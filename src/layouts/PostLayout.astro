@@ -1,0 +1,37 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  tags?: string[];
+  heroEmoji?: string;
+  heroColor?: string;
+}
+
+const { title, description, pubDate, tags = [], heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E' } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+
+const tagLabel = tags.length > 0 ? tags.join(' · ') : 'Travel';
+---
+<BaseLayout title={`${title} — Where Is Baldo?`} description={description}>
+  <div class="post-header">
+    <span class="post-tag">{tagLabel}</span>
+    <h1>{title}</h1>
+    <p class="post-meta">{formattedDate}</p>
+  </div>
+
+  <div class="post-body">
+    <slot />
+  </div>
+
+  <div class="post-footer">
+    <p>— Baldo</p>
+    <p>Follow along on Instagram and TikTok <strong>@whereisbaldo</strong></p>
+    <a href="/blog" class="btn-primary">← More Stories</a>
+  </div>
+</BaseLayout>

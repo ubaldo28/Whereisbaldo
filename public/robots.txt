@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://whereisbaldo.com/sitemap-index.xml

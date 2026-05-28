@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<BaseLayout title="Blog — Where Is Baldo?" description="Real travel stories from 22 countries. No highlight reels, no fake reviews — just honest writing from a California barber who can't stop getting on planes.">
+
+  <section class="page-header">
+    <span class="section-label">All Stories</span>
+    <h1>The Blog</h1>
+    <p class="page-subtitle">Every story here is real. The good trips, the bad trips, the ones where everything went sideways and I didn't care. No sponsored content disguised as genuine opinion. No resort packages. Just travel writing from someone who actually lives this.</p>
+  </section>
+
+  <section class="posts-section" style="padding-top: 0;">
+    <div class="posts-grid">
+      {allPosts.map(post => (
+        <PostCard
+          title={post.data.title}
+          description={post.data.description}
+          slug={post.slug}
+          tags={post.data.tags}
+          pubDate={post.data.pubDate}
+          heroEmoji={post.data.heroEmoji}
+          heroColor={post.data.heroColor}
+        />
+      ))}
+    </div>
+    {allPosts.length === 0 && (
+      <div class="empty-state">
+        <p>Stories are coming. Baldo is still processing the jet lag.</p>
+      </div>
+    )}
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: 4rem 2rem 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin: 0.5rem 0 1rem;
+    color: var(--dark);
+  }
+  .page-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--brown);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--brown);
+    font-style: italic;
+    font-size: 1.1rem;
+  }
+</style>

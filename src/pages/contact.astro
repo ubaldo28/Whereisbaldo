@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Contact — Where Is Baldo?" description="Get in touch with Baldo. Partnerships, questions, or just saying hello.">
+
+  <div class="post-header">
+    <span class="post-tag">Contact</span>
+    <h1>Get in Touch</h1>
+    <p class="post-meta">I read everything. I respond to things that seem real.</p>
+  </div>
+
+  <div class="post-body">
+
+    <p>Whether you want to talk about a collaboration, ask about a destination, or just say hello — here's how to reach me.</p>
+
+    <h2>For Partnerships & Collaborations</h2>
+    <p>Read the <a href="/work-with-me">Work With Me page</a> first so we're on the same page, then reach out via email with a brief description of what you're working on.</p>
+
+    <h2>For Everything Else</h2>
+    <p>Instagram DMs are the fastest way to get a response: <strong>@whereisbaldo</strong></p>
+
+    <div class="contact-form-wrap">
+      <h2>Send a Message</h2>
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        action="/contact-success"
+        class="contact-form"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="general">General / Just Saying Hi</option>
+            <option value="collaboration">Partnership / Collaboration</option>
+            <option value="destination">Question About a Destination</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required rows="6" placeholder="What's on your mind?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send It →</button>
+      </form>
+    </div>
+
+    <h2>Social</h2>
+    <p>
+      Instagram: <a href="https://instagram.com/whereisbaldo" target="_blank" rel="noopener">@whereisbaldo</a><br />
+      TikTok: <a href="https://tiktok.com/@whereisbaldo" target="_blank" rel="noopener">@whereisbaldo</a><br />
+      Facebook: <a href="https://facebook.com/whereisbaldo" target="_blank" rel="noopener">whereisbaldo</a>
+    </p>
+
+  </div>
+
+</BaseLayout>
+
+<style>
+  .contact-form-wrap {
+    background: var(--cream);
+    border: 1px solid var(--kraft);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+  }
+  .contact-form-wrap h2 {
+    margin-top: 0;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .form-group label {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--brown);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--kraft);
+    border-radius: 6px;
+    background: white;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: var(--dark);
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+</style>

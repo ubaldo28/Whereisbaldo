@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  tags?: string[];
+  pubDate: Date;
+  heroEmoji?: string;
+  heroColor?: string;
+}
+
+const { title, description, slug, tags = [], pubDate, heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E' } = Astro.props;
+const tagLabel = tags.length > 0 ? tags[0] : 'Travel';
+const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+<article class="post-card">
+  <div class="post-card-img" style={`background: linear-gradient(135deg, ${heroColor})`}>
+    {heroEmoji}
+  </div>
+  <div class="post-card-body">
+    <span class="post-tag">{tagLabel}</span>
+    <a href={`/blog/${slug}`} class="post-card-title">{title}</a>
+    <p class="post-card-excerpt">{description}</p>
+    <div class="post-card-footer">
+      <span>{formattedDate}</span>
+      <a href={`/blog/${slug}`} class="read-more">Read →</a>
+    </div>
+  </div>
+</article>

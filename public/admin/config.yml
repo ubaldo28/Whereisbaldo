@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/whereisbaldo  # ← replace with your actual GitHub username
+  branch: main
+  auth_type: pkce
+  app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID  # ← fill in after creating OAuth App (see SETUP.md)
+
+media_folder: public/images
+public_folder: /images
+
+site_url: https://whereisbaldo.com
+display_url: https://whereisbaldo.com
+logo_url: https://whereisbaldo.com/favicon.svg
+
+collections:
+  - name: posts
+    label: Blog Posts
+    folder: src/content/posts
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Publish Date, name: pubDate, widget: datetime, format: "YYYY-MM-DD" }
+      - label: Tags
+        name: tags
+        widget: list
+        default: ["Travel"]
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Hero Emoji, name: heroEmoji, widget: string, default: "✈️", required: false }
+      - { label: Hero Color (CSS gradient stops), name: heroColor, widget: string, default: "#4A2C10, #8B5E2E", required: false }
+      - { label: Body, name: body, widget: markdown }

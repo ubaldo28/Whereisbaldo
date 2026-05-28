@@ -1,0 +1,20 @@
+---
+const navLinks = [
+  { href: '/start-here', label: 'Start Here' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/work-with-me', label: 'Work With Me' },
+];
+---
+<header class="site-header">
+  <a href="/" class="logo-text">
+    <span class="logo-where">Where Is</span>
+    <span class="logo-baldo">Baldo<span>?</span></span>
+  </a>
+  <nav>
+    {navLinks.map(link => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+    <a href="https://buymeacoffee.com/whereisbaldo" class="nav-cta" target="_blank" rel="noopener">Buy Baldo a Taco</a>
+  </nav>
+</header>

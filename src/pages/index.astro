@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const recentPosts = allPosts.slice(0, 6);
+---
+<BaseLayout>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">A California barber. 22 countries. Zero plan.</p>
+    <h1>
+      <span class="where">Where</span> <span class="is">Is</span><br />
+      <span class="baldo">Baldo</span><span class="q">?</span>
+    </h1>
+    <p class="hero-sub">Real travel. Honest stories. No highlight reels, no fake reviews, no resort packages. Just a guy with a passport and a very good reason to keep moving.</p>
+    <div class="hero-buttons">
+      <a href="/start-here" class="btn-primary">Start Here</a>
+      <a href="/blog" class="btn-secondary">Read the Blog</a>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item">Albania</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Colombia</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Scotland</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Mexico</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Fargo, ND</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">22 Countries</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Still Lost</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">No Plan</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Albania</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Colombia</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Scotland</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Mexico</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Fargo, ND</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">22 Countries</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">Still Lost</span><span class="ticker-dot">✦</span>
+      <span class="ticker-item">No Plan</span><span class="ticker-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- RECENT POSTS -->
+  <section class="posts-section">
+    <div class="section-header">
+      <div>
+        <span class="section-label">Latest Stories</span>
+        <h2 class="section-title">From the Road</h2>
+      </div>
+      <a href="/blog" class="see-all">All Posts →</a>
+    </div>
+    <div class="posts-grid">
+      {recentPosts.map(post => (
+        <PostCard
+          title={post.data.title}
+          description={post.data.description}
+          slug={post.slug}
+          tags={post.data.tags}
+          pubDate={post.data.pubDate}
+          heroEmoji={post.data.heroEmoji}
+          heroColor={post.data.heroColor}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <blockquote>"The best trips I've ever taken are not always the ones to the places with the longest Wikipedia pages."</blockquote>
+    <cite>— Baldo</cite>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-strip">
+    <div class="about-inner">
+      <div class="about-avatar">✂️</div>
+      <div class="about-text">
+        <span class="section-label" style="color:var(--gold)">Who Is Baldo?</span>
+        <h2>California born.<br />Mexican roots.<br /><span>No fixed address.</span></h2>
+        <p>I'm Ubaldo — but everyone calls me Baldo. I'm a barber from California with Mexican family, a Spanish tongue, and a compulsion to get on planes to places most people can't point to on a map.</p>
+        <p>I've been to 22 countries, lived in Scotland, Mexico, Albania, and a few places in between. I travel on a budget, eat where locals eat, and skip the tourist areas on principle.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-number">22+</div>
+            <div class="stat-label">Countries</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Continents</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Plans</div>
+          </div>
+        </div>
+        <a href="/about" class="btn-primary">Read My Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINATIONS -->
+  <section class="destinations">
+    <span class="section-label">Places I've Been</span>
+    <h2 class="section-title">Destinations</h2>
+    <div class="dest-grid">
+      <a href="/blog" class="dest-chip featured">Albania<span class="dest-count">3 posts</span></a>
+      <a href="/blog" class="dest-chip">Colombia<span class="dest-count">1 post</span></a>
+      <a href="/blog" class="dest-chip">Scotland<span class="dest-count">coming soon</span></a>
+      <a href="/blog" class="dest-chip">Mexico<span class="dest-count">2 posts</span></a>
+      <a href="/blog" class="dest-chip">USA<span class="dest-count">2 posts</span></a>
+      <a href="/blog" class="dest-chip">Balkans<span class="dest-count">coming soon</span></a>
+      <a href="/blog" class="dest-chip">Europe<span class="dest-count">coming soon</span></a>
+      <a href="/blog" class="dest-chip">More soon<span class="dest-count">22 countries</span></a>
+    </div>
+  </section>
+
+  <!-- TACO -->
+  <section class="taco-section">
+    <span class="section-label">Support the Blog</span>
+    <h2>Buy Baldo a Taco 🌮</h2>
+    <p>No ads in your face. No sponsored BS disguised as genuine recommendations. Just honest travel writing, kept alive one taco at a time.</p>
+    <a href="https://buymeacoffee.com/whereisbaldo" class="btn-primary" target="_blank" rel="noopener">Buy Baldo a Taco</a>
+  </section>
+
+</BaseLayout>
