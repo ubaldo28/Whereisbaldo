@@ -11,10 +11,51 @@ const navLinks = [
     <span class="logo-where">Where Is</span>
     <span class="logo-baldo">Baldo<span>?</span></span>
   </a>
-  <nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  <nav id="mainNav">
     {navLinks.map(link => (
       <a href={link.href}>{link.label}</a>
     ))}
     <a href="https://buymeacoffee.com/whereisbaldo" class="nav-cta" target="_blank" rel="noopener">Buy Baldo a Taco</a>
   </nav>
 </header>
+
+<style>
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--dark);
+      flex-direction: column;
+      padding: 1rem;
+      gap: 0;
+      z-index: 100;
+    }
+    nav.open { display: flex; }
+    nav a {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.95rem;
+    }
+    nav a:last-child { border-bottom: none; }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  toggle?.addEventListener('click', () => nav?.classList.toggle('open'));
+</script>
