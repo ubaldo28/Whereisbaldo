@@ -6,33 +6,87 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalURL?: string;
 }
 
 const {
   title = 'Where Is Baldo? — Real Travel. Honest Stories.',
-  description = 'A California barber. 22 countries. Zero plan. Real travel writing by Baldo.',
+  description = 'A California barber. 22 countries. Zero plan. Real travel writing by Baldo — honest stories from places most people skip.',
+  ogImage = '/icon-192.png',
+  ogType = 'website',
+  canonicalURL = Astro.url.href,
 } = Astro.props;
+
+const siteName = 'Where Is Baldo?';
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content={description} />
   <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content={`https://whereisbaldo.com${ogImage}`} />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@whereisbaldo" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`https://whereisbaldo.com${ogImage}`} />
+
+  <!-- Author & Publisher -->
+  <meta name="author" content="Ubaldo Figueroa" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- PWA -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
   <meta name="theme-color" content="#2C1810" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Where Is Baldo?" />
-  <link rel="apple-touch-icon" href="/icon-192.png" />
+
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="Where Is Baldo? — RSS Feed" href="/rss.xml" />
+
+  <!-- JSON-LD: Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Where Is Baldo?",
+    "url": "https://whereisbaldo.com",
+    "description": "Real travel stories from a California barber who has visited 22 countries.",
+    "author": {
+      "@type": "Person",
+      "name": "Ubaldo Figueroa",
+      "alternateName": "Baldo",
+      "url": "https://whereisbaldo.com/about"
+    }
+  }
+  </script>
+
   <!-- Adsterra -->
   <script src="https://pl29635998.effectivecpmnetwork.com/1b/99/c5/1b99c5f321945fa1b78b4b5d10befbf8.js"></script>
   <script src="https://pl29636000.effectivecpmnetwork.com/9f/56/44/9f56448928cabba3a874e6705b2bd025.js"></script>
+
   <!-- Google AdSense -->
   <meta name="google-adsense-account" content="ca-pub-7380718671497895" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7380718671497895" crossorigin="anonymous"></script>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSDXJ1PRGL"></script>
   <script>
