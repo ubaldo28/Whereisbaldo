@@ -48,6 +48,27 @@ const {
     <slot />
   </main>
   <Footer />
+  <!-- Install App Banner -->
+  <div id="install-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:var(--darkbrown); color:var(--cream); padding:14px 20px; z-index:999; text-align:center; font-family:'Helvetica Neue',sans-serif; font-size:13px; border-top:2px solid var(--gold);">
+    <span id="install-text"></span>
+    <button onclick="document.getElementById('install-banner').style.display='none'" style="margin-left:16px; background:none; border:1px solid var(--gold); color:var(--gold); padding:4px 12px; border-radius:4px; cursor:pointer; font-size:12px;">✕</button>
+  </div>
+  <script>
+    const banner = document.getElementById('install-banner');
+    const text = document.getElementById('install-text');
+    const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    const isAndroid = /android/i.test(navigator.userAgent);
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+    if (!isStandalone) {
+      if (isIOS) {
+        text.innerHTML = '📲 Add to your Home Screen — tap <strong>Share</strong> then <strong>"Add to Home Screen"</strong>';
+        banner.style.display = 'block';
+      } else if (isAndroid) {
+        text.innerHTML = '📲 Install the app — tap <strong>⋮</strong> then <strong>"Add to Home Screen"</strong>';
+        banner.style.display = 'block';
+      }
+    }
+  </script>
   <!-- Webpushr -->
   <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BFcSY49Fbl0plbicUgFhjBGABH7GMM9k-zAVucp7y-JkNtavzHlmmTE6rGIaFbtmz8q3v8EVgwL_6mGJ8PT48AQ' });</script>
 </body>
