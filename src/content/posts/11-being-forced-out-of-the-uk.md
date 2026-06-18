@@ -1,5 +1,5 @@
 ---
-title: "The UK Is Making Me Leave. Here's the Truth About Why."
+title: "I'm Being Forced to Self-Deport."
 description: "I didn't overstay a visa. I didn't break any laws. I fell in love, it went wrong, and now the Home Office has decided the rest. This is the honest version of what that looks like."
 pubDate: 2026-02-01
 tags: ["Real Talk", "Personal", "UK"]
