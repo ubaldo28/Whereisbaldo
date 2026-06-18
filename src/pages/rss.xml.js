@@ -19,7 +19,7 @@ export async function GET() {
   <channel>
     <title>Where Is Baldo?</title>
     <link>https://whereisbaldo.com</link>
-    <description>Real travel stories from a California barber. 22 countries. Zero plan.</description>
+    <description>Real travel stories from a California barber. 22 countries. No plan.</description>
     <language>en-us</language>
     <atom:link href="https://whereisbaldo.com/rss.xml" rel="self" type="application/rss+xml"/>
     ${items}
