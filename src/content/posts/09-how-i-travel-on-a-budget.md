@@ -5,6 +5,7 @@ pubDate: 2026-01-05
 tags: ["Budget Travel", "Real Talk", "Tips"]
 heroEmoji: "💸"
 heroColor: "#4A2C10, #7C5E3A"
+draft: true
 ---
 
 I'm going to skip the obvious stuff.

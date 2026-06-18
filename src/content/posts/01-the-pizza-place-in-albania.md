@@ -5,6 +5,7 @@ pubDate: 2025-10-15
 tags: ["Albania", "Food", "Real Talk"]
 heroEmoji: "🍕"
 heroColor: "#1B3A2D, #2E6B4F"
+draft: true
 ---
 
 I almost didn't go to Albania.

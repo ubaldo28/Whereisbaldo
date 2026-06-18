@@ -5,6 +5,7 @@ pubDate: 2025-11-01
 tags: ["USA", "Off the Beaten Path", "Midwest"]
 heroEmoji: "❄️"
 heroColor: "#2C4A6E, #1A2E4A"
+draft: true
 ---
 
 When I tell people I've spent time in Fargo, North Dakota, they do this thing with their face. A sort of slow blink. Like I said something in a language they don't speak and they're waiting for a translation.

@@ -5,6 +5,7 @@ pubDate: 2025-11-10
 tags: ["Mexico", "Culture", "Personal"]
 heroEmoji: "🌮"
 heroColor: "#7C3A00, #C4995A"
+draft: true
 ---
 
 My family is Mexican. My grandparents came from Mexico. I grew up eating the food, speaking the language, being surrounded by the culture. I thought I understood it.

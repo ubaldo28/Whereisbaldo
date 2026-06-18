@@ -5,6 +5,7 @@ pubDate: 2025-12-10
 tags: ["Travel Philosophy", "Lessons", "Real Talk"]
 heroEmoji: "🌍"
 heroColor: "#2C3E50, #4A6A8A"
+draft: true
 ---
 
 I've been to 22 countries. That number sounds more impressive than it is — plenty of people have been to more, and the number alone doesn't mean much. What matters is what you bring back.

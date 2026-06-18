@@ -5,6 +5,7 @@ pubDate: 2025-10-22
 tags: ["Colombia", "Personal", "First Times"]
 heroEmoji: "🇨🇴"
 heroColor: "#C8102E, #7C1A10"
+draft: true
 ---
 
 There's a version of this story where I play it cool. Where I show up to Colombia as some seasoned traveler who knows what he's doing, fits in immediately, and has a great time.

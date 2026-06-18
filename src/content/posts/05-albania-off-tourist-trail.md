@@ -5,6 +5,7 @@ pubDate: 2025-11-18
 tags: ["Albania", "Hidden Gems", "Slow Travel"]
 heroEmoji: "🦅"
 heroColor: "#E07830, #8B5E2E"
+draft: true
 ---
 
 Most people who go to Albania spend about four days there. They do Tirana for a day or two — the colors of the buildings, the Blloku neighborhood, maybe Skanderbeg Square — and then they head south to Saranda because it's close to Corfu and it shows up on every "hidden gem Europe" list.

@@ -5,6 +5,7 @@ pubDate: 2026-01-15
 tags: ["Travel Philosophy", "Real Talk", "How I Travel"]
 heroEmoji: "🚶"
 heroColor: "#2C3E50, #8B5E2E"
+draft: true
 ---
 
 Let me tell you about the worst meal I've ever had while traveling.

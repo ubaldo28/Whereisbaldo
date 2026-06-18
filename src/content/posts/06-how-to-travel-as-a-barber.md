@@ -5,6 +5,7 @@ pubDate: 2025-12-01
 tags: ["Career", "Budget Travel", "Real Talk"]
 heroEmoji: "✂️"
 heroColor: "#4A2C10, #8B5E2E"
+draft: true
 ---
 
 People hear "barber" and "world traveler" and their brain doesn't immediately connect those two things. They think of travel as something for people with remote jobs — the laptop-on-a-beach crowd, the tech workers doing Zoom calls from Lisbon, the freelance designers who make it look effortless.
