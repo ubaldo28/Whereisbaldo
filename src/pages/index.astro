@@ -56,8 +56,8 @@ const recentPosts = allPosts.slice(0, 6);
     </div>
   </div>
 
-  <!-- RECENT POSTS — only show if there are live posts -->
-  {recentPosts.length > 0 && (
+  <!-- RECENT POSTS — only show if there are live posts, otherwise show teaser -->
+  {recentPosts.length > 0 ? (
     <section class="posts-section">
       <div class="section-header">
         <div>
@@ -79,6 +79,12 @@ const recentPosts = allPosts.slice(0, 6);
           />
         ))}
       </div>
+    </section>
+  ) : (
+    <section class="coming-soon-section">
+      <span class="section-label">First Story</span>
+      <h2>I'm Being Forced to Self-Deport.</h2>
+      <p>The first story is coming. Subscribe to get notified the moment it drops.</p>
     </section>
   )}
 
