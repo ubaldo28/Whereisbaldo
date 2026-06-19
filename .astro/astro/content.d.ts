@@ -211,6 +211,34 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
+"11-about-baldo.md": {
+	id: "11-about-baldo.md";
+  slug: "11-about-baldo";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"11-being-forced-out-of-the-uk.md": {
+	id: "11-being-forced-out-of-the-uk.md";
+  slug: "11-being-forced-out-of-the-uk";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"12-how-i-ended-up-in-scotland.md": {
+	id: "12-how-i-ended-up-in-scotland.md";
+  slug: "12-how-i-ended-up-in-scotland";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"13-the-relationship.md": {
+	id: "13-the-relationship.md";
+  slug: "13-the-relationship";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 };
 
 	};

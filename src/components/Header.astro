@@ -18,6 +18,7 @@ const navLinks = [
     ))}
     <a href="https://buymeacoffee.com/whereisbaldo" class="nav-cta" target="_blank" rel="noopener">Buy Baldo a Taco</a>
   </nav>
+  <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
 </header>
 
 <style>
@@ -57,5 +58,29 @@ const navLinks = [
 <script>
   const toggle = document.getElementById('navToggle');
   const nav = document.getElementById('mainNav');
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  
   toggle?.addEventListener('click', () => nav?.classList.toggle('open'));
+  
+  // Close menu when a link is clicked
+  const navLinks = nav?.querySelectorAll('a');
+  navLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('open');
+    });
+  });
+
+  // Dark mode toggle
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (isDarkMode) {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.textContent = '☀️';
+  }
+
+  darkModeToggle?.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isNowDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isNowDark);
+    darkModeToggle.textContent = isNowDark ? '☀️' : '🌙';
+  });
 </script>

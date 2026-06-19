@@ -79,9 +79,30 @@ const siteName = 'Where Is Baldo?';
   }
   </script>
 
-  <!-- Google AdSense -->
+  <!-- Google AdSense (lazy-loaded) -->
   <meta name="google-adsense-account" content="ca-pub-7380718671497895" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7380718671497895" crossorigin="anonymous"></script>
+  <script>
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.loadAdSense = function() {
+      if (!window.adSenseLoaded) {
+        const script = document.createElement('script');
+        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7380718671497895';
+        script.async = true;
+        script.crossOrigin = 'anonymous';
+        document.head.appendChild(script);
+        window.adSenseLoaded = true;
+      }
+    };
+    
+    // Load AdSense after page interactive (3 second delay)
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(window.loadAdSense, 3000);
+      });
+    } else {
+      setTimeout(window.loadAdSense, 3000);
+    }
+  </script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSDXJ1PRGL"></script>

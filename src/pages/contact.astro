@@ -22,13 +22,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="contact-form-wrap">
       <h2>Send a Message</h2>
       <form
-        name="contact"
+        action="https://formsubmit.co/baldolanded@gmail.com"
         method="POST"
-        data-netlify="true"
-        action="/contact-success"
         class="contact-form"
       >
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="_next" value="https://whereisbaldo.com/contact-success" />
+        <input type="hidden" name="_subject" value="New message from whereisbaldo.com" />
+        <input type="hidden" name="_captcha" value="false" />
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required placeholder="Your name" />

@@ -12,6 +12,11 @@ interface Props {
 
 const { title, description, pubDate, tags = [], heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E' } = Astro.props;
 
+// Calculate read time (assume 200 words per minute)
+const slot = await Astro.slots.render('default');
+const wordCount = slot.split(/\s+/).length;
+const readTime = Math.ceil(wordCount / 200);
+
 const formattedDate = pubDate.toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric'
 });
@@ -55,6 +60,7 @@ const canonicalURL = Astro.url.href;
     <h1>{title}</h1>
     <p class="post-meta">
       <time datetime={isoDate}>{formattedDate}</time>
+      &nbsp;·&nbsp; <span class="read-time">{readTime} min read</span>
       &nbsp;·&nbsp; By <a href="/about" style="color:var(--gold)">Baldo</a>
     </p>
   </div>
