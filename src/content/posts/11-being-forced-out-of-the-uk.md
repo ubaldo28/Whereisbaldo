@@ -1,57 +1,55 @@
 ---
-title: "I Started This Blog Out of Desperation. Here's Why."
-description: "I'm a 35-year-old barber from California sitting in an airport with a one-way ticket and no plan. This is why I'm writing."
-pubDate: 2026-07-17
+title: "I'm Being Forced to Self-Deport."
+description: "I didn't overstay a visa. I didn't break any laws. I fell in love, it went wrong, and now the Home Office has decided the rest. This is the honest version of what that looks like."
+pubDate: 2026-02-01
 tags: ["Real Talk", "Personal", "UK"]
 heroEmoji: "🇬🇧"
 heroColor: "#1c1c2e, #2a1a2e"
-draft: false
+draft: true
 ---
 
-I'm writing this from an airport.
+I'm being removed from the United Kingdom.
 
-I'm on a layover. One bag. One-way ticket. No idea what comes next.
+Not because I broke the law. Not because I overstayed anything or did something wrong. I'm being removed because a relationship ended — and when the relationship ended, so did my right to be here.
 
-I didn't start this blog because I had it all figured out. I started it because I had nothing else to do and I needed somewhere to put all of this. The story, the mess, the feelings I've been carrying around for the last however many months — I needed somewhere to put it before it ate me alive.
+That's the short version. The longer version is messier, more human, and honestly more useful if you've ever found yourself in a situation where you gave everything to something that turned out not to be what you thought it was.
 
-So here we are.
-
----
-
-My name is Baldo. I'm 35. I'm a barber from California. And up until recently, I was living in Scotland.
-
-I moved there for a relationship. I thought that relationship was my life. Turns out it wasn't — and when it fell apart, I found out real quick that my right to stay in the UK was tied to that person. No relationship, no visa. No visa, no staying.
-
-I'm not going to tell the whole story right now because honestly it's a lot and it needs to be told right. But the short version is this: the relationship broke down in a way that had nothing to do with just us. There were other people involved. And one day I was building a life in Scotland, and then I wasn't.
-
-The UK Home Office doesn't care about the details of why something went wrong. They just care that the paperwork no longer adds up. And mine didn't.
+So let me tell you the real version.
 
 ---
 
-The months that followed were the hardest of my life.
+I came to Scotland for a person. I stayed for years. I built a life here — real routines, real friendships, real roots in a place I genuinely came to love despite the rain and the grey skies and the fact that it gets dark at 3pm in December.
 
-I'm not going to sugarcoat it. I went dark. Darker than I've ever been. You're stuck in a country that's been your home, waiting for a letter you know is coming, surrounded by everything that became normal to you — and you just... wait. You can't make real plans. You can't move forward. You're just sitting in this in-between that has no end date.
+And then the relationship fell apart. Not quickly, not cleanly. The way these things actually fall apart when one person has been slowly rewriting your sense of reality for long enough that you stop being able to tell what's yours and what's been put there.
 
-I didn't handle it perfectly. I don't think anyone would.
-
-But I got through it.
+That's the relationship story. I'll tell that one separately, because it deserves its own space. What matters here is what happened after.
 
 ---
 
-When the decision finally came, I expected to fall apart.
+When you're in the UK on a visa tied to a partner, and that partner is no longer your partner, the Home Office doesn't really care about the details of what went wrong. They care about the paperwork. And the paperwork said I had to go.
 
-I didn't. I felt relief. Real, quiet relief. Like finally. Finally I know. Finally I can go.
+I won't pretend the process was cruel. It wasn't. It was bureaucratic. Cold in the way that systems are cold — not malicious, just indifferent. A form. A decision. A date.
 
-I'm going to Mexico. Not back to California — that's its own story for another post. Mexico. My parents are there. Real food. A bed that isn't borrowed time.
+What nobody tells you is what it does to your head in the months between when the process starts and when it ends. You're in a country you've been living in, surrounded by everything that's become normal to you, and slowly it all starts to feel like borrowed time. You wake up every day not knowing when the letter is coming. You make plans, sort of. You don't make plans, sort of. You exist in this strange in-between where the not-knowing is its own specific kind of torture.
 
-And this blog.
+I went through depression during that period. I had thoughts I'm not going to dress up or skip over, because I think too many people have had the same thoughts and felt like they couldn't say it out loud. I'm saying it. It got dark. I got through it.
 
-Because the thing about hitting rock bottom in a foreign country with a one-way ticket out is that you realize you've actually got a story. A real one. Not a highlight reel. Not a "look how great my life is" thing. A real, messy, what-the-hell-just-happened story that I think some people need to hear.
+---
 
-That's why I'm writing.
+And then the decision came.
 
-I don't know where this goes. I don't know what the blog becomes. I don't even know what my life looks like in six months. 
+And here's the part that surprised me most: I felt relief.
 
-But I'm here. I'm writing. And I've got a lot to say.
+Not sadness. Not anger. Not the grief I'd been bracing for. Just this quiet, exhale-sized relief that the not-knowing was finally over. That the door had closed and I could stop standing in front of it.
+
+I'm leaving the UK. I'm going to Mexico — not back to California, which is its own story. Mexico. Where my parents are. Where the food will wreck me in the best possible way. Where something that actually feels like a new beginning is waiting.
+
+---
+
+I'm a 35-year-old California barber who traveled to 22 countries, moved to Scotland for love, watched it fall apart, and is now being escorted to the door by a government process.
+
+That's the setup.
+
+The rest of this blog is what comes next.
 
 — Baldo
