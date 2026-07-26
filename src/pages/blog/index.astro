@@ -6,12 +6,12 @@ import { getCollection } from 'astro:content';
 const allPosts = await getCollection('posts', ({ data }) => !data.draft);
 allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
-<BaseLayout title="Blog — Where Is Baldo?" description="Real travel stories from 22 countries. No highlight reels, no fake reviews — just honest writing from a California barber who can't stop getting on planes.">
+<BaseLayout title="Blog — Where Is Baldo?" description="Real stories from a California boy who moved to Scotland, watched his life fall apart, and started writing about it. This is the honest version.">
 
   <section class="page-header">
     <span class="section-label">All Stories</span>
     <h1>The Blog</h1>
-    <p class="page-subtitle">Every story here is real. The good trips, the bad trips, the ones where everything went sideways and I didn't care. No sponsored content disguised as genuine opinion. No resort packages. Just travel writing from someone who actually lives this.</p>
+    <p class="page-subtitle">Every story here is real. No highlight reel. No filter. Just the honest version of what actually happened.</p>
   </section>
 
   <section class="posts-section" style="padding-top: 0;">
