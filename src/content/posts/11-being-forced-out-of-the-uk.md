@@ -46,7 +46,7 @@ I'm leaving the UK. I'm going to Mexico — not back to California, which is its
 
 ---
 
-I'm a 35-year-old California barber who traveled to 22 countries, moved to Scotland for love, watched it fall apart, and is now being escorted to the door by a government process.
+I'm a 35-year-old California boy who traveled to 22 countries, moved to Scotland for love, watched it fall apart, and is now being escorted to the door by a government process.
 
 That's the setup.
 
