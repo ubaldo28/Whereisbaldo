@@ -44,8 +44,8 @@ export async function onRequestPost(context) {
         subject: "You're in. The stories are coming.",
         html: `
           <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #3A2010;">
-            <h2 style="font-style: italic; color: #4A2C10;">Hey — you made it.</h2>
-            <p>Thanks for signing up. I'm Baldo. California boy, Mexican roots, 22 countries, and a life that recently fell apart in Scotland.</p>
+            <h2 style="font-style: italic; color: #4A2C10;">Hiya —</h2>
+            <p>You didn't have to sign up. But you did — and that means more than you know.</p>
             <p>The first stories drop soon. You'll get them straight to this inbox before anyone else.</p>
             <p>If you want to know more before then — <a href="https://whereisbaldo.com" style="color: #C4995A;">whereisbaldo.com</a> has everything so far.</p>
             <p style="margin-top: 40px;">— Baldo</p>
