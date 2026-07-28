@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const tagMap = {};
+
+  posts.forEach(post => {
+    (post.data.tags || []).forEach(tag => {
+      const slug = tag.toLowerCase().replace(/\s+/g, '-');
+      if (!tagMap[slug]) tagMap[slug] = { label: tag, posts: [] };
+      tagMap[slug].posts.push(post);
+    });
+  });
+
+  return Object.entries(tagMap).map(([slug, { label, posts }]) => ({
+    params: { tag: slug },
+    props: { label, posts },
+  }));
+}
+
+const { label, posts } = Astro.props;
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<BaseLayout title={`${label} Stories — Where Is Baldo?`} description={`All stories tagged with ${label} on whereisbaldo.com`}>
+  <section class="tag-page">
+    <span class="section-label">Topic</span>
+    <h1>{label}</h1>
+    <p class="tag-count">{posts.length} {posts.length === 1 ? 'story' : 'stories'}</p>
+  </section>
+  <section class="posts-section" style="padding-top: 0;">
+    <div class="posts-grid">
+      {posts.map(post => (
+        <PostCard
+          title={post.data.title}
+          description={post.data.description}
+          slug={post.slug}
+          tags={post.data.tags}
+          pubDate={post.data.pubDate}
+          heroEmoji={post.data.heroEmoji}
+          heroColor={post.data.heroColor}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tag-page { max-width: 700px; margin: 0 auto; padding: 4rem 2rem 1rem; text-align: center; }
+  .tag-page h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0.5rem 0 0.5rem; }
+  .tag-count { color: var(--brown); font-style: italic; }
+</style>

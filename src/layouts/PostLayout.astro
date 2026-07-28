@@ -8,9 +8,10 @@ interface Props {
   tags?: string[];
   heroEmoji?: string;
   heroColor?: string;
+  relatedPosts?: any[];
 }
 
-const { title, description, pubDate, tags = [], heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E' } = Astro.props;
+const { title, description, pubDate, tags = [], heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E', relatedPosts = [] } = Astro.props;
 
 // Calculate read time (assume 200 words per minute)
 const slot = await Astro.slots.render('default');
@@ -68,6 +69,21 @@ const canonicalURL = Astro.url.href;
   <div class="post-body">
     <slot />
   </div>
+
+  <!-- RELATED POSTS -->
+  {relatedPosts.length > 0 && (
+    <div class="related-posts">
+      <p class="share-label">Read Next</p>
+      <div class="related-grid">
+        {relatedPosts.map(p => (
+          <a href={`/blog/${p.slug}`} class="related-item">
+            <span class="related-emoji">{p.data.heroEmoji}</span>
+            <span class="related-title">{p.data.title}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
 
   <!-- SHARE BUTTONS -->
   <div class="share-section">

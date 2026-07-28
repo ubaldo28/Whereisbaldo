@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Search — Where Is Baldo?" description="Search all stories on whereisbaldo.com">
+  <section class="search-page">
+    <span class="section-label">Search</span>
+    <h1>Find a Story</h1>
+    <div class="search-bar-wrap">
+      <input type="text" id="searchInput" placeholder="Search stories..." autocomplete="off" />
+    </div>
+    <div id="searchResults" class="search-results"></div>
+  </section>
+</BaseLayout>
+
+<style>
+  .search-page { max-width: 700px; margin: 0 auto; padding: 4rem 2rem; }
+  .search-page h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0.5rem 0 2rem; }
+  .search-bar-wrap input {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    border: 2px solid var(--kraft);
+    border-radius: 4px;
+    background: var(--cream);
+    color: var(--dark);
+    font-family: Georgia, serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-bar-wrap input:focus { border-color: var(--gold); }
+  .search-results { margin-top: 2rem; }
+  .search-result-item { padding: 1.5rem 0; border-bottom: 1px solid var(--kraft); }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item a { text-decoration: none; }
+  .search-result-item h3 { font-size: 1.2rem; color: var(--darkbrown); margin-bottom: 0.4rem; }
+  .search-result-item h3:hover { color: var(--orange); }
+  .search-result-item p { font-size: 0.95rem; color: var(--brown); line-height: 1.6; }
+  .no-results { color: var(--brown); font-style: italic; margin-top: 1rem; }
+</style>
+
+<script>
+  const input = document.getElementById('searchInput');
+  const results = document.getElementById('searchResults');
+  let posts = [];
+
+  fetch('/search.json')
+    .then(r => r.json())
+    .then(data => { posts = data; });
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    if (!q) { results.innerHTML = ''; return; }
+
+    const matches = posts.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.description.toLowerCase().includes(q) ||
+      (p.tags || []).some(t => t.toLowerCase().includes(q))
+    );
+
+    if (matches.length === 0) {
+      results.innerHTML = '<p class="no-results">No stories found.</p>';
+      return;
+    }
+
+    results.innerHTML = matches.map(p => `
+      <div class="search-result-item">
+        <a href="/blog/${p.slug}">
+          <h3>${p.heroEmoji ? p.heroEmoji + ' ' : ''}${p.title}</h3>
+          <p>${p.description}</p>
+        </a>
+      </div>
+    `).join('');
+  });
+</script>

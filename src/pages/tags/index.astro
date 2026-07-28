@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts', ({ data }) => !data.draft);
+const tagMap = {};
+
+posts.forEach(post => {
+  (post.data.tags || []).forEach(tag => {
+    if (!tagMap[tag]) tagMap[tag] = 0;
+    tagMap[tag]++;
+  });
+});
+
+const tags = Object.entries(tagMap).sort((a, b) => b[1] - a[1]);
+---
+<BaseLayout title="Topics — Where Is Baldo?" description="Browse all story topics on whereisbaldo.com">
+  <section class="tags-page">
+    <span class="section-label">Topics</span>
+    <h1>Browse by Topic</h1>
+    <div class="tags-grid">
+      {tags.map(([tag, count]) => (
+        <a href={`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}`} class="tag-card">
+          <span class="tag-name">{tag}</span>
+          <span class="tag-count">{count} {count === 1 ? 'story' : 'stories'}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tags-page { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+  .tags-page h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0.5rem 0 2rem; }
+  .tags-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+  .tag-card { display: flex; flex-direction: column; align-items: center; padding: 16px 24px; background: var(--cream); border: 1px solid var(--kraft); border-radius: 4px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+  .tag-card:hover { border-color: var(--gold); background: var(--kraft); }
+  .tag-name { font-weight: 700; color: var(--darkbrown); font-size: 1rem; }
+  .tag-count { font-size: 0.8rem; color: var(--brown); margin-top: 4px; }
+</style>

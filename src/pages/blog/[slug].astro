@@ -6,12 +6,17 @@ export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
   return posts.map(post => ({
     params: { slug: post.slug },
-    props: { post },
+    props: { post, allPosts: posts },
   }));
 }
 
-const { post } = Astro.props;
+const { post, allPosts } = Astro.props;
 const { Content } = await post.render();
+
+// Related posts: same tags, excluding current
+const related = allPosts
+  .filter(p => p.slug !== post.slug && (p.data.tags || []).some(t => (post.data.tags || []).includes(t)))
+  .slice(0, 3);
 ---
 <PostLayout
   title={post.data.title}
@@ -20,6 +25,7 @@ const { Content } = await post.render();
   tags={post.data.tags}
   heroEmoji={post.data.heroEmoji}
   heroColor={post.data.heroColor}
+  relatedPosts={related}
 >
   <Content />
 </PostLayout>
