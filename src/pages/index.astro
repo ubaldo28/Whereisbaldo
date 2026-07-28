@@ -107,6 +107,15 @@ const recentPosts = allPosts.slice(0, 6);
       </div>
     </div>
 
+    <div class="email-signup">
+      <p>Get the next story in your inbox.</p>
+      <form id="subscribeForm" class="subscribe-form">
+        <input type="email" id="subscribeEmail" placeholder="Your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="subscribeMsg" style="display:none; margin-top:10px; font-size:14px; color:var(--brown);"></p>
+    </div>
+
     <div class="app-reminder">
       <p>Don't miss a story. Download the app and turn on notifications.</p>
       <button id="install-btn-2" style="background:var(--gold); color:var(--dark); border:none; padding:10px 24px; border-radius:20px; font-family:'Helvetica Neue',sans-serif; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer;">📲 Get the Free App</button>
@@ -150,5 +159,36 @@ const recentPosts = allPosts.slice(0, 6);
     <h2>Buy Baldo a Taco 🌮</h2>
     <a href="https://buymeacoffee.com/whereisbaldo" class="btn-primary" target="_blank" rel="noopener">Buy Baldo a Taco</a>
   </section>
+
+<script>
+  const form = document.getElementById('subscribeForm');
+  const msg = document.getElementById('subscribeMsg');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('subscribeEmail').value;
+    const btn = form.querySelector('button');
+    btn.textContent = 'Subscribing...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      msg.style.display = 'block';
+      if (data.success) {
+        msg.textContent = "You're in. Next story goes straight to your inbox.";
+        form.reset();
+      } else {
+        msg.textContent = data.error || 'Something went wrong. Try again.';
+      }
+    } catch {
+      msg.textContent = 'Something went wrong. Try again.';
+    }
+    btn.textContent = 'Subscribe';
+    btn.disabled = false;
+  });
+</script>
 
 </BaseLayout>

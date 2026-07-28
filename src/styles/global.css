@@ -173,6 +173,14 @@ nav a:focus { outline: 2px solid var(--orange); outline-offset: 4px; border-radi
 .coming-soon-list ul { list-style: none; padding: 0; margin: 0 auto 40px; }
 .coming-soon-list ul li { font-size: clamp(16px, 2.5vw, 20px); font-style: italic; color: var(--darkbrown); padding: 14px 0; border-bottom: 1px solid var(--kraft); line-height: 1.4; }
 .coming-soon-list ul li:last-child { border-bottom: none; }
+.email-signup { margin-bottom: 32px; }
+.email-signup p { font-size: 15px; color: var(--brown); margin-bottom: 12px; }
+.subscribe-form { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.subscribe-form input { padding: 10px 16px; border: 2px solid var(--kraft); border-radius: 4px; font-size: 14px; font-family: Georgia, serif; background: var(--cream); color: var(--dark); outline: none; min-width: 220px; }
+.subscribe-form input:focus { border-color: var(--gold); }
+.subscribe-form button { padding: 10px 24px; background: var(--darkbrown); color: var(--cream); border: none; border-radius: 4px; font-size: 14px; font-weight: 700; font-family: 'Helvetica Neue', sans-serif; cursor: pointer; letter-spacing: 0.5px; }
+.subscribe-form button:hover { background: var(--orange); }
+
 .app-reminder { margin-top: 40px; }
 .app-reminder p { font-size: 15px; color: var(--brown); margin-bottom: 16px; }
 
