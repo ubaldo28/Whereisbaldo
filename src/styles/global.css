@@ -259,7 +259,7 @@ nav a:focus { outline: 2px solid var(--orange); outline-offset: 4px; border-radi
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(196,153,90,0.25); margin-bottom: 32px; }
 .footer-tagline { font-size: 14px; color: var(--gold); font-style: italic; line-height: 1.7; margin: 16px 0 20px; }
 .footer-social { display: flex; gap: 12px; }
-.social-link { background: rgba(196,153,90,0.15); color: var(--gold); padding: 8px 14px; text-decoration: none; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; transition: all 0.2s; }
+.social-link { background: rgba(196,153,90,0.15); color: var(--gold); padding: 10px; text-decoration: none; border-radius: 4px; transition: all 0.2s; display: inline-flex; align-items: center; justify-content: center; }
 .social-link:hover { background: var(--orange); color: var(--cream); }
 .social-link:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
 .footer-col h4 { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
