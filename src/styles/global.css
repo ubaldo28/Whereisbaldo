@@ -175,6 +175,16 @@ nav a:focus { outline: 2px solid var(--orange); outline-offset: 4px; border-radi
 .coming-soon-list ul li:last-child { border-bottom: none; }
 .app-reminder { margin-top: 40px; }
 .app-reminder p { font-size: 15px; color: var(--brown); margin-bottom: 16px; }
+
+.share-section { text-align: center; padding: 40px 20px; border-top: 1px solid var(--kraft); border-bottom: 1px solid var(--kraft); margin: 40px 0; }
+.share-label { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--brown); display: block; margin-bottom: 16px; }
+.share-buttons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.share-btn { padding: 10px 20px; border-radius: 4px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-decoration: none; cursor: pointer; border: none; font-family: 'Helvetica Neue', sans-serif; transition: opacity 0.2s; }
+.share-btn:hover { opacity: 0.85; }
+.share-fb { background: #1877F2; color: white; }
+.share-x { background: #000; color: white; }
+.share-wa { background: #25D366; color: white; }
+.share-copy { background: var(--darkbrown); color: var(--cream); }
 .taco-section { background: var(--kraft); padding: 64px 40px; text-align: center; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); }
 .taco-section h2 { font-size: 32px; font-weight: 700; font-style: italic; color: var(--darkbrown); margin-bottom: 12px; }
 .taco-section p { font-size: 16px; color: var(--brown); max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }

@@ -69,9 +69,23 @@ const canonicalURL = Astro.url.href;
     <slot />
   </div>
 
+  <!-- SHARE BUTTONS -->
+  <div class="share-section">
+    <p class="share-label">Share this story</p>
+    <div class="share-buttons">
+      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonicalURL)}`} target="_blank" rel="noopener" class="share-btn share-fb">Facebook</a>
+      <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalURL)}&text=${encodeURIComponent(title)}`} target="_blank" rel="noopener" class="share-btn share-x">X / Twitter</a>
+      <a href={`https://wa.me/?text=${encodeURIComponent(title + ' — ' + canonicalURL)}`} target="_blank" rel="noopener" class="share-btn share-wa">WhatsApp</a>
+      <button class="share-btn share-copy" onclick={`navigator.clipboard.writeText('${canonicalURL}').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy Link'},2000)})`}>Copy Link</button>
+    </div>
+  </div>
+
   <div class="post-footer">
     <p>— Baldo</p>
     <p>Follow along on Instagram and TikTok <strong>@whereisbaldo</strong></p>
-    <a href="/blog" class="btn-primary">← More Stories</a>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin: 1rem 0;">
+      <a href="/blog" class="btn-primary">← More Stories</a>
+      <a href="https://venmo.com/u/ubaldofigueroa" target="_blank" rel="noopener" class="btn-secondary">💸 Tip Baldo on Venmo</a>
+    </div>
   </div>
 </BaseLayout>
