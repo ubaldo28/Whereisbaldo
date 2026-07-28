@@ -194,7 +194,7 @@ nav a:focus { outline: 2px solid var(--orange); outline-offset: 4px; border-radi
 .share-section { text-align: center; padding: 40px 20px; border-top: 1px solid var(--kraft); border-bottom: 1px solid var(--kraft); margin: 40px 0; }
 .share-label { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--brown); display: block; margin-bottom: 16px; }
 .share-buttons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-.share-btn { padding: 10px 20px; border-radius: 4px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-decoration: none; cursor: pointer; border: none; font-family: 'Helvetica Neue', sans-serif; transition: opacity 0.2s; }
+.share-btn { display: inline-block; padding: 10px 20px; border-radius: 4px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-decoration: none; cursor: pointer; border: none; font-family: 'Helvetica Neue', sans-serif; transition: opacity 0.2s; }
 .share-btn:hover { opacity: 0.85; }
 .share-fb { background: #1877F2; color: white; }
 .share-x { background: #000; color: white; }

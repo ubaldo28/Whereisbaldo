@@ -122,25 +122,32 @@ const recentPosts = allPosts.slice(0, 6);
 
     <div class="app-reminder">
       <p>Don't miss a story. Download the app and turn on notifications.</p>
-      <button id="install-btn-2" style="display:none; background:var(--gold); color:var(--dark); border:none; padding:10px 24px; border-radius:20px; font-family:'Helvetica Neue',sans-serif; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer;">📲 Get the Free App</button>
-      <div id="ios-modal-2" style="display:none; position:fixed; bottom:0; left:0; right:0; background:var(--darkbrown); color:var(--cream); padding:24px 20px; z-index:999; border-top:2px solid var(--gold); text-align:center; font-family:'Helvetica Neue',sans-serif;">
-        <p style="font-size:14px; margin-bottom:12px;">Tap <strong>Share ↑</strong> then <strong>"Add to Home Screen"</strong> — no App Store needed.</p>
-        <button onclick="document.getElementById('ios-modal-2').style.display='none'" style="background:var(--orange); color:white; border:none; padding:8px 24px; border-radius:4px; cursor:pointer; font-size:13px;">Got it</button>
+      <button id="install-btn-2" style="background:var(--gold); color:var(--dark); border:none; padding:10px 24px; border-radius:20px; font-family:'Helvetica Neue',sans-serif; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; cursor:pointer;">📲 Get the Free App</button>
+      <div id="install-modal" style="display:none; position:fixed; bottom:0; left:0; right:0; background:var(--darkbrown); color:var(--cream); padding:24px 20px; z-index:999; border-top:2px solid var(--gold); text-align:center; font-family:'Helvetica Neue',sans-serif;">
+        <p id="install-msg" style="font-size:14px; margin-bottom:12px;"></p>
+        <button onclick="document.getElementById('install-modal').style.display='none'" style="background:var(--orange); color:white; border:none; padding:8px 24px; border-radius:4px; cursor:pointer; font-size:13px;">Got it</button>
       </div>
       <script>
         const btn2 = document.getElementById('install-btn-2');
+        const modal = document.getElementById('install-modal');
+        const msg = document.getElementById('install-msg');
         const isIOS2 = /iphone|ipad|ipod/i.test(navigator.userAgent);
+        const isAndroid = /android/i.test(navigator.userAgent);
         const isStandalone2 = window.matchMedia('(display-mode: standalone)').matches;
         let deferredPrompt2;
-        if (!isStandalone2) {
-          if (isIOS2) {
-            btn2.addEventListener('click', () => { document.getElementById('ios-modal-2').style.display = 'block'; });
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt2 = e; });
+        btn2.addEventListener('click', () => {
+          if (isStandalone2) return;
+          if (deferredPrompt2) {
+            deferredPrompt2.prompt();
+          } else if (isIOS2) {
+            msg.innerHTML = 'Tap <strong>Share ↑</strong> then <strong>"Add to Home Screen"</strong> — free, no App Store needed.';
+            modal.style.display = 'block';
+          } else {
+            msg.innerHTML = 'Open your browser menu and tap <strong>"Add to Home Screen"</strong> or <strong>"Install App"</strong> — free, no App Store needed.';
+            modal.style.display = 'block';
           }
-          window.addEventListener('beforeinstallprompt', (e) => {
-            deferredPrompt2 = e;
-            btn2.addEventListener('click', () => { deferredPrompt2.prompt(); });
-          });
-        }
+        });
       </script>
     </div>
   </section>
