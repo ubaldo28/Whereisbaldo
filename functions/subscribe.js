@@ -25,21 +25,21 @@ export async function onRequestPost(context) {
     const audienceData = await audienceRes.json();
 
     if (!audienceRes.ok) {
-      return new Response(JSON.stringify({ error: audienceData.message || 'Failed to subscribe.', detail: audienceData }), {
+      return new Response(JSON.stringify({ error: audienceData.message || 'Failed to add contact.', detail: audienceData }), {
         status: 500,
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
       });
     }
 
     // Send welcome email
-    await fetch('https://api.resend.com/emails', {
+    const emailRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${env.RESEND_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Baldo <baldo@whereisbaldo.com>',
+        from: 'Baldo <noreply@whereisbaldo.com>',
         to: [email],
         subject: "You're in. The stories are coming.",
         html: `
@@ -50,11 +50,21 @@ export async function onRequestPost(context) {
             <p>If you want to know more before then — <a href="https://whereisbaldo.com" style="color: #C4995A;">whereisbaldo.com</a> has everything so far.</p>
             <p style="margin-top: 40px;">— Baldo</p>
             <hr style="border: none; border-top: 1px solid #F5E3B0; margin: 40px 0;" />
-            <p style="font-size: 12px; color: #8B5E2E;">You're receiving this because you signed up at whereisbaldo.com. <a href="https://whereisbaldo.com" style="color: #8B5E2E;">Unsubscribe</a></p>
+            <p style="font-size: 12px; color: #8B5E2E;">You signed up at whereisbaldo.com</p>
           </div>
         `,
       }),
     });
+
+    const emailData = await emailRes.json();
+
+    if (!emailRes.ok) {
+      // Contact added but email failed — still return success to user but log the error
+      return new Response(JSON.stringify({ success: true, emailError: emailData.message }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+      });
+    }
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
