@@ -1,7 +1,7 @@
 ---
 title: "About Baldo"
 description: "Hey, I'm Ubaldo — but you can call me Baldo. A California boy, 22 countries, a hotel room in Scotland, and a one-way ticket to Mexico. This is where it starts."
-pubDate: 2026-01-01
+pubDate: 2026-07-28
 tags: ["About", "Real Talk"]
 heroEmoji: "✂️"
 heroColor: "#1a1a2e, #16213e"
