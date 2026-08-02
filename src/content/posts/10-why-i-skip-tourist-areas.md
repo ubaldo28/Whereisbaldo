@@ -96,4 +96,3 @@ That's where the trip actually is.
 
 *— Baldo*
 
-Instagram **@ubaldofigueroa** · TikTok **@whereisbaldo**

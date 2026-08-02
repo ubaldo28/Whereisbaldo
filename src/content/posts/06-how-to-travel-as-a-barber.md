@@ -88,4 +88,3 @@ The shop will still be there. Your clients will still need cuts. Go somewhere.
 
 *— Baldo*
 
-Instagram **@ubaldofigueroa** · TikTok **@whereisbaldo**

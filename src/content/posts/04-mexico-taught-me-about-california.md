@@ -80,4 +80,3 @@ That's worth more than I expected when I booked the ticket.
 
 *— Baldo*
 
-Instagram **@ubaldofigueroa** · TikTok **@whereisbaldo**

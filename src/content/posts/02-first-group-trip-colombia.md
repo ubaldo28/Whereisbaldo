@@ -86,4 +86,3 @@ They came off [ADD YOUR DETAILS: when]. My teeth look great. Colombia was partly
 
 *— Baldo*
 
-Instagram **@ubaldofigueroa** · TikTok **@whereisbaldo**

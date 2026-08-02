@@ -120,4 +120,3 @@ What did I miss? What would you add?
 
 *— Baldo*
 
-Instagram **@ubaldofigueroa** · TikTok **@whereisbaldo**
