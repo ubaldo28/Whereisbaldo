@@ -90,4 +90,4 @@ Go now. Thank me later.
 
 *— Baldo*
 
-*Follow along on Instagram and TikTok @whereisbaldo*
+Instagram **@ubaldofigueroa** · TikTok **@whereisbaldo**

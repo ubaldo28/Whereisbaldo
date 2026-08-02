@@ -100,4 +100,4 @@ That's it. That's actually it.
 
 *— Baldo*
 
-*Follow along on Instagram and TikTok @whereisbaldo*
+Instagram **@ubaldofigueroa** · TikTok **@whereisbaldo**

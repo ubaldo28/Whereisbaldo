@@ -88,4 +88,4 @@ Car is useful. Winters make some things impractical. Pack layers. Then pack more
 
 *— Baldo*
 
-*Follow along on Instagram and TikTok @whereisbaldo*
+Instagram **@ubaldofigueroa** · TikTok **@whereisbaldo**

@@ -76,4 +76,4 @@ It works. I promise.
 
 *— Baldo*
 
-*Follow along on Instagram and TikTok @whereisbaldo*
+Instagram **@ubaldofigueroa** · TikTok **@whereisbaldo**

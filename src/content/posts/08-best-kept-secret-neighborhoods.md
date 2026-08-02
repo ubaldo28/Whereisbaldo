@@ -80,4 +80,4 @@ Ask your accommodation host, not for "the best restaurant" (they'll tell you wha
 
 *— Baldo*
 
-*Follow along on Instagram and TikTok @whereisbaldo*
+Instagram **@ubaldofigueroa** · TikTok **@whereisbaldo**
