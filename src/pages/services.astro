@@ -1,44 +1,73 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Services — Where Is Baldo?" description="Web design, development, and AI automation by Baldo. Custom-built sites and systems that actually work.">
+<BaseLayout title="Services — Where Is Baldo?" description="Web design, AI automation, SEO, social media, content, branding and more. Custom services for small businesses and creators.">
 
   <div class="post-header">
     <span class="post-tag">Services</span>
-    <h1>Web & AI Services</h1>
+    <h1>What I Do</h1>
     <p class="post-meta">You're looking at what I build. This site is the portfolio.</p>
   </div>
 
   <div class="post-body">
 
-    <p>I built this site from scratch while living out of a hotel room in Scotland, waiting on a government letter. No team. No agency. Just me, a laptop, and a reason to get something done.</p>
+    <p>I built this site from scratch while living out of a hotel room in Scotland, waiting on a government letter. No team. No agency. Just me, a laptop, and a reason to get something done. I've also built <a href="https://geniotech.co.uk" target="_blank" rel="noopener">geniotech.co.uk</a> and <a href="https://potuswatchdaily.com" target="_blank" rel="noopener">potuswatchdaily.com</a>. Different clients, different goals, same standard.</p>
 
-    <p>I've also built <a href="https://geniotech.co.uk" target="_blank" rel="noopener">geniotech.co.uk</a> and <a href="https://potuswatchdaily.com" target="_blank" rel="noopener">potuswatchdaily.com</a>. Different clients, different goals, same standard.</p>
+    <p>I'm not an agency. You won't get handed off to someone junior or lost in a ticket system. You work with me directly, start to finish.</p>
 
-    <h2>💻 Web Design & Development</h2>
-    <p>Fast, custom-built sites that look good on every device and actually do what they're supposed to. Not templates dressed up to look original. Real builds that load fast, rank on Google, and convert visitors into customers.</p>
-    <p>What's included:</p>
-    <ul>
-      <li>Custom design — built around your brand, not a generic template</li>
-      <li>Mobile-first and fast — no bloated page builders</li>
-      <li>SEO-ready from day one</li>
-      <li>Contact forms, email signups, analytics — all set up and working</li>
-      <li>You own everything — no monthly platform fees</li>
-    </ul>
+    <div class="services-list">
 
-    <h2>🤖 AI Automation</h2>
-    <p>Repetitive tasks that eat your time don't have to. I set up systems that handle the boring stuff automatically so you can focus on the work that actually needs you.</p>
-    <p>Examples of what I automate:</p>
-    <ul>
-      <li>Email responses and follow-ups</li>
-      <li>Content scheduling and publishing</li>
-      <li>Customer inquiry workflows</li>
-      <li>Lead capture and CRM updates</li>
-      <li>Social media posting pipelines</li>
-    </ul>
+      <div class="service-item">
+        <h2>💻 Web Design & Development</h2>
+        <p>Fast, custom-built sites that look good on every device and actually do what they're supposed to. Not templates dressed up to look original. Real builds that load fast, rank on Google, and convert visitors into customers.</p>
+      </div>
 
-    <h2>How It Works</h2>
-    <p>I'm not an agency. You won't get handed off to someone junior or lost in a ticket system. You work with me directly, start to finish. I scope the project, give you a flat price, and deliver.</p>
+      <div class="service-item">
+        <h2>🤖 AI Automation</h2>
+        <p>Repetitive tasks that eat your time don't have to. I set up systems that handle emails, workflows, content scheduling, customer responses and more — automatically. You focus on the work that actually needs you.</p>
+      </div>
+
+      <div class="service-item">
+        <h2>📱 Social Media Management</h2>
+        <p>Instagram, TikTok, Facebook — managed, grown, and kept consistent. I create content, schedule posts, engage with your audience, and build the kind of presence that actually converts followers into customers.</p>
+      </div>
+
+      <div class="service-item">
+        <h2>🔍 SEO</h2>
+        <p>Getting found on Google is not optional anymore. I handle the technical side — sitemaps, schema markup, meta tags, page speed, internal linking — and the content side, so your site ranks for the things your customers are actually searching for.</p>
+      </div>
+
+      <div class="service-item">
+        <h2>✍️ Content Writing</h2>
+        <p>Blog posts, landing page copy, product descriptions, email sequences — written in a voice that sounds human, not like it came out of a template. Content that ranks and content that converts are two different things. I do both.</p>
+      </div>
+
+      <div class="service-item">
+        <h2>📧 Email Marketing</h2>
+        <p>List building, welcome sequences, newsletters, campaigns. Most businesses ignore email and leave money on the table. I set up the system, write the emails, and keep your audience coming back.</p>
+      </div>
+
+      <div class="service-item">
+        <h2>📢 Paid Ads Management</h2>
+        <p>Facebook, Instagram, and Google ads managed properly. Not boosted posts — actual campaigns with targeting, copy, creative, and tracking. I run the ads so you don't have to guess what's working.</p>
+      </div>
+
+      <div class="service-item">
+        <h2>🎨 Branding & Logo Design</h2>
+        <p>Logo, colors, fonts, brand identity — everything a business needs to look like it knows what it's doing. Clean, professional, and built to work across your website, social media, and print.</p>
+      </div>
+
+      <div class="service-item">
+        <h2>🎬 Video Editing</h2>
+        <p>Short-form content for TikTok, Instagram Reels, and YouTube Shorts. I edit, caption, and optimize for each platform. Fast turnaround, scroll-stopping results.</p>
+      </div>
+
+      <div class="service-item">
+        <h2>💬 Chatbot Setup</h2>
+        <p>AI-powered chatbots that handle customer questions, qualify leads, and book appointments — 24/7, without you lifting a finger. Set it up once, let it run.</p>
+      </div>
+
+    </div>
 
     <h2>Get in Touch</h2>
     <p>Use the <a href="/contact">contact page</a> or email directly at <a href="mailto:baldolanded@gmail.com">baldolanded@gmail.com</a>. Tell me what you're working on and what you need. The more specific you are, the faster we can figure out if it's a good fit.</p>
@@ -48,3 +77,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 
 </BaseLayout>
+
+<style>
+  .services-list { display: flex; flex-direction: column; gap: 0; }
+  .service-item { border-bottom: 1px solid var(--kraft); padding: 2rem 0; }
+  .service-item:last-child { border-bottom: none; }
+  .service-item h2 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+</style>
