@@ -1,11 +1,11 @@
 ---
 interface Props {
-  slot: string;
+  adSlot: string;
   format?: 'auto' | 'rectangle' | 'horizontal' | 'vertical';
   style?: string;
 }
 const {
-  slot,
+  adSlot,
   format = 'auto',
   style = 'display:block;text-align:center;',
 } = Astro.props;
@@ -15,7 +15,7 @@ const {
     class="adsbygoogle"
     style={style}
     data-ad-client="ca-pub-7380718671497895"
-    data-ad-slot={slot}
+    data-ad-slot={adSlot}
     data-ad-format={format}
     data-full-width-responsive="true"
   ></ins>
