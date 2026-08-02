@@ -253,6 +253,17 @@ nav a:focus { outline: 2px solid var(--orange); outline-offset: 4px; border-radi
 .static-body strong { color: var(--darkbrown); }
 .static-body a { color: var(--orange); }
 
+/* ── SERVICES ── */
+.services-section { background: var(--darkbrown); padding: 72px 40px; text-align: center; }
+.services-inner { max-width: 860px; margin: 0 auto; }
+.services-intro { font-size: 17px; color: var(--kraft); line-height: 1.8; margin: 16px 0 40px; }
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; text-align: left; }
+.service-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(196,153,90,0.25); border-radius: 8px; padding: 32px 28px; }
+.service-icon { font-size: 32px; margin-bottom: 16px; }
+.service-card h3 { font-size: 20px; font-weight: 700; color: var(--gold); margin-bottom: 12px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+.service-card p { font-size: 15px; color: var(--kraft); line-height: 1.75; }
+@media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } .services-section { padding: 56px 20px; } }
+
 /* ── FOOTER ── */
 .site-footer { background: var(--dark); color: var(--kraft); padding: 56px 40px 32px; }
 .footer-inner { max-width: 1200px; margin: 0 auto; }
