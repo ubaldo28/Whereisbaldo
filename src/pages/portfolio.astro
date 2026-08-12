@@ -28,10 +28,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="hstat-line"></div>
     <div class="hstat"><span class="hstat-n">1</span><span class="hstat-l">Paying Client</span></div>
     <div class="hstat-line"></div>
-    <div class="hstat"><span class="hstat-n">4.6★</span><span class="hstat-l">Client Rating</span></div>
-    <div class="hstat-line"></div>
-    <div class="hstat"><span class="hstat-n">17</span><span class="hstat-l">Countries Reached</span></div>
-    <div class="hstat-line"></div>
     <div class="hstat"><span class="hstat-n">0</span><span class="hstat-l">Prior Experience</span></div>
   </div>
 </section>
@@ -133,29 +129,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <span>Automated Publishing</span><span>Breaking News</span><span>Newsletter</span><span>AdSense</span><span>SEO</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PHOTO STRIP -->
-<section class="photo-strip">
-  <div class="strip-label">THE MAN BEHIND THE SITES</div>
-  <div class="strip-grid">
-    <div class="strip-img strip-tall">
-      <img src="/baldo-london-eye.jpg" alt="London Eye" />
-      <span class="strip-cap">London, UK</span>
-    </div>
-    <div class="strip-img strip-tall">
-      <img src="/baldo-london.jpg" alt="Tower Bridge" />
-      <span class="strip-cap">Tower Bridge</span>
-    </div>
-    <div class="strip-img strip-wide">
-      <img src="/baldo-scotland.jpg" alt="Scotland" />
-      <span class="strip-cap">Scotland</span>
-    </div>
-    <div class="strip-img strip-tall">
-      <img src="/baldo-travel.jpg" alt="Medellín" />
-      <span class="strip-cap">Medellín, Colombia</span>
     </div>
   </div>
 </section>
@@ -532,73 +505,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   border-radius: 20px;
   border: 1px solid rgba(196,153,90,0.25);
   color: rgba(196,153,90,0.8);
-}
-
-/* ── PHOTO STRIP ── */
-.photo-strip {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 40px;
-}
-.strip-label {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(196,153,90,0.2);
-}
-.strip-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.6fr 1fr;
-  gap: 12px;
-  height: 480px;
-}
-.strip-img {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-}
-.strip-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 0.5s ease;
-  display: block;
-}
-.strip-img:hover img { transform: scale(1.05); }
-.strip-cap {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.9);
-  background: rgba(0,0,0,0.45);
-  padding: 4px 10px;
-  border-radius: 20px;
-}
-.strip-wide img { object-position: center 30%; }
-
-@media (max-width: 900px) {
-  .strip-grid {
-    grid-template-columns: 1fr 1fr;
-    height: auto;
-    grid-template-rows: 240px 240px;
-  }
-  .strip-wide { grid-column: span 2; }
-}
-@media (max-width: 540px) {
-  .strip-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-  .strip-img { height: 260px; }
-  .strip-wide { grid-column: span 1; }
-  .photo-strip { padding: 60px 24px; }
 }
 
 /* ── MARQUEE ── */
