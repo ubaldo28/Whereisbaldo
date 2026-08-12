@@ -1,68 +1,98 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Portfolio — Ubaldo Figueroa" description="Web developer. Three live sites. One year. No prior experience.">
-<div class="portfolio-wrap">
+<BaseLayout title="Ubaldo Figueroa — Web Developer & Growth Hacker" description="Three live sites. One year. No prior experience.">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-right">
-    <div class="hero-photo-wrap">
-      <img src="/baldo-london-eye.jpg" alt="Ubaldo Figueroa" class="hero-photo" />
-    </div>
+<style is:global>
+  /* Hide blog chrome on this page */
+  .site-header,
+  footer,
+  .dark-mode-toggle { display: none !important; }
+  body, html {
+    background: #0c0c0c !important;
+    color: #fff !important;
+  }
+  main { padding: 0 !important; margin: 0 !important; }
+</style>
+
+<!-- ── PORTFOLIO NAV ── -->
+<nav class="pf-nav">
+  <a href="/" class="pf-logo">UF</a>
+  <div class="pf-links">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="/contact">Contact</a>
+    <a href="/Ubaldo_Resume.docx" download class="pf-cv">Download CV ↓</a>
   </div>
-  <div class="hero-left">
-    <div class="hero-available"><span class="pulse"></span>Available for work</div>
-    <h1 class="hero-name">
-      <span class="hero-name-first">UBALDO</span>
-      <span class="hero-name-last">FIGUEROA</span>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="pf-hero">
+  <div class="pf-hero-text">
+    <div class="pf-available"><span class="pf-dot"></span>Available for work</div>
+    <h1 class="pf-h1">
+      Hey, I'm<br/>
+      <span class="pf-accent">Ubaldo Figueroa</span>
     </h1>
-    <p class="hero-role">Web Developer <span class="hero-amp">&</span> Growth Hacker</p>
-    <p class="hero-desc">I build websites that work — fast, SEO-ready, and built to grow. Three live sites. One year. No prior experience. No excuses.</p>
-    <div class="hero-btns">
-      <a href="/contact" class="btn-primary">Let's Work →</a>
-      <a href="/Ubaldo_Resume.docx" download class="hero-cv">Download CV ↓</a>
+    <p class="pf-role">Web Developer & Growth Hacker</p>
+    <p class="pf-desc">Three live sites. One year. Zero experience before I started. No team, no agency, no shortcuts.</p>
+    <div class="pf-btns">
+      <a href="#work" class="pf-btn">See My Work →</a>
+      <a href="/contact" class="pf-btn-ghost">Let's Talk</a>
     </div>
   </div>
-  <div class="hero-stats-bar">
-    <div class="hstat"><span class="hstat-n">3</span><span class="hstat-l">Sites Built</span></div>
-    <div class="hstat-line"></div>
-    <div class="hstat"><span class="hstat-n">1</span><span class="hstat-l">Paying Client</span></div>
-    <div class="hstat-line"></div>
-    <div class="hstat"><span class="hstat-n">0</span><span class="hstat-l">Prior Experience</span></div>
+  <div class="pf-hero-img">
+    <img src="/baldo-london-eye.jpg" alt="Ubaldo Figueroa" />
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section class="projects">
-  <div class="projects-label">SELECTED WORK</div>
+<!-- ── STATS ── -->
+<div class="pf-stats">
+  <div class="pf-stat">
+    <span class="pf-sn">3</span>
+    <span class="pf-sl">Sites Built from Scratch</span>
+  </div>
+  <div class="pf-sdiv"></div>
+  <div class="pf-stat">
+    <span class="pf-sn">1</span>
+    <span class="pf-sl">Paying Client</span>
+  </div>
+  <div class="pf-sdiv"></div>
+  <div class="pf-stat">
+    <span class="pf-sn">0</span>
+    <span class="pf-sl">Prior Experience</span>
+  </div>
+</div>
+
+<!-- ── WORK ── -->
+<section class="pf-work" id="work">
+  <p class="pf-label">Selected Work</p>
 
   <!-- 01 -->
-  <div class="project">
-    <div class="project-header">
-      <span class="project-num">01</span>
-      <span class="project-type">Freelance Client Work · 2026</span>
-      <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="project-url">geniotech.co.uk ↗</a>
+  <div class="pf-project">
+    <div class="pf-project-meta">
+      <span class="pf-num">01</span>
+      <span class="pf-tag">Freelance · 2026</span>
+      <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-link">geniotech.co.uk ↗</a>
     </div>
-    <div class="project-body">
-      <div class="project-browser">
-        <div class="browser-bar">
-          <span class="bdot r"></span><span class="bdot y"></span><span class="bdot g"></span>
+    <div class="pf-project-body">
+      <div class="pf-browser">
+        <div class="pf-browser-bar">
+          <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
           <span class="burl">geniotech.co.uk</span>
         </div>
         <a href="https://geniotech.co.uk" target="_blank" rel="noopener">
           <img src="/portfolio-geniotech.jpg" alt="GenioTech" />
         </a>
       </div>
-      <div class="project-info">
-        <h2 class="project-title">GenioTech</h2>
-        <p class="project-desc">A phone repair shop in Dundee needed a real web presence — not a template. I built the entire thing solo: online booking, e-commerce, photo gallery, blog, newsletter, and a PWA customers can install on their phone.</p>
-        <div class="project-metrics">
-          <div class="metric"><strong>🏆</strong> Scottish Retail Award Winner</div>
-          <div class="metric"><strong>4.6★</strong> · 184+ Google Reviews</div>
-          <div class="metric"><strong>&lt;1hr</strong> most screen repairs</div>
+      <div class="pf-project-info">
+        <h2 class="pf-title">GenioTech</h2>
+        <p class="pf-pdesc">A phone repair shop in Dundee needed a real web presence — not a template. Built solo: online booking, e-commerce, photo gallery, blog, newsletter, and a PWA customers can install.</p>
+        <div class="pf-metrics">
+          <div>🏆 Scottish Retail Award Winner</div>
+          <div>4.6★ · 184+ Google Reviews</div>
         </div>
-        <div class="project-stack">
+        <div class="pf-tags">
           <span>Booking System</span><span>E-commerce</span><span>PWA</span><span>SEO</span><span>Newsletter</span>
         </div>
       </div>
@@ -70,28 +100,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 
   <!-- 02 -->
-  <div class="project project-flip">
-    <div class="project-header">
-      <span class="project-num">02</span>
-      <span class="project-type">Personal Brand · March 2026</span>
-      <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="project-url">whereisbaldo.com ↗</a>
+  <div class="pf-project pf-flip">
+    <div class="pf-project-meta">
+      <span class="pf-num">02</span>
+      <span class="pf-tag">Personal Brand · March 2026</span>
+      <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-link">whereisbaldo.com ↗</a>
     </div>
-    <div class="project-body">
-      <div class="project-info">
-        <h2 class="project-title">Where Is Baldo?</h2>
-        <p class="project-desc">Built while living in a hotel room in Scotland, waiting on a government letter. No team. No plan. Custom design, dark mode, email subscriptions, push notifications, AdSense, and an installable PWA. You're on it right now.</p>
-        <div class="project-metrics">
-          <div class="metric"><strong>🌍</strong> 17 countries reached</div>
-          <div class="metric"><strong>📲</strong> Installable PWA</div>
-          <div class="metric"><strong>📧</strong> Email + push notifications</div>
+    <div class="pf-project-body">
+      <div class="pf-project-info">
+        <h2 class="pf-title">Where Is Baldo?</h2>
+        <p class="pf-pdesc">Built in a hotel room in Scotland, waiting on a government letter. Custom design, dark mode, email subscriptions, push notifications, Google Analytics, AdSense, and a full PWA.</p>
+        <div class="pf-metrics">
+          <div>🌍 Readers in multiple countries</div>
+          <div>📲 Installable PWA</div>
+          <div>📧 Email + push notifications</div>
         </div>
-        <div class="project-stack">
-          <span>Custom Design</span><span>Dark Mode</span><span>Resend API</span><span>Webpushr</span><span>AdSense</span><span>PWA</span>
+        <div class="pf-tags">
+          <span>Custom Design</span><span>Dark Mode</span><span>Resend API</span><span>Webpushr</span><span>AdSense</span>
         </div>
       </div>
-      <div class="project-browser">
-        <div class="browser-bar">
-          <span class="bdot r"></span><span class="bdot y"></span><span class="bdot g"></span>
+      <div class="pf-browser">
+        <div class="pf-browser-bar">
+          <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
           <span class="burl">whereisbaldo.com</span>
         </div>
         <a href="https://whereisbaldo.com" target="_blank" rel="noopener">
@@ -102,153 +132,174 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 
   <!-- 03 -->
-  <div class="project">
-    <div class="project-header">
-      <span class="project-num">03</span>
-      <span class="project-type">Passion Project · January 2026</span>
-      <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="project-url">potuswatchdaily.com ↗</a>
+  <div class="pf-project">
+    <div class="pf-project-meta">
+      <span class="pf-num">03</span>
+      <span class="pf-tag">Passion Project · January 2026</span>
+      <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-link">potuswatchdaily.com ↗</a>
     </div>
-    <div class="project-body">
-      <div class="project-browser">
-        <div class="browser-bar">
-          <span class="bdot r"></span><span class="bdot y"></span><span class="bdot g"></span>
+    <div class="pf-project-body">
+      <div class="pf-browser">
+        <div class="pf-browser-bar">
+          <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
           <span class="burl">potuswatchdaily.com</span>
         </div>
         <a href="https://potuswatchdaily.com" target="_blank" rel="noopener">
           <img src="/portfolio-potus.jpg" alt="POTUS Watch Daily" />
         </a>
       </div>
-      <div class="project-info">
-        <h2 class="project-title">POTUS Watch Daily</h2>
-        <p class="project-desc">Started as practice. Became a real foreign policy intelligence platform that publishes multiple dispatches every single day. Automated content pipeline, breaking news ticker, AdSense, newsletter.</p>
-        <div class="project-metrics">
-          <div class="metric"><strong>🔁</strong> Publishes multiple times daily</div>
-          <div class="metric"><strong>🔴 LIVE</strong> breaking news ticker</div>
-          <div class="metric"><strong>💰</strong> AdSense monetised</div>
+      <div class="pf-project-info">
+        <h2 class="pf-title">POTUS Watch Daily</h2>
+        <p class="pf-pdesc">Started as practice. Became a real foreign policy intelligence platform publishing multiple dispatches every day — automated pipeline, breaking news ticker, AdSense, newsletter.</p>
+        <div class="pf-metrics">
+          <div>🔁 Publishes multiple times daily</div>
+          <div>🔴 Live breaking news ticker</div>
+          <div>💰 AdSense monetised</div>
         </div>
-        <div class="project-stack">
-          <span>Automated Publishing</span><span>Breaking News</span><span>Newsletter</span><span>AdSense</span><span>SEO</span>
+        <div class="pf-tags">
+          <span>Automated Publishing</span><span>Breaking News</span><span>Newsletter</span><span>AdSense</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span>Web Design</span><span class="mdot">✦</span>
-    <span>AI Automation</span><span class="mdot">✦</span>
-    <span>SEO</span><span class="mdot">✦</span>
-    <span>Email Marketing</span><span class="mdot">✦</span>
-    <span>Paid Ads</span><span class="mdot">✦</span>
-    <span>Chatbot Setup</span><span class="mdot">✦</span>
-    <span>Growth Hacking</span><span class="mdot">✦</span>
-    <span>Web Design</span><span class="mdot">✦</span>
-    <span>AI Automation</span><span class="mdot">✦</span>
-    <span>SEO</span><span class="mdot">✦</span>
-    <span>Email Marketing</span><span class="mdot">✦</span>
-    <span>Paid Ads</span><span class="mdot">✦</span>
-    <span>Chatbot Setup</span><span class="mdot">✦</span>
-    <span>Growth Hacking</span><span class="mdot">✦</span>
+<!-- ── MARQUEE ── -->
+<div class="pf-marquee">
+  <div class="pf-marquee-track">
+    <span>Web Design</span><span class="mx">✦</span>
+    <span>AI Automation</span><span class="mx">✦</span>
+    <span>SEO</span><span class="mx">✦</span>
+    <span>Email Marketing</span><span class="mx">✦</span>
+    <span>Growth Hacking</span><span class="mx">✦</span>
+    <span>Chatbot Setup</span><span class="mx">✦</span>
+    <span>Web Design</span><span class="mx">✦</span>
+    <span>AI Automation</span><span class="mx">✦</span>
+    <span>SEO</span><span class="mx">✦</span>
+    <span>Email Marketing</span><span class="mx">✦</span>
+    <span>Growth Hacking</span><span class="mx">✦</span>
+    <span>Chatbot Setup</span><span class="mx">✦</span>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section class="services">
-  <div class="services-inner">
-    <div class="services-top">
-      <div>
-        <p class="slabel">What I Offer</p>
-        <h2 class="services-title">Services</h2>
-      </div>
-      <a href="/services" class="services-more">Full details →</a>
-    </div>
-    <div class="sgrid">
-      <a href="/services" class="scard scard-lg">
-        <span class="scard-icon">💻</span>
-        <h3>Web Design & Development</h3>
-        <p>Custom sites from scratch. Fast, mobile-first, built to rank. Not templates.</p>
-        <span class="scard-arrow">→</span>
-      </a>
-      <a href="/services" class="scard scard-lg">
-        <span class="scard-icon">🤖</span>
-        <h3>AI Automation</h3>
-        <p>Systems that handle emails, workflows, scheduling automatically.</p>
-        <span class="scard-arrow">→</span>
-      </a>
-      <a href="/services" class="scard">
-        <span class="scard-icon">🔍</span>
-        <h3>SEO</h3>
-        <p>Technical and content SEO so the right people find you.</p>
-        <span class="scard-arrow">→</span>
-      </a>
-      <a href="/services" class="scard">
-        <span class="scard-icon">📧</span>
-        <h3>Email Marketing</h3>
-        <p>Lists, sequences, newsletters, campaigns.</p>
-        <span class="scard-arrow">→</span>
-      </a>
-      <a href="/services" class="scard">
-        <span class="scard-icon">📢</span>
-        <h3>Paid Ads</h3>
-        <p>Facebook, Instagram & Google ads done properly.</p>
-        <span class="scard-arrow">→</span>
-      </a>
-      <a href="/services" class="scard">
-        <span class="scard-icon">💬</span>
-        <h3>Chatbot Setup</h3>
-        <p>AI bots that qualify leads and book 24/7.</p>
-        <span class="scard-arrow">→</span>
-      </a>
-    </div>
+<!-- ── SERVICES ── -->
+<section class="pf-services" id="services">
+  <p class="pf-label">What I Offer</p>
+  <h2 class="pf-sec-title">Services</h2>
+  <div class="pf-sgrid">
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">💻</span>
+      <h3>Web Design & Development</h3>
+      <p>Custom sites from scratch. Fast, mobile-first, built to rank. Not templates.</p>
+    </a>
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">🤖</span>
+      <h3>AI Automation</h3>
+      <p>Systems that handle emails, workflows, and scheduling automatically.</p>
+    </a>
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">🔍</span>
+      <h3>SEO</h3>
+      <p>Technical and content SEO so the right people find you.</p>
+    </a>
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">📧</span>
+      <h3>Email Marketing</h3>
+      <p>Lists, sequences, newsletters, campaigns.</p>
+    </a>
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">📢</span>
+      <h3>Paid Ads</h3>
+      <p>Facebook, Instagram & Google ads done properly.</p>
+    </a>
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">💬</span>
+      <h3>Chatbot Setup</h3>
+      <p>AI bots that qualify leads and book 24/7.</p>
+    </a>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-  <div class="cta-inner">
-    <p class="cta-eyebrow">Let's build something</p>
-    <h2 class="cta-title">Ready when<br/><em>you are.</em></h2>
-    <p class="cta-sub">Available for freelance and the right full-time role. You work with me directly — no agency, no handoffs.</p>
-    <div class="cta-btns">
-      <a href="/contact" class="btn-primary">Get in Touch →</a>
-      <a href="/Ubaldo_Resume.docx" download class="btn-secondary">Download Resume</a>
-    </div>
+<!-- ── CTA ── -->
+<section class="pf-cta">
+  <p class="pf-label">Let's build something</p>
+  <h2 class="pf-cta-title">Ready when<br/><em>you are.</em></h2>
+  <p class="pf-cta-sub">Available for freelance and the right full-time role. You work with me directly — no agency, no handoffs.</p>
+  <div class="pf-cta-btns">
+    <a href="/contact" class="pf-btn">Get in Touch →</a>
+    <a href="/Ubaldo_Resume.docx" download class="pf-btn-ghost">Download Resume</a>
   </div>
 </section>
 
+<!-- ── PORTFOLIO FOOTER ── -->
+<div class="pf-foot">
+  <span>© 2026 Ubaldo Figueroa</span>
+  <a href="/">whereisbaldo.com</a>
 </div>
+
 </BaseLayout>
 
 <style>
-.portfolio-wrap {
-  background: #111;
-  min-height: 100vh;
+/* ── NAV ── */
+.pf-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(12,12,12,0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
+.pf-logo {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+.pf-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.pf-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.55);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.pf-links a:hover { color: #fff; }
+.pf-cv {
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: background 0.2s !important;
+}
+.pf-cv:hover { background: rgba(255,255,255,0.08) !important; }
 
 /* ── HERO ── */
-.hero {
+.pf-hero {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  grid-template-rows: 1fr auto;
-  min-height: calc(100vh - 72px);
-  max-width: 1200px;
+  grid-template-columns: 1fr 480px;
+  min-height: 90vh;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 60px 40px 0;
-  gap: 0 60px;
+  padding: 0 60px;
+  align-items: center;
+  gap: 60px;
+  position: relative;
 }
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-bottom: 80px;
-}
-.hero-available {
+.pf-hero-text { z-index: 2; }
+.pf-available {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Helvetica Neue', sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -256,424 +307,367 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   color: #4ade80;
   margin-bottom: 2rem;
 }
-.pulse {
+.pf-dot {
   width: 8px; height: 8px;
-  border-radius: 50%;
   background: #4ade80;
-  animation: pulse 2s infinite;
+  border-radius: 50%;
+  animation: blink 2s infinite;
 }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
 
-.hero-name {
-  display: flex;
-  flex-direction: column;
-  line-height: 0.9;
-  margin: 0 0 1rem;
-}
-.hero-name-first {
-  font-size: clamp(4rem, 9vw, 8rem);
+.pf-h1 {
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
   font-weight: 900;
-  color: var(--cream);
+  line-height: 1.05;
+  color: #fff;
+  margin: 0 0 0.75rem;
   letter-spacing: -0.02em;
 }
-.hero-name-last {
-  font-size: clamp(4rem, 9vw, 8rem);
-  font-weight: 900;
-  color: var(--gold);
-  letter-spacing: -0.02em;
-}
-.hero-role {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--kraft);
-  margin: 0 0 1.25rem;
-}
-.hero-amp { color: var(--gold); }
-.hero-desc {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--kraft);
-  max-width: 460px;
-  margin-bottom: 2rem;
-}
-.hero-btns {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-.hero-cv {
-  font-family: 'Helvetica Neue', sans-serif;
+.pf-accent { color: #c49959; }
+.pf-role {
   font-size: 13px;
-  font-weight: 600;
-  color: var(--kraft);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 1.5rem;
+}
+.pf-desc {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+}
+.pf-btns { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.pf-btn {
+  display: inline-block;
+  background: #c49959;
+  color: #0c0c0c;
   text-decoration: none;
-  transition: color 0.2s;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s;
 }
-.hero-cv:hover { color: var(--cream); }
+.pf-btn:hover { opacity: 0.85; }
+.pf-btn-ghost {
+  display: inline-block;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.pf-btn-ghost:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
 
-.hero-right {
-  display: flex;
-  align-items: flex-end;
-}
-.hero-photo-wrap {
-  width: 100%;
-  max-height: calc(100vh - 160px);
+.pf-hero-img {
+  position: relative;
+  height: 80vh;
   overflow: hidden;
-  border-radius: 16px 16px 0 0;
-  background: var(--darkbrown);
+  border-radius: 16px;
 }
-.hero-photo {
+.pf-hero-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #0c0c0c 0%, transparent 30%);
+  z-index: 1;
+}
+.pf-hero-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center top;
   display: block;
-  filter: contrast(1.05);
 }
 
-.hero-stats-bar {
-  grid-column: 1 / -1;
+/* ── STATS ── */
+.pf-stats {
   display: flex;
   align-items: center;
-  border-top: 1px solid rgba(196,153,90,0.2);
-  padding: 28px 0;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 60px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  gap: 0;
 }
-.hstat {
+.pf-stat {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
-.hstat-n {
-  font-size: 2.2rem;
+.pf-sn {
+  font-size: 2.5rem;
   font-weight: 900;
-  color: var(--gold);
+  color: #c49959;
   line-height: 1;
 }
-.hstat-l {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+.pf-sl {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--kraft);
+  color: rgba(255,255,255,0.35);
   text-align: center;
 }
-.hstat-line {
+.pf-sdiv {
   width: 1px;
   height: 40px;
-  background: rgba(196,153,90,0.2);
+  background: rgba(255,255,255,0.08);
 }
 
-/* ── PROJECTS ── */
-.projects {
-  max-width: 1200px;
+/* ── WORK ── */
+.pf-work {
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 80px 40px;
+  padding: 100px 60px;
 }
-.projects-label {
-  font-family: 'Helvetica Neue', sans-serif;
+.pf-label {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--gold);
+  text-transform: uppercase;
+  color: #c49959;
   margin-bottom: 3rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(196,153,90,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.project {
-  padding: 60px 0;
-  border-bottom: 1px solid rgba(196,153,90,0.12);
+.pf-project {
+  padding: 70px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.project-header {
+.pf-project-meta {
   display: flex;
   align-items: baseline;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
-.project-num {
-  font-size: clamp(3.5rem, 7vw, 6rem);
+.pf-num {
+  font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 900;
-  color: rgba(196,153,90,0.15);
+  color: rgba(196,153,89,0.12);
   line-height: 1;
-  letter-spacing: -0.03em;
   flex-shrink: 0;
+  letter-spacing: -0.03em;
 }
-.project-type {
-  font-family: 'Helvetica Neue', sans-serif;
+.pf-tag {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--kraft);
+  color: rgba(255,255,255,0.3);
   flex: 1;
 }
-.project-url {
-  font-family: 'Helvetica Neue', sans-serif;
+.pf-link {
   font-size: 13px;
   font-weight: 700;
-  color: var(--gold);
+  color: #c49959;
   text-decoration: none;
   flex-shrink: 0;
 }
-.project-url:hover { opacity: 0.7; }
-.project-body {
+.pf-link:hover { opacity: 0.7; }
+.pf-project-body {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 56px;
+  gap: 60px;
   align-items: start;
 }
-.project-flip .project-body {
-  grid-template-columns: 1fr 1.2fr;
-}
+.pf-flip .pf-project-body { grid-template-columns: 1fr 1.2fr; }
 
-/* Browser mockup */
-.project-browser {
+/* Browser */
+.pf-browser {
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
   background: #111;
 }
-.browser-bar {
+.pf-browser-bar {
   display: flex;
   align-items: center;
   gap: 5px;
   padding: 10px 14px;
-  background: #1e1e1e;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }
-.bdot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-.bdot.r { background: #ff5f57; }
-.bdot.y { background: #febc2e; }
-.bdot.g { background: #28c840; }
+.bd { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.bd.r { background: #ff5f57; }
+.bd.y { background: #febc2e; }
+.bd.g { background: #28c840; }
 .burl {
   flex: 1;
   text-align: center;
-  font-family: 'Helvetica Neue', sans-serif;
   font-size: 11px;
-  color: rgba(255,255,255,0.3);
-  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.04);
   border-radius: 4px;
   padding: 3px 10px;
   margin: 0 6px;
 }
-.project-browser img {
-  width: 100%;
-  display: block;
-  transition: transform 0.5s ease;
-}
-.project-browser:hover img { transform: scale(1.02); }
+.pf-browser img { width: 100%; display: block; transition: transform 0.5s; }
+.pf-browser:hover img { transform: scale(1.02); }
 
 /* Project info */
-.project-title {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+.pf-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 900;
-  color: var(--cream);
+  color: #fff;
   margin: 0 0 1rem;
-  line-height: 1.05;
+  line-height: 1.1;
 }
-.project-desc {
+.pf-pdesc {
   font-size: 15px;
   line-height: 1.8;
-  color: var(--kraft);
+  color: rgba(255,255,255,0.45);
   margin-bottom: 1.5rem;
 }
-.project-metrics {
+.pf-metrics {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-bottom: 1.5rem;
   padding: 16px 20px;
-  background: rgba(196,153,90,0.05);
-  border-left: 2px solid var(--gold);
+  background: rgba(255,255,255,0.03);
+  border-left: 2px solid #c49959;
   border-radius: 0 8px 8px 0;
-}
-.metric {
-  font-family: 'Helvetica Neue', sans-serif;
   font-size: 13px;
-  color: var(--kraft);
+  color: rgba(255,255,255,0.5);
 }
-.project-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.project-stack span {
-  font-family: 'Helvetica Neue', sans-serif;
+.pf-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.pf-tags span {
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.06em;
   padding: 4px 12px;
   border-radius: 20px;
-  border: 1px solid rgba(196,153,90,0.25);
-  color: rgba(196,153,90,0.8);
+  border: 1px solid rgba(196,153,89,0.2);
+  color: rgba(196,153,89,0.6);
 }
 
 /* ── MARQUEE ── */
-.marquee-wrap {
+.pf-marquee {
   overflow: hidden;
-  border-top: 1px solid rgba(196,153,90,0.2);
-  border-bottom: 1px solid rgba(196,153,90,0.2);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   padding: 20px 0;
-  background: var(--darkbrown);
+  background: #0a0a0a;
 }
-.marquee-track {
+.pf-marquee-track {
   display: flex;
   align-items: center;
   gap: 2rem;
   width: max-content;
-  animation: marquee 20s linear infinite;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 13px;
+  animation: scroll 22s linear infinite;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--kraft);
+  color: rgba(255,255,255,0.25);
 }
-.mdot { color: var(--gold); }
-@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.mx { color: #c49959; }
+@keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* ── SERVICES ── */
-.services {
-  padding: 80px 40px;
-  max-width: 1200px;
+.pf-services {
+  max-width: 1300px;
   margin: 0 auto;
+  padding: 100px 60px;
 }
-.services-top {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 2.5rem;
-}
-.slabel {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-.services-title {
+.pf-sec-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
-  color: var(--cream);
-  margin: 0;
+  color: #fff;
+  margin: 0 0 3rem;
   line-height: 1;
 }
-.services-more {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--gold);
-  text-decoration: none;
-  padding-bottom: 4px;
-}
-.sgrid {
+.pf-sgrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  border: 1px solid rgba(196,153,90,0.15);
+  background: rgba(255,255,255,0.06);
   border-radius: 12px;
   overflow: hidden;
 }
-.scard {
-  background: rgba(255,255,255,0.02);
-  padding: 32px 28px;
+.pf-scard {
+  background: #111;
+  padding: 36px 30px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-right: 1px solid rgba(196,153,90,0.15);
-  border-bottom: 1px solid rgba(196,153,90,0.15);
   transition: background 0.25s;
-  position: relative;
 }
-.scard:hover { background: rgba(196,153,90,0.07); }
-.scard-icon { font-size: 1.75rem; }
-.scard h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--cream);
-  margin: 0;
-}
-.scard p {
-  font-size: 13px;
-  color: var(--kraft);
-  line-height: 1.65;
-  margin: 0;
-  flex: 1;
-}
-.scard-arrow {
-  font-size: 1.1rem;
-  color: var(--gold);
-  margin-top: auto;
-}
+.pf-scard:hover { background: #161616; }
+.pf-sicon { font-size: 1.75rem; }
+.pf-scard h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0; }
+.pf-scard p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.65; margin: 0; }
 
 /* ── CTA ── */
-.cta {
-  padding: 120px 40px;
+.pf-cta {
+  padding: 120px 60px;
   text-align: center;
-  background: var(--darkbrown);
-  border-top: 1px solid rgba(196,153,90,0.15);
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
-.cta-inner { max-width: 600px; margin: 0 auto; }
-.cta-eyebrow {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1rem;
-}
-.cta-title {
+.pf-cta-title {
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 900;
-  color: var(--cream);
+  color: #fff;
   line-height: 1.05;
-  margin: 0 0 1.25rem;
+  margin: 0.5rem 0 1.25rem;
 }
-.cta-title em { color: var(--gold); font-style: italic; }
-.cta-sub {
+.pf-cta-title em { color: #c49959; font-style: italic; }
+.pf-cta-sub {
   font-size: 1rem;
-  color: var(--kraft);
+  color: rgba(255,255,255,0.4);
   line-height: 1.75;
-  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
 }
-.cta-btns {
+.pf-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+.pf-foot {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 60px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
 }
+.pf-foot a { color: rgba(255,255,255,0.2); text-decoration: none; }
+.pf-foot a:hover { color: rgba(255,255,255,0.5); }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; padding: 48px 24px 0; }
-  .hero-right { order: -1; height: 320px; }
-  .hero-photo-wrap { border-radius: 12px; max-height: 320px; }
-  .hero-left { padding-bottom: 40px; }
-  .hero-stats-bar { flex-wrap: wrap; gap: 1rem; padding: 24px 0; }
-  .hstat-line { display: none; }
-  .hstat { flex: 0 0 45%; }
-  .projects { padding: 60px 24px; }
-  .project-body,
-  .project-flip .project-body { grid-template-columns: 1fr; gap: 32px; }
-  .project-flip .project-body .project-browser { order: -1; }
-  .services { padding: 60px 24px; }
-  .sgrid { grid-template-columns: 1fr 1fr; }
-  .cta { padding: 80px 24px; }
-  .services-top { flex-direction: column; align-items: flex-start; gap: 8px; }
+@media (max-width: 960px) {
+  .pf-nav { padding: 20px 24px; }
+  .pf-hero { grid-template-columns: 1fr; padding: 60px 24px 40px; min-height: auto; gap: 40px; }
+  .pf-hero-img { height: 50vw; min-height: 280px; }
+  .pf-hero-img::before { background: linear-gradient(to bottom, #0c0c0c 0%, transparent 20%); }
+  .pf-stats { padding: 32px 24px; flex-wrap: wrap; gap: 1.5rem; }
+  .pf-sdiv { display: none; }
+  .pf-stat { flex: 0 0 45%; }
+  .pf-work, .pf-services { padding: 60px 24px; }
+  .pf-project-body,
+  .pf-flip .pf-project-body { grid-template-columns: 1fr; gap: 32px; }
+  .pf-flip .pf-project-body .pf-browser { order: -1; }
+  .pf-sgrid { grid-template-columns: 1fr 1fr; }
+  .pf-cta { padding: 80px 24px; }
+  .pf-foot { padding: 20px 24px; }
 }
 @media (max-width: 540px) {
-  .sgrid { grid-template-columns: 1fr; }
-  .hstat { flex: 0 0 100%; }
-  .hero-name-first, .hero-name-last { font-size: 3.5rem; }
+  .pf-links { gap: 1.2rem; }
+  .pf-sgrid { grid-template-columns: 1fr; }
+  .pf-stat { flex: 0 0 100%; }
+  .pf-h1 { font-size: 2.4rem; }
 }
 </style>
