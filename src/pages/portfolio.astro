@@ -275,13 +275,13 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 .pf-hero {
   display: grid;
   grid-template-columns: 1fr 480px;
-  min-height: 90vh;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 60px;
+  min-height: 92vh;
+  width: 100%;
+  padding: 0 0 0 80px;
   align-items: center;
-  gap: 60px;
+  gap: 0;
   position: relative;
+  overflow: hidden;
 }
 .pf-hero-text { z-index: 2; }
 .pf-available {
@@ -356,16 +356,29 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 
 .pf-hero-img {
   position: relative;
-  height: 80vh;
-  overflow: hidden;
-  border-radius: 16px;
+  height: 88vh;
+  overflow: visible;
 }
+/* Left fade — blends into text */
 .pf-hero-img::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(196,153,89,0.15) 100%);
+  background:
+    linear-gradient(to right, #151515 0%, rgba(21,21,21,0.6) 35%, transparent 65%),
+    linear-gradient(to top, #151515 0%, transparent 20%),
+    linear-gradient(to bottom, #151515 0%, transparent 15%);
+  z-index: 2;
+  pointer-events: none;
+}
+/* Dark overlay filter */
+.pf-hero-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15,15,15,0.35);
   z-index: 1;
+  pointer-events: none;
 }
 .pf-hero-img img {
   width: 100%;
@@ -373,6 +386,8 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   object-fit: cover;
   object-position: center top;
   display: block;
+  filter: brightness(0.75) contrast(1.05) grayscale(0.15);
+  border-radius: 0;
 }
 
 /* ── STATS ── */
