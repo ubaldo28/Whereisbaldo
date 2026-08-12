@@ -359,13 +359,13 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   height: 88vh;
   overflow: visible;
 }
-/* Left fade — blends into text */
+/* Right fade — blends into dark edge */
 .pf-hero-img::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, #151515 0%, rgba(21,21,21,0.6) 35%, transparent 65%),
+    linear-gradient(to left, #151515 0%, rgba(21,21,21,0.6) 35%, transparent 65%),
     linear-gradient(to top, #151515 0%, transparent 20%),
     linear-gradient(to bottom, #151515 0%, transparent 15%);
   z-index: 2;
