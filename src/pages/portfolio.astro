@@ -1,19 +1,7 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 ---
-<BaseLayout title="Ubaldo Figueroa — Web Developer & Growth Hacker" description="Three live sites. One year. No prior experience.">
-
-<style is:global>
-  /* Hide blog chrome on this page */
-  .site-header,
-  footer,
-  .dark-mode-toggle { display: none !important; }
-  body, html {
-    background: #0c0c0c !important;
-    color: #fff !important;
-  }
-  main { padding: 0 !important; margin: 0 !important; }
-</style>
+<PortfolioLayout title="Ubaldo Figueroa — Web Developer & Growth Hacker" description="Three live sites. One year. No prior experience.">
 
 <!-- ── PORTFOLIO NAV ── -->
 <nav class="pf-nav">
@@ -237,7 +225,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <a href="/">whereisbaldo.com</a>
 </div>
 
-</BaseLayout>
+</PortfolioLayout>
 
 <style>
 /* ── NAV ── */
