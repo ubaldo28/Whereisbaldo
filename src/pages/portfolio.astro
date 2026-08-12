@@ -1,178 +1,462 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Portfolio — Ubaldo Figueroa" description="Three production websites built from scratch. Web design, SEO, and AI automation for small businesses and creators.">
+<BaseLayout title="Portfolio — Ubaldo Figueroa" description="Three production websites built from scratch. Web design, SEO, and AI automation.">
 
-<div class="pf-hero">
+<!-- HERO -->
+<section class="pf-hero">
   <div class="pf-hero-inner">
-    <p class="pf-eyebrow">Portfolio</p>
-    <h1 class="pf-headline">Three sites.<br/>One year.<br/>No prior experience.</h1>
-    <p class="pf-sub">One paid client job. One passion project. One personal brand. All live, all running.</p>
-    <div class="pf-stats">
-      <div class="pf-stat"><span class="pf-stat-num">3</span><span class="pf-stat-label">Live Sites</span></div>
-      <div class="pf-stat-div"></div>
-      <div class="pf-stat"><span class="pf-stat-num">1</span><span class="pf-stat-label">Paying Client</span></div>
-      <div class="pf-stat-div"></div>
-      <div class="pf-stat"><span class="pf-stat-num">0</span><span class="pf-stat-label">Prior Experience</span></div>
+    <div class="pf-available"><span class="pf-dot"></span>Available for work</div>
+    <h1 class="pf-headline">
+      I build websites<br/>
+      <span class="pf-headline-accent">that actually work.</span>
+    </h1>
+    <p class="pf-sub">Three live sites. One paying client. One passion project. One personal brand. Built solo — no team, no agency, no prior experience.</p>
+    <div class="pf-hero-cta">
+      <a href="/contact" class="btn-primary">Hire Me →</a>
+      <a href="/Ubaldo_Resume.docx" download class="pf-resume-link">Download Resume ↓</a>
     </div>
   </div>
-</div>
+  <div class="pf-hero-stats">
+    <div class="pf-stat-item">
+      <span class="pf-stat-n">3</span>
+      <span class="pf-stat-l">Sites Built</span>
+    </div>
+    <div class="pf-stat-div"></div>
+    <div class="pf-stat-item">
+      <span class="pf-stat-n">1</span>
+      <span class="pf-stat-l">Paying Client</span>
+    </div>
+    <div class="pf-stat-div"></div>
+    <div class="pf-stat-item">
+      <span class="pf-stat-n">4.6<span style="font-size:1.5rem;">★</span></span>
+      <span class="pf-stat-l">Client Rating</span>
+    </div>
+    <div class="pf-stat-div"></div>
+    <div class="pf-stat-item">
+      <span class="pf-stat-n">0</span>
+      <span class="pf-stat-l">Prior Experience</span>
+    </div>
+  </div>
+</section>
 
-<div class="pf-projects">
+<!-- PROJECTS -->
+<section class="pf-projects">
 
   <!-- GENIOTECH -->
   <div class="pf-project">
-    <div class="pf-project-inner">
-      <div class="pf-project-img-col">
-        <div class="pf-img-frame">
-          <img src="https://geniotech.co.uk/og-image.jpg" alt="GenioTech" />
+    <div class="pf-project-wrap">
+      <div class="pf-browser">
+        <div class="pf-browser-bar">
+          <span class="pf-dot-r"></span><span class="pf-dot-y"></span><span class="pf-dot-g"></span>
+          <span class="pf-browser-url">geniotech.co.uk</span>
         </div>
-        <div class="pf-badges">
-          <span class="pf-badge pf-badge-award">🏆 Scottish Retail Award Winner</span>
-          <span class="pf-badge">⭐ 4.6 · 184+ Google Reviews</span>
-        </div>
+        <a href="https://geniotech.co.uk" target="_blank" rel="noopener">
+          <img src="/portfolio-geniotech.jpg" alt="GenioTech website" class="pf-browser-img" />
+        </a>
       </div>
-      <div class="pf-project-text-col">
-        <span class="pf-label">Freelance Client Work · 2026</span>
-        <h2 class="pf-project-name">GenioTech</h2>
-        <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-link">geniotech.co.uk ↗</a>
-        <p class="pf-project-desc">A phone repair shop in Dundee needed a real web presence — not a template, not a drag-and-drop builder. I built the whole thing from scratch and delivered it solo. Online booking, e-commerce, photo gallery, blog, newsletter, and a PWA customers can install on their phone.</p>
-        <div class="pf-tags">
-          <span>Booking System</span>
-          <span>E-commerce</span>
-          <span>PWA</span>
-          <span>SEO</span>
-          <span>Newsletter</span>
-          <span>Social Integration</span>
+      <div class="pf-project-info">
+        <div class="pf-project-top">
+          <span class="pf-chip pf-chip-client">Paid Client Work</span>
+          <span class="pf-chip">2026</span>
         </div>
+        <h2 class="pf-project-title">GenioTech</h2>
+        <p class="pf-project-body">A phone repair business in Dundee needed more than a template. I built the whole site from scratch — online booking, e-commerce shop, gallery, blog, newsletter, and a PWA customers can install on their phone. Solo delivery, start to finish.</p>
+        <div class="pf-highlights">
+          <div class="pf-highlight"><strong>🏆</strong> Scottish Independent Retail Award Winner</div>
+          <div class="pf-highlight"><strong>⭐ 4.6</strong> · 184+ verified Google reviews</div>
+          <div class="pf-highlight"><strong>⚡ &lt;1hr</strong> most screen repairs</div>
+        </div>
+        <div class="pf-tags">
+          <span>Booking System</span><span>E-commerce</span><span>PWA</span>
+          <span>SEO</span><span>Newsletter</span><span>Social Feeds</span>
+        </div>
+        <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-visit">Visit site ↗</a>
       </div>
     </div>
   </div>
 
   <!-- WHERE IS BALDO -->
-  <div class="pf-project pf-project-alt">
-    <div class="pf-project-inner pf-project-inner-rev">
-      <div class="pf-project-img-col">
-        <div class="pf-img-frame">
-          <img src="/og-image.jpg" alt="Where Is Baldo?" />
+  <div class="pf-project pf-project-flip">
+    <div class="pf-project-wrap">
+      <div class="pf-project-info">
+        <div class="pf-project-top">
+          <span class="pf-chip pf-chip-personal">Personal Brand</span>
+          <span class="pf-chip">March 2026</span>
         </div>
-        <div class="pf-badges">
-          <span class="pf-badge">✍️ Personal Brand</span>
-          <span class="pf-badge">🌍 17 Countries Reached</span>
+        <h2 class="pf-project-title">Where Is Baldo?</h2>
+        <p class="pf-project-body">Built while living out of a hotel room in Scotland, waiting on a government letter. No team, no roadmap — just a reason to build something. Custom design, dark mode, email subscriptions, push notifications, Google Analytics, AdSense, and an installable PWA. You're on it right now.</p>
+        <div class="pf-highlights">
+          <div class="pf-highlight"><strong>🌍</strong> 17 countries reached organically</div>
+          <div class="pf-highlight"><strong>📲</strong> Installable PWA on any device</div>
+          <div class="pf-highlight"><strong>📧</strong> Email + push notification system</div>
         </div>
-      </div>
-      <div class="pf-project-text-col">
-        <span class="pf-label">Personal Brand · March 2026</span>
-        <h2 class="pf-project-name">Where Is Baldo?</h2>
-        <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-link">whereisbaldo.com ↗</a>
-        <p class="pf-project-desc">Built while living out of a hotel room in Scotland, waiting on a government letter. No team, no plan — just a reason to get something done. Custom design, dark mode, email subscriptions, push notifications, Google Analytics, AdSense, and an installable PWA. You're on it right now.</p>
         <div class="pf-tags">
-          <span>Custom Design</span>
-          <span>Dark Mode</span>
-          <span>Email API</span>
-          <span>Push Notifications</span>
-          <span>Analytics</span>
-          <span>AdSense</span>
-          <span>PWA</span>
+          <span>Custom Design</span><span>Dark Mode</span><span>Resend API</span>
+          <span>Webpushr</span><span>AdSense</span><span>Analytics</span><span>PWA</span>
         </div>
+        <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-visit">Visit site ↗</a>
+      </div>
+      <div class="pf-browser">
+        <div class="pf-browser-bar">
+          <span class="pf-dot-r"></span><span class="pf-dot-y"></span><span class="pf-dot-g"></span>
+          <span class="pf-browser-url">whereisbaldo.com</span>
+        </div>
+        <a href="https://whereisbaldo.com" target="_blank" rel="noopener">
+          <img src="/portfolio-baldo.jpg" alt="Where Is Baldo website" class="pf-browser-img" />
+        </a>
       </div>
     </div>
   </div>
 
   <!-- POTUS WATCH -->
   <div class="pf-project">
-    <div class="pf-project-inner">
-      <div class="pf-project-img-col">
-        <div class="pf-img-frame">
-          <img src="https://www.potuswatchdaily.com/og-default.jpg" alt="POTUS Watch Daily" />
+    <div class="pf-project-wrap">
+      <div class="pf-browser">
+        <div class="pf-browser-bar">
+          <span class="pf-dot-r"></span><span class="pf-dot-y"></span><span class="pf-dot-g"></span>
+          <span class="pf-browser-url">potuswatchdaily.com</span>
         </div>
-        <div class="pf-badges">
-          <span class="pf-badge">🔁 Publishes Daily</span>
-          <span class="pf-badge">📰 Foreign Policy Intel</span>
-        </div>
+        <a href="https://potuswatchdaily.com" target="_blank" rel="noopener">
+          <img src="/portfolio-potus.jpg" alt="POTUS Watch Daily website" class="pf-browser-img" />
+        </a>
       </div>
-      <div class="pf-project-text-col">
-        <span class="pf-label">Passion Project · January 2026</span>
-        <h2 class="pf-project-name">POTUS Watch Daily</h2>
-        <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-link">potuswatchdaily.com ↗</a>
-        <p class="pf-project-desc">Started as a way to practice building. Became a real foreign policy intelligence platform that publishes multiple dispatches every day. Breaking news ticker, automated content pipeline, category filtering, newsletter subscriptions, and AdSense monetisation.</p>
-        <div class="pf-tags">
-          <span>Automated Publishing</span>
-          <span>News Ticker</span>
-          <span>Newsletter</span>
-          <span>AdSense</span>
-          <span>SEO</span>
+      <div class="pf-project-info">
+        <div class="pf-project-top">
+          <span class="pf-chip pf-chip-passion">Passion Project</span>
+          <span class="pf-chip">January 2026</span>
         </div>
+        <h2 class="pf-project-title">POTUS Watch Daily</h2>
+        <p class="pf-project-body">Started as a way to practice building. Turned into a real foreign policy intelligence platform that publishes multiple dispatches every day. Breaking news ticker, automated content pipeline, category filtering, newsletter, and AdSense monetisation.</p>
+        <div class="pf-highlights">
+          <div class="pf-highlight"><strong>🔁</strong> Publishes multiple times daily</div>
+          <div class="pf-highlight"><strong>🔴 LIVE</strong> breaking news ticker</div>
+          <div class="pf-highlight"><strong>💰</strong> AdSense monetised</div>
+        </div>
+        <div class="pf-tags">
+          <span>Automated Publishing</span><span>News Ticker</span>
+          <span>Newsletter</span><span>AdSense</span><span>SEO</span>
+        </div>
+        <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-visit">Visit site ↗</a>
       </div>
     </div>
   </div>
 
-</div>
+</section>
 
 <!-- SERVICES -->
-<div class="pf-services-section">
+<section class="pf-services">
   <div class="pf-services-inner">
-    <p class="pf-eyebrow" style="text-align:center;">What I Offer</p>
-    <h2 class="pf-section-title">Services</h2>
-    <div class="pf-bento">
-      <div class="pf-bento-item pf-bento-large">
-        <div class="pf-bento-icon">💻</div>
+    <div class="pf-services-head">
+      <div>
+        <p class="pf-eyebrow">What I Offer</p>
+        <h2 class="pf-services-title">Services</h2>
+      </div>
+      <a href="/services" class="pf-services-link">See full details →</a>
+    </div>
+    <div class="pf-grid">
+      <div class="pf-card pf-card-wide">
+        <div class="pf-card-icon">💻</div>
         <h3>Web Design & Development</h3>
-        <p>Custom sites built from scratch. Fast, mobile-first, and built to rank — not templates dressed up to look original.</p>
+        <p>Custom sites from scratch. Fast, mobile-first, built to rank. Not templates — real builds.</p>
       </div>
-      <div class="pf-bento-item pf-bento-large">
-        <div class="pf-bento-icon">🤖</div>
+      <div class="pf-card pf-card-wide">
+        <div class="pf-card-icon">🤖</div>
         <h3>AI Automation</h3>
-        <p>Systems that handle emails, workflows, scheduling, and customer responses — automatically, while you focus on what matters.</p>
+        <p>Systems that handle emails, workflows, and scheduling automatically while you focus on what matters.</p>
       </div>
-      <div class="pf-bento-item">
-        <div class="pf-bento-icon">🔍</div>
+      <div class="pf-card">
+        <div class="pf-card-icon">🔍</div>
         <h3>SEO</h3>
         <p>Technical and content SEO so the right people find you on Google.</p>
       </div>
-      <div class="pf-bento-item">
-        <div class="pf-bento-icon">📧</div>
+      <div class="pf-card">
+        <div class="pf-card-icon">📧</div>
         <h3>Email Marketing</h3>
-        <p>List building, sequences, newsletters, and campaigns that get read.</p>
+        <p>List building, sequences, newsletters and campaigns that actually get read.</p>
       </div>
-      <div class="pf-bento-item">
-        <div class="pf-bento-icon">📢</div>
+      <div class="pf-card">
+        <div class="pf-card-icon">📢</div>
         <h3>Paid Ads</h3>
-        <p>Facebook, Instagram, and Google ads managed properly — not boosted posts.</p>
+        <p>Facebook, Instagram and Google ads managed properly — not boosted posts.</p>
       </div>
-      <div class="pf-bento-item">
-        <div class="pf-bento-icon">💬</div>
+      <div class="pf-card">
+        <div class="pf-card-icon">💬</div>
         <h3>Chatbot Setup</h3>
         <p>AI bots that qualify leads and book appointments 24/7.</p>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- CTA -->
-<div class="pf-cta-section">
+<section class="pf-cta">
   <div class="pf-cta-inner">
-    <h2 class="pf-cta-headline">Let's work together.</h2>
-    <p class="pf-cta-sub">Available for freelance projects and the right full-time role. You work with me directly — no agency, no handoffs.</p>
-    <div class="pf-cta-buttons">
+    <p class="pf-eyebrow" style="text-align:center; margin-bottom:1rem;">Let's work together</p>
+    <h2 class="pf-cta-title">Ready when you are.</h2>
+    <p class="pf-cta-body">Available for freelance and the right full-time role. You work with me directly — no agency, no handoffs, no BS.</p>
+    <div class="pf-cta-btns">
       <a href="/contact" class="btn-primary">Get in Touch →</a>
       <a href="/Ubaldo_Resume.docx" download class="btn-secondary">Download Resume</a>
     </div>
   </div>
-</div>
+</section>
 
 </BaseLayout>
 
 <style>
-  /* HERO */
+  /* ── HERO ── */
   .pf-hero {
-    background: var(--dark);
-    border-bottom: 1px solid rgba(196,153,90,0.2);
-    padding: 80px 40px 72px;
-  }
-  .pf-hero-inner {
-    max-width: 780px;
+    padding: 80px 40px 0;
+    max-width: 1100px;
     margin: 0 auto;
+  }
+  .pf-available {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4ade80;
+    margin-bottom: 1.5rem;
+  }
+  .pf-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .pf-headline {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--cream);
+    margin: 0 0 1.25rem;
+  }
+  .pf-headline-accent { color: var(--gold); }
+  .pf-sub {
+    font-size: 1.1rem;
+    color: var(--kraft);
+    line-height: 1.75;
+    max-width: 540px;
+    margin-bottom: 2rem;
+  }
+  .pf-hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .pf-resume-link {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--kraft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .pf-resume-link:hover { color: var(--cream); }
+
+  .pf-hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-top: 1px solid rgba(196,153,90,0.2);
+    border-bottom: 1px solid rgba(196,153,90,0.2);
+    padding: 28px 0;
+    margin-bottom: 0;
+  }
+  .pf-stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 0 20px;
+  }
+  .pf-stat-n {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .pf-stat-l {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--kraft);
+    text-align: center;
+  }
+  .pf-stat-div {
+    width: 1px;
+    height: 48px;
+    background: rgba(196,153,90,0.2);
+    flex-shrink: 0;
+  }
+
+  /* ── PROJECTS ── */
+  .pf-projects {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .pf-project {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(196,153,90,0.12);
+  }
+  .pf-project:last-child { border-bottom: none; }
+  .pf-project-wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .pf-project-flip .pf-project-wrap {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  /* Browser mockup */
+  .pf-browser {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    background: #1a1a1a;
+  }
+  .pf-browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: #2a2a2a;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .pf-dot-r, .pf-dot-y, .pf-dot-g {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .pf-dot-r { background: #ff5f57; }
+  .pf-dot-y { background: #febc2e; }
+  .pf-dot-g { background: #28c840; }
+  .pf-browser-url {
+    flex: 1;
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    padding: 3px 10px;
+    margin: 0 8px;
+  }
+  .pf-browser-img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .pf-browser:hover .pf-browser-img { transform: scale(1.02); }
+
+  /* Project info */
+  .pf-project-top {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+  .pf-chip {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(196,153,90,0.3);
+    color: var(--kraft);
+  }
+  .pf-chip-client { border-color: var(--gold); color: var(--gold); }
+  .pf-chip-personal { border-color: #c084fc; color: #c084fc; }
+  .pf-chip-passion { border-color: #f87171; color: #f87171; }
+
+  .pf-project-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--cream);
+    margin: 0 0 1rem;
+    line-height: 1.05;
+  }
+  .pf-project-body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--kraft);
+    margin-bottom: 1.5rem;
+  }
+  .pf-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+    padding: 16px;
+    background: rgba(196,153,90,0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(196,153,90,0.12);
+  }
+  .pf-highlight {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    color: var(--kraft);
+  }
+  .pf-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 1.5rem;
+  }
+  .pf-tags span {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(196,153,90,0.2);
+    color: rgba(196,153,90,0.7);
+  }
+  .pf-visit {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s;
+  }
+  .pf-visit:hover { opacity: 0.7; }
+
+  /* ── SERVICES ── */
+  .pf-services {
+    background: rgba(196,153,90,0.04);
+    border-top: 1px solid rgba(196,153,90,0.15);
+    border-bottom: 1px solid rgba(196,153,90,0.15);
+    padding: 80px 40px;
+  }
+  .pf-services-inner { max-width: 1100px; margin: 0 auto; }
+  .pf-services-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
   }
   .pf-eyebrow {
     font-family: 'Helvetica Neue', sans-serif;
@@ -181,253 +465,100 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 1.25rem;
+    margin-bottom: 6px;
   }
-  .pf-headline {
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 900;
-    line-height: 1.05;
-    color: var(--cream);
-    margin: 0 0 1.25rem;
-  }
-  .pf-sub {
-    font-size: 1.15rem;
-    color: var(--kraft);
-    line-height: 1.7;
-    max-width: 520px;
-    margin-bottom: 2.5rem;
-  }
-  .pf-stats {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  .pf-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .pf-stat-num {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--gold);
-    line-height: 1;
-  }
-  .pf-stat-label {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--kraft);
-  }
-  .pf-stat-div {
-    width: 1px;
-    height: 40px;
-    background: rgba(196,153,90,0.25);
-  }
-
-  /* PROJECTS */
-  .pf-projects {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-  .pf-project {
-    padding: 72px 0;
-    border-bottom: 1px solid rgba(196,153,90,0.15);
-  }
-  .pf-project:last-child { border-bottom: none; }
-  .pf-project-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-  .pf-project-inner-rev { direction: rtl; }
-  .pf-project-inner-rev > * { direction: ltr; }
-
-  .pf-img-frame {
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(196,153,90,0.2);
-    aspect-ratio: 1200/630;
-    background: var(--darkbrown);
-  }
-  .pf-img-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-  .pf-img-frame:hover img { transform: scale(1.03); }
-
-  .pf-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 14px;
-  }
-  .pf-badge {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 5px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(196,153,90,0.3);
-    color: var(--kraft);
-    background: rgba(196,153,90,0.06);
-  }
-  .pf-badge-award {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: rgba(196,153,90,0.12);
-  }
-
-  .pf-label {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    display: block;
-    margin-bottom: 10px;
-  }
-  .pf-project-name {
+  .pf-services-title {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
     color: var(--cream);
-    margin: 0 0 8px;
+    margin: 0;
     line-height: 1.1;
   }
-  .pf-link {
+  .pf-services-link {
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 13px;
+    font-weight: 600;
     color: var(--gold);
     text-decoration: none;
-    display: inline-block;
-    margin-bottom: 1.25rem;
-    opacity: 0.85;
-    transition: opacity 0.2s;
+    padding-bottom: 8px;
   }
-  .pf-link:hover { opacity: 1; }
-
-  .pf-project-desc {
-    font-size: 16px;
-    line-height: 1.8;
-    color: var(--kraft);
-    margin-bottom: 1.5rem;
-  }
-  .pf-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .pf-tags span {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    padding: 5px 14px;
-    border-radius: 20px;
-    border: 1px solid rgba(196,153,90,0.25);
-    color: var(--kraft);
-  }
-
-  /* SERVICES BENTO */
-  .pf-services-section {
-    background: var(--darkbrown);
-    padding: 80px 40px;
-    border-top: 1px solid rgba(196,153,90,0.15);
-    border-bottom: 1px solid rgba(196,153,90,0.15);
-  }
-  .pf-services-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .pf-section-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 900;
-    color: var(--cream);
-    margin: 0 0 2.5rem;
-    text-align: center;
-  }
-  .pf-bento {
+  .pf-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
     gap: 16px;
   }
-  .pf-bento-item {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(196,153,90,0.18);
+  .pf-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(196,153,90,0.15);
     border-radius: 12px;
     padding: 28px;
-    transition: border-color 0.2s, background 0.2s;
+    transition: border-color 0.25s, background 0.25s;
   }
-  .pf-bento-item:hover {
-    border-color: rgba(196,153,90,0.5);
-    background: rgba(255,255,255,0.07);
+  .pf-card:hover {
+    border-color: rgba(196,153,90,0.4);
+    background: rgba(196,153,90,0.06);
   }
-  .pf-bento-large {
-    grid-column: span 1;
-  }
-  .pf-bento-icon {
-    font-size: 2rem;
-    margin-bottom: 14px;
-  }
-  .pf-bento-item h3 {
-    font-size: 1.1rem;
+  .pf-card-wide { grid-column: span 1; }
+  .pf-card-icon { font-size: 1.75rem; margin-bottom: 12px; }
+  .pf-card h3 {
+    font-size: 1rem;
     font-weight: 700;
     color: var(--cream);
-    margin: 0 0 10px;
+    margin: 0 0 8px;
   }
-  .pf-bento-item p {
-    font-size: 14px;
+  .pf-card p {
+    font-size: 13px;
     color: var(--kraft);
     line-height: 1.7;
     margin: 0;
   }
 
-  /* CTA */
-  .pf-cta-section {
-    padding: 100px 40px;
-    text-align: center;
-  }
-  .pf-cta-inner { max-width: 600px; margin: 0 auto; }
-  .pf-cta-headline {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+  /* ── CTA ── */
+  .pf-cta { padding: 100px 40px; text-align: center; }
+  .pf-cta-inner { max-width: 560px; margin: 0 auto; }
+  .pf-cta-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 900;
     color: var(--cream);
     margin: 0 0 1rem;
-    line-height: 1.1;
+    line-height: 1.05;
   }
-  .pf-cta-sub {
+  .pf-cta-body {
     font-size: 1rem;
     color: var(--kraft);
-    line-height: 1.7;
+    line-height: 1.75;
     margin-bottom: 2rem;
   }
-  .pf-cta-buttons {
+  .pf-cta-btns {
     display: flex;
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  /* RESPONSIVE */
+  /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    .pf-hero { padding: 60px 24px 52px; }
+    .pf-hero { padding: 60px 24px 0; }
     .pf-projects { padding: 0 24px; }
-    .pf-project { padding: 52px 0; }
-    .pf-project-inner { grid-template-columns: 1fr; gap: 32px; }
-    .pf-project-inner-rev { direction: ltr; }
-    .pf-bento { grid-template-columns: 1fr; }
-    .pf-services-section { padding: 60px 24px; }
-    .pf-cta-section { padding: 72px 24px; }
-    .pf-stats { gap: 1.25rem; }
-    .pf-stat-num { font-size: 2rem; }
+    .pf-project { padding: 56px 0; }
+    .pf-project-wrap,
+    .pf-project-flip .pf-project-wrap {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .pf-project-flip .pf-project-wrap { direction: ltr; }
+    .pf-project-flip .pf-project-wrap .pf-project-info { order: 1; }
+    .pf-project-flip .pf-project-wrap .pf-browser { order: 2; }
+    .pf-hero-stats { flex-wrap: wrap; gap: 1rem; }
+    .pf-stat-div { display: none; }
+    .pf-stat-item { flex: 0 0 45%; }
+    .pf-grid { grid-template-columns: 1fr 1fr; }
+    .pf-services { padding: 60px 24px; }
+    .pf-cta { padding: 72px 24px; }
+    .pf-services-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+  @media (max-width: 480px) {
+    .pf-grid { grid-template-columns: 1fr; }
+    .pf-stat-item { flex: 0 0 100%; }
   }
 </style>
