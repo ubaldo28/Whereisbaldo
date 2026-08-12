@@ -3,318 +3,431 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Portfolio — Ubaldo Figueroa" description="Three production websites built from scratch. Web design, SEO, and AI automation for small businesses and creators.">
 
-  <div class="post-header">
-    <span class="post-tag">Portfolio</span>
-    <h1>What I've Built</h1>
-    <p class="post-meta">Three live sites. One year. No prior experience.</p>
+<div class="pf-hero">
+  <div class="pf-hero-inner">
+    <p class="pf-eyebrow">Portfolio</p>
+    <h1 class="pf-headline">Three sites.<br/>One year.<br/>No prior experience.</h1>
+    <p class="pf-sub">One paid client job. One passion project. One personal brand. All live, all running.</p>
+    <div class="pf-stats">
+      <div class="pf-stat"><span class="pf-stat-num">3</span><span class="pf-stat-label">Live Sites</span></div>
+      <div class="pf-stat-div"></div>
+      <div class="pf-stat"><span class="pf-stat-num">1</span><span class="pf-stat-label">Paying Client</span></div>
+      <div class="pf-stat-div"></div>
+      <div class="pf-stat"><span class="pf-stat-num">0</span><span class="pf-stat-label">Prior Experience</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="pf-projects">
+
+  <!-- GENIOTECH -->
+  <div class="pf-project">
+    <div class="pf-project-inner">
+      <div class="pf-project-img-col">
+        <div class="pf-img-frame">
+          <img src="https://geniotech.co.uk/og-image.jpg" alt="GenioTech" />
+        </div>
+        <div class="pf-badges">
+          <span class="pf-badge pf-badge-award">🏆 Scottish Retail Award Winner</span>
+          <span class="pf-badge">⭐ 4.6 · 184+ Google Reviews</span>
+        </div>
+      </div>
+      <div class="pf-project-text-col">
+        <span class="pf-label">Freelance Client Work · 2026</span>
+        <h2 class="pf-project-name">GenioTech</h2>
+        <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-link">geniotech.co.uk ↗</a>
+        <p class="pf-project-desc">A phone repair shop in Dundee needed a real web presence — not a template, not a drag-and-drop builder. I built the whole thing from scratch and delivered it solo. Online booking, e-commerce, photo gallery, blog, newsletter, and a PWA customers can install on their phone.</p>
+        <div class="pf-tags">
+          <span>Booking System</span>
+          <span>E-commerce</span>
+          <span>PWA</span>
+          <span>SEO</span>
+          <span>Newsletter</span>
+          <span>Social Integration</span>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="post-body">
-
-    <p>I didn't go to school for this. I didn't do a bootcamp. I built three real, working websites — one for a paying client, one that started as practice and turned into something I care about, and one that's my own story. Everything here is live and running right now.</p>
-
-    <div class="portfolio-grid">
-
-      <!-- GENIOTECH -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-wrap">
-          <img src="https://geniotech.co.uk/og-image.jpg" alt="GenioTech website" class="portfolio-img" loading="lazy" />
+  <!-- WHERE IS BALDO -->
+  <div class="pf-project pf-project-alt">
+    <div class="pf-project-inner pf-project-inner-rev">
+      <div class="pf-project-img-col">
+        <div class="pf-img-frame">
+          <img src="/og-image.jpg" alt="Where Is Baldo?" />
         </div>
-        <div class="portfolio-details">
-          <div class="portfolio-meta-row">
-            <span class="portfolio-tag">Freelance Client Work</span>
-            <span class="portfolio-year">2026</span>
-          </div>
-          <h2 class="portfolio-title">GenioTech</h2>
-          <p class="portfolio-url"><a href="https://geniotech.co.uk" target="_blank" rel="noopener">geniotech.co.uk ↗</a></p>
-          <p class="portfolio-desc">A full business website for an award-winning phone repair shop in Dundee, Scotland. Built and delivered solo for a real paying client — online booking, e-commerce shop, photo gallery, blog, newsletter, and a PWA the customer can install on their phone. The client is a Scottish Independent Retail Award winner with a 4.6★ Google rating across 184+ reviews.</p>
-          <ul class="portfolio-tech">
-            <li>Online booking system</li>
-            <li>E-commerce shop</li>
-            <li>PWA / installable app</li>
-            <li>Full SEO setup</li>
-            <li>Newsletter & social integration</li>
-          </ul>
+        <div class="pf-badges">
+          <span class="pf-badge">✍️ Personal Brand</span>
+          <span class="pf-badge">🌍 17 Countries Reached</span>
         </div>
       </div>
-
-      <!-- WHEREISBALDO -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-wrap">
-          <img src="/og-image.jpg" alt="Where Is Baldo website" class="portfolio-img" loading="lazy" />
-        </div>
-        <div class="portfolio-details">
-          <div class="portfolio-meta-row">
-            <span class="portfolio-tag">Personal Brand</span>
-            <span class="portfolio-year">March 2026</span>
-          </div>
-          <h2 class="portfolio-title">Where Is Baldo?</h2>
-          <p class="portfolio-url"><a href="https://whereisbaldo.com" target="_blank" rel="noopener">whereisbaldo.com ↗</a></p>
-          <p class="portfolio-desc">My own personal blog — built while living out of a hotel room in Scotland, waiting on a government letter. Custom design, dark mode, responsive layout, email subscriptions via Resend, push notifications via Webpushr, Google Analytics, AdSense, and a PWA. You're looking at it right now.</p>
-          <ul class="portfolio-tech">
-            <li>Custom design & dark mode</li>
-            <li>Email subscription (Resend API)</li>
-            <li>Push notifications (Webpushr)</li>
-            <li>Google Analytics & AdSense</li>
-            <li>PWA / installable app</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- POTUS WATCH DAILY -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-wrap">
-          <img src="https://www.potuswatchdaily.com/og-default.jpg" alt="POTUS Watch Daily website" class="portfolio-img" loading="lazy" />
-        </div>
-        <div class="portfolio-details">
-          <div class="portfolio-meta-row">
-            <span class="portfolio-tag">Practice → Passion Project</span>
-            <span class="portfolio-year">January 2026</span>
-          </div>
-          <h2 class="portfolio-title">POTUS Watch Daily</h2>
-          <p class="portfolio-url"><a href="https://potuswatchdaily.com" target="_blank" rel="noopener">potuswatchdaily.com ↗</a></p>
-          <p class="portfolio-desc">Started as a way to learn. Became a real, daily-publishing foreign policy intelligence site. Automated content pipeline, breaking news ticker, category filtering, newsletter subscriptions, and AdSense monetisation. Publishes multiple dispatches every day.</p>
-          <ul class="portfolio-tech">
-            <li>Automated content publishing</li>
-            <li>Breaking news ticker</li>
-            <li>Newsletter subscriptions</li>
-            <li>Google AdSense</li>
-            <li>Full SEO & social meta</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <hr class="portfolio-divider" />
-
-    <h2>What I Can Do For You</h2>
-
-    <div class="services-inline">
-      <div class="service-inline-item">
-        <span class="service-emoji">💻</span>
-        <div>
-          <strong>Web Design & Development</strong>
-          <p>Custom sites built from scratch. Fast, mobile-friendly, and built to rank on Google.</p>
-        </div>
-      </div>
-      <div class="service-inline-item">
-        <span class="service-emoji">🤖</span>
-        <div>
-          <strong>AI Automation</strong>
-          <p>Systems that handle repetitive tasks — emails, workflows, scheduling — automatically.</p>
-        </div>
-      </div>
-      <div class="service-inline-item">
-        <span class="service-emoji">🔍</span>
-        <div>
-          <strong>SEO</strong>
-          <p>Technical and content SEO so your site gets found by the right people.</p>
-        </div>
-      </div>
-      <div class="service-inline-item">
-        <span class="service-emoji">📧</span>
-        <div>
-          <strong>Email Marketing</strong>
-          <p>List building, welcome sequences, newsletters, and campaigns that actually get read.</p>
-        </div>
-      </div>
-      <div class="service-inline-item">
-        <span class="service-emoji">📢</span>
-        <div>
-          <strong>Paid Ads</strong>
-          <p>Facebook, Instagram, and Google ads managed properly — not just boosted posts.</p>
-        </div>
-      </div>
-      <div class="service-inline-item">
-        <span class="service-emoji">💬</span>
-        <div>
-          <strong>Chatbot Setup</strong>
-          <p>AI bots that handle questions, qualify leads, and book appointments 24/7.</p>
+      <div class="pf-project-text-col">
+        <span class="pf-label">Personal Brand · March 2026</span>
+        <h2 class="pf-project-name">Where Is Baldo?</h2>
+        <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-link">whereisbaldo.com ↗</a>
+        <p class="pf-project-desc">Built while living out of a hotel room in Scotland, waiting on a government letter. No team, no plan — just a reason to get something done. Custom design, dark mode, email subscriptions, push notifications, Google Analytics, AdSense, and an installable PWA. You're on it right now.</p>
+        <div class="pf-tags">
+          <span>Custom Design</span>
+          <span>Dark Mode</span>
+          <span>Email API</span>
+          <span>Push Notifications</span>
+          <span>Analytics</span>
+          <span>AdSense</span>
+          <span>PWA</span>
         </div>
       </div>
     </div>
-
-    <hr class="portfolio-divider" />
-
-    <div class="portfolio-cta">
-      <h2>Hire Me or Work Together</h2>
-      <p>I'm available for freelance projects and open to the right full-time role. I work directly with you — no middlemen, no handoffs to juniors.</p>
-      <div class="cta-buttons">
-        <a href="/contact" class="btn-primary">Get in Touch →</a>
-        <a href="/Ubaldo_Resume.docx" download class="btn-secondary">Download Resume</a>
-      </div>
-    </div>
-
   </div>
+
+  <!-- POTUS WATCH -->
+  <div class="pf-project">
+    <div class="pf-project-inner">
+      <div class="pf-project-img-col">
+        <div class="pf-img-frame">
+          <img src="https://www.potuswatchdaily.com/og-default.jpg" alt="POTUS Watch Daily" />
+        </div>
+        <div class="pf-badges">
+          <span class="pf-badge">🔁 Publishes Daily</span>
+          <span class="pf-badge">📰 Foreign Policy Intel</span>
+        </div>
+      </div>
+      <div class="pf-project-text-col">
+        <span class="pf-label">Passion Project · January 2026</span>
+        <h2 class="pf-project-name">POTUS Watch Daily</h2>
+        <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-link">potuswatchdaily.com ↗</a>
+        <p class="pf-project-desc">Started as a way to practice building. Became a real foreign policy intelligence platform that publishes multiple dispatches every day. Breaking news ticker, automated content pipeline, category filtering, newsletter subscriptions, and AdSense monetisation.</p>
+        <div class="pf-tags">
+          <span>Automated Publishing</span>
+          <span>News Ticker</span>
+          <span>Newsletter</span>
+          <span>AdSense</span>
+          <span>SEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SERVICES -->
+<div class="pf-services-section">
+  <div class="pf-services-inner">
+    <p class="pf-eyebrow" style="text-align:center;">What I Offer</p>
+    <h2 class="pf-section-title">Services</h2>
+    <div class="pf-bento">
+      <div class="pf-bento-item pf-bento-large">
+        <div class="pf-bento-icon">💻</div>
+        <h3>Web Design & Development</h3>
+        <p>Custom sites built from scratch. Fast, mobile-first, and built to rank — not templates dressed up to look original.</p>
+      </div>
+      <div class="pf-bento-item pf-bento-large">
+        <div class="pf-bento-icon">🤖</div>
+        <h3>AI Automation</h3>
+        <p>Systems that handle emails, workflows, scheduling, and customer responses — automatically, while you focus on what matters.</p>
+      </div>
+      <div class="pf-bento-item">
+        <div class="pf-bento-icon">🔍</div>
+        <h3>SEO</h3>
+        <p>Technical and content SEO so the right people find you on Google.</p>
+      </div>
+      <div class="pf-bento-item">
+        <div class="pf-bento-icon">📧</div>
+        <h3>Email Marketing</h3>
+        <p>List building, sequences, newsletters, and campaigns that get read.</p>
+      </div>
+      <div class="pf-bento-item">
+        <div class="pf-bento-icon">📢</div>
+        <h3>Paid Ads</h3>
+        <p>Facebook, Instagram, and Google ads managed properly — not boosted posts.</p>
+      </div>
+      <div class="pf-bento-item">
+        <div class="pf-bento-icon">💬</div>
+        <h3>Chatbot Setup</h3>
+        <p>AI bots that qualify leads and book appointments 24/7.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="pf-cta-section">
+  <div class="pf-cta-inner">
+    <h2 class="pf-cta-headline">Let's work together.</h2>
+    <p class="pf-cta-sub">Available for freelance projects and the right full-time role. You work with me directly — no agency, no handoffs.</p>
+    <div class="pf-cta-buttons">
+      <a href="/contact" class="btn-primary">Get in Touch →</a>
+      <a href="/Ubaldo_Resume.docx" download class="btn-secondary">Download Resume</a>
+    </div>
+  </div>
+</div>
 
 </BaseLayout>
 
 <style>
-  .portfolio-grid {
+  /* HERO */
+  .pf-hero {
+    background: var(--dark);
+    border-bottom: 1px solid rgba(196,153,90,0.2);
+    padding: 80px 40px 72px;
+  }
+  .pf-hero-inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .pf-eyebrow {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .pf-headline {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--cream);
+    margin: 0 0 1.25rem;
+  }
+  .pf-sub {
+    font-size: 1.15rem;
+    color: var(--kraft);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+  }
+  .pf-stats {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .pf-stat {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-    margin: 3rem 0;
+    gap: 4px;
+  }
+  .pf-stat-num {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .pf-stat-label {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--kraft);
+  }
+  .pf-stat-div {
+    width: 1px;
+    height: 40px;
+    background: rgba(196,153,90,0.25);
   }
 
-  .portfolio-item {
-    border: 1px solid var(--kraft);
-    border-radius: 10px;
+  /* PROJECTS */
+  .pf-projects {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .pf-project {
+    padding: 72px 0;
+    border-bottom: 1px solid rgba(196,153,90,0.15);
+  }
+  .pf-project:last-child { border-bottom: none; }
+  .pf-project-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .pf-project-inner-rev { direction: rtl; }
+  .pf-project-inner-rev > * { direction: ltr; }
+
+  .pf-img-frame {
+    border-radius: 12px;
     overflow: hidden;
-  }
-
-  .portfolio-img-wrap {
-    width: 100%;
+    border: 1px solid rgba(196,153,90,0.2);
     aspect-ratio: 1200/630;
-    overflow: hidden;
     background: var(--darkbrown);
   }
-
-  .portfolio-img {
+  .pf-img-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
   }
+  .pf-img-frame:hover img { transform: scale(1.03); }
 
-  .portfolio-details {
-    padding: 2rem;
-  }
-
-  .portfolio-meta-row {
+  .pf-badges {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
   }
-
-  .portfolio-tag {
+  .pf-badge {
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    background: var(--gold);
-    color: var(--dark);
-    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
     border-radius: 20px;
+    border: 1px solid rgba(196,153,90,0.3);
+    color: var(--kraft);
+    background: rgba(196,153,90,0.06);
+  }
+  .pf-badge-award {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(196,153,90,0.12);
   }
 
-  .portfolio-year {
+  .pf-label {
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 0.8rem;
-    color: var(--brown);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 10px;
   }
-
-  .portfolio-title {
-    font-size: 1.8rem;
-    margin: 0.25rem 0 0.2rem;
+  .pf-project-name {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
     color: var(--cream);
+    margin: 0 0 8px;
+    line-height: 1.1;
   }
-
-  .portfolio-url {
-    margin: 0 0 1rem;
-    font-size: 0.9rem;
-  }
-
-  .portfolio-url a {
+  .pf-link {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 13px;
     color: var(--gold);
     text-decoration: none;
-  }
-
-  .portfolio-url a:hover {
-    text-decoration: underline;
-  }
-
-  .portfolio-desc {
-    font-size: 16px;
-    line-height: 1.75;
-    color: var(--kraft);
+    display: inline-block;
     margin-bottom: 1.25rem;
+    opacity: 0.85;
+    transition: opacity 0.2s;
   }
+  .pf-link:hover { opacity: 1; }
 
-  .portfolio-tech {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .pf-project-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--kraft);
+    margin-bottom: 1.5rem;
+  }
+  .pf-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
-
-  .portfolio-tech li {
+  .pf-tags span {
     font-family: 'Helvetica Neue', sans-serif;
-    font-size: 0.75rem;
-    padding: 4px 12px;
-    border: 1px solid rgba(196,153,90,0.3);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 5px 14px;
     border-radius: 20px;
+    border: 1px solid rgba(196,153,90,0.25);
     color: var(--kraft);
   }
 
-  .portfolio-divider {
-    border: none;
-    border-top: 1px solid var(--kraft);
-    margin: 3rem 0;
-    opacity: 0.3;
+  /* SERVICES BENTO */
+  .pf-services-section {
+    background: var(--darkbrown);
+    padding: 80px 40px;
+    border-top: 1px solid rgba(196,153,90,0.15);
+    border-bottom: 1px solid rgba(196,153,90,0.15);
   }
-
-  .services-inline {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
+  .pf-services-inner {
+    max-width: 1100px;
+    margin: 0 auto;
   }
-
-  .service-inline-item {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-
-  .service-emoji {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .service-inline-item strong {
-    display: block;
-    font-size: 1rem;
+  .pf-section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
     color: var(--cream);
-    margin-bottom: 4px;
+    margin: 0 0 2.5rem;
+    text-align: center;
   }
-
-  .service-inline-item p {
-    font-size: 15px;
+  .pf-bento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+  .pf-bento-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(196,153,90,0.18);
+    border-radius: 12px;
+    padding: 28px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .pf-bento-item:hover {
+    border-color: rgba(196,153,90,0.5);
+    background: rgba(255,255,255,0.07);
+  }
+  .pf-bento-large {
+    grid-column: span 1;
+  }
+  .pf-bento-icon {
+    font-size: 2rem;
+    margin-bottom: 14px;
+  }
+  .pf-bento-item h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin: 0 0 10px;
+  }
+  .pf-bento-item p {
+    font-size: 14px;
     color: var(--kraft);
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
   }
 
-  .portfolio-cta {
+  /* CTA */
+  .pf-cta-section {
+    padding: 100px 40px;
     text-align: center;
-    padding: 2rem 0;
   }
-
-  .portfolio-cta h2 {
-    margin-bottom: 0.75rem;
+  .pf-cta-inner { max-width: 600px; margin: 0 auto; }
+  .pf-cta-headline {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--cream);
+    margin: 0 0 1rem;
+    line-height: 1.1;
   }
-
-  .portfolio-cta p {
+  .pf-cta-sub {
+    font-size: 1rem;
     color: var(--kraft);
-    margin-bottom: 1.75rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
   }
-
-  .cta-buttons {
+  .pf-cta-buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  @media (max-width: 600px) {
-    .portfolio-details { padding: 1.25rem; }
-    .portfolio-title { font-size: 1.4rem; }
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .pf-hero { padding: 60px 24px 52px; }
+    .pf-projects { padding: 0 24px; }
+    .pf-project { padding: 52px 0; }
+    .pf-project-inner { grid-template-columns: 1fr; gap: 32px; }
+    .pf-project-inner-rev { direction: ltr; }
+    .pf-bento { grid-template-columns: 1fr; }
+    .pf-services-section { padding: 60px 24px; }
+    .pf-cta-section { padding: 72px 24px; }
+    .pf-stats { gap: 1.25rem; }
+    .pf-stat-num { font-size: 2rem; }
   }
 </style>
