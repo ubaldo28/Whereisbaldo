@@ -2,9 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Portfolio — Ubaldo Figueroa" description="Web developer. Three live sites. One year. No prior experience.">
+<div class="portfolio-wrap">
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <img src="/baldo-london-eye.jpg" alt="Ubaldo Figueroa" class="hero-photo" />
+    </div>
+  </div>
   <div class="hero-left">
     <div class="hero-available"><span class="pulse"></span>Available for work</div>
     <h1 class="hero-name">
@@ -212,18 +218,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </section>
 
+</div>
 </BaseLayout>
 
 <style>
+.portfolio-wrap {
+  background: #111;
+  min-height: 100vh;
+}
+
 /* ── HERO ── */
 .hero {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 420px;
   grid-template-rows: 1fr auto;
   min-height: calc(100vh - 72px);
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 40px 0;
+  gap: 0 60px;
 }
 .hero-left {
   display: flex;
@@ -643,7 +656,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; min-height: auto; padding: 48px 24px 0; }
-  .hero-right { display: none; }
+  .hero-right { order: -1; height: 320px; }
+  .hero-photo-wrap { border-radius: 12px; max-height: 320px; }
   .hero-left { padding-bottom: 40px; }
   .hero-stats-bar { flex-wrap: wrap; gap: 1rem; padding: 24px 0; }
   .hstat-line { display: none; }
