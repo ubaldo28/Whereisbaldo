@@ -284,23 +284,24 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   overflow: hidden;
 }
 
-/* Photo: fills right half, fully blended */
+/* Photo: full image, right side */
 .pf-hero-bg {
   position: absolute;
-  top: 0; right: 0;
-  width: 60%;
+  top: 0;
+  right: 0;
+  width: 58%;
   height: 100%;
   z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 .pf-hero-bg img {
-  width: 100%;
-  height: 140%;
-  object-fit: cover;
-  object-position: center top;
+  height: 95%;
+  width: auto;
+  object-fit: contain;
   display: block;
   filter: brightness(0.68) contrast(1.05) grayscale(0.15);
-  transform: scale(0.50) translateY(-12%);
-  transform-origin: center top;
 }
 /* Multi-directional overlay that kills all edges */
 .pf-hero-overlay {
