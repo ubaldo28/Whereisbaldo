@@ -91,20 +91,27 @@ nav a:focus { outline: 2px solid var(--orange); outline-offset: 4px; border-radi
 
 /* ── HERO ── */
 .hero {
-  background:
-    linear-gradient(rgba(28,14,5,0.55), rgba(28,14,5,0.55)),
-    url('/baldo-scotland.jpg') center center / 100% auto no-repeat;
-  background-color: #1c0e05;
+  position: relative;
+  overflow: hidden;
   color: var(--cream);
-  padding: 90px 40px 80px;
-  min-height: 56.25vw;
+  text-align: center;
+  background: #1c0e05;
+}
+.hero-scotland-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.55);
+}
+.hero-text {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  padding: 60px 40px;
+  background: rgba(28,14,5,0.25);
 }
 .hero::before {
   content: '???';
