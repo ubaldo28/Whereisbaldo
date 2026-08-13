@@ -928,11 +928,11 @@ type();
   .pf-links { gap: 0; }
 
   /* Hero */
-  .pf-hero { min-height: 85vh; align-items: flex-start; padding-top: 36px; }
-  .pf-hero-bg { width: 55%; height: 100%; top: 0; right: 0; left: auto; }
+  .pf-hero { height: 88vh; min-height: 520px; max-height: 900px; }
+  .pf-hero-bg { top: 0; right: 0; bottom: 0; left: auto; width: 55%; }
   .pf-hero-bg img { object-fit: contain; object-position: right top; filter: brightness(0.6) contrast(1.1) grayscale(0.2); }
   .pf-hero-overlay { background: linear-gradient(to right, #151515 28%, rgba(21,21,21,0.9) 50%, rgba(21,21,21,0.2) 78%, transparent 100%), linear-gradient(to top, #151515 0%, transparent 12%); }
-  .pf-hero-text { padding: 0 24px; max-width: 100%; }
+  .pf-hero-text { position: absolute; top: 28px; left: 0; width: 65%; padding: 0 12px 0 24px; max-width: none; }
   .pf-h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
   .pf-role { font-size: 1rem; }
   .pf-desc { font-size: 0.95rem; margin-bottom: 2rem; }
