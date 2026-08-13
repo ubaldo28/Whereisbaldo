@@ -38,26 +38,66 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   </div>
 </section>
 
-<!-- ── STATS ── -->
-<div class="pf-stats">
-  <div class="pf-stat">
-    <span class="pf-sn">3</span>
-    <span class="pf-sl">Sites Shipped</span>
+<!-- ── CAPABILITIES ── -->
+<div class="pf-about">
+  <!-- Left: 3 capability cards -->
+  <div class="pf-caps">
+    <div class="pf-cap">
+      <span class="pf-cap-num">01 / What I build</span>
+      <h3 class="pf-cap-title">Full-Stack<br/>Web Dev</h3>
+      <p class="pf-cap-desc">Design, code, launch — no handoffs, no agency overhead. One person who owns the whole thing.</p>
+      <div class="pf-cap-tags"><span>Astro</span><span>JavaScript</span><span>HTML/CSS</span></div>
+    </div>
+    <div class="pf-cap">
+      <span class="pf-cap-num">02 / How I grow it</span>
+      <h3 class="pf-cap-title">SEO &<br/>Organic Growth</h3>
+      <p class="pf-cap-desc">Sites engineered to rank. Technical SEO, conversion strategy, and on-page content — built in, not bolted on.</p>
+      <div class="pf-cap-tags"><span>On-page SEO</span><span>Technical</span><span>Copy</span></div>
+    </div>
+    <div class="pf-cap">
+      <span class="pf-cap-num">03 / What you get</span>
+      <h3 class="pf-cap-title">Solo. Brief<br/>to Browser.</h3>
+      <p class="pf-cap-desc">From your first message to a live URL — strategy, design, dev, and deploy. Faster and leaner than an agency.</p>
+      <div class="pf-cap-tags"><span>End-to-end</span><span>Production-ready</span></div>
+    </div>
   </div>
-  <div class="pf-sdiv"></div>
-  <div class="pf-stat">
-    <span class="pf-sn">12</span>
-    <span class="pf-sl">Months Self-Taught</span>
-  </div>
-  <div class="pf-sdiv"></div>
-  <div class="pf-stat">
-    <span class="pf-sn">1</span>
-    <span class="pf-sl">Award-Winning Client</span>
-  </div>
-  <div class="pf-sdiv"></div>
-  <div class="pf-stat">
-    <span class="pf-sn">1</span>
-    <span class="pf-sl">One Man Team</span>
+
+  <!-- Right: credentials + tech stack -->
+  <div class="pf-cred-col">
+    <div class="pf-cred-box">
+      <p class="pf-cred-head">The case for hiring me</p>
+      <div class="pf-cred-row">
+        <span class="pf-dot-g"></span>
+        <span><strong>3 production sites</strong> you can visit right now</span>
+      </div>
+      <div class="pf-cred-row">
+        <span class="pf-dot-g"></span>
+        <span><strong>1 paying client</strong> who trusted me first</span>
+      </div>
+      <div class="pf-cred-row">
+        <span class="pf-dot-g"></span>
+        <span>Went from <strong>zero to hire-ready</strong> in 12 months</span>
+      </div>
+      <div class="pf-cred-row pf-cred-muted">
+        <span class="pf-dot-dim"></span>
+        <span>No bootcamp. No agency. No shortcuts.</span>
+      </div>
+    </div>
+    <div class="pf-stack-box">
+      <p class="pf-stack-head">Tech stack</p>
+      <div class="pf-stack-group">
+        <p class="pf-stack-cat">Frontend</p>
+        <div class="pf-pills"><span class="hi">Astro</span><span class="hi">JavaScript</span><span>HTML / CSS</span></div>
+      </div>
+      <div class="pf-stack-group">
+        <p class="pf-stack-cat">Deploy & tooling</p>
+        <div class="pf-pills"><span>Cloudflare Pages</span><span>Git / GitHub</span><span>Figma</span></div>
+      </div>
+      <div class="pf-stack-group">
+        <p class="pf-stack-cat">Growth</p>
+        <div class="pf-pills"><span class="hi">SEO</span><span>Analytics</span><span>Copywriting</span></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -388,7 +428,7 @@ type();
   padding-right: 2px;
   animation: blink-cursor 0.75s step-end infinite;
 }
-@keyframes blink-cursor { 0%,100%{border-color:#c49959} 50%{border-color:transparent} }
+@keyframes blink-cursor { 0%,100%{border-color:#4ade80} 50%{border-color:transparent} }
 .pf-desc {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -429,44 +469,144 @@ type();
   overflow: visible;
 }
 
-/* ── STATS ── */
-.pf-stats {
-  display: flex;
-  align-items: center;
+/* ── CAPABILITIES ── */
+.pf-about {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 16px;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 40px 60px;
+  padding: 56px 60px;
   border-top: 1px solid rgba(255,255,255,0.06);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  gap: 0;
 }
-.pf-stat {
-  flex: 1;
+
+/* Left: 3 capability cards stacked */
+.pf-caps {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 6px;
+  gap: 12px;
 }
-.pf-sn {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #c49959;
-  line-height: 1;
+.pf-cap {
+  background: #161616;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-top: 2px solid #4ade80;
+  border-radius: 10px;
+  padding: 20px 22px 18px;
+  flex: 1;
+}
+.pf-cap-num {
   display: block;
+  font-size: 10px;
+  font-family: monospace;
+  color: #4ade80;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
 }
-.pf-sl {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+.pf-cap-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+.pf-cap-desc {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+.pf-cap-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.pf-cap-tags span {
+  font-size: 10px;
+  font-family: monospace;
+  color: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Right: credentials + tech stack */
+.pf-cred-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pf-cred-box, .pf-stack-box {
+  background: #161616;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+.pf-cred-head, .pf-stack-head {
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  text-align: center;
-  display: block;
+  color: rgba(255,255,255,0.2);
+  margin: 0 0 14px;
 }
-.pf-sdiv {
-  width: 1px;
-  height: 40px;
-  background: rgba(255,255,255,0.08);
+.pf-cred-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+}
+.pf-cred-row:last-child { border-bottom: none; padding-bottom: 0; }
+.pf-cred-row:first-of-type { padding-top: 0; }
+.pf-cred-row strong { color: #fff; font-weight: 700; }
+.pf-cred-muted { color: rgba(255,255,255,0.28) !important; font-style: italic; }
+.pf-dot-g {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.pf-dot-dim {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.pf-stack-box { flex: 1; }
+.pf-stack-group { margin-bottom: 12px; }
+.pf-stack-group:last-child { margin-bottom: 0; }
+.pf-stack-cat {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.18);
+  margin: 0 0 7px;
+}
+.pf-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.pf-pills span {
+  font-size: 11px;
+  font-family: monospace;
+  color: rgba(255,255,255,0.42);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+.pf-pills span.hi {
+  color: #4ade80;
+  border-color: rgba(74,222,128,0.22);
+  background: rgba(74,222,128,0.06);
 }
 
 /* ── WORK ── */
