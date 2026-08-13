@@ -927,11 +927,11 @@ type();
   .pf-links a:not(.pf-cv) { display: none; }
   .pf-links { gap: 0; }
 
-  /* Hero — photo right-aligned like desktop, less height */
-  .pf-hero { min-height: 75vh; align-items: center; padding-top: 0; }
-  .pf-hero-bg { width: 55%; height: 100%; top: 0; right: 0; left: auto; }
-  .pf-hero-bg img { object-fit: contain; object-position: right top; filter: brightness(0.5) contrast(1.1) grayscale(0.25); }
-  .pf-hero-overlay { background: linear-gradient(to right, #151515 30%, rgba(21,21,21,0.92) 52%, rgba(21,21,21,0.25) 78%, transparent 100%), linear-gradient(to top, #151515 0%, transparent 15%); }
+  /* Hero — text starts at top, photo right-aligned alongside it */
+  .pf-hero { min-height: auto; align-items: flex-start; padding: 52px 0 60px; }
+  .pf-hero-bg { width: 52%; height: 100%; top: 0; right: 0; left: auto; }
+  .pf-hero-bg img { object-fit: contain; object-position: right top; filter: brightness(0.6) contrast(1.1) grayscale(0.2); }
+  .pf-hero-overlay { background: linear-gradient(to right, #151515 28%, rgba(21,21,21,0.9) 50%, rgba(21,21,21,0.2) 78%, transparent 100%), linear-gradient(to top, #151515 0%, transparent 12%); }
   .pf-hero-text { padding: 0 24px; max-width: 100%; }
   .pf-h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
   .pf-role { font-size: 1rem; }
