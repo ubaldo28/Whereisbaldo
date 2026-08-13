@@ -294,12 +294,12 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 }
 .pf-hero-bg img {
   width: 100%;
-  height: 100%;
+  height: 110%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center top;
   display: block;
   filter: brightness(0.45) contrast(1.1) grayscale(0.2);
-  transform: scale(0.93);
+  transform: scale(0.9) translateY(-8%);
   transform-origin: center top;
 }
 /* Multi-directional overlay that kills all edges */
@@ -308,7 +308,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   inset: 0;
   background:
     linear-gradient(to right, #151515 0%, rgba(21,21,21,0.85) 25%, rgba(21,21,21,0.4) 55%, transparent 80%),
-    linear-gradient(to top, #151515 0%, transparent 14%),
+    linear-gradient(to top, #151515 0%, transparent 8%),
     linear-gradient(to bottom, #151515 0%, transparent 20%),
     linear-gradient(to left, #151515 0%, transparent 30%);
 }
