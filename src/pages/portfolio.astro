@@ -16,6 +16,12 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 
 <!-- ── HERO ── -->
 <section class="pf-hero">
+  <!-- Background photo — full bleed, heavily blended -->
+  <div class="pf-hero-bg">
+    <img src="/baldo-headshot.jpg" alt="" aria-hidden="true" />
+    <div class="pf-hero-overlay"></div>
+  </div>
+  <!-- Text sits on top -->
   <div class="pf-hero-text">
     <div class="pf-available"><span class="pf-dot"></span>Available for work</div>
     <h1 class="pf-h1">
@@ -28,9 +34,6 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <a href="#work" class="pf-btn">See My Work →</a>
       <a href="/contact" class="pf-btn-ghost">Let's Talk</a>
     </div>
-  </div>
-  <div class="pf-hero-img">
-    <img src="/baldo-headshot.png" alt="Ubaldo Figueroa" />
   </div>
 </section>
 
@@ -273,17 +276,47 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 
 /* ── HERO ── */
 .pf-hero {
-  display: grid;
-  grid-template-columns: 1fr 480px;
+  position: relative;
   min-height: 92vh;
   width: 100%;
-  padding: 0 0 0 80px;
+  display: flex;
   align-items: center;
-  gap: 0;
-  position: relative;
   overflow: hidden;
 }
-.pf-hero-text { z-index: 2; }
+
+/* Photo: fills right half, fully blended */
+.pf-hero-bg {
+  position: absolute;
+  top: 0; right: 0;
+  width: 60%;
+  height: 100%;
+  z-index: 0;
+}
+.pf-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: brightness(0.45) contrast(1.1) grayscale(0.2);
+}
+/* Multi-directional overlay that kills all edges */
+.pf-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, #151515 0%, rgba(21,21,21,0.85) 25%, rgba(21,21,21,0.4) 55%, transparent 80%),
+    linear-gradient(to top, #151515 0%, transparent 25%),
+    linear-gradient(to bottom, #151515 0%, transparent 20%),
+    linear-gradient(to left, #151515 0%, transparent 30%);
+}
+
+.pf-hero-text {
+  position: relative;
+  z-index: 2;
+  padding: 0 0 0 80px;
+  max-width: 620px;
+}
 .pf-available {
   display: inline-flex;
   align-items: center;
@@ -358,36 +391,6 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   position: relative;
   height: 88vh;
   overflow: visible;
-}
-/* Right fade — blends into dark edge */
-.pf-hero-img::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to left, #151515 0%, rgba(21,21,21,0.6) 35%, transparent 65%),
-    linear-gradient(to top, #151515 0%, transparent 20%),
-    linear-gradient(to bottom, #151515 0%, transparent 15%);
-  z-index: 2;
-  pointer-events: none;
-}
-/* Dark overlay filter */
-.pf-hero-img::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(15,15,15,0.35);
-  z-index: 1;
-  pointer-events: none;
-}
-.pf-hero-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  filter: brightness(0.75) contrast(1.05) grayscale(0.15);
-  border-radius: 0;
 }
 
 /* ── STATS ── */
