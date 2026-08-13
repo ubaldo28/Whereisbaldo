@@ -118,12 +118,14 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
           <span class="burl">geniotech.co.uk</span>
         </div>
-        <video
-          src="/geniotech-hero.mp4"
-          poster="/portfolio-geniotech.jpg"
-          autoplay muted loop playsinline
-          class="pf-project-video"
-        ></video>
+        <div class="pf-browser-content">
+          <img src="/portfolio-geniotech.jpg" alt="GenioTech website" />
+          <video
+            src="/geniotech-hero.mp4"
+            autoplay muted loop playsinline
+            class="pf-hero-overlay"
+          ></video>
+        </div>
       </div>
       <div class="pf-project-info">
         <h2 class="pf-title">GenioTech</h2>
@@ -702,7 +704,18 @@ type();
 }
 .pf-browser img { width: 100%; display: block; transition: transform 0.5s; }
 .pf-browser:hover img { transform: scale(1.02); }
-.pf-project-video { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+.pf-browser-content { position: relative; overflow: hidden; line-height: 0; }
+.pf-hero-overlay {
+  position: absolute;
+  top: 8.3%;
+  left: 0;
+  width: 100%;
+  height: 79%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+.pf-browser:hover .pf-hero-overlay { transform: scale(1.02); }
 
 /* Project info */
 .pf-title {
