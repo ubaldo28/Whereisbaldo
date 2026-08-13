@@ -148,22 +148,13 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   </div>
 
   <!-- 02 -->
-  <div class="pf-project">
+  <div class="pf-project pf-flip">
     <div class="pf-project-meta">
       <span class="pf-num">02</span>
       <span class="pf-tag">Passion Project · January 2026</span>
       <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-link">potuswatchdaily.com ↗</a>
     </div>
     <div class="pf-project-body">
-      <div class="pf-browser">
-        <div class="pf-browser-bar">
-          <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
-          <span class="burl">potuswatchdaily.com</span>
-        </div>
-        <a href="https://potuswatchdaily.com" target="_blank" rel="noopener">
-          <img src="/portfolio-potus.jpg" alt="POTUS Watch Daily" />
-        </a>
-      </div>
       <div class="pf-project-info">
         <h2 class="pf-title">POTUS Watch Daily</h2>
         <p class="pf-pdesc">Started as practice. Became a real foreign policy intelligence platform publishing multiple dispatches every day — automated pipeline, breaking news ticker, AdSense, newsletter.</p>
@@ -175,6 +166,15 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         <div class="pf-tags">
           <span>Automated Publishing</span><span>Breaking News</span><span>Newsletter</span><span>AdSense</span>
         </div>
+      </div>
+      <div class="pf-browser">
+        <div class="pf-browser-bar">
+          <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
+          <span class="burl">potuswatchdaily.com</span>
+        </div>
+        <a href="https://potuswatchdaily.com" target="_blank" rel="noopener">
+          <img src="/portfolio-potus.jpg" alt="POTUS Watch Daily" />
+        </a>
       </div>
     </div>
   </div>
@@ -708,15 +708,16 @@ type();
   padding: 3px 10px;
   margin: 0 6px;
 }
-.pf-browser img { width: 100%; display: block; transition: transform 0.5s; }
+.pf-browser img { width: 100%; display: block; transition: transform 0.5s; aspect-ratio: 1318/896; object-fit: cover; object-position: top; }
 .pf-browser:hover img { transform: scale(1.02); }
-.pf-browser-content { position: relative; overflow: hidden; line-height: 0; container-type: inline-size; }
+.pf-browser-content { position: relative; overflow: hidden; line-height: 0; container-type: inline-size; aspect-ratio: 1318/896; }
+.pf-browser-content img { height: 100%; }
 .pf-hero-overlay {
   position: absolute;
-  top: 8.3%;
+  top: 10.6%;
   left: 0;
   width: 100%;
-  height: 79%;
+  height: 89%;
   object-fit: cover;
   display: block;
   transition: transform 0.5s;
@@ -724,7 +725,7 @@ type();
 .pf-browser:hover .pf-hero-overlay { transform: scale(1.02); }
 .pf-hero-text {
   position: absolute;
-  top: 23%;
+  top: 29%;
   left: 0;
   width: 53%;
   padding-left: 4.5%;
