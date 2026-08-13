@@ -123,7 +123,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <video
             src="/geniotech-hero.mp4"
             autoplay muted loop playsinline
-            class="pf-hero-overlay"
+            class="pf-vid-overlay"
           ></video>
           <div class="pf-hero-text">
             <span class="pf-hero-badge"><span class="pf-dot-closed"></span>Closed · reopens tomorrow at 9 am</span>
@@ -712,7 +712,7 @@ type();
 .pf-browser:hover img { transform: scale(1.02); }
 .pf-browser-content { position: relative; overflow: hidden; line-height: 0; container-type: inline-size; aspect-ratio: 1318/896; }
 .pf-browser-content img { height: 100%; }
-.pf-hero-overlay {
+.pf-vid-overlay {
   position: absolute;
   top: 10.6%;
   left: 0;
@@ -722,7 +722,7 @@ type();
   display: block;
   transition: transform 0.5s;
 }
-.pf-browser:hover .pf-hero-overlay { transform: scale(1.02); }
+.pf-browser:hover .pf-vid-overlay { transform: scale(1.02); }
 .pf-hero-text {
   position: absolute;
   top: 29%;
@@ -912,25 +912,54 @@ type();
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
-  .pf-nav { padding: 20px 24px; }
-  .pf-hero { grid-template-columns: 1fr; padding: 60px 24px 40px; min-height: auto; gap: 40px; }
-  .pf-hero-img { height: 50vw; min-height: 280px; }
-  .pf-hero-img::before { background: linear-gradient(to bottom, #151515 0%, transparent 20%); }
-  .pf-stats { padding: 32px 24px; flex-wrap: wrap; gap: 1.5rem; }
-  .pf-sdiv { display: none; }
-  .pf-stat { flex: 0 0 45%; }
   .pf-work, .pf-services { padding: 60px 24px; }
   .pf-project-body,
-  .pf-flip .pf-project-body { grid-template-columns: 1fr; gap: 32px; }
+  .pf-flip .pf-project-body { grid-template-columns: 1fr; gap: 28px; }
   .pf-flip .pf-project-body .pf-browser { order: -1; }
   .pf-sgrid { grid-template-columns: 1fr 1fr; }
   .pf-cta { padding: 80px 24px; }
   .pf-foot { padding: 20px 24px; }
+  .pf-about { grid-template-columns: 1fr; padding: 36px 24px; gap: 16px; }
 }
-@media (max-width: 540px) {
-  .pf-links { gap: 1.2rem; }
+@media (max-width: 768px) {
+  /* Nav — hide links, keep logo + CV */
+  .pf-nav { padding: 16px 20px; }
+  .pf-links a:not(.pf-cv) { display: none; }
+  .pf-links { gap: 0; }
+
+  /* Hero */
+  .pf-hero { min-height: 85vh; }
+  .pf-hero-text { padding: 0 24px; max-width: 100%; }
+  .pf-h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .pf-role { font-size: 1rem; }
+  .pf-desc { font-size: 0.95rem; margin-bottom: 2rem; }
+  .pf-hero-bg { width: 50%; opacity: 0.85; }
+  .pf-btns { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .pf-btn, .pf-btn-ghost { width: 100%; text-align: center; padding: 13px 20px; }
+
+  /* Capabilities */
+  .pf-about { grid-template-columns: 1fr; padding: 32px 20px; gap: 12px; }
+  .pf-caps { gap: 10px; }
+  .pf-cap { padding: 16px 18px 14px; }
+  .pf-cred-col { gap: 10px; }
+
+  /* Projects */
+  .pf-project { padding: 48px 0; }
+  .pf-project-meta { flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+  .pf-num { font-size: 2.5rem; }
+  .pf-title { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+  .pf-pdesc { font-size: 0.9rem; }
+
+  /* Services */
   .pf-sgrid { grid-template-columns: 1fr; }
-  .pf-stat { flex: 0 0 100%; }
-  .pf-h1 { font-size: 2.4rem; }
+  .pf-sec-title { font-size: 1.8rem; }
+
+  /* CTA */
+  .pf-cta { padding: 64px 20px; }
+  .pf-cta-title { font-size: clamp(2rem, 8vw, 3rem); }
+  .pf-cta-btns { flex-direction: column; align-items: center; }
+
+  /* Footer */
+  .pf-foot { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
 }
 </style>
