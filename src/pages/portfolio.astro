@@ -301,6 +301,8 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   filter: brightness(0.45) contrast(1.1) grayscale(0.2);
   transform: scale(0.62) translateY(-28%);
   transform-origin: center top;
+  -webkit-mask-image: radial-gradient(ellipse 75% 85% at 50% 30%, black 40%, transparent 75%);
+  mask-image: radial-gradient(ellipse 75% 85% at 50% 30%, black 40%, transparent 75%);
 }
 /* Multi-directional overlay that kills all edges */
 .pf-hero-overlay {
