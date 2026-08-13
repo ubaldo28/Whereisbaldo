@@ -18,7 +18,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 <section class="pf-hero">
   <!-- Background photo — full bleed, heavily blended -->
   <div class="pf-hero-bg">
-    <img src="/baldo-headshot.jpg" alt="" aria-hidden="true" />
+    <img src="/baldo-headshot.png" alt="" aria-hidden="true" />
     <div class="pf-hero-overlay"></div>
   </div>
   <!-- Text sits on top -->
@@ -301,14 +301,6 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   filter: brightness(0.45) contrast(1.1) grayscale(0.2);
   transform: scale(0.62) translateY(-12%);
   transform-origin: center top;
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-  mask-composite: intersect;
 }
 /* Multi-directional overlay that kills all edges */
 .pf-hero-overlay {
