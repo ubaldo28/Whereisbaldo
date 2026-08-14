@@ -23,7 +23,7 @@ export async function onRequestPost(context) {
       body: JSON.stringify({
         from: 'Portfolio Contact <noreply@whereisbaldo.com>',
         to: ['ubaldofigueroamx@gmail.com'],
-        reply_to: [{ email: email, name: name }],
+        reply_to: `${name} <${email}>`,
         subject: `New inquiry from ${name} — reply to: ${email}`,
         html: `
           <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a;">
