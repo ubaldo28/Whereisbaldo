@@ -3,7 +3,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 ---
 <PortfolioLayout title="Ubaldo Figueroa — Web Developer & Growth Hacker" description="Three live sites. One year. No prior experience.">
 
-<!-- ── NAV ── -->
+<!-- ── PORTFOLIO NAV ── -->
 <nav class="pf-nav">
   <a href="/" class="pf-logo">UF</a>
   <div class="pf-links">
@@ -16,83 +16,100 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 
 <!-- ── HERO ── -->
 <section class="pf-hero">
+  <!-- Background photo — full bleed, heavily blended -->
   <div class="pf-hero-bg">
     <img src="/baldo-headshot.png" alt="" aria-hidden="true" />
     <div class="pf-hero-overlay"></div>
   </div>
+  <!-- Text sits on top -->
   <div class="pf-hero-text">
     <div class="pf-available"><span class="pf-dot"></span>Available for work</div>
-    <h1 class="pf-h1">Ubaldo<br/>Figueroa</h1>
+    <h1 class="pf-h1">
+      Hey, I'm<br/>
+      <span class="pf-accent">Ubaldo Figueroa</span>
+    </h1>
     <p class="pf-role">Full-Stack Developer & Growth Engineer</p>
-    <p class="pf-desc">From the barber's chair to shipping three live production sites in under a year. I own the full stack — strategy, design, build, deploy. No agency. No shortcuts.</p>
+    <p class="pf-desc">From the barber's chair to designing, building, and shipping three live production sites from scratch. I own the full stack: design, build, and deploy. Direct to work with, fast to deliver, and built to integrate whether you need a freelance partner or a high-velocity full-time developer.</p>
+    <p class="pf-typed"><span class="pf-hash">#</span> I build <span id="pf-tw"></span></p>
     <div class="pf-btns">
       <a href="/contact" class="pf-btn">Hire Me →</a>
       <a href="/Ubaldo_Resume.docx" download class="pf-btn-ghost">Download CV ↓</a>
     </div>
+    <div class="pf-tech-strip">
+      <span>Astro</span><span class="pf-strip-dot">·</span>
+      <span>JavaScript</span><span class="pf-strip-dot">·</span>
+      <span>HTML / CSS</span><span class="pf-strip-dot">·</span>
+      <span>Cloudflare</span><span class="pf-strip-dot">·</span>
+      <span>Git</span><span class="pf-strip-dot">·</span>
+      <span>Figma</span><span class="pf-strip-dot">·</span>
+      <span>SEO</span>
+    </div>
   </div>
 </section>
 
-<!-- ── STATS ── -->
-<div class="pf-stats">
-  <div class="pf-stat">
-    <span class="pf-stat-n">3</span>
-    <span class="pf-stat-l">Production sites shipped</span>
+
+<!-- ── CAPABILITIES ── -->
+<div class="pf-about">
+  <!-- Left: 3 capability cards -->
+  <div class="pf-caps">
+    <div class="pf-cap">
+      <span class="pf-cap-num">01 / What I build</span>
+      <h3 class="pf-cap-title">Full-Stack<br/>Web Dev</h3>
+      <p class="pf-cap-desc">Design, code, launch — no handoffs, no agency overhead. One person who owns the whole thing.</p>
+      <div class="pf-cap-tags"><span>Astro</span><span>JavaScript</span><span>HTML/CSS</span></div>
+    </div>
+    <div class="pf-cap">
+      <span class="pf-cap-num">02 / How I grow it</span>
+      <h3 class="pf-cap-title">SEO &<br/>Organic Growth</h3>
+      <p class="pf-cap-desc">Sites engineered to rank. Technical SEO, conversion strategy, and on-page content — built in, not bolted on.</p>
+      <div class="pf-cap-tags"><span>On-page SEO</span><span>Technical</span><span>Copy</span></div>
+    </div>
+    <div class="pf-cap">
+      <span class="pf-cap-num">03 / What you get</span>
+      <h3 class="pf-cap-title">Solo. Brief<br/>to Browser.</h3>
+      <p class="pf-cap-desc">From your first message to a live URL — strategy, design, dev, and deploy. Faster and leaner than an agency.</p>
+      <div class="pf-cap-tags"><span>End-to-end</span><span>Production-ready</span></div>
+    </div>
   </div>
-  <div class="pf-stat-div"></div>
-  <div class="pf-stat">
-    <span class="pf-stat-n">1</span>
-    <span class="pf-stat-l">Paying client</span>
-  </div>
-  <div class="pf-stat-div"></div>
-  <div class="pf-stat">
-    <span class="pf-stat-n">12</span>
-    <span class="pf-stat-l">Months to hire-ready</span>
-  </div>
-  <div class="pf-stat-div"></div>
-  <div class="pf-stat">
-    <span class="pf-stat-n">0</span>
-    <span class="pf-stat-l">Bootcamps</span>
+
+  <!-- Right: credentials + tech stack -->
+  <div class="pf-cred-col">
+    <div class="pf-cred-box">
+      <p class="pf-cred-head">The case for hiring me</p>
+      <div class="pf-cred-row">
+        <span class="pf-dot-g"></span>
+        <span><strong>3 production sites</strong> you can visit right now</span>
+      </div>
+      <div class="pf-cred-row">
+        <span class="pf-dot-g"></span>
+        <span><strong>1 paying client</strong> who trusted me first</span>
+      </div>
+      <div class="pf-cred-row">
+        <span class="pf-dot-g"></span>
+        <span>Went from <strong>zero to hire-ready</strong> in 12 months</span>
+      </div>
+      <div class="pf-cred-row pf-cred-muted">
+        <span class="pf-dot-dim"></span>
+        <span>No bootcamp. No agency. No shortcuts.</span>
+      </div>
+    </div>
+    <div class="pf-stack-box">
+      <p class="pf-stack-head">Tech stack</p>
+      <div class="pf-stack-group">
+        <p class="pf-stack-cat">Frontend</p>
+        <div class="pf-pills"><span class="hi">Astro</span><span class="hi">JavaScript</span><span>HTML / CSS</span></div>
+      </div>
+      <div class="pf-stack-group">
+        <p class="pf-stack-cat">Deploy & tooling</p>
+        <div class="pf-pills"><span>Cloudflare Pages</span><span>Git / GitHub</span><span>Figma</span></div>
+      </div>
+      <div class="pf-stack-group">
+        <p class="pf-stack-cat">Growth</p>
+        <div class="pf-pills"><span class="hi">SEO</span><span>Analytics</span><span>Copywriting</span></div>
+      </div>
+    </div>
   </div>
 </div>
-
-<!-- ── ABOUT ── -->
-<section class="pf-about">
-  <div class="pf-about-inner">
-    <div class="pf-about-left">
-      <p class="pf-eyebrow">About</p>
-      <h2 class="pf-about-title">I build things<br/>that work.</h2>
-      <p class="pf-about-body">Went from barber to self-taught developer in under a year. No bootcamp. No agency. Just shipping — three production sites, a paying client, and systems built for scale.</p>
-      <p class="pf-about-body">I own the full stack: strategy, design, code, and deploy. One person, zero handoffs, fast delivery.</p>
-    </div>
-    <div class="pf-about-right">
-      <div class="pf-caps-grid">
-        <div class="pf-cap-item">
-          <span class="pf-cap-n">01</span>
-          <h3>Full-Stack Development</h3>
-          <p>Design to deployment. Astro, JavaScript, HTML/CSS — built from scratch, not assembled from templates.</p>
-        </div>
-        <div class="pf-cap-item">
-          <span class="pf-cap-n">02</span>
-          <h3>SEO & Organic Growth</h3>
-          <p>Technical SEO, on-page copy, and conversion strategy built into the architecture from day one.</p>
-        </div>
-        <div class="pf-cap-item">
-          <span class="pf-cap-n">03</span>
-          <h3>Automation & AI</h3>
-          <p>Pipelines, workflows, and AI-assisted systems that run without you.</p>
-        </div>
-        <div class="pf-cap-item">
-          <span class="pf-cap-n">04</span>
-          <h3>Brief to Browser</h3>
-          <p>One contact, end-to-end ownership — faster and leaner than any agency.</p>
-        </div>
-      </div>
-      <div class="pf-stack-row">
-        <span>Astro</span><span>JavaScript</span><span>HTML / CSS</span><span>Cloudflare</span><span>Git</span><span>Figma</span><span>SEO</span><span>Resend</span><span>Analytics</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── AVAILABLE BANNER ── -->
 <div class="pf-avail-banner">
@@ -103,21 +120,53 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   </div>
 </div>
 
+<!-- ── SKILLS ── -->
+<section class="pf-skills">
+  <div class="pf-skills-inner">
+    <div class="pf-skills-left">
+      <p class="pf-label">Expertise</p>
+      <h2 class="pf-skills-title">What I<br/>bring to<br/>the table.</h2>
+    </div>
+    <div class="pf-skills-right">
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">HTML / CSS</span><span class="pf-skill-pct">90%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:90%"></div></div>
+      </div>
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">JavaScript</span><span class="pf-skill-pct">78%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:78%"></div></div>
+      </div>
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">Astro</span><span class="pf-skill-pct">85%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:85%"></div></div>
+      </div>
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">SEO & Analytics</span><span class="pf-skill-pct">88%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:88%"></div></div>
+      </div>
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">UI / UX Design</span><span class="pf-skill-pct">80%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:80%"></div></div>
+      </div>
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">AI & Automation</span><span class="pf-skill-pct">82%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:82%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── WORK ── -->
 <section class="pf-work" id="work">
-  <div class="pf-work-header">
-    <p class="pf-eyebrow">Selected Work</p>
-    <h2 class="pf-work-title">Projects.</h2>
-  </div>
+  <p class="pf-label">Selected Work</p>
+  <h2 class="pf-work-title">Projects<span class="pf-work-dot">.</span></h2>
 
   <!-- 01 -->
   <div class="pf-project">
     <div class="pf-project-meta">
       <span class="pf-num">01</span>
-      <div class="pf-project-meta-right">
-        <span class="pf-tag">Freelance · 2026</span>
-        <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-link">geniotech.co.uk ↗</a>
-      </div>
+      <span class="pf-tag">Freelance · 2026</span>
+      <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-link">geniotech.co.uk ↗</a>
     </div>
     <div class="pf-project-body">
       <div class="pf-browser">
@@ -127,11 +176,15 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         </div>
         <div class="pf-browser-content">
           <img src="/portfolio-geniotech.jpg" alt="GenioTech website" />
-          <video src="/geniotech-hero.mp4" autoplay muted loop playsinline class="pf-vid-overlay"></video>
+          <video
+            src="/geniotech-hero.mp4"
+            autoplay muted loop playsinline
+            class="pf-vid-overlay"
+          ></video>
           <div class="pf-gt-text">
             <span class="pf-hero-badge"><span class="pf-dot-closed"></span>Closed · reopens tomorrow at 9 am</span>
             <h3 class="pf-hero-h">Dundee's go-to<br>repair shop.<br><em class="pf-hero-green">Fast. Trusted.</em></h3>
-            <p class="pf-hero-p">Cracked screens fixed in under an hour. iPhones, Samsungs, tablets, laptops.</p>
+            <p class="pf-hero-p">Cracked screens fixed in under an hour. iPhones, Samsungs, tablets, laptops. Award-winning service on Hilltown.</p>
             <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-hero-btn">Book a repair</a>
           </div>
         </div>
@@ -140,16 +193,12 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         <h2 class="pf-title">GenioTech</h2>
         <p class="pf-pdesc">A phone repair shop in Dundee needed a real web presence — not a template. Built solo: online booking, e-commerce, photo gallery, blog, newsletter, and a PWA customers can install.</p>
         <div class="pf-metrics">
-          <div class="pf-metric">
-            <span class="pf-metric-val">Award</span>
-            <span class="pf-metric-lab">Scottish Independent Retail</span>
-          </div>
-          <div class="pf-metric">
-            <span class="pf-metric-val">4.7★</span>
-            <span class="pf-metric-lab">200+ verified reviews</span>
-          </div>
+          <div>🏆 Scottish Independent Retail Award Winner</div>
+          <div>4.7★ · 200+ Verified Reviews</div>
         </div>
-        <div class="pf-tags"><span>Booking</span><span>E-commerce</span><span>PWA</span><span>SEO</span><span>Newsletter</span></div>
+        <div class="pf-tags">
+          <span>Booking System</span><span>E-commerce</span><span>PWA</span><span>SEO</span><span>Newsletter</span>
+        </div>
         <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
     </div>
@@ -159,30 +208,21 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   <div class="pf-project pf-flip">
     <div class="pf-project-meta">
       <span class="pf-num">02</span>
-      <div class="pf-project-meta-right">
-        <span class="pf-tag">Passion Project · January 2026</span>
-        <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-link">potuswatchdaily.com ↗</a>
-      </div>
+      <span class="pf-tag">Passion Project · January 2026</span>
+      <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-link">potuswatchdaily.com ↗</a>
     </div>
     <div class="pf-project-body">
       <div class="pf-project-info">
         <h2 class="pf-title">POTUS Watch Daily</h2>
         <p class="pf-pdesc">Started as practice. Became a real foreign policy intelligence platform publishing multiple dispatches every day — automated pipeline, breaking news ticker, AdSense, newsletter.</p>
         <div class="pf-metrics">
-          <div class="pf-metric">
-            <span class="pf-metric-val">Daily</span>
-            <span class="pf-metric-lab">Automated publishing</span>
-          </div>
-          <div class="pf-metric">
-            <span class="pf-metric-val">Live</span>
-            <span class="pf-metric-lab">Breaking news ticker</span>
-          </div>
-          <div class="pf-metric">
-            <span class="pf-metric-val">AdSense</span>
-            <span class="pf-metric-lab">Monetised</span>
-          </div>
+          <div>🔁 Publishes multiple times daily</div>
+          <div>🔴 Live breaking news ticker</div>
+          <div>💰 AdSense monetised</div>
         </div>
-        <div class="pf-tags"><span>Automation</span><span>Breaking News</span><span>Newsletter</span><span>AdSense</span></div>
+        <div class="pf-tags">
+          <span>Automated Publishing</span><span>Breaking News</span><span>Newsletter</span><span>AdSense</span>
+        </div>
         <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
       <div class="pf-browser">
@@ -201,10 +241,8 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   <div class="pf-project">
     <div class="pf-project-meta">
       <span class="pf-num">03</span>
-      <div class="pf-project-meta-right">
-        <span class="pf-tag">Personal Brand · March 2026</span>
-        <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-link">whereisbaldo.com ↗</a>
-      </div>
+      <span class="pf-tag">Personal Brand · March 2026</span>
+      <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-link">whereisbaldo.com ↗</a>
     </div>
     <div class="pf-project-body">
       <div class="pf-browser">
@@ -220,16 +258,13 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         <h2 class="pf-title">Where Is Baldo?</h2>
         <p class="pf-pdesc">Built in a hotel room in Scotland, waiting on a government letter. Custom design, dark mode, email subscriptions, push notifications, Google Analytics, AdSense, and a full PWA.</p>
         <div class="pf-metrics">
-          <div class="pf-metric">
-            <span class="pf-metric-val">Global</span>
-            <span class="pf-metric-lab">Readers in multiple countries</span>
-          </div>
-          <div class="pf-metric">
-            <span class="pf-metric-val">PWA</span>
-            <span class="pf-metric-lab">Installable on any device</span>
-          </div>
+          <div>🌍 Readers in multiple countries</div>
+          <div>📲 Installable PWA</div>
+          <div>📧 Email + push notifications</div>
         </div>
-        <div class="pf-tags"><span>Custom Design</span><span>Dark Mode</span><span>Resend</span><span>Webpushr</span><span>AdSense</span></div>
+        <div class="pf-tags">
+          <span>Custom Design</span><span>Dark Mode</span><span>Resend API</span><span>Webpushr</span><span>AdSense</span>
+        </div>
         <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
     </div>
@@ -256,61 +291,39 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 
 <!-- ── SERVICES ── -->
 <section class="pf-services" id="services">
-  <div class="pf-services-inner">
-    <div class="pf-services-left">
-      <p class="pf-eyebrow">What I Offer</p>
-      <h2 class="pf-sec-title">Services.</h2>
-    </div>
-    <div class="pf-services-list">
-      <a href="/services" class="pf-srow">
-        <span class="pf-srow-n">01</span>
-        <div class="pf-srow-body">
-          <h3>Web Design & Development</h3>
-          <p>Custom sites from scratch. Fast, mobile-first, built to rank. Not templates.</p>
-        </div>
-        <span class="pf-srow-arrow">↗</span>
-      </a>
-      <a href="/services" class="pf-srow">
-        <span class="pf-srow-n">02</span>
-        <div class="pf-srow-body">
-          <h3>AI Automation</h3>
-          <p>Systems that handle emails, workflows, and scheduling automatically.</p>
-        </div>
-        <span class="pf-srow-arrow">↗</span>
-      </a>
-      <a href="/services" class="pf-srow">
-        <span class="pf-srow-n">03</span>
-        <div class="pf-srow-body">
-          <h3>SEO</h3>
-          <p>Technical and content SEO so the right people find you.</p>
-        </div>
-        <span class="pf-srow-arrow">↗</span>
-      </a>
-      <a href="/services" class="pf-srow">
-        <span class="pf-srow-n">04</span>
-        <div class="pf-srow-body">
-          <h3>Email Marketing</h3>
-          <p>Lists, sequences, newsletters, campaigns.</p>
-        </div>
-        <span class="pf-srow-arrow">↗</span>
-      </a>
-      <a href="/services" class="pf-srow">
-        <span class="pf-srow-n">05</span>
-        <div class="pf-srow-body">
-          <h3>Paid Ads</h3>
-          <p>Facebook, Instagram & Google ads done properly.</p>
-        </div>
-        <span class="pf-srow-arrow">↗</span>
-      </a>
-      <a href="/services" class="pf-srow">
-        <span class="pf-srow-n">06</span>
-        <div class="pf-srow-body">
-          <h3>Chatbot Setup</h3>
-          <p>AI bots that qualify leads and book appointments 24/7.</p>
-        </div>
-        <span class="pf-srow-arrow">↗</span>
-      </a>
-    </div>
+  <p class="pf-label">What I Offer</p>
+  <h2 class="pf-sec-title">Services</h2>
+  <div class="pf-sgrid">
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">💻</span>
+      <h3>Web Design & Development</h3>
+      <p>Custom sites from scratch. Fast, mobile-first, built to rank. Not templates.</p>
+    </a>
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">🤖</span>
+      <h3>AI Automation</h3>
+      <p>Systems that handle emails, workflows, and scheduling automatically.</p>
+    </a>
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">🔍</span>
+      <h3>SEO</h3>
+      <p>Technical and content SEO so the right people find you.</p>
+    </a>
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">📧</span>
+      <h3>Email Marketing</h3>
+      <p>Lists, sequences, newsletters, campaigns.</p>
+    </a>
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">📢</span>
+      <h3>Paid Ads</h3>
+      <p>Facebook, Instagram & Google ads done properly.</p>
+    </a>
+    <a href="/services" class="pf-scard">
+      <span class="pf-sicon">💬</span>
+      <h3>Chatbot Setup</h3>
+      <p>AI bots that qualify leads and book 24/7.</p>
+    </a>
   </div>
 </section>
 
@@ -318,7 +331,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 <section class="pf-contact" id="contact">
   <div class="pf-contact-inner">
     <div class="pf-contact-left">
-      <p class="pf-eyebrow">Let's build something</p>
+      <p class="pf-label">Let's build something</p>
       <h2 class="pf-cta-title">Have a project?<br/><em>Let's talk.</em></h2>
       <p class="pf-cta-sub">Available for freelance and the right full-time role. You work with me directly — no agency, no handoffs.</p>
       <a href="/Ubaldo_Resume.docx" download class="pf-btn-ghost pf-contact-cv">Download Resume ↓</a>
@@ -344,18 +357,23 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- ── PORTFOLIO FOOTER ── -->
 <div class="pf-foot">
   <span>© 2026 Ubaldo Figueroa</span>
   <a href="/">whereisbaldo.com</a>
 </div>
 
 <script>
+// Contact form
 document.getElementById('pf-contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('pf-form-btn');
   const msg = document.getElementById('pf-form-msg');
-  const data = { name: this.name.value, email: this.email.value, message: this.message.value };
+  const data = {
+    name: this.name.value,
+    email: this.email.value,
+    message: this.message.value
+  };
   btn.textContent = 'Sending...';
   btn.disabled = true;
   try {
@@ -383,6 +401,23 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   btn.textContent = 'Send Message →';
   btn.disabled = false;
 });
+
+// Typewriter
+const words = ["websites that rank.", "tools that automate.", "brands that grow.", "sites from scratch."];
+let wi = 0, ci = 0, deleting = false;
+const el = document.getElementById('pf-tw');
+function type() {
+  const word = words[wi];
+  if (!deleting) {
+    el.textContent = word.slice(0, ++ci);
+    if (ci === word.length) { deleting = true; setTimeout(type, 1800); return; }
+  } else {
+    el.textContent = word.slice(0, --ci);
+    if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
+  }
+  setTimeout(type, deleting ? 50 : 80);
+}
+type();
 </script>
 
 </PortfolioLayout>
@@ -393,21 +428,20 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 72px;
+  padding: 10px 60px;
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(8,8,8,0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  background: rgba(21,21,21,0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .pf-logo {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 900;
   color: #fff;
   text-decoration: none;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
 }
 .pf-links {
   display: flex;
@@ -416,25 +450,21 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
 }
 .pf-links a {
   text-decoration: none;
-  color: rgba(255,255,255,0.38);
+  color: rgba(255,255,255,0.55);
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   transition: color 0.2s;
 }
 .pf-links a:hover { color: #fff; }
 .pf-cv {
-  color: rgba(255,255,255,0.7) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.2);
   padding: 8px 18px;
   border-radius: 6px;
-  transition: background 0.2s, border-color 0.2s, color 0.2s !important;
+  transition: background 0.2s !important;
 }
-.pf-cv:hover {
-  background: rgba(255,255,255,0.06) !important;
-  border-color: rgba(255,255,255,0.3) !important;
-  color: #fff !important;
-}
+.pf-cv:hover { background: rgba(255,255,255,0.08) !important; }
 
 /* ── HERO ── */
 .pf-hero {
@@ -442,13 +472,16 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   min-height: 92vh;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 24px;
   overflow: hidden;
 }
+
+/* Photo: fills right portion, fully blended */
 .pf-hero-bg {
   position: absolute;
   top: 0; right: 0;
-  width: 56%;
+  width: 65%;
   height: 100%;
   z-index: 0;
 }
@@ -458,34 +491,36 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   object-fit: contain;
   object-position: center top;
   display: block;
-  filter: brightness(0.48) contrast(1.1) grayscale(0.4);
+  filter: brightness(0.65) contrast(1.1) grayscale(0.25);
 }
+/* Blend left edge and bottom into dark background */
 .pf-hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, #080808 0%, rgba(8,8,8,0.96) 28%, rgba(8,8,8,0.55) 54%, transparent 78%),
-    linear-gradient(to top, #080808 0%, transparent 10%);
+    linear-gradient(to right, #151515 0%, rgba(21,21,21,0.9) 25%, rgba(21,21,21,0.35) 55%, transparent 80%),
+    linear-gradient(to top, #151515 0%, transparent 7%);
 }
+
 .pf-hero-text {
   position: relative;
   z-index: 2;
-  padding: 0 0 0 72px;
+  padding: 0 0 0 80px;
   max-width: 620px;
 }
 .pf-available {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #4ade80;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
 }
 .pf-dot {
-  width: 7px; height: 7px;
+  width: 8px; height: 8px;
   background: #4ade80;
   border-radius: 50%;
   animation: blink 2s infinite;
@@ -493,286 +528,318 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
 
 .pf-h1 {
-  font-size: clamp(4rem, 7.5vw, 7rem);
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
   font-weight: 900;
-  line-height: 0.94;
+  line-height: 1.05;
   color: #fff;
-  margin: 0 0 1.75rem;
-  letter-spacing: -0.035em;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
 }
+.pf-accent { color: #c49959; }
 .pf-role {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  color: rgba(255,255,255,0.4);
-  margin: 0 0 1.5rem;
-  letter-spacing: 0.01em;
+  color: rgba(255,255,255,0.55);
+  margin: 0 0 1.25rem;
 }
+.pf-typed {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.4);
+  margin: 0 0 2.5rem;
+  font-family: monospace;
+}
+.pf-hash { color: #c49959; margin-right: 4px; }
+#pf-tw {
+  color: #4ade80;
+  border-right: 2px solid #4ade80;
+  padding-right: 2px;
+  animation: blink-cursor 0.75s step-end infinite;
+}
+@keyframes blink-cursor { 0%,100%{border-color:#4ade80} 50%{border-color:transparent} }
 .pf-desc {
-  font-size: 1rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.4);
-  max-width: 460px;
-  margin-bottom: 2.75rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+  max-width: 480px;
+  margin-bottom: 2.5rem;
 }
-.pf-btns { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.pf-btns { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
 .pf-btn {
   display: inline-block;
-  background: #ffffff;
-  color: #080808;
+  background: #c49959;
+  color: #151515;
   text-decoration: none;
   padding: 14px 28px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  transition: opacity 0.2s, transform 0.15s;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s;
 }
-.pf-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.pf-btn:hover { opacity: 0.85; }
 .pf-btn-ghost {
   display: inline-block;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
-  border: 1px solid rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.15);
   padding: 14px 28px;
-  border-radius: 6px;
-  transition: border-color 0.2s, color 0.2s;
+  border-radius: 8px;
+  transition: all 0.2s;
 }
-.pf-btn-ghost:hover { border-color: rgba(255,255,255,0.38); color: #fff; }
+.pf-btn-ghost:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
 
-/* ── STATS STRIP ── */
-.pf-stats {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-  align-items: center;
-  padding: 52px 72px;
-  background: #0c0c0c;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.pf-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.pf-stat-n {
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-  font-weight: 900;
-  color: #fff;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-.pf-stat-l {
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 0.04em;
-}
-.pf-stat-div {
-  width: 1px;
-  height: 48px;
-  background: rgba(255,255,255,0.07);
-  margin: 0 48px;
+.pf-hero-img {
+  position: relative;
+  height: 88vh;
+  overflow: visible;
 }
 
-/* ── EYEBROW ── */
-.pf-eyebrow {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.22);
-  margin-bottom: 1rem;
+/* ── BIO ── */
+.pf-bio {
+  padding: 80px 60px;
+  border-bottom: 1px solid rgba(196,153,89,0.18);
 }
-
-/* ── ABOUT ── */
-.pf-about {
-  padding: 108px 72px;
-}
-.pf-about-inner {
-  max-width: 1280px;
+.pf-bio-inner {
+  max-width: 1300px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 88px;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 60px;
   align-items: start;
 }
-.pf-about-title {
-  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
-  font-weight: 900;
-  line-height: 1.08;
+.pf-bio-headline {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.15;
   color: #fff;
-  margin-bottom: 1.75rem;
-  letter-spacing: -0.025em;
+  margin-top: 12px;
 }
-.pf-about-body {
+.pf-bio-right p {
   font-size: 15px;
-  line-height: 1.9;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 1rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 1.2em;
 }
-.pf-about-body:last-child { margin-bottom: 0; }
+.pf-bio-right p:last-child { margin-bottom: 0; }
+.pf-bio-right p strong { color: #fff; }
+.pf-bio-role {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c49959;
+  margin-bottom: 0.75rem !important;
+}
 
-/* 2x2 capability grid */
-.pf-caps-grid {
+/* ── CAPABILITIES ── */
+.pf-about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 20px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 16px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 56px 60px;
+  border-bottom: 1px solid rgba(196,153,89,0.18);
 }
-.pf-cap-item {
-  background: #0f0f0f;
-  padding: 28px 24px;
+
+/* Left: 3 capability cards stacked */
+.pf-caps {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
-.pf-cap-n {
+.pf-cap {
+  background: #161616;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-top: 2px solid #4ade80;
+  border-radius: 10px;
+  padding: 20px 22px 18px;
+  flex: 1;
+}
+.pf-cap-num {
+  display: block;
   font-size: 10px;
   font-family: monospace;
-  color: rgba(255,255,255,0.18);
+  color: #4ade80;
   letter-spacing: 0.08em;
+  margin-bottom: 10px;
 }
-.pf-cap-item h3 {
-  font-size: 0.9rem;
-  font-weight: 700;
+.pf-cap-title {
+  font-size: 1.15rem;
+  font-weight: 800;
   color: #fff;
-  line-height: 1.3;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 8px;
 }
-.pf-cap-item p {
+.pf-cap-desc {
   font-size: 12.5px;
-  color: rgba(255,255,255,0.32);
-  line-height: 1.7;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.65;
+  margin: 0 0 14px;
 }
-
-/* Tech stack pills */
-.pf-stack-row {
+.pf-cap-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px;
 }
-.pf-stack-row span {
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.32);
+.pf-cap-tags span {
+  font-size: 10px;
+  font-family: monospace;
+  color: rgba(255,255,255,0.28);
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.07);
-  padding: 5px 13px;
-  border-radius: 100px;
-  letter-spacing: 0.02em;
+  padding: 3px 8px;
+  border-radius: 4px;
 }
 
-/* ── AVAILABLE BANNER ── */
-.pf-avail-banner {
-  background: rgba(74,222,128,0.03);
-  border-top: 1px solid rgba(74,222,128,0.09);
-  border-bottom: 1px solid rgba(74,222,128,0.09);
-  padding: 18px 72px;
-}
-.pf-avail-inner {
-  max-width: 1280px;
-  margin: 0 auto;
+/* Right: credentials + tech stack */
+.pf-cred-col {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 12px;
 }
-.pf-avail-dot {
-  width: 7px; height: 7px;
+.pf-cred-box, .pf-stack-box {
+  background: #161616;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+.pf-cred-head, .pf-stack-head {
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  margin: 0 0 14px;
+}
+.pf-cred-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+}
+.pf-cred-row:last-child { border-bottom: none; padding-bottom: 0; }
+.pf-cred-row:first-of-type { padding-top: 0; }
+.pf-cred-row strong { color: #fff; font-weight: 700; }
+.pf-cred-muted { color: rgba(255,255,255,0.28) !important; font-style: italic; }
+.pf-dot-g {
+  width: 5px; height: 5px;
   border-radius: 50%;
   background: #4ade80;
   flex-shrink: 0;
-  animation: blink 2s infinite;
+  margin-top: 6px;
 }
-.pf-avail-text {
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.45);
-  flex: 1;
-}
-.pf-avail-cta {
-  font-size: 12px;
-  font-weight: 700;
-  color: #4ade80;
-  text-decoration: none;
+.pf-dot-dim {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
   flex-shrink: 0;
-  transition: opacity 0.2s;
+  margin-top: 6px;
 }
-.pf-avail-cta:hover { opacity: 0.7; }
+.pf-stack-box { flex: 1; }
+.pf-stack-group { margin-bottom: 12px; }
+.pf-stack-group:last-child { margin-bottom: 0; }
+.pf-stack-cat {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.18);
+  margin: 0 0 7px;
+}
+.pf-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.pf-pills span {
+  font-size: 11px;
+  font-family: monospace;
+  color: rgba(255,255,255,0.42);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+.pf-pills span.hi {
+  color: #4ade80;
+  border-color: rgba(74,222,128,0.22);
+  background: rgba(74,222,128,0.06);
+}
 
 /* ── WORK ── */
 .pf-work {
-  max-width: 1280px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 108px 72px;
+  padding: 100px 60px;
 }
-.pf-work-header {
-  margin-bottom: 0;
-}
-.pf-work-title {
-  font-size: clamp(3rem, 6vw, 5.5rem);
-  font-weight: 900;
-  color: #fff;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  margin-bottom: 0;
+.pf-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c49959;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(196,153,89,0.18);
 }
 .pf-project {
-  padding: 80px 0;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 70px 0;
+  border-bottom: 1px solid rgba(196,153,89,0.18);
 }
 .pf-project-meta {
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 .pf-num {
-  font-size: clamp(4rem, 9vw, 8rem);
+  font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 900;
-  color: rgba(255,255,255,0.035);
+  color: rgba(196,153,89,0.12);
   line-height: 1;
   flex-shrink: 0;
-  letter-spacing: -0.05em;
-}
-.pf-project-meta-right {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex: 1;
+  letter-spacing: -0.03em;
 }
 .pf-tag {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.3);
+  flex: 1;
 }
 .pf-link {
   font-size: 13px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.4);
+  font-weight: 700;
+  color: #c49959;
   text-decoration: none;
-  transition: color 0.2s;
+  flex-shrink: 0;
 }
-.pf-link:hover { color: #fff; }
+.pf-link:hover { opacity: 0.7; }
 .pf-project-body {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 64px;
+  gap: 60px;
   align-items: start;
 }
 .pf-flip .pf-project-body { grid-template-columns: 1fr 1.2fr; }
+.pf-flip .pf-project-meta { flex-direction: row-reverse; }
+.pf-flip .pf-tag { text-align: right; }
 
-/* Browser mockup */
+/* Browser */
 .pf-browser {
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 48px 120px rgba(0,0,0,0.85);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
   background: #111;
 }
 .pf-browser-bar {
@@ -780,7 +847,7 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   align-items: center;
   gap: 5px;
   padding: 10px 14px;
-  background: #131313;
+  background: #1a1a1a;
   border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 .bd { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
@@ -791,7 +858,7 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   flex: 1;
   text-align: center;
   font-size: 11px;
-  color: rgba(255,255,255,0.16);
+  color: rgba(255,255,255,0.2);
   background: rgba(255,255,255,0.04);
   border-radius: 4px;
   padding: 3px 10px;
@@ -799,18 +866,14 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
 }
 .pf-browser img { width: 100%; display: block; transition: transform 0.5s; }
 .pf-browser:hover img { transform: scale(1.02); }
-.pf-browser-content {
-  position: relative;
-  overflow: hidden;
-  line-height: 0;
-  container-type: inline-size;
-  aspect-ratio: 1318/896;
-}
+.pf-browser-content { position: relative; overflow: hidden; line-height: 0; container-type: inline-size; aspect-ratio: 1318/896; }
 .pf-browser-content img { height: 100%; }
 .pf-vid-overlay {
   position: absolute;
-  top: 10.6%; left: 0;
-  width: 100%; height: 89%;
+  top: 10.6%;
+  left: 0;
+  width: 100%;
+  height: 89%;
   object-fit: cover;
   display: block;
   transition: transform 0.5s;
@@ -818,7 +881,8 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
 .pf-browser:hover .pf-vid-overlay { transform: scale(1.02); }
 .pf-gt-text {
   position: absolute;
-  top: 29%; left: 0;
+  top: 29%;
+  left: 0;
   width: 53%;
   padding-left: 4.5%;
   pointer-events: none;
@@ -837,7 +901,8 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   margin-bottom: 2cqw;
 }
 .pf-dot-closed {
-  width: 0.55cqw; height: 0.55cqw;
+  width: 0.55cqw;
+  height: 0.55cqw;
   border-radius: 50%;
   background: rgb(93,202,165);
   flex-shrink: 0;
@@ -872,41 +937,29 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
 
 /* Project info */
 .pf-title {
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 900;
   color: #fff;
   margin: 0 0 1rem;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 .pf-pdesc {
-  font-size: 14.5px;
-  line-height: 1.9;
-  color: rgba(255,255,255,0.38);
-  margin-bottom: 1.75rem;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 1.5rem;
 }
 .pf-metrics {
   display: flex;
-  gap: 2.5rem;
-  margin-bottom: 1.75rem;
-  flex-wrap: wrap;
-}
-.pf-metric {
-  display: flex;
   flex-direction: column;
-  gap: 4px;
-}
-.pf-metric-val {
-  font-size: 1rem;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1;
-}
-.pf-metric-lab {
-  font-size: 11px;
-  color: rgba(255,255,255,0.28);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.03);
+  border-left: 2px solid #c49959;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
 }
 .pf-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .pf-tags span {
@@ -915,29 +968,17 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   letter-spacing: 0.06em;
   padding: 4px 12px;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.28);
+  border: 1px solid rgba(196,153,89,0.2);
+  color: rgba(196,153,89,0.6);
 }
-.pf-view-btn {
-  display: inline-block;
-  margin-top: 1.5rem;
-  font-size: 13px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.6);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.14);
-  padding-bottom: 2px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.pf-view-btn:hover { color: #fff; border-color: rgba(255,255,255,0.45); }
 
 /* ── MARQUEE ── */
 .pf-marquee {
   overflow: hidden;
-  border-top: 1px solid rgba(255,255,255,0.04);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(196,153,89,0.18);
+  border-bottom: 1px solid rgba(196,153,89,0.18);
   padding: 20px 0;
-  background: #060606;
+  background: #0a0a0a;
 }
 .pf-marquee-track {
   display: flex;
@@ -945,126 +986,238 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   gap: 2rem;
   width: max-content;
   animation: scroll 22s linear infinite;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.13);
+  color: rgba(255,255,255,0.25);
 }
-.mx { color: rgba(255,255,255,0.07); }
+.mx { color: #c49959; }
 @keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* ── SERVICES ── */
 .pf-services {
-  padding: 108px 72px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-.pf-services-inner {
-  max-width: 1280px;
+  max-width: 1300px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 0.55fr 1fr;
-  gap: 80px;
-  align-items: start;
+  padding: 100px 60px;
 }
 .pf-sec-title {
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
   color: #fff;
-  letter-spacing: -0.04em;
+  margin: 0 0 3rem;
   line-height: 1;
 }
-.pf-services-list {
+.pf-sgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pf-scard {
+  background: #111;
+  padding: 36px 30px;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  transition: background 0.25s;
 }
-.pf-srow {
+.pf-scard:hover { background: #161616; }
+.pf-sicon { font-size: 1.75rem; }
+.pf-scard h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0; }
+.pf-scard p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.65; margin: 0; }
+
+/* ── CTA ── */
+.pf-cta {
+  padding: 120px 60px;
+  text-align: center;
+  border-top: 1px solid rgba(196,153,89,0.18);
+}
+.pf-cta-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.05;
+  margin: 0.5rem 0 1.25rem;
+}
+.pf-cta-title em { color: #c49959; font-style: italic; }
+.pf-cta-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.75;
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+}
+.pf-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── TECH STRIP ── */
+.pf-tech-strip {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  padding: 24px 0;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  text-decoration: none;
-  color: inherit;
-  transition: padding-left 0.25s ease;
+  flex-wrap: wrap;
+  gap: 0.4rem 0;
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  max-width: 480px;
 }
-.pf-srow:last-child { border-bottom: 1px solid rgba(255,255,255,0.05); }
-.pf-srow:hover { padding-left: 8px; }
-.pf-srow:hover .pf-srow-n { color: rgba(255,255,255,0.5); }
-.pf-srow:hover .pf-srow-body h3 { color: #fff; }
-.pf-srow:hover .pf-srow-arrow { opacity: 1; transform: translate(3px, -3px); }
-.pf-srow-n {
-  font-size: 10px;
-  font-family: monospace;
-  color: rgba(255,255,255,0.18);
-  flex-shrink: 0;
-  width: 22px;
-  transition: color 0.25s;
-}
-.pf-srow-body { flex: 1; }
-.pf-srow-body h3 {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.68);
-  margin-bottom: 4px;
-  transition: color 0.25s;
-}
-.pf-srow-body p {
-  font-size: 12.5px;
+.pf-tech-strip span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: rgba(255,255,255,0.28);
-  line-height: 1.55;
 }
-.pf-srow-arrow {
-  font-size: 16px;
-  color: rgba(255,255,255,0.22);
-  flex-shrink: 0;
-  opacity: 0.5;
-  transition: opacity 0.25s, transform 0.25s;
-}
+.pf-strip-dot { color: rgba(196,153,89,0.5) !important; padding: 0 0.5rem; }
 
-/* ── CONTACT ── */
-.pf-contact {
-  padding: 108px 72px;
-  border-top: 1px solid rgba(255,255,255,0.05);
+/* ── AVAILABLE BANNER ── */
+.pf-avail-banner {
+  border-top: 1px solid rgba(196,153,89,0.18);
+  border-bottom: 1px solid rgba(196,153,89,0.18);
+  background: rgba(74,222,128,0.03);
+  padding: 18px 60px;
 }
-.pf-contact-inner {
-  max-width: 1280px;
+.pf-avail-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.pf-avail-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: blink 2s infinite;
+}
+.pf-avail-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  flex: 1;
+}
+.pf-avail-cta {
+  font-size: 12px;
+  font-weight: 700;
+  color: #c49959;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+.pf-avail-cta:hover { opacity: 0.7; }
+
+/* ── SKILLS ── */
+.pf-skills {
+  padding: 80px 60px;
+  border-bottom: 1px solid rgba(196,153,89,0.18);
+}
+.pf-skills-inner {
+  max-width: 1300px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 88px;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 60px;
+  align-items: start;
+}
+.pf-skills-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  margin-top: 12px;
+}
+.pf-skills-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 4px;
+}
+.pf-skill-item { display: flex; flex-direction: column; gap: 8px; }
+.pf-skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pf-skill-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+}
+.pf-skill-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: #c49959;
+  font-family: monospace;
+}
+.pf-skill-bar {
+  height: 3px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.pf-skill-fill {
+  height: 100%;
+  background: linear-gradient(to right, #c49959, rgba(196,153,89,0.5));
+  border-radius: 2px;
+}
+
+/* ── WORK TITLE ── */
+.pf-work-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  margin: 0 0 3rem;
+  letter-spacing: -0.03em;
+}
+.pf-work-dot { color: #c49959; }
+
+/* ── VIEW BUTTON ── */
+.pf-view-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 13px;
+  font-weight: 700;
+  color: #c49959;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(196,153,89,0.3);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+.pf-view-btn:hover { opacity: 0.7; }
+
+/* ── CONTACT FORM ── */
+.pf-contact {
+  padding: 100px 60px;
+  border-top: 1px solid rgba(196,153,89,0.18);
+}
+.pf-contact-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
   align-items: start;
 }
 .pf-contact-left { padding-top: 4px; }
 .pf-contact-cv { display: inline-block; margin-top: 2rem; }
-.pf-cta-title {
-  font-size: clamp(2.8rem, 5.5vw, 5rem);
-  font-weight: 900;
-  color: #fff;
-  line-height: 1.02;
-  margin: 0.5rem 0 1.25rem;
-  letter-spacing: -0.035em;
-}
-.pf-cta-title em { color: rgba(255,255,255,0.55); font-style: italic; }
-.pf-cta-sub {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.35);
-  line-height: 1.85;
-  max-width: 420px;
-}
 .pf-form { display: flex; flex-direction: column; gap: 20px; }
 .pf-form-group { display: flex; flex-direction: column; gap: 8px; }
 .pf-form-label {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.3);
 }
 .pf-form-input {
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
   padding: 14px 16px;
   font-size: 14px;
   color: #fff;
@@ -1073,8 +1226,8 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   transition: border-color 0.2s;
   width: 100%;
 }
-.pf-form-input::placeholder { color: rgba(255,255,255,0.16); }
-.pf-form-input:focus { border-color: rgba(255,255,255,0.28); }
+.pf-form-input::placeholder { color: rgba(255,255,255,0.2); }
+.pf-form-input:focus { border-color: rgba(196,153,89,0.5); }
 .pf-form-textarea { min-height: 140px; resize: vertical; }
 .pf-form-submit { width: 100%; justify-content: center; cursor: pointer; border: none; font-family: inherit; font-size: 14px; }
 
@@ -1083,76 +1236,68 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 72px;
-  border-top: 1px solid rgba(255,255,255,0.04);
+  padding: 24px 60px;
+  border-top: 1px solid rgba(196,153,89,0.18);
   font-size: 12px;
-  color: rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.2);
 }
-.pf-foot a { color: rgba(255,255,255,0.14); text-decoration: none; transition: color 0.2s; }
-.pf-foot a:hover { color: rgba(255,255,255,0.4); }
+.pf-foot a { color: rgba(255,255,255,0.2); text-decoration: none; }
+.pf-foot a:hover { color: rgba(255,255,255,0.5); }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 1100px) {
-  .pf-nav { padding: 18px 40px; }
-  .pf-stats { padding: 44px 40px; }
-  .pf-stat-div { margin: 0 28px; }
-  .pf-about { padding: 80px 40px; }
-  .pf-work { padding: 80px 40px; }
-  .pf-services { padding: 80px 40px; }
-  .pf-contact { padding: 80px 40px; }
-  .pf-foot { padding: 24px 40px; }
-  .pf-avail-banner { padding: 18px 40px; }
-  .pf-hero-text { padding-left: 40px; }
-}
-@media (max-width: 900px) {
-  .pf-about-inner { grid-template-columns: 1fr; gap: 48px; }
-  .pf-services-inner { grid-template-columns: 1fr; gap: 36px; }
-  .pf-project-body, .pf-flip .pf-project-body { grid-template-columns: 1fr; gap: 32px; }
+@media (max-width: 960px) {
+  .pf-work, .pf-services { padding: 60px 24px; }
+  .pf-project-body,
+  .pf-flip .pf-project-body { grid-template-columns: 1fr; gap: 28px; }
   .pf-flip .pf-project-body .pf-browser { order: -1; }
-  .pf-contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .pf-sgrid { grid-template-columns: 1fr 1fr; }
+  .pf-cta { padding: 80px 24px; }
+  .pf-foot { padding: 20px 24px; }
+  .pf-about { grid-template-columns: 1fr; padding: 36px 24px; gap: 16px; }
 }
 @media (max-width: 768px) {
+  /* Nav — hide links, keep logo + CV */
   .pf-nav { padding: 16px 20px; }
   .pf-links a:not(.pf-cv) { display: none; }
   .pf-links { gap: 0; }
 
-  .pf-hero { min-height: 88vh; }
-  .pf-hero-bg { width: 56%; top: 60px; }
-  .pf-hero-overlay {
-    background:
-      linear-gradient(to right, rgba(8,8,8,0.99) 0%, rgba(8,8,8,0.7) 25%, rgba(8,8,8,0.1) 50%, transparent 62%),
-      linear-gradient(to top, #080808 0%, transparent 6%);
-  }
-  .pf-hero-text { position: absolute; top: 32px; left: 0; width: 68%; padding: 0 12px 0 20px; max-width: none; }
-  .pf-h1 { font-size: clamp(2.5rem, 10vw, 3.8rem); }
-  .pf-role { font-size: 0.875rem; }
-  .pf-desc { font-size: 0.9rem; margin-bottom: 2rem; }
+  /* Hero */
+  .pf-hero { height: 88vh; min-height: 520px; max-height: 900px; }
+  .pf-hero-bg { top: 60px; right: 0; bottom: 0; left: auto; width: 55%; }
+  .pf-hero-bg img { object-fit: contain; object-position: right top; filter: brightness(0.6) contrast(1.1) grayscale(0.2); }
+  .pf-hero-overlay { background: linear-gradient(to right, rgba(21,21,21,0.98) 0%, rgba(21,21,21,0.65) 22%, rgba(21,21,21,0.08) 48%, transparent 58%), linear-gradient(to top, #151515 0%, transparent 5%); }
+  .pf-hero-text { position: absolute; top: 28px; left: 0; width: 65%; padding: 0 12px 0 24px; max-width: none; }
+  .pf-h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .pf-role { font-size: 1rem; }
+  .pf-desc { font-size: 0.95rem; margin-bottom: 2rem; }
   .pf-btns { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   .pf-btn, .pf-btn-ghost { width: 100%; text-align: center; padding: 13px 20px; }
+  .pf-available { white-space: nowrap; }
+  .pf-typed { white-space: nowrap; }
 
-  .pf-stats {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px 20px;
-    padding: 40px 20px;
-  }
-  .pf-stat-div { display: none; }
+  /* Capabilities */
+  .pf-about { grid-template-columns: 1fr; padding: 32px 20px; gap: 12px; }
+  .pf-caps { gap: 10px; }
+  .pf-cap { padding: 16px 18px 14px; }
+  .pf-cred-col { gap: 10px; }
 
-  .pf-about { padding: 64px 20px; }
-  .pf-about-inner { gap: 40px; }
-  .pf-caps-grid { grid-template-columns: 1fr; }
+  /* Projects */
+  .pf-project { padding: 48px 0; }
+  .pf-project-meta { flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+  .pf-num { font-size: 2.5rem; }
+  .pf-title { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+  .pf-pdesc { font-size: 0.9rem; }
 
-  .pf-work { padding: 64px 20px; }
-  .pf-project { padding: 52px 0; }
-  .pf-num { font-size: 3.5rem; }
-  .pf-project-meta { flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-  .pf-project-meta-right { flex-direction: column; gap: 0.25rem; align-items: flex-start; }
+  /* Services */
+  .pf-sgrid { grid-template-columns: 1fr; }
+  .pf-sec-title { font-size: 1.8rem; }
 
-  .pf-services { padding: 64px 20px; }
-  .pf-services-inner { gap: 28px; }
-  .pf-sec-title { font-size: 2.5rem; }
+  /* CTA */
+  .pf-cta { padding: 64px 20px; }
+  .pf-cta-title { font-size: clamp(2rem, 8vw, 3rem); }
+  .pf-cta-btns { flex-direction: column; align-items: center; }
 
-  .pf-contact { padding: 64px 20px; }
-  .pf-avail-banner { padding: 16px 20px; }
+  /* Footer */
   .pf-foot { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
 }
 </style>
