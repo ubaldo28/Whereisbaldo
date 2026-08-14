@@ -1,18 +1,36 @@
 {
   "name": "Where Is Baldo?",
   "short_name": "WhereIsBaldo?",
-  "description": "Real travel. Honest stories. A California boy. 22 countries. No plan.",
+  "description": "Web developer, growth hacker, and travel writer. Real stories. Real projects. Built from scratch.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#2C1810",
-  "theme_color": "#2C1810",
+  "background_color": "#ffffff",
+  "theme_color": "#0a0a0a",
   "orientation": "portrait-primary",
   "icons": [
     {
       "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
