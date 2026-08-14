@@ -22,7 +22,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: 'Portfolio Contact <hello@whereisbaldo.com>',
-        to: ['baldolanded@gmail.com'],
+        to: ['hello@whereisbaldo.com'],
         reply_to: `${name} <${email}>`,
         subject: `New inquiry from ${name}`,
         html: `
