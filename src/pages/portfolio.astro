@@ -35,6 +35,15 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <a href="/contact" class="pf-btn">Hire Me →</a>
       <a href="/Ubaldo_Resume.docx" download class="pf-btn-ghost">Download CV ↓</a>
     </div>
+    <div class="pf-tech-strip">
+      <span>Astro</span><span class="pf-strip-dot">·</span>
+      <span>JavaScript</span><span class="pf-strip-dot">·</span>
+      <span>HTML / CSS</span><span class="pf-strip-dot">·</span>
+      <span>Cloudflare</span><span class="pf-strip-dot">·</span>
+      <span>Git</span><span class="pf-strip-dot">·</span>
+      <span>Figma</span><span class="pf-strip-dot">·</span>
+      <span>SEO</span>
+    </div>
   </div>
 </section>
 
@@ -102,9 +111,55 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   </div>
 </div>
 
+<!-- ── AVAILABLE BANNER ── -->
+<div class="pf-avail-banner">
+  <div class="pf-avail-inner">
+    <span class="pf-avail-dot"></span>
+    <span class="pf-avail-text">Currently available for freelance projects & full-time roles</span>
+    <a href="/contact" class="pf-avail-cta">Let's Talk →</a>
+  </div>
+</div>
+
+<!-- ── SKILLS ── -->
+<section class="pf-skills">
+  <div class="pf-skills-inner">
+    <div class="pf-skills-left">
+      <p class="pf-label">Expertise</p>
+      <h2 class="pf-skills-title">What I<br/>bring to<br/>the table.</h2>
+    </div>
+    <div class="pf-skills-right">
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">HTML / CSS</span><span class="pf-skill-pct">90%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:90%"></div></div>
+      </div>
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">JavaScript</span><span class="pf-skill-pct">78%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:78%"></div></div>
+      </div>
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">Astro</span><span class="pf-skill-pct">85%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:85%"></div></div>
+      </div>
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">SEO & Analytics</span><span class="pf-skill-pct">88%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:88%"></div></div>
+      </div>
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">UI / UX Design</span><span class="pf-skill-pct">80%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:80%"></div></div>
+      </div>
+      <div class="pf-skill-item">
+        <div class="pf-skill-top"><span class="pf-skill-name">AI & Automation</span><span class="pf-skill-pct">82%</span></div>
+        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:82%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── WORK ── -->
 <section class="pf-work" id="work">
   <p class="pf-label">Selected Work</p>
+  <h2 class="pf-work-title">Projects<span class="pf-work-dot">.</span></h2>
 
   <!-- 01 -->
   <div class="pf-project">
@@ -144,6 +199,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         <div class="pf-tags">
           <span>Booking System</span><span>E-commerce</span><span>PWA</span><span>SEO</span><span>Newsletter</span>
         </div>
+        <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
     </div>
   </div>
@@ -167,6 +223,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         <div class="pf-tags">
           <span>Automated Publishing</span><span>Breaking News</span><span>Newsletter</span><span>AdSense</span>
         </div>
+        <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
       <div class="pf-browser">
         <div class="pf-browser-bar">
@@ -208,6 +265,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         <div class="pf-tags">
           <span>Custom Design</span><span>Dark Mode</span><span>Resend API</span><span>Webpushr</span><span>AdSense</span>
         </div>
+        <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
     </div>
   </div>
@@ -269,14 +327,32 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   </div>
 </section>
 
-<!-- ── CTA ── -->
-<section class="pf-cta">
-  <p class="pf-label">Let's build something</p>
-  <h2 class="pf-cta-title">Ready when<br/><em>you are.</em></h2>
-  <p class="pf-cta-sub">Available for freelance and the right full-time role. You work with me directly — no agency, no handoffs.</p>
-  <div class="pf-cta-btns">
-    <a href="/contact" class="pf-btn">Get in Touch →</a>
-    <a href="/Ubaldo_Resume.docx" download class="pf-btn-ghost">Download Resume</a>
+<!-- ── CONTACT ── -->
+<section class="pf-contact" id="contact">
+  <div class="pf-contact-inner">
+    <div class="pf-contact-left">
+      <p class="pf-label">Let's build something</p>
+      <h2 class="pf-cta-title">Have a project?<br/><em>Let's talk.</em></h2>
+      <p class="pf-cta-sub">Available for freelance and the right full-time role. You work with me directly — no agency, no handoffs.</p>
+      <a href="/Ubaldo_Resume.docx" download class="pf-btn-ghost pf-contact-cv">Download Resume ↓</a>
+    </div>
+    <div class="pf-contact-right">
+      <form class="pf-form" action="https://formspree.io/f/ubaldofigueroamx@gmail.com" method="POST">
+        <div class="pf-form-group">
+          <label class="pf-form-label">Name</label>
+          <input type="text" name="name" class="pf-form-input" placeholder="Your name" required />
+        </div>
+        <div class="pf-form-group">
+          <label class="pf-form-label">Email</label>
+          <input type="email" name="email" class="pf-form-input" placeholder="your@email.com" required />
+        </div>
+        <div class="pf-form-group">
+          <label class="pf-form-label">Message</label>
+          <textarea name="message" class="pf-form-input pf-form-textarea" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="pf-btn pf-form-submit">Send Message →</button>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -936,6 +1012,184 @@ type();
   margin: 0 auto 2.5rem;
 }
 .pf-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── TECH STRIP ── */
+.pf-tech-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0;
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  max-width: 480px;
+}
+.pf-tech-strip span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+}
+.pf-strip-dot { color: rgba(196,153,89,0.5) !important; padding: 0 0.5rem; }
+
+/* ── AVAILABLE BANNER ── */
+.pf-avail-banner {
+  border-top: 1px solid rgba(196,153,89,0.18);
+  border-bottom: 1px solid rgba(196,153,89,0.18);
+  background: rgba(74,222,128,0.03);
+  padding: 18px 60px;
+}
+.pf-avail-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.pf-avail-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: blink 2s infinite;
+}
+.pf-avail-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  flex: 1;
+}
+.pf-avail-cta {
+  font-size: 12px;
+  font-weight: 700;
+  color: #c49959;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+.pf-avail-cta:hover { opacity: 0.7; }
+
+/* ── SKILLS ── */
+.pf-skills {
+  padding: 80px 60px;
+  border-bottom: 1px solid rgba(196,153,89,0.18);
+}
+.pf-skills-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 60px;
+  align-items: start;
+}
+.pf-skills-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  margin-top: 12px;
+}
+.pf-skills-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 4px;
+}
+.pf-skill-item { display: flex; flex-direction: column; gap: 8px; }
+.pf-skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pf-skill-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+}
+.pf-skill-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: #c49959;
+  font-family: monospace;
+}
+.pf-skill-bar {
+  height: 3px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.pf-skill-fill {
+  height: 100%;
+  background: linear-gradient(to right, #c49959, rgba(196,153,89,0.5));
+  border-radius: 2px;
+}
+
+/* ── WORK TITLE ── */
+.pf-work-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  margin: 0 0 3rem;
+  letter-spacing: -0.03em;
+}
+.pf-work-dot { color: #c49959; }
+
+/* ── VIEW BUTTON ── */
+.pf-view-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 13px;
+  font-weight: 700;
+  color: #c49959;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(196,153,89,0.3);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+.pf-view-btn:hover { opacity: 0.7; }
+
+/* ── CONTACT FORM ── */
+.pf-contact {
+  padding: 100px 60px;
+  border-top: 1px solid rgba(196,153,89,0.18);
+}
+.pf-contact-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+.pf-contact-left { padding-top: 4px; }
+.pf-contact-cv { display: inline-block; margin-top: 2rem; }
+.pf-form { display: flex; flex-direction: column; gap: 20px; }
+.pf-form-group { display: flex; flex-direction: column; gap: 8px; }
+.pf-form-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.pf-form-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #fff;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.pf-form-input::placeholder { color: rgba(255,255,255,0.2); }
+.pf-form-input:focus { border-color: rgba(196,153,89,0.5); }
+.pf-form-textarea { min-height: 140px; resize: vertical; }
+.pf-form-submit { width: 100%; justify-content: center; cursor: pointer; border: none; font-family: inherit; font-size: 14px; }
 
 /* ── FOOTER ── */
 .pf-foot {
