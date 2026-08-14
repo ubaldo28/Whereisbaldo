@@ -495,8 +495,8 @@ type();
 .pf-hero-bg img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: right top;
+  object-fit: cover;
+  object-position: center top;
   display: block;
   filter: grayscale(0.65) contrast(1.08) brightness(0.92) saturate(1.4);
 }
@@ -504,8 +504,7 @@ type();
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, #fff 0%, rgba(255,255,255,0.97) 26%, rgba(255,255,255,0.45) 50%, transparent 66%),
-    linear-gradient(to left, #fff 0%, rgba(255,255,255,0.92) 8%, rgba(255,255,255,0.55) 20%, transparent 38%),
+    linear-gradient(to right, #fff 0%, rgba(255,255,255,0.95) 18%, transparent 36%),
     linear-gradient(to top, #fff 0%, transparent 7%);
 }
 .pf-hero-text {
