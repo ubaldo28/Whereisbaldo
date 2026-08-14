@@ -38,6 +38,21 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   </div>
 </section>
 
+<!-- ── BIO ── -->
+<section class="pf-bio">
+  <div class="pf-bio-inner">
+    <div class="pf-bio-left">
+      <p class="pf-label">About</p>
+      <h2 class="pf-bio-headline">Not your typical<br/>developer story.</h2>
+    </div>
+    <div class="pf-bio-right">
+      <p>I've built three real, live websites from scratch — no prior experience, no bootcamp, no team. One was a paid freelance job for a real paying client. One started as a practice project and turned into something I actually care about. One is my own personal brand, built in a hotel room in Scotland, waiting on a government letter.</p>
+      <p>Before I ever touched code, I was a barber. I spent years sitting with people at their most vulnerable — and in that chair I heard everything. Marriages falling apart. Dreams never said out loud. People trust you with their appearance and end up trusting you with everything else. I brought that same attention to detail and care for people into every site I've built.</p>
+      <p>I learn by shipping. I figure things out. I don't wait to be ready. No CS degree, no bootcamp — just live sites, real clients, and code you can actually visit right now.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ── CAPABILITIES ── -->
 <div class="pf-about">
   <!-- Left: 3 capability cards -->
@@ -480,6 +495,35 @@ type();
   height: 88vh;
   overflow: visible;
 }
+
+/* ── BIO ── */
+.pf-bio {
+  padding: 80px 60px;
+  border-bottom: 1px solid rgba(196,153,89,0.18);
+}
+.pf-bio-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 60px;
+  align-items: start;
+}
+.pf-bio-headline {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  margin-top: 12px;
+}
+.pf-bio-right p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 1.2em;
+}
+.pf-bio-right p:last-child { margin-bottom: 0; }
+.pf-bio-right p strong { color: #fff; }
 
 /* ── CAPABILITIES ── */
 .pf-about {
