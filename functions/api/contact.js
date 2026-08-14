@@ -30,7 +30,7 @@ export async function onRequestPost(context) {
             <h2 style="color: #c49959; margin-bottom: 24px;">New Portfolio Inquiry</h2>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
-            <a href="mailto:${email}?subject=Re: Your portfolio inquiry" style="display:inline-block;margin:16px 0;padding:12px 24px;background:#c49959;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;">Reply to ${name} →</a>
+            <a href="https://whereisbaldo.com/api/reply?to=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&subject=${encodeURIComponent('Re: ' + name + ' — portfolio inquiry')}" style="display:inline-block;margin:16px 0;padding:12px 24px;background:#c49959;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;">Reply to ${name} →</a>
             <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
             <p><strong>Message:</strong></p>
             <p style="white-space: pre-wrap; line-height: 1.7;">${message}</p>
