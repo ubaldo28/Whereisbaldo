@@ -46,9 +46,8 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <h2 class="pf-bio-headline">Not your typical<br/>developer story.</h2>
     </div>
     <div class="pf-bio-right">
-      <p>I've built three real, live websites from scratch — no prior experience, no bootcamp, no team. One was a paid freelance job for a real paying client. One started as a practice project and turned into something I actually care about. One is my own personal brand, built in a hotel room in Scotland, waiting on a government letter.</p>
-      <p>Before I ever touched code, I was a barber. I spent years sitting with people at their most vulnerable — and in that chair I heard everything. Marriages falling apart. Dreams never said out loud. People trust you with their appearance and end up trusting you with everything else. I brought that same attention to detail and care for people into every site I've built.</p>
-      <p>I learn by shipping. I figure things out. I don't wait to be ready. No CS degree, no bootcamp — just live sites, real clients, and code you can actually visit right now.</p>
+      <p class="pf-bio-role">Full-Stack Developer & Growth Engineer</p>
+      <p>From the barber's chair to designing, building, and shipping three live production sites from scratch. I own the full stack: design, build, and deploy. Direct to work with, fast to deliver, and built to integrate whether you need a freelance partner or a high-velocity full-time developer.</p>
     </div>
   </div>
 </section>
@@ -524,6 +523,14 @@ type();
 }
 .pf-bio-right p:last-child { margin-bottom: 0; }
 .pf-bio-right p strong { color: #fff; }
+.pf-bio-role {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c49959;
+  margin-bottom: 0.75rem !important;
+}
 
 /* ── CAPABILITIES ── */
 .pf-about {
