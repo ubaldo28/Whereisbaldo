@@ -337,7 +337,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <a href="/Ubaldo_Resume.docx" download class="pf-btn-ghost pf-contact-cv">Download Resume ↓</a>
     </div>
     <div class="pf-contact-right">
-      <form class="pf-form" action="https://formspree.io/f/ubaldofigueroamx@gmail.com" method="POST">
+      <form class="pf-form" id="pf-contact-form">
         <div class="pf-form-group">
           <label class="pf-form-label">Name</label>
           <input type="text" name="name" class="pf-form-input" placeholder="Your name" required />
@@ -350,7 +350,8 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <label class="pf-form-label">Message</label>
           <textarea name="message" class="pf-form-input pf-form-textarea" placeholder="Tell me about your project..." required></textarea>
         </div>
-        <button type="submit" class="pf-btn pf-form-submit">Send Message →</button>
+        <button type="submit" class="pf-btn pf-form-submit" id="pf-form-btn">Send Message →</button>
+        <p id="pf-form-msg" style="display:none;margin-top:12px;font-size:13px;"></p>
       </form>
     </div>
   </div>
@@ -363,6 +364,45 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 </div>
 
 <script>
+// Contact form
+document.getElementById('pf-contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('pf-form-btn');
+  const msg = document.getElementById('pf-form-msg');
+  const data = {
+    name: this.name.value,
+    email: this.email.value,
+    message: this.message.value
+  };
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    if (json.success) {
+      msg.style.display = 'block';
+      msg.style.color = '#4ade80';
+      msg.textContent = "Message sent. I'll be in touch soon.";
+      this.reset();
+    } else {
+      msg.style.display = 'block';
+      msg.style.color = '#f87171';
+      msg.textContent = json.error || 'Something went wrong. Try again.';
+    }
+  } catch {
+    msg.style.display = 'block';
+    msg.style.color = '#f87171';
+    msg.textContent = 'Something went wrong. Try again.';
+  }
+  btn.textContent = 'Send Message →';
+  btn.disabled = false;
+});
+
+// Typewriter
 const words = ["websites that rank.", "tools that automate.", "brands that grow.", "sites from scratch."];
 let wi = 0, ci = 0, deleting = false;
 const el = document.getElementById('pf-tw');
