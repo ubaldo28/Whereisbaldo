@@ -84,7 +84,7 @@ const getFormHTML = (to, name, subject) => `<!DOCTYPE html>
     <div class="logo">Where Is Baldo — Reply</div>
     <h1>Reply to ${name}</h1>
     <div class="meta">
-      <strong>From:</strong> <span>Ubaldo Figueroa &lt;hello@whereisbaldo.com&gt;</span><br>
+      <strong>From:</strong> <span>hello@whereisbaldo.com</span><br>
       <strong>To:</strong> <span>${name} &lt;${to}&gt;</span><br>
       <strong>Subject:</strong> <span>${subject}</span>
     </div>
@@ -115,7 +115,6 @@ const getFormHTML = (to, name, subject) => `<!DOCTYPE html>
       });
       if (res.ok) {
         document.querySelector('.card').innerHTML = \`
-          <div class="logo">Where Is Baldo</div>
           <h1 style="color:#c49959;">Reply Sent ✓</h1>
           <p style="margin-top:16px;color:#999;line-height:1.7;">Your message to <strong style="color:#f0ece4;">${name}</strong> was sent from <strong style="color:#c49959;">hello@whereisbaldo.com</strong>.</p>
         \`;
@@ -161,7 +160,7 @@ export async function onRequest(context) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Ubaldo Figueroa <hello@whereisbaldo.com>',
+          from: 'hello@whereisbaldo.com',
           to: [to],
           subject: subject || `Re: Your portfolio inquiry`,
           html: `<div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.7;">
