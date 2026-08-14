@@ -486,25 +486,27 @@ type();
 }
 .pf-hero-bg {
   position: absolute;
-  top: -70px; right: -10px;
-  width: 58%;
+  top: -70px; right: 0;
+  width: 52%;
   height: calc(100% + 70px);
   z-index: 1;
 }
 .pf-hero-bg img {
-  position: absolute;
-  top: 0; right: 0;
-  width: 78%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(0.78);
+  transform-origin: top center;
   display: block;
-  filter: grayscale(0.55) contrast(1.05) brightness(1.0) saturate(1.4);
+  filter: grayscale(0.65) contrast(1.05) brightness(1.0) saturate(1.4);
 }
 .pf-hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, #fff 0%, rgba(255,255,255,0.97) 22%, rgba(255,255,255,0.4) 44%, transparent 58%),
-    linear-gradient(to top, #fff 0%, transparent 8%);
+    linear-gradient(to right, #fff 0%, rgba(255,255,255,0.97) 20%, rgba(255,255,255,0.3) 40%, transparent 52%),
+    linear-gradient(to top, #fff 0%, rgba(255,255,255,0.7) 18%, transparent 28%);
 }
 .pf-hero-text {
   position: relative;
