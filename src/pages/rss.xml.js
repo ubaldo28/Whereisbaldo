@@ -8,8 +8,8 @@ export async function GET() {
     <item>
       <title><![CDATA[${post.data.title}]]></title>
       <description><![CDATA[${post.data.description}]]></description>
-      <link>https://whereisbaldo.com/blog/${post.slug}</link>
-      <guid>https://whereisbaldo.com/blog/${post.slug}</guid>
+      <link>https://whereisbaldo.com/blog/${post.id}</link>
+      <guid>https://whereisbaldo.com/blog/${post.id}</guid>
       <pubDate>${new Date(post.data.pubDate).toUTCString()}</pubDate>
     </item>`).join('');
 

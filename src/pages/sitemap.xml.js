@@ -17,7 +17,7 @@ export async function GET() {
   ];
 
   const postPages = posts.map(post => ({
-    url: `https://whereisbaldo.com/blog/${post.slug}`,
+    url: `https://whereisbaldo.com/blog/${post.id}`,
     priority: '0.9',
     changefreq: 'monthly',
     lastmod: post.data.pubDate.toISOString().split('T')[0],

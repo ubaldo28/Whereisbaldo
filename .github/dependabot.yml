@@ -1,0 +1,19 @@
+# Checks weekly for newer versions of the packages this site is built from.
+# It opens a pull request on GitHub when something is out of date — it never
+# changes the live site on its own. You review the PR and merge it if you want it.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    groups:
+      astro:
+        patterns:
+          - "astro"
+          - "@astrojs/*"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"

@@ -6,7 +6,7 @@ export async function GET() {
   const index = posts.map(post => ({
     title: post.data.title,
     description: post.data.description,
-    slug: post.slug,
+    slug: post.id,
     tags: post.data.tags || [],
     pubDate: post.data.pubDate.toISOString(),
     heroEmoji: post.data.heroEmoji || '',
