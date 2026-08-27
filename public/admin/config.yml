@@ -3,7 +3,7 @@ backend:
   repo: ubaldo28/Whereisbaldo
   branch: main
   auth_type: pkce
-  app_id: YOUR_GITHUB_OAUTH_APP_CLIENT_ID  # ← fill in after creating OAuth App (see SETUP.md)
+  app_id: Ov23liduX7br4mXFFDVT
 
 media_folder: public/images
 public_folder: /images
