@@ -1,21 +1,21 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
   return posts.map(post => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post, allPosts: posts },
   }));
 }
 
 const { post, allPosts } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 // Related posts: same tags, excluding current
 const related = allPosts
-  .filter(p => p.slug !== post.slug && (p.data.tags || []).some(t => (post.data.tags || []).includes(t)))
+  .filter(p => p.id !== post.id && (p.data.tags || []).some(t => (post.data.tags || []).includes(t)))
   .slice(0, 3);
 ---
 <PostLayout

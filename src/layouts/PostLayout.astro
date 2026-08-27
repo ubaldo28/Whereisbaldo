@@ -77,7 +77,7 @@ const canonicalURL = Astro.url.href;
       <p class="share-label">Read Next</p>
       <div class="related-grid">
         {relatedPosts.map(p => (
-          <a href={`/blog/${p.slug}`} class="related-item">
+          <a href={`/blog/${p.id}`} class="related-item">
             <span class="related-emoji">{p.data.heroEmoji}</span>
             <span class="related-title">{p.data.title}</span>
           </a>
