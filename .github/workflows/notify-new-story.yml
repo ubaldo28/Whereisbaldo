@@ -14,36 +14,38 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Check for newly published stories
-        id: check
+      - name: Notify for every newly published story
+        env:
+          WEBPUSHR_KEY: ${{ secrets.WEBPUSHR_KEY }}
+          WEBPUSHR_AUTH_TOKEN: ${{ secrets.WEBPUSHR_AUTH_TOKEN }}
         run: |
           CHANGED_FILES=$(git diff HEAD~1 HEAD --name-only -- 'src/content/posts/*.md' 2>/dev/null || echo "")
 
-          TITLE=""
-          SLUG=""
-
           for FILE in $CHANGED_FILES; do
-            if [ -f "$FILE" ]; then
-              OLD_DRAFT=$(git show HEAD~1:"$FILE" 2>/dev/null | grep '^draft:' | awk '{print $2}' || echo "")
-              NEW_DRAFT=$(grep '^draft:' "$FILE" | awk '{print $2}' || echo "")
+            [ -f "$FILE" ] || continue
 
-              if [ "$OLD_DRAFT" = "true" ] && [ "$NEW_DRAFT" = "false" ]; then
-                TITLE=$(grep '^title:' "$FILE" | sed 's/^title: *//;s/^"//;s/"$//')
-                SLUG=$(basename "$FILE" .md)
-                break
-              fi
+            OLD_DRAFT=$(git show HEAD~1:"$FILE" 2>/dev/null | grep '^draft:' | awk '{print $2}' || echo "")
+            NEW_DRAFT=$(grep '^draft:' "$FILE" | awk '{print $2}' || echo "")
+
+            if [ "$OLD_DRAFT" = "true" ] && [ "$NEW_DRAFT" = "false" ]; then
+              TITLE=$(grep '^title:' "$FILE" | sed 's/^title: *//;s/^"//;s/"$//')
+              SLUG=$(basename "$FILE" .md)
+
+              # Build the JSON with jq so quotes and $ in titles cannot break or
+              # inject into the command.
+              PAYLOAD=$(jq -n \
+                --arg title "New story from Baldo" \
+                --arg message "$TITLE" \
+                --arg url "https://whereisbaldo.com/blog/$SLUG" \
+                '{title: $title, message: $message, target_url: $url}')
+
+              curl -sS -X POST \
+                -H "webpushrKey: $WEBPUSHR_KEY" \
+                -H "webpushrAuthToken: $WEBPUSHR_AUTH_TOKEN" \
+                -H "Content-Type: application/json" \
+                -d "$PAYLOAD" \
+                https://api.webpushr.com/v1/notification/send/all
+
+              echo "Notified: $TITLE"
             fi
           done
-
-          echo "title=$TITLE" >> $GITHUB_OUTPUT
-          echo "slug=$SLUG" >> $GITHUB_OUTPUT
-
-      - name: Send push notification
-        if: steps.check.outputs.title != ''
-        run: |
-          curl -X POST \
-            -H "webpushrKey: ${{ secrets.WEBPUSHR_KEY }}" \
-            -H "webpushrAuthToken: ${{ secrets.WEBPUSHR_AUTH_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d "{\"title\":\"New story from Baldo\",\"message\":\"${{ steps.check.outputs.title }}\",\"target_url\":\"https://whereisbaldo.com/blog/${{ steps.check.outputs.slug }}\"}" \
-            https://api.webpushr.com/v1/notification/send/all

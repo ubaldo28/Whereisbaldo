@@ -15,7 +15,7 @@ const { title, description, pubDate, tags = [], heroEmoji = '✈️', heroColor 
 
 // Calculate read time (assume 200 words per minute)
 const slot = await Astro.slots.render('default');
-const wordCount = slot.split(/\s+/).length;
+const wordCount = slot.replace(/<[^>]*>/g, ' ').replace(/&[a-z]+;/gi, ' ').split(/\s+/).filter(Boolean).length;
 const readTime = Math.ceil(wordCount / 200);
 
 const formattedDate = pubDate.toLocaleDateString('en-US', {
