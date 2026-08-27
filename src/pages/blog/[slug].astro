@@ -25,6 +25,7 @@ const related = allPosts
   tags={post.data.tags}
   heroEmoji={post.data.heroEmoji}
   heroColor={post.data.heroColor}
+  ogImage={post.data.ogImage ?? `/og/${post.id}.png`}
   relatedPosts={related}
 >
   <Content />

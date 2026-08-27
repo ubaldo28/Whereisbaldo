@@ -11,6 +11,7 @@ const posts = defineCollection({
     draft: z.boolean().default(false),
     heroEmoji: z.string().optional().default('\u2708\ufe0f'),
     heroColor: z.string().optional().default('#4A2C10, #8B5E2E'),
+    ogImage: z.string().optional(),
   }),
 });
 

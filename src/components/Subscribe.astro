@@ -1,0 +1,122 @@
+---
+interface Props {
+  heading?: string;
+  blurb?: string;
+}
+const {
+  heading = 'Get the next story in your inbox.',
+  blurb = "No schedule, no spam. Just the next one, when it's ready.",
+} = Astro.props;
+---
+<section class="subscribe-widget">
+  <p class="sub-heading">{heading}</p>
+  <p class="sub-blurb">{blurb}</p>
+  <form class="sub-form">
+    <input type="email" name="email" placeholder="Your email" required aria-label="Your email address" />
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="sub-msg" hidden></p>
+</section>
+
+<style>
+  .subscribe-widget {
+    background: var(--kraft);
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    padding: 40px 24px;
+    margin: 48px 0 0;
+    text-align: center;
+  }
+  .sub-heading {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(20px, 3vw, 26px);
+    color: var(--darkbrown);
+    margin: 0 0 8px;
+  }
+  .sub-blurb {
+    font-size: 15px;
+    color: var(--brown);
+    margin: 0 0 20px;
+  }
+  .sub-form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .sub-form input {
+    padding: 12px 16px;
+    border: 2px solid var(--gold);
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: Georgia, serif;
+    background: var(--cream);
+    color: var(--text);
+    min-width: 240px;
+    outline: none;
+  }
+  .sub-form input:focus { border-color: var(--orange); }
+  .sub-form button {
+    padding: 12px 26px;
+    background: var(--darkbrown);
+    color: var(--cream);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .sub-form button:hover { background: var(--orange); }
+  .sub-form button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .sub-form button[disabled] { opacity: 0.6; cursor: default; }
+  .sub-msg {
+    font-size: 14px;
+    color: var(--brown);
+    margin: 14px 0 0;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.subscribe-widget').forEach((widget) => {
+    const form = widget.querySelector('.sub-form');
+    const msg = widget.querySelector('.sub-msg');
+    if (!form || !msg) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      const input = form.querySelector('input');
+      const label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Subscribing...';
+      msg.hidden = true;
+
+      try {
+        const res = await fetch('/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: input.value.trim() }),
+        });
+        const data = await res.json();
+        if (data.success) {
+          msg.textContent = "You're in. The next story comes straight to you.";
+          form.reset();
+        } else {
+          msg.textContent = data.error || 'Something went wrong. Try again.';
+        }
+      } catch {
+        msg.textContent = 'Something went wrong. Try again.';
+      }
+
+      msg.hidden = false;
+      btn.disabled = false;
+      btn.textContent = label;
+    });
+  });
+</script>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Subscribe from '../components/Subscribe.astro';
 
 interface Props {
   title: string;
@@ -9,9 +10,10 @@ interface Props {
   heroEmoji?: string;
   heroColor?: string;
   relatedPosts?: any[];
+  ogImage?: string;
 }
 
-const { title, description, pubDate, tags = [], heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E', relatedPosts = [] } = Astro.props;
+const { title, description, pubDate, tags = [], heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E', relatedPosts = [], ogImage } = Astro.props;
 
 // Calculate read time (assume 200 words per minute)
 const slot = await Astro.slots.render('default');
@@ -28,6 +30,7 @@ const canonicalURL = Astro.url.href;
 <BaseLayout
   title={`${title} — Where Is Baldo?`}
   description={description}
+  ogImage={ogImage}
   ogType="article"
   canonicalURL={canonicalURL}
 >
@@ -70,6 +73,8 @@ const canonicalURL = Astro.url.href;
     <slot />
     <p style="margin-top:2rem;">— Baldo</p>
   </div>
+
+  <Subscribe />
 
   <!-- RELATED POSTS -->
   {relatedPosts.length > 0 && (
