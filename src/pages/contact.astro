@@ -22,14 +22,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="contact-form-wrap">
       <h2>Send a Message</h2>
-      <form
-        action="https://formsubmit.co/baldolanded@gmail.com"
-        method="POST"
-        class="contact-form"
-      >
-        <input type="hidden" name="_next" value="https://whereisbaldo.com/contact-success" />
-        <input type="hidden" name="_subject" value="New message from whereisbaldo.com" />
-        <input type="hidden" name="_captcha" value="true" />
+      <form id="contactForm" class="contact-form">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required placeholder="Your name" />
@@ -54,6 +47,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <textarea id="message" name="message" required rows="6" placeholder="What's on your mind?"></textarea>
         </div>
         <button type="submit" class="btn-primary">Send It →</button>
+        <p id="contactMsg" class="form-msg" hidden></p>
       </form>
     </div>
 
@@ -119,4 +113,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     resize: vertical;
     min-height: 140px;
   }
+  .form-msg {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.9rem;
+    color: var(--brown);
+    margin: 0;
+  }
 </style>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const msg = document.getElementById('contactMsg');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    msg.hidden = true;
+
+    const payload = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      subject: form.subject.value,
+      message: form.message.value.trim(),
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (data.success) {
+        window.location.href = '/contact-success';
+        return;
+      }
+      msg.textContent = data.error || 'That did not send. Email baldolanded@gmail.com instead.';
+      msg.hidden = false;
+    } catch {
+      msg.textContent = 'That did not send. Email baldolanded@gmail.com instead.';
+      msg.hidden = false;
+    }
+
+    btn.disabled = false;
+    btn.textContent = original;
+  });
+</script>
