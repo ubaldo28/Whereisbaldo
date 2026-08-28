@@ -49,21 +49,64 @@ const template = ({ name, email, topic, message }) => `
 </td></tr>
 </table>`;
 
+const ALLOWED_ORIGINS = [
+  'https://whereisbaldo.com',
+  'https://www.whereisbaldo.com',
+];
+
+// One line, no header tricks — this value ends up inside an email header.
+const oneLine = (s, max) => String(s).replace(/[\r\n]+/g, ' ').trim().slice(0, max);
+
+const json = (payload, status, origin) =>
+  new Response(JSON.stringify(payload), {
+    status,
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': origin,
+      'Vary': 'Origin',
+    },
+  });
+
+export async function onRequestOptions(context) {
+  const origin = context.request.headers.get('Origin') || '';
+  if (!ALLOWED_ORIGINS.includes(origin)) return new Response(null, { status: 403 });
+  return new Response(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': origin,
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Vary': 'Origin',
+    },
+  });
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
+  // The form is only ever posted from this site. Previously any page anywhere
+  // could script this endpoint and put mail in the inbox.
+  const origin = request.headers.get('Origin') || '';
+  if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+    return json({ error: 'Not allowed.' }, 403, ALLOWED_ORIGINS[0]);
+  }
+  const allowOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+
   try {
     const body = await request.json();
-    const name = (body.name || '').trim();
-    const email = (body.email || '').trim().toLowerCase();
-    const topic = (body.subject || '').trim();
-    const message = (body.message || '').trim();
 
-    if (!name || !email || !message || !email.includes('@')) {
-      return new Response(JSON.stringify({ error: 'All fields are required.' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-      });
+    // Honeypot: a real person never fills this in.
+    if ((body.company || '').trim()) {
+      return json({ success: true }, 200, allowOrigin);
+    }
+
+    const name = oneLine(body.name || '', 120);
+    const email = oneLine(body.email || '', 200).toLowerCase();
+    const topic = oneLine(body.subject || '', 80);
+    const message = String(body.message || '').trim().slice(0, 5000);
+
+    if (!name || !email || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return json({ error: 'All fields are required.' }, 400, allowOrigin);
     }
 
     const emailRes = await fetch('https://api.resend.com/emails', {
@@ -85,21 +128,14 @@ export async function onRequestPost(context) {
     const data = await emailRes.json();
 
     if (!emailRes.ok) {
-      return new Response(JSON.stringify({ error: data.message || 'Failed to send message.' }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-      });
+      console.error('resend error', emailRes.status, data && data.message);
+      return json({ error: 'Failed to send message.' }, 502, allowOrigin);
     }
 
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-    });
+    return json({ success: true }, 200, allowOrigin);
 
   } catch (e) {
-    return new Response(JSON.stringify({ error: e.message || 'Something went wrong.' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-    });
+    console.error('contact error', e && e.message);
+    return json({ error: 'Something went wrong.' }, 500, allowOrigin);
   }
 }

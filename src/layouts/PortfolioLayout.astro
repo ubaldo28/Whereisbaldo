@@ -11,8 +11,8 @@ interface Props {
 
 const {
   title = 'Ubaldo Figueroa — Web Developer & Growth Hacker',
-  description = 'Three live sites. One year. No prior experience.',
-  ogImage = '/og-image.jpg',
+  description = 'Ubaldo Figueroa builds and ships full-stack sites end to end — design, code, deploy. Three live production sites, including an AI news platform that publishes itself. Available for freelance and full-time work.',
+  ogImage = '/og/portfolio.png',
   ogType = 'website',
   canonicalURL = Astro.url.href,
 } = Astro.props;
@@ -40,6 +40,8 @@ const siteName = 'Where Is Baldo?';
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@whereisbaldo" />
+  <meta name="twitter:creator" content="@whereisbaldo" />
+  <meta name="twitter:image:alt" content="Ubaldo Figueroa — full-stack developer" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={`https://whereisbaldo.com${ogImage}`} />
@@ -57,29 +59,29 @@ const siteName = 'Where Is Baldo?';
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Where Is Baldo?" />
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
-
   <!-- RSS Feed -->
   <link rel="alternate" type="application/rss+xml" title="Where Is Baldo? — RSS Feed" href="/rss.xml" />
 
-  <!-- JSON-LD: Website -->
-  <script type="application/ld+json">
-  {
+  <!-- JSON-LD: this page is a person's profile, not a generic website -->
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Where Is Baldo?",
-    "url": "https://whereisbaldo.com",
-    "description": "Web Developer & Growth Hacker. Three live sites. One year. No prior experience.",
-    "author": {
+    "@type": "ProfilePage",
+    "url": canonicalURL,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@type": "WebSite", "name": siteName, "url": "https://whereisbaldo.com" },
+    "mainEntity": {
       "@type": "Person",
       "name": "Ubaldo Figueroa",
       "alternateName": "Baldo",
-      "nationality": "American",
-      "url": "https://whereisbaldo.com/about"
+      "jobTitle": "Full-Stack Developer & Growth Engineer",
+      "url": "https://whereisbaldo.com/portfolio",
+      "email": "mailto:hello@whereisbaldo.com",
+      "knowsAbout": ["Astro", "JavaScript", "Node.js", "Cloudflare Pages", "Technical SEO", "AI automation"],
+      "sameAs": ["https://whereisbaldo.com", "https://potuswatchdaily.com"],
+      "seeks": { "@type": "Demand", "name": "Freelance and full-time web development work" }
     }
-  }
-  </script>
+  })} />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSDXJ1PRGL"></script>

@@ -1,23 +1,29 @@
 ---
 import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 ---
-<PortfolioLayout title="Ubaldo Figueroa — Web Developer & Growth Hacker" description="Three live sites. One year. No prior experience.">
+<PortfolioLayout
+  title="Ubaldo Figueroa — Full-Stack Developer & Growth Engineer"
+  description="Full-stack developer who ships end to end — design, code, deploy. Three live production sites, including an AI news platform that publishes itself. Available for freelance and full-time work."
+>
+
+<a href="#pf-main" class="pf-skip">Skip to content</a>
 
 <!-- ── NAV ── -->
-<nav class="pf-nav">
+<nav class="pf-nav" aria-label="Primary">
   <a href="/" class="pf-logo">UF®</a>
   <div class="pf-links">
     <a href="#work">Work</a>
     <a href="#services">Services</a>
     <a href="/contact">Contact</a>
-    <a href="/Ubaldo_Resume.docx" download class="pf-cv">Download CV ↓</a>
+    <a href="/Ubaldo_Resume.docx" download class="pf-cv"><span class="pf-cv-long">Download CV</span><span class="pf-cv-short">CV</span> ↓</a>
   </div>
 </nav>
 
 <!-- ── HERO ── -->
-<section class="pf-hero">
+<section class="pf-hero" id="pf-main">
   <div class="pf-hero-bg">
-    <img src="/baldo-headshot.png" alt="" aria-hidden="true" />
+    <img src="/baldo-headshot.webp" alt="" aria-hidden="true" width="1080" height="1055"
+         decoding="async" fetchpriority="high" />
     <div class="pf-hero-overlay"></div>
   </div>
   <div class="pf-hero-text">
@@ -61,19 +67,19 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   <div class="pf-caps">
     <div class="pf-cap">
       <span class="pf-cap-num">01 / What I build</span>
-      <h3 class="pf-cap-title">Full-Stack<br/>Web Dev</h3>
+      <h2 class="pf-cap-title">Full-Stack<br/>Web Dev</h2>
       <p class="pf-cap-desc">Design, code, launch — no handoffs, no agency overhead. One person who owns the whole thing.</p>
       <div class="pf-cap-tags"><span>Astro</span><span>JavaScript</span><span>HTML/CSS</span></div>
     </div>
     <div class="pf-cap">
       <span class="pf-cap-num">02 / How I grow it</span>
-      <h3 class="pf-cap-title">SEO &<br/>Organic Growth</h3>
+      <h2 class="pf-cap-title">SEO &<br/>Organic Growth</h2>
       <p class="pf-cap-desc">Sites built to rank from day one. Technical SEO, content, and structure baked in — not bolted on after.</p>
       <div class="pf-cap-tags"><span>On-page SEO</span><span>Technical</span><span>Copy</span></div>
     </div>
     <div class="pf-cap">
       <span class="pf-cap-num">03 / What you get</span>
-      <h3 class="pf-cap-title">Solo. Brief<br/>to Browser.</h3>
+      <h2 class="pf-cap-title">Solo. Brief<br/>to Browser.</h2>
       <p class="pf-cap-desc">First message to live URL — strategy, design, dev, deploy. Faster and cheaper than any agency.</p>
       <div class="pf-cap-tags"><span>End-to-end</span><span>Production-ready</span></div>
     </div>
@@ -181,18 +187,20 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span class="burl">geniotech.co.uk</span>
         </div>
         <div class="pf-browser-content">
-          <img src="/portfolio-geniotech.jpg" alt="GenioTech website" />
-          <video src="/geniotech-hero.mp4" autoplay muted loop playsinline class="pf-vid-overlay"></video>
-          <div class="pf-gt-text">
+          <img src="/portfolio-geniotech.webp" alt="The GenioTech site: device repair booking, pricing and accessories store"
+               width="1176" height="1026" loading="lazy" decoding="async" />
+          <video id="pf-gt-video" data-src="/geniotech-hero.mp4" poster="/geniotech-hero-poster.webp"
+                 muted loop playsinline preload="none" aria-hidden="true" class="pf-vid-overlay"></video>
+          <div class="pf-gt-text" aria-hidden="true">
             <span class="pf-hero-badge"><span class="pf-dot-closed"></span>Closed · reopens tomorrow at 9 am</span>
-            <h3 class="pf-hero-h">Dundee's go-to<br>repair shop.<br><em class="pf-hero-green">Fast. Trusted.</em></h3>
+            <div class="pf-hero-h">Dundee's go-to<br>repair shop.<br><em class="pf-hero-green">Fast. Trusted.</em></div>
             <p class="pf-hero-p">Cracked screens fixed in under an hour. iPhones, Samsungs, tablets, laptops. Award-winning service on Hilltown.</p>
-            <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-hero-btn">Book a repair</a>
+            <span class="pf-hero-btn">Book a repair</span>
           </div>
         </div>
       </div>
       <div class="pf-project-info">
-        <h2 class="pf-title">GenioTech</h2>
+        <h3 class="pf-title">GenioTech</h3>
         <p class="pf-pdesc">Full site build for a working repair shop in Dundee. Customers choose their device, see a starting price, and book a repair slot online instead of phoning the shop. Includes an accessories store, photo and video gallery, blog, newsletter capture, and an installable PWA.</p>
         <p class="pf-outcome"><strong>What changed:</strong> bookings moved off the phone and onto the site. Customers self-serve by device type and see pricing before they commit, with newsletter signup built into the flow behind a 10% first-order incentive.</p>
         <div class="pf-metrics">
@@ -217,7 +225,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
     </div>
     <div class="pf-project-body">
       <div class="pf-project-info">
-        <h2 class="pf-title">POTUS Watch Daily</h2>
+        <h3 class="pf-title">POTUS Watch Daily</h3>
         <p class="pf-pdesc">A foreign-policy publication that researches, writes and publishes itself. Built on the Claude API, it produces multiple dispatches a day across desks covering the Americas, China, NATO, Iran, the Middle East, Russia, trade and analysis — with a breaking-news ticker, archive, newsletter, and a published editorial standards policy.</p>
         <p class="pf-outcome"><strong>What changed:</strong> this is a production AI system, not a demo. It has run on an automated publishing pipeline since January 2026, generating and shipping content daily without manual intervention.</p>
         <div class="pf-metrics">
@@ -237,7 +245,8 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span class="burl">potuswatchdaily.com</span>
         </div>
         <a href="https://potuswatchdaily.com" target="_blank" rel="noopener">
-          <img src="/portfolio-potus.jpg" alt="POTUS Watch Daily" />
+          <img src="/portfolio-potus.webp" alt="POTUS Watch Daily: an AI-run foreign-policy publication with a breaking-news ticker"
+               width="1176" height="1026" loading="lazy" decoding="async" />
         </a>
       </div>
     </div>
@@ -257,11 +266,12 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span class="burl">whereisbaldo.com</span>
         </div>
         <a href="https://whereisbaldo.com" target="_blank" rel="noopener">
-          <img src="/portfolio-baldo-v2.jpg" alt="Where Is Baldo?" />
+          <img src="/portfolio-baldo-v2.webp" alt="Where Is Baldo?: a custom publishing platform with dark mode and search"
+               width="1427" height="840" loading="lazy" decoding="async" />
         </a>
       </div>
       <div class="pf-project-info">
-        <h2 class="pf-title">Where Is Baldo?</h2>
+        <h3 class="pf-title">Where Is Baldo?</h3>
         <p class="pf-pdesc">A custom publishing platform, built from scratch rather than assembled on an off-the-shelf CMS. Transactional email through Resend, web push through Webpushr, dark mode, search, generated social cards, and an installable PWA.</p>
         <p class="pf-outcome"><strong>What it&rsquo;s for:</strong> this is where I test infrastructure before it goes near client work. The email and push stack running here is the same one I would deploy for a client.</p>
         <div class="pf-metrics">
@@ -283,8 +293,6 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
     <a href="/contact" class="pf-view-btn">Get in touch →</a>
   </div>
 </section>
-
-<!-- ── MARQUEE ── -->
 
 <!-- ── SERVICES ── -->
 <section class="pf-services" id="services">
@@ -336,26 +344,33 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
     <div class="pf-contact-right">
       <form class="pf-form" id="pf-contact-form">
         <div class="pf-form-group">
-          <label class="pf-form-label">Name</label>
-          <input type="text" name="name" class="pf-form-input" placeholder="Your name" required />
+          <label class="pf-form-label" for="pf-name">Name</label>
+          <input type="text" id="pf-name" name="name" class="pf-form-input" placeholder="Your name"
+                 autocomplete="name" maxlength="120" required />
         </div>
         <div class="pf-form-group">
-          <label class="pf-form-label">Email</label>
-          <input type="email" name="email" class="pf-form-input" placeholder="your@email.com" required />
+          <label class="pf-form-label" for="pf-email">Email</label>
+          <input type="email" id="pf-email" name="email" class="pf-form-input" placeholder="your@email.com"
+                 autocomplete="email" maxlength="200" required />
         </div>
         <div class="pf-form-group">
-          <label class="pf-form-label">Message</label>
-          <textarea name="message" class="pf-form-input pf-form-textarea" placeholder="Tell me about your project..." required></textarea>
+          <label class="pf-form-label" for="pf-message">Message</label>
+          <textarea id="pf-message" name="message" class="pf-form-input pf-form-textarea"
+                    placeholder="Tell me about your project..." maxlength="5000" required></textarea>
+        </div>
+        <div class="pf-hp" aria-hidden="true">
+          <label for="pf-company">Company</label>
+          <input type="text" id="pf-company" name="company" tabindex="-1" autocomplete="off" />
         </div>
         <button type="submit" class="pf-btn pf-form-submit" id="pf-form-btn">Send Message →</button>
-        <p id="pf-form-msg" style="display:none;margin-top:12px;font-size:13px;"></p>
+        <p id="pf-form-msg" role="status" aria-live="polite" style="margin-top:12px;font-size:13px;"></p>
       </form>
     </div>
   </div>
 </section>
 
 <!-- ── FOOTER ── -->
-<div class="pf-foot">
+<footer class="pf-foot">
   <span>© 2026 Ubaldo Figueroa</span>
   <div class="pf-foot-sites">
     <span>geniotech.co.uk</span>
@@ -365,13 +380,14 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
     <span>whereisbaldo.com</span>
   </div>
   <a href="/">whereisbaldo.com</a>
-</div>
+</footer>
 
 <script>
 document.getElementById('pf-contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('pf-form-btn');
   const msg = document.getElementById('pf-form-msg');
+  if (this.company.value) { return; }
   const data = { name: this.name.value, email: this.email.value, message: this.message.value };
   btn.textContent = 'Sending...';
   btn.disabled = true;
@@ -383,17 +399,14 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
     });
     const json = await res.json();
     if (json.success) {
-      msg.style.display = 'block';
       msg.style.color = '#4ade80';
       msg.textContent = "Message sent. I'll be in touch soon.";
       this.reset();
     } else {
-      msg.style.display = 'block';
       msg.style.color = '#f87171';
       msg.textContent = json.error || 'Something went wrong. Try again.';
     }
   } catch {
-    msg.style.display = 'block';
     msg.style.color = '#f87171';
     msg.textContent = 'Something went wrong. Try again.';
   }
@@ -402,20 +415,46 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
 });
 
 const words = ["websites that rank.", "tools that automate.", "brands that grow.", "sites from scratch."];
-let wi = 0, ci = 0, deleting = false;
 const el = document.getElementById('pf-tw');
-function type() {
-  const word = words[wi];
-  if (!deleting) {
-    el.textContent = word.slice(0, ++ci);
-    if (ci === word.length) { deleting = true; setTimeout(type, 1800); return; }
-  } else {
-    el.textContent = word.slice(0, --ci);
-    if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
+const stillPlease = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (stillPlease.matches) {
+  // WCAG 2.2.2 — no indefinite motion for people who ask for none.
+  el.textContent = words[0];
+} else {
+  let wi = 0, ci = 0, deleting = false, timer = null;
+  function type() {
+    const word = words[wi];
+    if (!deleting) {
+      el.textContent = word.slice(0, ++ci);
+      if (ci === word.length) { deleting = true; timer = setTimeout(type, 1800); return; }
+    } else {
+      el.textContent = word.slice(0, --ci);
+      if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
+    }
+    timer = setTimeout(type, deleting ? 50 : 80);
   }
-  setTimeout(type, deleting ? 50 : 80);
+  // Stop burning frames when the tab is in the background.
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { clearTimeout(timer); } else { clearTimeout(timer); type(); }
+  });
+  type();
 }
-type();
+
+// The GenioTech clip is 2.3 MB. Don't fetch it until it is actually on screen,
+// and never autoplay it for someone who asked for reduced motion.
+const vid = document.getElementById('pf-gt-video');
+if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) { if (!vid.paused) vid.pause(); return; }
+      if (!vid.src) { vid.src = vid.dataset.src; }
+      const p = vid.play();
+      if (p) p.catch(() => {});
+    });
+  }, { rootMargin: '200px' });
+  io.observe(vid);
+}
 </script>
 
 </PortfolioLayout>
@@ -438,6 +477,7 @@ type();
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid #e5e5e5;
 }
+.pf-cv-short { display: none; }
 .pf-logo {
   font-size: 1.1rem;
   font-weight: 900;
@@ -452,8 +492,11 @@ type();
 }
 .pf-links a {
   text-decoration: none;
-  color: #bbb;
+  color: #5f5f5f;
   font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   font-weight: 500;
   letter-spacing: 0.04em;
   transition: color 0.2s;
@@ -472,9 +515,58 @@ type();
   color: #fff !important;
 }
 
+.pf-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background: #0a0a0a;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.pf-skip:focus {
+  left: 0;
+}
+.pf-hp {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  color: #fff;
+}
+.pf-hp input, .pf-hp label { width: 1px; height: 1px; padding: 0; border: 0; font-size: 1px; }
+
+/* Visible keyboard focus everywhere — the default outline was being lost
+   against the dark sections. */
+.pf-nav a:focus-visible,
+.pf-hero a:focus-visible,
+.pf-avail-cta:focus-visible,
+.pf-link:focus-visible,
+.pf-view-btn:focus-visible,
+.pf-scard:focus-visible,
+.pf-foot a:focus-visible,
+.pf-form-input:focus-visible,
+.pf-form-submit:focus-visible,
+.pf-skip:focus-visible {
+  outline: 3px solid #00706e;
+  outline-offset: 3px;
+}
+.pf-contact a:focus-visible,
+.pf-contact .pf-form-input:focus-visible,
+.pf-contact .pf-form-submit:focus-visible,
+.pf-foot a:focus-visible,
+.pf-avail-cta:focus-visible {
+  outline-color: #2ec4c0;
+}
+
 /* ── HERO ── */
 .pf-hero {
   position: relative;
+  overflow-x: clip;
   min-height: 62vh;
   width: 100%;
   display: flex;
@@ -517,7 +609,7 @@ type();
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #16a34a;
+  color: #15803d;
   margin-bottom: 1.5rem;
 }
 .pf-dot {
@@ -546,13 +638,13 @@ type();
   width: 100%;
   max-width: 560px;
   height: 4px;
-  background: #00918e;
+  background: #00706e;
   margin: 22px 0;
 }
 .pf-role {
   font-size: 1rem;
   font-weight: 600;
-  color: #999;
+  color: #5f5f5f;
   margin: 0 0 1rem;
   letter-spacing: 0.02em;
 }
@@ -560,11 +652,11 @@ type();
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #ccc;
+  color: #5f5f5f;
   margin: 0 0 2rem;
   font-family: monospace;
 }
-.pf-hash { color: #00918e; margin-right: 4px; }
+.pf-hash { color: #00706e; margin-right: 4px; }
 #pf-tw {
   color: #0a0a0a;
   border-right: 2px solid #0a0a0a;
@@ -575,7 +667,7 @@ type();
 .pf-desc {
   font-size: 1rem;
   line-height: 1.8;
-  color: #777;
+  color: #4f4f4f;
   max-width: 480px;
   margin-bottom: 2rem;
 }
@@ -621,9 +713,9 @@ type();
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ccc;
+  color: #5f5f5f;
 }
-.pf-strip-dot { color: #00918e; padding: 0 0.5rem; }
+.pf-strip-dot { color: #00706e; padding: 0 0.5rem; }
 
 /* ── HERO STATS ── */
 .pf-hero-stats {
@@ -641,7 +733,7 @@ type();
   display: block;
   font-size: 3.8rem;
   font-weight: 900;
-  color: #e8e8e8;
+  color: #8a8a8a;
   line-height: 1;
   letter-spacing: -0.05em;
 }
@@ -651,7 +743,7 @@ type();
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #ccc;
+  color: #5f5f5f;
   margin-top: 0;
 }
 .pf-stat-sep { width: 100%; height: 1px; background: #e5e5e5; }
@@ -680,14 +772,14 @@ type();
   position: absolute;
   top: 0; left: 0;
   width: 4px; height: 100%;
-  background: #00918e;
+  background: #00706e;
 }
 .pf-cap:hover { border-color: #0a0a0a; }
 .pf-cap-num {
   display: block;
   font-size: 10px;
   font-family: monospace;
-  color: #00918e;
+  color: #00706e;
   letter-spacing: 0.08em;
   margin-bottom: 10px;
   font-weight: 700;
@@ -703,7 +795,7 @@ type();
 }
 .pf-cap-desc {
   font-size: 13px;
-  color: #888;
+  color: #5f5f5f;
   line-height: 1.7;
   margin: 0 0 14px;
 }
@@ -711,7 +803,7 @@ type();
 .pf-cap-tags span {
   font-size: 10px;
   font-family: monospace;
-  color: #555;
+  color: #4a4a4a;
   background: #f5f5f5;
   border: 1px solid #e0e0e0;
   padding: 3px 8px;
@@ -729,7 +821,7 @@ type();
   font-size: 9.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #bbb;
+  color: #5f5f5f;
   margin: 0 0 14px;
 }
 .pf-cred-row {
@@ -745,7 +837,7 @@ type();
 .pf-cred-row:last-child { border-bottom: none; padding-bottom: 0; }
 .pf-cred-row:first-of-type { padding-top: 0; }
 .pf-cred-row strong { color: #0a0a0a; font-weight: 700; }
-.pf-cred-muted { color: #bbb !important; font-style: italic; }
+.pf-cred-muted { color: #5f5f5f !important; font-style: italic; }
 .pf-dot-g {
   width: 6px; height: 6px;
   border-radius: 50%;
@@ -767,14 +859,14 @@ type();
   font-size: 9px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #ccc;
+  color: #5f5f5f;
   margin: 0 0 7px;
 }
 .pf-pills { display: flex; flex-wrap: wrap; gap: 5px; }
 .pf-pills span {
   font-size: 11px;
   font-family: monospace;
-  color: #888;
+  color: #545454;
   background: #f5f5f5;
   border: 1px solid #e5e5e5;
   padding: 3px 10px;
@@ -810,7 +902,7 @@ type();
 .pf-avail-text {
   font-size: 13px;
   font-weight: 500;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.62);
   flex: 1;
 }
 .pf-avail-cta {
@@ -818,8 +910,10 @@ type();
   font-weight: 700;
   color: #fff;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.35);
-  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   flex-shrink: 0;
   transition: opacity 0.2s;
 }
@@ -857,7 +951,7 @@ type();
 .pf-skill-item { display: flex; flex-direction: column; gap: 8px; }
 .pf-skill-top { display: flex; justify-content: space-between; align-items: center; }
 .pf-skill-name { font-size: 13px; font-weight: 700; color: #0a0a0a; }
-.pf-skill-pct { font-size: 12px; font-weight: 700; font-family: monospace; color: #00918e; }
+.pf-skill-pct { font-size: 12px; font-weight: 700; font-family: monospace; color: #00706e; }
 .pf-skill-bar { height: 3px; background: #e5e5e5; overflow: hidden; }
 .pf-skill-fill { height: 100%; background: #0a0a0a; }
 
@@ -868,10 +962,10 @@ type();
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  color: #00918e;
+  color: #00706e;
   display: inline-block;
 }
-.pf-label-inv { color: rgba(255,255,255,0.4) !important; }
+.pf-label-inv { color: rgba(255,255,255,0.6) !important; }
 
 /* ── WORK ── */
 .pf-work {
@@ -887,7 +981,7 @@ type();
   margin: 0 0 60px;
   letter-spacing: -0.05em;
 }
-.pf-work-dot { color: #00918e; }
+.pf-work-dot { color: #00706e; }
 .pf-stack {
   font-size: 0.82rem;
   line-height: 1.75;
@@ -900,7 +994,7 @@ type();
   font-size: 0.66rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  opacity: 0.7;
+  opacity: 0.85;
   margin-bottom: 0.3rem;
 }
 .pf-outcome {
@@ -935,7 +1029,7 @@ type();
 .pf-num {
   font-size: clamp(3.5rem, 7vw, 6rem);
   font-weight: 900;
-  color: #ebebeb;
+  color: #8a8a8a;
   line-height: 1;
   flex-shrink: 0;
   letter-spacing: -0.04em;
@@ -945,17 +1039,19 @@ type();
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ccc;
+  color: #5f5f5f;
   flex: 1;
 }
 .pf-link {
   font-size: 13px;
   font-weight: 700;
-  color: #00918e;
+  color: #00706e;
   text-decoration: none;
   flex-shrink: 0;
-  border-bottom: 1px solid rgba(0,145,142,0.35);
-  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(0,112,110,0.4);
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   transition: opacity 0.2s;
 }
 .pf-link:hover { opacity: 0.7; }
@@ -997,7 +1093,7 @@ type();
   flex: 1;
   text-align: center;
   font-size: 11px;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.55);
   background: rgba(255,255,255,0.06);
   border-radius: 4px;
   padding: 3px 10px;
@@ -1092,9 +1188,9 @@ type();
   margin-bottom: 1.5rem;
   padding: 16px 20px;
   background: #fafafa;
-  border-left: 3px solid #00918e;
+  border-left: 3px solid #00706e;
   font-size: 13px;
-  color: #555;
+  color: #4f4f4f;
 }
 .pf-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .pf-tags span {
@@ -1102,12 +1198,14 @@ type();
   font-weight: 600;
   letter-spacing: 0.06em;
   padding: 4px 12px;
-  border: 1px solid #e0e0e0;
-  color: #888;
+  border: 1px solid #d4d4d4;
+  color: #545454;
   background: #fff;
 }
 .pf-view-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   margin-top: 1.25rem;
   font-size: 13px;
   font-weight: 700;
@@ -1117,29 +1215,8 @@ type();
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
-.pf-view-btn:hover { color: #00918e; border-color: #00918e; }
+.pf-view-btn:hover { color: #00706e; border-color: #00706e; }
 
-/* ── MARQUEE ── */
-.pf-marquee {
-  overflow: hidden;
-  padding: 20px 0;
-  background: #0a0a0a;
-  border-top: 4px solid #00918e;
-}
-.pf-marquee-track {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  width: max-content;
-  animation: scroll 22s linear infinite;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
-}
-.mx { color: #00918e; }
-@keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* ── SERVICES ── */
 .pf-services {
@@ -1172,7 +1249,7 @@ type();
   transition: background 0.2s;
 }
 .pf-scard:hover { background: #fafafa; }
-.pf-scard:hover .pf-sicon { background: #00918e; }
+.pf-scard:hover .pf-sicon { background: #00706e; }
 .pf-sicon {
   font-size: 1.3rem;
   width: 44px; height: 44px;
@@ -1192,7 +1269,7 @@ type();
 }
 .pf-scard p {
   font-size: 13px;
-  color: #888;
+  color: #5f5f5f;
   line-height: 1.65;
   margin: 0;
 }
@@ -1229,10 +1306,10 @@ type();
   margin: 0.5rem 0 1.25rem;
   letter-spacing: -0.04em;
 }
-.pf-cta-title em { color: #00918e; font-style: italic; }
+.pf-cta-title em { color: #2ec4c0; font-style: italic; }
 .pf-cta-sub {
   font-size: 1rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.62);
   line-height: 1.75;
   max-width: 500px;
 }
@@ -1243,7 +1320,7 @@ type();
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.62);
 }
 .pf-form-input {
   background: rgba(255,255,255,0.05);
@@ -1257,8 +1334,8 @@ type();
   transition: border-color 0.2s;
   width: 100%;
 }
-.pf-form-input::placeholder { color: rgba(255,255,255,0.2); }
-.pf-form-input:focus { border-color: #00918e; }
+.pf-form-input::placeholder { color: rgba(255,255,255,0.55); }
+.pf-form-input:focus { border-color: #2ec4c0; box-shadow: 0 0 0 2px rgba(46,196,192,0.35); }
 .pf-form-textarea { min-height: 140px; resize: vertical; }
 .pf-form-submit {
   width: 100%;
@@ -1266,15 +1343,15 @@ type();
   cursor: pointer;
   font-family: inherit;
   font-size: 14px;
-  background: #00918e;
-  border: 2px solid #00918e;
+  background: #00706e;
+  border: 2px solid #00706e;
   color: #fff;
   padding: 13px 26px;
   font-weight: 700;
   letter-spacing: 0.02em;
   transition: all 0.2s;
 }
-.pf-form-submit:hover { background: transparent; color: #00918e; }
+.pf-form-submit:hover { background: transparent; color: #2ec4c0; border-color: #2ec4c0; }
 .pf-form-submit:disabled { opacity: 0.6; cursor: default; }
 
 /* ── FOOTER ── */
@@ -1286,9 +1363,16 @@ type();
   background: #0a0a0a;
   border-top: 1px solid rgba(255,255,255,0.07);
   font-size: 12px;
-  color: rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.6);
 }
-.pf-foot a { color: rgba(255,255,255,0.22); text-decoration: none; transition: color 0.2s; }
+.pf-foot a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
 .pf-foot a:hover { color: rgba(255,255,255,0.6); }
 .pf-foot-sites {
   display: flex;
@@ -1298,7 +1382,18 @@ type();
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.pf-foot-sep { color: rgba(255,255,255,0.12); }
+.pf-foot-sep { color: rgba(255,255,255,0.62); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .pf-dot, .pf-avail-dot { opacity: 1 !important; }
+  #pf-tw { border-right-color: transparent; }
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
@@ -1314,11 +1409,20 @@ type();
   .pf-hero-stats { display: none; }
 }
 @media (max-width: 768px) {
-  .pf-nav { padding: 16px 20px; }
-  .pf-links a:not(.pf-cv) { display: none; }
-  .pf-links { gap: 0; }
+  .pf-nav { padding: 12px 16px; gap: 10px; }
+  .pf-links { gap: 14px; }
+  .pf-links a { font-size: 12px; letter-spacing: 0.02em; }
+  .pf-cv { padding: 7px 10px; }
+  .pf-cv-long { display: none; }
+  .pf-cv-short { display: inline; }
+  .pf-tech-strip { flex-wrap: wrap; gap: 0.35rem 0; }
+  .pf-strip-dot { padding: 0 0.35rem; }
   .pf-hero { min-height: 88vh; padding-top: 18px; padding-bottom: 60px; }
-  .pf-hero-bg { width: 55%; }
+  .pf-hero-bg { width: 66%; right: 0; }
+  .pf-hero-overlay {
+    background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0.99) 26%, rgba(255,255,255,0.9) 100%);
+  }
+  .pf-hero-bg img { filter: grayscale(0.45) contrast(0.8) brightness(1.34) saturate(1.1); }
   .pf-hero-text { padding: 0 20px 40px 24px; max-width: 100%; }
   .pf-h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
   .pf-name { font-size: clamp(2.2rem, 10vw, 3.5rem); }
