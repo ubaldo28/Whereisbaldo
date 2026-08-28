@@ -1105,18 +1105,20 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 .pf-gt-nav { top: 0; height: 6.67%; background: #080d0b; display: flex; align-items: center;
   padding: 0 2.19cqw; font-size: 1.02cqw; }
 .pf-gt-logo { height: 2.81cqw; width: auto; display: block; }
-/* centred in the gap between the logo and the icons, not in the whole bar */
+/* centred in the gap between the logo and the icons, not in the whole bar.
+   The card renders their nav at ~48% of its real size, so the faint values
+   from their site are lifted here — copied literally they turn to mush. */
 .pf-gt-links { display: flex; align-items: center; justify-content: center; flex: 1;
-  gap: 1.4cqw; color: rgba(255,255,255,0.5); white-space: nowrap; }
-.pf-gt-links b { background: #1d9e75; color: #fff; font-weight: 400;
-  padding: 0.547cqw 1.094cqw; border-radius: 0.47cqw; }
+  gap: 1.5cqw; font-size: 1.13cqw; color: rgba(255,255,255,0.78); white-space: nowrap; }
+.pf-gt-links b { background: #1d9e75; color: #fff; font-weight: 500;
+  padding: 0.6cqw 1.15cqw; border-radius: 0.5cqw; }
 .pf-gt-right { display: flex; align-items: center; gap: 0.78cqw; flex-shrink: 0; }
-.pf-gt-soc { width: 2.5cqw; height: 2.5cqw; border-radius: 0.547cqw;
-  border: 1px solid rgba(29,158,117,0.2); color: rgba(255,255,255,0.5);
+.pf-gt-soc { width: 2.9cqw; height: 2.9cqw; border-radius: 0.6cqw;
+  border: 1px solid rgba(29,158,117,0.45); color: rgba(255,255,255,0.85);
   display: flex; align-items: center; justify-content: center; }
-.pf-gt-soc svg { width: 1.35cqw; height: 1.35cqw; display: block; }
-.pf-gt-install { color: #5dcaa5; border: 1px solid rgba(29,158,117,0.5); border-radius: 0.547cqw;
-  padding: 0.39cqw 0.86cqw; font-size: 0.94cqw; white-space: nowrap; }
+.pf-gt-soc svg { width: 1.7cqw; height: 1.7cqw; display: block; stroke-width: 2; }
+.pf-gt-install { color: #6fd6b0; border: 1px solid rgba(29,158,117,0.8); border-radius: 0.6cqw;
+  padding: 0.5cqw 1cqw; font-size: 1.06cqw; font-weight: 500; white-space: nowrap; }
 .pf-gt-book { background: #1d9e75; color: #fff; font-weight: 500; border-radius: 0.547cqw;
   padding: 0.625cqw 1.406cqw; font-size: 1.02cqw; white-space: nowrap; }
 
@@ -1129,12 +1131,12 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 .pf-gt-h { font-size: 3.125cqw; font-weight: 500; color: #fff; line-height: 1.15;
   margin: 0 0 1.7cqw; }
 .pf-gt-h em { color: #5dcaa5; font-style: normal; }
-.pf-gt-p { font-size: 1.172cqw; color: rgba(255,255,255,0.75); line-height: 1.75; margin: 0 0 2cqw; }
+.pf-gt-p { font-size: 1.172cqw; color: rgba(255,255,255,0.88); line-height: 1.75; margin: 0 0 2cqw; }
 .pf-gt-cta { align-self: flex-start; background: #1d9e75; color: #fff; font-weight: 500;
   font-size: 1.02cqw; padding: 0.625cqw 1.406cqw; border-radius: 0.547cqw; }
 
 .pf-gt-ticker { top: 66.44%; height: 4.54%; background: #0f1a14; display: flex; align-items: center;
-  gap: 2.6cqw; padding: 0 2.19cqw; font-size: 0.86cqw; color: rgba(255,255,255,0.62);
+  gap: 2.6cqw; padding: 0 2.19cqw; font-size: 0.95cqw; color: rgba(255,255,255,0.8);
   white-space: nowrap; overflow: hidden; }
 .pf-gt-ticker span { position: relative; padding-left: 0.9cqw; }
 .pf-gt-ticker span::before { content: ""; position: absolute; left: 0; top: 50%;
@@ -1147,19 +1149,19 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   justify-content: center; gap: 0.3cqw; border-right: 1px solid rgba(29,158,117,0.2); }
 .pf-gt-stats > div:last-child { border-right: 0; }
 .pf-gt-stats b { font-size: 1.719cqw; font-weight: 500; color: #5dcaa5; }
-.pf-gt-stats span { font-size: 0.86cqw; color: rgba(255,255,255,0.45); }
+.pf-gt-stats span { font-size: 0.95cqw; color: rgba(255,255,255,0.72); }
 
 .pf-gt-svc { top: 80.4%; height: 19.6%; background: #080d0b; padding: 1.5cqw 2.19cqw 0; overflow: hidden; }
 .pf-gt-svc-lbl { display: block; font-size: 0.78cqw; letter-spacing: 0.078cqw; color: #1d9e75; }
 .pf-gt-svc-h { font-size: 1.719cqw; color: #fff; font-weight: 500; margin: 0.55cqw 0 0.3cqw; }
-.pf-gt-svc-sub { font-size: 1.016cqw; color: rgba(255,255,255,0.45); margin: 0 0 1.1cqw; }
+.pf-gt-svc-sub { font-size: 1.016cqw; color: rgba(255,255,255,0.68); margin: 0 0 1.1cqw; }
 .pf-gt-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25cqw; }
 .pf-gt-cards > div { border: 1px solid rgba(29,158,117,0.2); border-radius: 0.86cqw;
   padding: 0.85cqw 1cqw; display: flex; flex-direction: column; gap: 0.3cqw; }
 .pf-gt-cards i { width: 2.3cqw; height: 2.3cqw; border-radius: 0.55cqw;
   background: rgba(29,158,117,0.12); display: block; margin-bottom: 0.2cqw; }
 .pf-gt-cards b { font-size: 1.094cqw; font-weight: 500; color: #fff; }
-.pf-gt-cards p { font-size: 0.9375cqw; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.45; }
+.pf-gt-cards p { font-size: 0.9375cqw; color: rgba(255,255,255,0.68); margin: 0; line-height: 1.45; }
 .pf-gt-cards em { font-size: 0.86cqw; font-style: normal; color: #5dcaa5;
   background: rgba(29,158,117,0.12); border-radius: 0.35cqw; padding: 0.2cqw 0.55cqw;
   align-self: flex-start; margin-top: 0.2cqw; }
