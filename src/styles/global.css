@@ -283,6 +283,12 @@ nav a:focus { outline: 2px solid var(--orange); outline-offset: 4px; border-radi
 .static-body a { color: var(--orange); }
 
 /* ── SERVICES ── */
+/* This section is dark, but .section-title/.section-label are coloured for the
+   cream pages. "Beyond the Blog" was rendering dark brown on dark brown — the
+   exact same colour — so the heading was invisible on the live homepage. */
+.services-section .section-title { color: var(--cream); }
+.services-section .section-label { color: var(--gold); }
+
 .services-section { background: var(--darkbrown); padding: 72px 40px; text-align: center; }
 .services-inner { max-width: 860px; margin: 0 auto; }
 .services-intro { font-size: 17px; color: var(--kraft); line-height: 1.8; margin: 16px 0 40px; }
