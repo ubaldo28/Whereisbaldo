@@ -14,7 +14,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   <div class="pf-links">
     <a href="#work">Work</a>
     <a href="#services">Services</a>
-    <a href="/contact">Contact</a>
+    <a href="#contact">Contact</a>
     <a href="/Ubaldo_Resume.docx" download class="pf-cv"><span class="pf-cv-long">Download CV</span><span class="pf-cv-short">CV</span> ↓</a>
   </div>
 </nav>
@@ -37,7 +37,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
     <p class="pf-desc">From the barber&rsquo;s chair to three live production sites — including an AI news platform that publishes itself. I own everything: design, build, deploy. One person. No handoffs.</p>
     <p class="pf-typed"><span class="pf-hash">#</span> I build <span id="pf-tw"></span></p>
     <div class="pf-btns">
-      <a href="/contact" class="pf-btn">Hire Me →</a>
+      <a href="#contact" class="pf-btn">Hire Me →</a>
       <a href="/Ubaldo_Resume.docx" download class="pf-btn-ghost">Download CV ↓</a>
     </div>
     <div class="pf-tech-strip">
@@ -128,7 +128,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   <div class="pf-avail-inner">
     <span class="pf-avail-dot"></span>
     <span class="pf-avail-text">Currently available for freelance projects & full-time roles</span>
-    <a href="/contact" class="pf-avail-cta">Let's Talk →</a>
+    <a href="#contact" class="pf-avail-cta">Let's Talk →</a>
   </div>
 </div>
 
@@ -254,7 +254,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 
   <div class="pf-work-cta">
     <p>Available for freelance and contract work — full-stack builds, AI automation, and systems that run without babysitting.</p>
-    <a href="/contact" class="pf-view-btn">Get in touch →</a>
+    <a href="#contact" class="pf-view-btn">Get in touch →</a>
   </div>
 </section>
 
@@ -352,7 +352,7 @@ document.getElementById('pf-contact-form').addEventListener('submit', async func
   const btn = document.getElementById('pf-form-btn');
   const msg = document.getElementById('pf-form-msg');
   if (this.company.value) { return; }
-  const data = { name: this.name.value, email: this.email.value, message: this.message.value };
+  const data = { name: this.name.value, email: this.email.value, message: this.message.value, subject: 'Portfolio' };
   btn.textContent = 'Sending...';
   btn.disabled = true;
   try {
@@ -526,6 +526,8 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 .pf-avail-cta:focus-visible {
   outline-color: #2ec4c0;
 }
+
+#pf-main, #work, #services, #contact { scroll-margin-top: 84px; }
 
 /* ── HERO ── */
 .pf-hero {
