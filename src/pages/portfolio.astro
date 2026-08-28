@@ -193,10 +193,11 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       </div>
       <div class="pf-project-info">
         <h2 class="pf-title">GenioTech</h2>
-        <p class="pf-pdesc">A phone repair shop in Dundee needed a real web presence — not a template. Built solo: online booking, e-commerce, photo gallery, blog, newsletter, and a PWA customers can install.</p>
+        <p class="pf-pdesc">Full site build for a working repair shop in Dundee. Customers choose their device, see a starting price, and book a repair slot online instead of phoning the shop. Includes an accessories store, photo and video gallery, blog, newsletter capture, and an installable PWA.</p>
+        <p class="pf-outcome"><strong>What changed:</strong> bookings moved off the phone and onto the site. Customers self-serve by device type and see pricing before they commit, with newsletter signup built into the flow behind a 10% first-order incentive.</p>
         <div class="pf-metrics">
-          <div>🏆 Scottish Independent Retail Award Winner</div>
-          <div>4.7★ · 200+ Verified Reviews</div>
+          <div>Built for an award-winning independent retailer</div>
+          <div>The shop holds a Scottish Independent Retail Award and 4.7★ across 200+ verified reviews</div>
         </div>
         <div class="pf-tags">
           <span>Booking System</span><span>E-commerce</span><span>PWA</span><span>SEO</span><span>Newsletter</span>
@@ -210,20 +211,21 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   <div class="pf-project pf-flip">
     <div class="pf-project-meta">
       <span class="pf-num">02</span>
-      <span class="pf-tag">Passion Project · January 2026</span>
+      <span class="pf-tag">Own product · Live since January 2026</span>
       <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-link">potuswatchdaily.com ↗</a>
     </div>
     <div class="pf-project-body">
       <div class="pf-project-info">
         <h2 class="pf-title">POTUS Watch Daily</h2>
-        <p class="pf-pdesc">Started as practice. Became a real foreign policy intelligence platform publishing multiple dispatches every day — automated pipeline, breaking news ticker, AdSense, newsletter.</p>
+        <p class="pf-pdesc">A foreign-policy publication that researches, writes and publishes itself. Built on the Claude API, it produces multiple dispatches a day across desks covering the Americas, China, NATO, Iran, the Middle East, Russia, trade and analysis — with a breaking-news ticker, archive, newsletter, and a published editorial standards policy.</p>
+        <p class="pf-outcome"><strong>What changed:</strong> this is a production AI system, not a demo. It has run on an automated publishing pipeline since January 2026, generating and shipping content daily without manual intervention.</p>
         <div class="pf-metrics">
-          <div>🔁 Publishes multiple times daily</div>
-          <div>🔴 Live breaking news ticker</div>
-          <div>💰 AdSense monetised</div>
+          <div>Publishes unattended, multiple times a day</div>
+          <div>Live breaking-news ticker and archive</div>
+          <div>Published editorial standards policy</div>
         </div>
         <div class="pf-tags">
-          <span>Automated Publishing</span><span>Breaking News</span><span>Newsletter</span><span>AdSense</span>
+          <span>Claude API</span><span>Autonomous Pipeline</span><span>Breaking News</span><span>Newsletter</span><span>AdSense</span>
         </div>
         <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
@@ -243,7 +245,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   <div class="pf-project">
     <div class="pf-project-meta">
       <span class="pf-num">03</span>
-      <span class="pf-tag">Personal Brand · March 2026</span>
+      <span class="pf-tag">Own build · 2026</span>
       <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-link">whereisbaldo.com ↗</a>
     </div>
     <div class="pf-project-body">
@@ -258,18 +260,24 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       </div>
       <div class="pf-project-info">
         <h2 class="pf-title">Where Is Baldo?</h2>
-        <p class="pf-pdesc">Built in a hotel room in Scotland, waiting on a government letter. Custom design, dark mode, email subscriptions, push notifications, Google Analytics, AdSense, and a full PWA.</p>
+        <p class="pf-pdesc">A custom publishing platform, built from scratch rather than assembled on an off-the-shelf CMS. Transactional email through Resend, web push through Webpushr, dark mode, search, generated social cards, and an installable PWA.</p>
+        <p class="pf-outcome"><strong>What it&rsquo;s for:</strong> this is where I test infrastructure before it goes near client work. The email and push stack running here is the same one I would deploy for a client.</p>
         <div class="pf-metrics">
-          <div>🌍 Readers in multiple countries</div>
-          <div>📲 Installable PWA</div>
-          <div>📧 Email + push notifications</div>
+          <div>Installable PWA with web push</div>
+          <div>Transactional email on Resend</div>
+          <div>Per-post social cards generated at build time</div>
         </div>
         <div class="pf-tags">
-          <span>Custom Design</span><span>Dark Mode</span><span>Resend API</span><span>Webpushr</span><span>AdSense</span>
+          <span>Astro</span><span>Cloudflare Pages</span><span>Cloudflare Functions</span><span>Resend API</span><span>Webpushr</span>
         </div>
         <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
     </div>
+  </div>
+
+  <div class="pf-work-cta">
+    <p>Available for freelance and contract work — full-stack builds, AI automation, and systems that run without babysitting.</p>
+    <a href="/contact" class="pf-view-btn">Get in touch →</a>
   </div>
 </section>
 
@@ -877,6 +885,24 @@ type();
   letter-spacing: -0.05em;
 }
 .pf-work-dot { color: #00918e; }
+.pf-outcome {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+  opacity: 0.85;
+}
+.pf-work-cta {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+}
+.pf-work-cta p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 46ch;
+  margin: 0 auto 1.5rem;
+}
 .pf-project {
   padding: 70px 0;
   border-bottom: 1px solid #e5e5e5;
