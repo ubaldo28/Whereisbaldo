@@ -202,6 +202,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         <div class="pf-tags">
           <span>Booking System</span><span>E-commerce</span><span>PWA</span><span>SEO</span><span>Newsletter</span>
         </div>
+        <p class="pf-stack"><strong>Stack</strong> Astro 4 · TypeScript · Cloudflare Pages · Cloudflare Workers · Stripe · Resend · Cal.eu · Service Worker PWA · JSON-LD</p>
         <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
     </div>
@@ -225,8 +226,9 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <div>Published editorial standards policy</div>
         </div>
         <div class="pf-tags">
-          <span>Claude API</span><span>Autonomous Pipeline</span><span>Breaking News</span><span>Newsletter</span><span>AdSense</span>
+          <span>Autonomous Pipeline</span><span>Breaking News</span><span>Archive</span><span>Newsletter</span><span>Monetised</span>
         </div>
+        <p class="pf-stack"><strong>Stack</strong> Astro (SSR) · Cloudflare Pages · Supabase / PostgreSQL · Node.js · Claude API (Haiku) · NewsAPI · Unsplash API · Railway · GitHub Actions · Wrangler · IndexNow</p>
         <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
       <div class="pf-browser">
@@ -268,8 +270,9 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <div>Per-post social cards generated at build time</div>
         </div>
         <div class="pf-tags">
-          <span>Astro</span><span>Cloudflare Pages</span><span>Cloudflare Functions</span><span>Resend API</span><span>Webpushr</span>
+          <span>Custom Design</span><span>Dark Mode</span><span>Search</span><span>PWA</span><span>Web Push</span><span>Generated Social Cards</span>
         </div>
+        <p class="pf-stack"><strong>Stack</strong> Astro 7 · Cloudflare Pages · Cloudflare Functions · Resend · Webpushr · Decap CMS</p>
         <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
     </div>
@@ -885,6 +888,21 @@ type();
   letter-spacing: -0.05em;
 }
 .pf-work-dot { color: #00918e; }
+.pf-stack {
+  font-size: 0.82rem;
+  line-height: 1.75;
+  margin: 0 0 1.25rem;
+  opacity: 0.75;
+  letter-spacing: 0.01em;
+}
+.pf-stack strong {
+  display: block;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.3rem;
+}
 .pf-outcome {
   font-size: 0.95rem;
   line-height: 1.7;
