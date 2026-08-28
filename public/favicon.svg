@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <rect width="100" height="100" rx="23" fill="#F2762E"/>
-  <text x="50" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="bold" font-style="italic" fill="#FFF6E6" text-anchor="middle" letter-spacing="-2">B<tspan fill="#8C3410" font-style="normal">?</tspan></text>
+  <path d="M50 13c-8.3 0-15 6.7-15 15 0 11.2 12.7 23.6 14.3 25.1a1 1 0 0 0 1.4 0C52.3 51.6 65 39.2 65 28c0-8.3-6.7-15-15-15z" fill="#FFF6E6"/>
+  <text x="50" y="34.5" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="bold" fill="#F2762E" text-anchor="middle">?</text>
+  <text x="50" y="72" font-family="Helvetica, Arial, sans-serif" font-size="8.5" font-weight="bold" letter-spacing="2.6" fill="#FFD9B0" text-anchor="middle">WHERE IS</text>
+  <text x="47.5" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="bold" font-style="italic" fill="#FFF6E6" text-anchor="middle">Baldo</text>
+  <text x="76" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="bold" fill="#8C3410" text-anchor="middle">?</text>
 </svg>
