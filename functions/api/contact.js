@@ -53,7 +53,7 @@ const template = ({ name, email, topic, message }) => `
 // binding or dashboard setup, so there is nothing to configure and no secret.
 // Per-colo rather than global — it throttles a script hammering the form, it is
 // not a defence against a distributed flood.
-const RATE = { max: 5, windowSec: 900 };
+const RATE = { max: 5, windowSec: 21600 };
 
 async function overRateLimit(ip) {
   if (!ip) return false;
@@ -69,6 +69,24 @@ async function overRateLimit(ip) {
     return false;
   } catch {
     return false; // never let the limiter itself block a real message
+  }
+}
+
+// Cloudflare Turnstile. The secret lives in the TURNSTILE_SECRET_KEY
+// environment variable on the Pages project — never in this file.
+async function turnstileOk(token, ip, secret) {
+  if (!secret) return true;            // not configured yet: don't lock the form
+  if (!token) return false;
+  const body = new FormData();
+  body.append('secret', secret);
+  body.append('response', token);
+  if (ip) body.append('remoteip', ip);
+  try {
+    const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body });
+    const d = await r.json();
+    return d.success === true;
+  } catch {
+    return true;                        // Cloudflare unreachable: let the message through
   }
 }
 
@@ -127,6 +145,11 @@ export async function onRequestPost(context) {
     // Honeypot: a real person never fills this in.
     if ((body.company || '').trim()) {
       return json({ success: true }, 200, allowOrigin);
+    }
+
+    const ip = request.headers.get('CF-Connecting-IP');
+    if (!(await turnstileOk(body['cf-turnstile-response'], ip, env.TURNSTILE_SECRET_KEY))) {
+      return json({ error: "Couldn't verify that you're human. Reload the page and try again." }, 403, allowOrigin);
     }
 
     const name = oneLine(body.name || '', 120);

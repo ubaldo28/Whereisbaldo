@@ -327,6 +327,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <label for="pf-company">Company</label>
           <input type="text" id="pf-company" name="company" tabindex="-1" autocomplete="off" />
         </div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAEfFYnVs6FFakIpO" data-size="invisible"></div>
         <button type="submit" class="pf-btn pf-form-submit" id="pf-form-btn">Send Message →</button>
         <p id="pf-form-msg" role="status" aria-live="polite" style="margin-top:12px;font-size:13px;"></p>
       </form>
@@ -347,13 +348,18 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   <a href="/">whereisbaldo.com</a>
 </footer>
 
+<script is:inline async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
 <script>
 document.getElementById('pf-contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('pf-form-btn');
   const msg = document.getElementById('pf-form-msg');
   if (this.company.value) { return; }
-  const data = { name: this.name.value, email: this.email.value, message: this.message.value, subject: 'Portfolio' };
+  const token = (window.turnstile && document.querySelector('.cf-turnstile'))
+    ? (this.querySelector('[name="cf-turnstile-response"]') || {}).value
+    : undefined;
+  const data = { name: this.name.value, email: this.email.value, message: this.message.value,
+                 subject: 'Portfolio', 'cf-turnstile-response': token };
   btn.textContent = 'Sending...';
   btn.disabled = true;
   try {

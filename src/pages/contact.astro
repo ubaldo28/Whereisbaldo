@@ -46,6 +46,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <label for="message">Message</label>
           <textarea id="message" name="message" required rows="6" placeholder="What's on your mind?"></textarea>
         </div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAEfFYnVs6FFakIpO" data-size="invisible"></div>
         <button type="submit" class="btn-primary">Send It →</button>
         <p id="contactMsg" class="form-msg" hidden></p>
       </form>
@@ -138,6 +139,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       email: form.email.value.trim(),
       subject: form.subject.options[form.subject.selectedIndex].text,
       message: form.message.value.trim(),
+      'cf-turnstile-response': (form.querySelector('[name="cf-turnstile-response"]') || {}).value,
     };
 
     try {
@@ -162,3 +164,4 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     btn.textContent = original;
   });
 </script>
+<script is:inline async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
