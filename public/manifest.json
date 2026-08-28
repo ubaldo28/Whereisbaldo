@@ -4,8 +4,8 @@
   "description": "Web developer, growth hacker, and travel writer. Real stories. Real projects. Built from scratch.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0a0a0a",
+  "background_color": "#F2762E",
+  "theme_color": "#F2762E",
   "orientation": "portrait-primary",
   "icons": [
     {
