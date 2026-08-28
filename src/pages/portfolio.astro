@@ -155,6 +155,13 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
                  muted loop playsinline preload="none" aria-hidden="true" class="pf-vid-overlay"></video>
           <img src="/portfolio-geniotech-v3.webp" alt="The GenioTech site: device repair booking, pricing, awards and accessories store"
                width="1600" height="1088" loading="eager" decoding="sync" class="pf-shot-knockout" />
+          <div class="pf-gt-stats" aria-hidden="true">
+            <div><b>4.7&#9733;</b><span>Google rating</span></div>
+            <div><b>200+</b><span>verified reviews</span></div>
+            <div><b>&lt;1hr</b><span>most screen repairs</span></div>
+            <div><b class="pf-gt-emo">&#127942;</b><span>Scottish Retail winner</span></div>
+            <div><b class="pf-gt-emo">&#129351;</b><span>UK SBA 2026 Finalist</span></div>
+          </div>
         </div>
       </div>
       <div class="pf-project-info">
@@ -1069,6 +1076,32 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 /* The hero band is knocked out of this screenshot so the clip plays behind the
    site's own text. Dark ground underneath in case the clip never loads. */
 .pf-shot-knockout { position: relative; z-index: 1; }
+/* The awards strip is live markup rather than pixels, so the emoji and text
+   are drawn by the reader's own machine — Apple's trophy on a Mac — instead of
+   whatever font rendered the screenshot. */
+.pf-gt-stats {
+  position: absolute;
+  left: 0; width: 100%;
+  top: 70.98%; height: 9.42%;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: #0f1a14;
+  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, sans-serif;
+  line-height: normal;
+}
+.pf-gt-stats > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25cqw;
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+.pf-gt-stats > div:last-child { border-right: 0; }
+.pf-gt-stats b { font-size: 2.1cqw; font-weight: 600; color: #5dcaa5; }
+.pf-gt-stats b.pf-gt-emo { font-size: 2.4cqw; color: inherit; }
+.pf-gt-stats span { font-size: 1.05cqw; color: rgba(255,255,255,0.55); }
 .pf-browser:hover .pf-vid-overlay { transform: scale(1.02); }
 
 /* Project info */
