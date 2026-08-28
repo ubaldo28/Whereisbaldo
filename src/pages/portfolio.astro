@@ -155,9 +155,9 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
                  muted loop playsinline preload="none" aria-hidden="true" class="pf-vid-overlay"></video>
 
           <div class="pf-gt-nav">
-            <span class="pf-gt-mark">geni<i>o</i>tech</span>
-            <nav><b>Home</b><span>Services</span><span>Shop</span><span>Book Repair</span><span>Gallery</span><span>Blog</span></nav>
-            <span class="pf-gt-book">Quick book &#8594;</span>
+            <img class="pf-gt-logo" src="/geniotech-logo.png" alt="" width="200" height="48" loading="eager" decoding="sync" />
+            <nav class="pf-gt-links"><b>Home</b><span>Services</span><span>Shop</span><span>Book Repair</span><span>Gallery</span><span>Blog</span></nav>
+            <div class="pf-gt-right"><i class="pf-gt-soc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></i><i class="pf-gt-soc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.5 8.5h2V5.6h-2.3c-2 0-3.2 1.3-3.2 3.3v1.6H9v2.9h2v8.1h3v-8.1h2.2l.4-2.9H14v-1.2c0-.6.2-.8.5-.8z" fill="currentColor" stroke="none"/></svg></i><i class="pf-gt-soc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 3.5v9.9a3.1 3.1 0 1 1-2.4-3v2.6a.9.9 0 1 0 .9.9V3.5H15c.3 1.7 1.4 2.9 3.2 3.1v2.5c-1.2-.1-2.3-.5-3.2-1.2z" fill="currentColor" stroke="none"/></svg></i><span class="pf-gt-install">Install App</span><span class="pf-gt-book">Quick book &#8594;</span></div>
           </div>
 
           <div class="pf-gt-hero">
@@ -175,15 +175,20 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
             <div><b>4.7&#9733;</b><span>Google rating</span></div>
             <div><b>200+</b><span>verified reviews</span></div>
             <div><b>&lt;1hr</b><span>most screen repairs</span></div>
-            <div><b class="pf-gt-emo">&#127942;</b><span>Scottish Retail winner</span></div>
-            <div><b class="pf-gt-emo">&#129351;</b><span>UK SBA 2026 Finalist</span></div>
+            <div><b>&#127942;</b><span>Scottish Retail winner</span></div>
+            <div><b>&#129351;</b><span>UK SBA 2026 Finalist</span></div>
           </div>
 
           <div class="pf-gt-svc">
-            <span class="pf-gt-svc-lbl">SERVICES</span>
+            <span class="pf-gt-svc-lbl">services</span>
             <p class="pf-gt-svc-h">What we fix</p>
             <p class="pf-gt-svc-sub">Quality parts &middot; professional repairs &middot; guaranteed work</p>
-            <div class="pf-gt-cards"><i></i><i></i><i></i><i></i></div>
+            <div class="pf-gt-cards">
+              <div><i></i><b>iPhone</b><p>Screen, battery, charging port, cameras and more</p><em>from &pound;29</em></div>
+              <div><i></i><b>Samsung &amp; Android</b><p>Galaxy, Huawei, Pixel and all models</p><em>from &pound;29</em></div>
+              <div><i></i><b>Tablets</b><p>iPad, Samsung Tab, Huawei and more</p><em>from &pound;39</em></div>
+              <div><i></i><b>Laptops &amp; Macs</b><p>Screen, keyboard, battery, software</p><em>from &pound;49</em></div>
+            </div>
           </div>
         </div>
       </div>
@@ -258,7 +263,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         </div>
         <div class="pf-browser-content">
           <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-shot-link">
-            <img src="/portfolio-baldo-v3.webp" alt="Where Is Baldo?: a custom publishing platform with dark mode and search"
+            <img src="/portfolio-baldo-v2.webp" alt="Where Is Baldo?: a custom publishing platform with dark mode and search"
                  width="1600" height="1088" loading="lazy" decoding="async" />
           </a>
         </div>
@@ -1064,7 +1069,7 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   padding: 3px 10px;
   margin: 0 6px;
 }
-.pf-browser img { width: 100%; display: block; transition: transform 0.5s; }
+.pf-browser > img, .pf-browser-content > img, .pf-browser-content > a > img { width: 100%; display: block; transition: transform 0.5s; }
 .pf-browser:hover img { transform: scale(1.02); }
 .pf-browser-content {
   background: #080d0b;
@@ -1077,47 +1082,86 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 .pf-shot-link { display: block; width: 100%; height: 100%; }
 /* cover, not stretch — and anchored to the top so the masthead of each
    screenshot is what survives the crop. */
-.pf-browser-content img {
+.pf-browser-content > img,
+.pf-browser-content > a > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
 }
+/* This shot is wider than the box, so a centred crop cut the logo in half.
+   Anchor it left: the identity and nav survive instead. */
+.pf-shot-left img { object-position: top left; }
 
-/* GenioTech's card is drawn as markup, not captured as a picture, so the
-   reader's own machine renders it — Apple's trophy on a Mac — and it stays
-   sharp at any size. The clip is the hero's background, as on their site. */
-.pf-gt { background: #080d0b; font-family: -apple-system, "system-ui", "Segoe UI", Roboto, sans-serif; line-height: normal; }
+/* Drawn as markup rather than captured, so the reader's own machine renders it
+   — Apple's trophy on a Mac — and it stays sharp at any size. Every colour and
+   size below is read off geniotech.co.uk, converted to cqw at their 1280px
+   layout width (1cqw = 12.8px). */
+.pf-gt { background: #080d0b; line-height: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
 .pf-gt * { line-height: normal; }
 .pf-gt > *:not(video) { position: absolute; left: 0; width: 100%; z-index: 2; box-sizing: border-box; }
-.pf-gt-nav { top: 0; height: 6.67%; background: #080d0b; display: flex; align-items: center; gap: 2cqw; padding: 0 2.4cqw; font-size: 1.05cqw; }
-.pf-gt-mark { font-weight: 800; font-size: 1.75cqw; letter-spacing: -0.02em; color: #fff; text-transform: uppercase; }
-.pf-gt-mark i { color: #5dcaa5; font-style: normal; }
-.pf-gt-nav nav { display: flex; align-items: center; gap: 1.5cqw; margin-left: 3cqw; color: rgba(255,255,255,0.62); }
-.pf-gt-nav nav b { background: #2f9e73; color: #fff; font-weight: 500; padding: 0.4cqw 1cqw; border-radius: 0.5cqw; }
-.pf-gt-book { margin-left: auto; background: #4cb98c; color: #06251a; font-weight: 600; padding: 0.5cqw 1.1cqw; border-radius: 0.5cqw; white-space: nowrap; }
-.pf-gt-hero { top: 6.67%; height: 59.77%; display: flex; flex-direction: column; justify-content: center; padding-left: 3.6cqw; }
-.pf-gt-badge { display: inline-flex; align-items: center; gap: 0.5cqw; align-self: flex-start; font-size: 0.95cqw; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); border-radius: 2cqw; padding: 0.4cqw 1cqw; margin-bottom: 1.6cqw; }
-.pf-gt-badge i { width: 0.5cqw; height: 0.5cqw; border-radius: 50%; background: #5dcaa5; }
-.pf-gt-h { font-size: 3.12cqw; font-weight: 500; color: #fff; line-height: 1.18; margin: 0 0 1.4cqw; letter-spacing: -0.01em; }
+
+.pf-gt-nav { top: 0; height: 6.67%; background: #080d0b; display: flex; align-items: center;
+  padding: 0 2.19cqw; font-size: 1.02cqw; }
+.pf-gt-logo { height: 2.81cqw; width: auto; display: block; }
+.pf-gt-links { display: flex; align-items: center; gap: 1.4cqw; margin: 0 auto 0 3.4cqw;
+  color: rgba(255,255,255,0.5); white-space: nowrap; }
+.pf-gt-links b { background: #1d9e75; color: #fff; font-weight: 400;
+  padding: 0.547cqw 1.094cqw; border-radius: 0.47cqw; }
+.pf-gt-right { display: flex; align-items: center; gap: 0.78cqw; }
+.pf-gt-soc { width: 2.5cqw; height: 2.5cqw; border-radius: 0.547cqw;
+  border: 1px solid rgba(29,158,117,0.2); color: rgba(255,255,255,0.5);
+  display: flex; align-items: center; justify-content: center; }
+.pf-gt-soc svg { width: 1.35cqw; height: 1.35cqw; display: block; }
+.pf-gt-install { color: #5dcaa5; border: 1px solid rgba(29,158,117,0.5); border-radius: 0.547cqw;
+  padding: 0.39cqw 0.86cqw; font-size: 0.94cqw; white-space: nowrap; }
+.pf-gt-book { background: #1d9e75; color: #fff; font-weight: 500; border-radius: 0.547cqw;
+  padding: 0.625cqw 1.406cqw; font-size: 1.02cqw; white-space: nowrap; }
+
+.pf-gt-hero { top: 6.67%; height: 59.77%; display: flex; flex-direction: column;
+  justify-content: center; padding-left: 4.06cqw; }
+.pf-gt-badge { display: inline-flex; align-items: center; gap: 0.5cqw; align-self: flex-start;
+  font-size: 0.86cqw; color: #5dcaa5; background: rgba(29,158,117,0.12);
+  border-radius: 1.5625cqw; padding: 0.39cqw 1.094cqw; margin-bottom: 1.9cqw; }
+.pf-gt-badge i { width: 0.44cqw; height: 0.44cqw; border-radius: 50%; background: #5dcaa5; }
+.pf-gt-h { font-size: 3.125cqw; font-weight: 500; color: #fff; line-height: 1.15;
+  margin: 0 0 1.7cqw; }
 .pf-gt-h em { color: #5dcaa5; font-style: normal; }
-.pf-gt-p { font-size: 1.17cqw; color: rgba(255,255,255,0.75); line-height: 1.75; margin: 0 0 1.8cqw; }
-.pf-gt-cta { align-self: flex-start; background: #4cb98c; color: #06251a; font-weight: 600; font-size: 1.1cqw; padding: 0.75cqw 1.5cqw; border-radius: 0.6cqw; }
-.pf-gt-ticker { top: 66.44%; height: 4.54%; background: #0f1a14; display: flex; align-items: center; gap: 2.6cqw; padding: 0 2cqw; font-size: 0.92cqw; color: rgba(255,255,255,0.7); white-space: nowrap; overflow: hidden; }
-.pf-gt-ticker span { position: relative; padding-left: 1cqw; }
-.pf-gt-ticker span::before { content: ""; position: absolute; left: 0; top: 50%; width: 0.35cqw; height: 0.35cqw; margin-top: -0.175cqw; border-radius: 50%; background: #5dcaa5; }
-.pf-gt-stats { top: 70.98%; height: 9.42%; background: #0f1a14; display: grid; grid-template-columns: repeat(5, 1fr); }
-.pf-gt-stats > div { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.25cqw; border-right: 1px solid rgba(255,255,255,0.07); }
+.pf-gt-p { font-size: 1.172cqw; color: rgba(255,255,255,0.75); line-height: 1.75; margin: 0 0 2cqw; }
+.pf-gt-cta { align-self: flex-start; background: #1d9e75; color: #fff; font-weight: 500;
+  font-size: 1.02cqw; padding: 0.625cqw 1.406cqw; border-radius: 0.547cqw; }
+
+.pf-gt-ticker { top: 66.44%; height: 4.54%; background: #0f1a14; display: flex; align-items: center;
+  gap: 2.6cqw; padding: 0 2.19cqw; font-size: 0.86cqw; color: rgba(255,255,255,0.62);
+  white-space: nowrap; overflow: hidden; }
+.pf-gt-ticker span { position: relative; padding-left: 0.9cqw; }
+.pf-gt-ticker span::before { content: ""; position: absolute; left: 0; top: 50%;
+  width: 0.34cqw; height: 0.34cqw; margin-top: -0.17cqw; border-radius: 50%; background: #1d9e75; }
+
+.pf-gt-stats { top: 70.98%; height: 9.42%; background: #0f1a14;
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid rgba(29,158,117,0.2); }
+.pf-gt-stats > div { display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 0.3cqw; border-right: 1px solid rgba(29,158,117,0.2); }
 .pf-gt-stats > div:last-child { border-right: 0; }
-.pf-gt-stats b { font-size: 2.1cqw; font-weight: 600; color: #5dcaa5; }
-.pf-gt-stats b.pf-gt-emo { font-size: 2.4cqw; color: inherit; }
-.pf-gt-stats span { font-size: 1.05cqw; color: rgba(255,255,255,0.55); }
-.pf-gt-svc { top: 80.4%; height: 19.6%; background: #080d0b; padding: 1.6cqw 2.4cqw 0; }
-.pf-gt-svc-lbl { display: block; font-size: 0.82cqw; letter-spacing: 0.16em; color: #4cb98c; }
-.pf-gt-svc-h { font-size: 1.85cqw; color: #fff; font-weight: 500; margin: 0.5cqw 0 0.3cqw; }
-.pf-gt-svc-sub { font-size: 0.95cqw; color: rgba(255,255,255,0.45); margin: 0 0 1.2cqw; }
-.pf-gt-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2cqw; }
-.pf-gt-cards i { display: block; height: 4cqw; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.8cqw; background: rgba(255,255,255,0.02); }
+.pf-gt-stats b { font-size: 1.719cqw; font-weight: 500; color: #5dcaa5; }
+.pf-gt-stats span { font-size: 0.86cqw; color: rgba(255,255,255,0.45); }
+
+.pf-gt-svc { top: 80.4%; height: 19.6%; background: #080d0b; padding: 1.5cqw 2.19cqw 0; overflow: hidden; }
+.pf-gt-svc-lbl { display: block; font-size: 0.78cqw; letter-spacing: 0.078cqw; color: #1d9e75; }
+.pf-gt-svc-h { font-size: 1.719cqw; color: #fff; font-weight: 500; margin: 0.55cqw 0 0.3cqw; }
+.pf-gt-svc-sub { font-size: 1.016cqw; color: rgba(255,255,255,0.45); margin: 0 0 1.1cqw; }
+.pf-gt-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25cqw; }
+.pf-gt-cards > div { border: 1px solid rgba(29,158,117,0.2); border-radius: 0.86cqw;
+  padding: 0.85cqw 1cqw; display: flex; flex-direction: column; gap: 0.3cqw; }
+.pf-gt-cards i { width: 2.3cqw; height: 2.3cqw; border-radius: 0.55cqw;
+  background: rgba(29,158,117,0.12); display: block; margin-bottom: 0.2cqw; }
+.pf-gt-cards b { font-size: 1.094cqw; font-weight: 500; color: #fff; }
+.pf-gt-cards p { font-size: 0.9375cqw; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.45; }
+.pf-gt-cards em { font-size: 0.86cqw; font-style: normal; color: #5dcaa5;
+  background: rgba(29,158,117,0.12); border-radius: 0.35cqw; padding: 0.2cqw 0.55cqw;
+  align-self: flex-start; margin-top: 0.2cqw; }
 
 .pf-vid-overlay {
   position: absolute;
