@@ -10,7 +10,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 
 <!-- ── NAV ── -->
 <nav class="pf-nav" aria-label="Primary">
-  <a href="/" class="pf-logo">UF®</a>
+  <a href="/" class="pf-logo">UF</a>
   <div class="pf-links">
     <a href="#work">Work</a>
     <a href="#services">Services</a>
@@ -56,9 +56,9 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
   <div class="pf-hero-stats">
     <div class="pf-stat"><div class="pf-stat-num">3</div><div class="pf-stat-label">live sites</div></div>
     <div class="pf-stat-sep"></div>
-    <div class="pf-stat"><div class="pf-stat-num">1yr</div><div class="pf-stat-label">zero prior exp</div></div>
-    <div class="pf-stat-sep"></div>
     <div class="pf-stat"><div class="pf-stat-num">1</div><div class="pf-stat-label">paying client</div></div>
+    <div class="pf-stat-sep"></div>
+    <div class="pf-stat"><div class="pf-stat-num">0</div><div class="pf-stat-label">handoffs</div></div>
   </div>
 </section>
 
@@ -131,42 +131,6 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
     <a href="/contact" class="pf-avail-cta">Let's Talk →</a>
   </div>
 </div>
-
-<!-- ── SKILLS ── -->
-<section class="pf-skills">
-  <div class="pf-skills-inner">
-    <div class="pf-skills-left">
-      <p class="pf-label">Expertise</p>
-      <h2 class="pf-skills-title">What I<br/>bring to<br/>the table.</h2>
-    </div>
-    <div class="pf-skills-right">
-      <div class="pf-skill-item">
-        <div class="pf-skill-top"><span class="pf-skill-name">HTML / CSS</span><span class="pf-skill-pct">90%</span></div>
-        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:90%"></div></div>
-      </div>
-      <div class="pf-skill-item">
-        <div class="pf-skill-top"><span class="pf-skill-name">JavaScript</span><span class="pf-skill-pct">78%</span></div>
-        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:78%"></div></div>
-      </div>
-      <div class="pf-skill-item">
-        <div class="pf-skill-top"><span class="pf-skill-name">Astro</span><span class="pf-skill-pct">85%</span></div>
-        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:85%"></div></div>
-      </div>
-      <div class="pf-skill-item">
-        <div class="pf-skill-top"><span class="pf-skill-name">SEO & Analytics</span><span class="pf-skill-pct">88%</span></div>
-        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:88%"></div></div>
-      </div>
-      <div class="pf-skill-item">
-        <div class="pf-skill-top"><span class="pf-skill-name">UI / UX Design</span><span class="pf-skill-pct">80%</span></div>
-        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:80%"></div></div>
-      </div>
-      <div class="pf-skill-item">
-        <div class="pf-skill-top"><span class="pf-skill-name">AI & Automation</span><span class="pf-skill-pct">82%</span></div>
-        <div class="pf-skill-bar"><div class="pf-skill-fill" style="width:82%"></div></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── WORK ── -->
 <section class="pf-work" id="work">
@@ -919,42 +883,6 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 }
 .pf-avail-cta:hover { opacity: 0.7; }
 
-/* ── SKILLS ── */
-.pf-skills {
-  padding: 80px 60px;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
-  background: #fafafa;
-}
-.pf-skills-inner {
-  max-width: 1300px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 60px;
-  align-items: start;
-}
-.pf-skills-title {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 900;
-  line-height: 1.1;
-  color: #0a0a0a;
-  margin-top: 12px;
-  letter-spacing: -0.03em;
-}
-.pf-skills-right {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  padding-top: 4px;
-}
-.pf-skill-item { display: flex; flex-direction: column; gap: 8px; }
-.pf-skill-top { display: flex; justify-content: space-between; align-items: center; }
-.pf-skill-name { font-size: 13px; font-weight: 700; color: #0a0a0a; }
-.pf-skill-pct { font-size: 12px; font-weight: 700; font-family: monospace; color: #00706e; }
-.pf-skill-bar { height: 3px; background: #e5e5e5; overflow: hidden; }
-.pf-skill-fill { height: 100%; background: #0a0a0a; }
-
 /* ── SECTION LABELS ── */
 .pf-label {
   font-size: 11px;
@@ -1404,7 +1332,6 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   .pf-foot { padding: 20px 24px; }
   .pf-about { grid-template-columns: 1fr; padding: 36px 24px; gap: 16px; }
   .pf-contact { padding: 80px 24px; }
-  .pf-skills { padding: 60px 24px; }
   .pf-avail-banner { padding: 18px 24px; }
   .pf-hero-stats { display: none; }
 }
@@ -1442,8 +1369,6 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   .pf-contact { padding: 60px 20px; }
   .pf-contact-inner { grid-template-columns: 1fr; gap: 40px; }
   .pf-cta-title { font-size: clamp(2rem, 8vw, 3rem); }
-  .pf-skills { padding: 60px 20px; }
-  .pf-skills-inner { grid-template-columns: 1fr; gap: 32px; }
   .pf-avail-banner { padding: 16px 20px; }
   .pf-foot { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
   .pf-foot-sites { display: none; }
