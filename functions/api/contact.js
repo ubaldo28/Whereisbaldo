@@ -49,6 +49,29 @@ const template = ({ name, email, topic, message }) => `
 </td></tr>
 </table>`;
 
+// Per-IP throttle. Uses the Cache API, which Pages Functions have without any
+// binding or dashboard setup, so there is nothing to configure and no secret.
+// Per-colo rather than global — it throttles a script hammering the form, it is
+// not a defence against a distributed flood.
+const RATE = { max: 5, windowSec: 900 };
+
+async function overRateLimit(ip) {
+  if (!ip) return false;
+  try {
+    const cache = caches.default;
+    const key = new Request('https://rl.whereisbaldo.internal/contact/' + encodeURIComponent(ip));
+    const hit = await cache.match(key);
+    const count = hit ? parseInt(await hit.text(), 10) || 0 : 0;
+    if (count >= RATE.max) return true;
+    await cache.put(key, new Response(String(count + 1), {
+      headers: { 'Cache-Control': 'max-age=' + RATE.windowSec },
+    }));
+    return false;
+  } catch {
+    return false; // never let the limiter itself block a real message
+  }
+}
+
 const ALLOWED_ORIGINS = [
   'https://whereisbaldo.com',
   'https://www.whereisbaldo.com',
@@ -91,6 +114,12 @@ export async function onRequestPost(context) {
     return json({ error: 'Not allowed.' }, 403, ALLOWED_ORIGINS[0]);
   }
   const allowOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+
+  // Counted before the honeypot, so a bot that trips the honeypot still burns
+  // its allowance instead of retrying forever for free.
+  if (await overRateLimit(request.headers.get('CF-Connecting-IP'))) {
+    return json({ error: 'Too many messages from this connection. Try again shortly.' }, 429, allowOrigin);
+  }
 
   try {
     const body = await request.json();
