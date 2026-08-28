@@ -314,9 +314,9 @@ nav a:focus { outline: 2px solid var(--orange); outline-offset: 4px; border-radi
 .footer-col ul li a { color: var(--kraft); text-decoration: none; font-size: 14px; font-style: italic; transition: color 0.2s; }
 .footer-col ul li a:hover { color: var(--orange); }
 .footer-col ul li a:focus { outline: 2px solid var(--orange); outline-offset: 2px; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; color: rgba(196,153,90,0.5); letter-spacing: 1px; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; color: var(--gold); letter-spacing: 1px; }
 .footer-legal { display: flex; gap: 20px; }
-.footer-legal a { color: rgba(196,153,90,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-legal a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
 .footer-legal a:hover { color: var(--gold); }
 .footer-legal a:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
 
