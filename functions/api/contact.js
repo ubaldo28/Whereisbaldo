@@ -6,14 +6,14 @@ const template = ({ name, email, topic, message }) => `
 <tr><td align="center" style="padding:0 16px;">
   <table role="presentation" width="430" cellpadding="0" cellspacing="0" style="width:430px;max-width:100%;background:#FFFDF8;border-radius:16px;overflow:hidden;">
 
-    <tr><td style="background:#F2762E;padding:16px 24px;">
+    <tr><td style="background:#A84A12;padding:16px 24px;">
       <table role="presentation" cellpadding="0" cellspacing="0"><tr>
         <td style="padding-right:10px;vertical-align:middle;">
           <img src="https://whereisbaldo.com/email-pin.png" width="24" height="30" alt="" style="display:block;border:0;" />
         </td>
         <td style="vertical-align:middle;">
-          <div style="font-size:9px;letter-spacing:3px;color:#FFDDBD;font-weight:700;">WHERE IS</div>
-          <div style="font-family:Georgia,'Times New Roman',serif;font-size:19px;font-style:italic;font-weight:bold;color:#FFFDF8;line-height:1.1;">Baldo<span style="color:#8C3410">?</span></div>
+          <div style="font-size:9px;letter-spacing:3px;color:#FFE9D6;font-weight:700;">WHERE IS</div>
+          <div style="font-family:Georgia,'Times New Roman',serif;font-size:19px;font-style:italic;font-weight:bold;color:#FFFDF8;line-height:1.1;">Baldo<span style="color:#FFD0A5">?</span></div>
         </td>
       </tr></table>
     </td></tr>
@@ -34,7 +34,7 @@ const template = ({ name, email, topic, message }) => `
 
     <tr><td style="padding:22px 24px 6px;">
       <a href="mailto:${escape(email)}?subject=${encodeURIComponent('Re: your message to whereisbaldo.com')}"
-         style="display:block;background:#F2762E;color:#FFFDF8;text-decoration:none;text-align:center;padding:14px;border-radius:10px;font-size:15px;font-weight:700;">Reply to ${escape(name)}</a>
+         style="display:block;background:#A84A12;color:#FFFDF8;text-decoration:none;text-align:center;padding:14px;border-radius:10px;font-size:15px;font-weight:700;">Reply to ${escape(name)}</a>
     </td></tr>
 
     <tr><td style="padding:16px 24px 24px;">
