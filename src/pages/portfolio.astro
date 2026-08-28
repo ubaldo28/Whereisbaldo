@@ -151,16 +151,10 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span class="burl">geniotech.co.uk</span>
         </div>
         <div class="pf-browser-content">
-          <img src="/portfolio-geniotech.webp" alt="The GenioTech site: device repair booking, pricing and accessories store"
-               width="1176" height="1026" loading="lazy" decoding="async" />
           <video id="pf-gt-video" data-src="/geniotech-hero.mp4" poster="/geniotech-hero-poster.webp"
                  muted loop playsinline preload="none" aria-hidden="true" class="pf-vid-overlay"></video>
-          <div class="pf-gt-text" aria-hidden="true">
-            <span class="pf-hero-badge"><span class="pf-dot-closed"></span>Closed · reopens tomorrow at 9 am</span>
-            <div class="pf-hero-h">Dundee's go-to<br>repair shop.<br><em class="pf-hero-green">Fast. Trusted.</em></div>
-            <p class="pf-hero-p">Cracked screens fixed in under an hour. iPhones, Samsungs, tablets, laptops. Award-winning service on Hilltown.</p>
-            <span class="pf-hero-btn">Book a repair</span>
-          </div>
+          <img src="/portfolio-geniotech.webp" alt="The GenioTech site: device repair booking, pricing, awards and accessories store"
+               width="1427" height="969" loading="lazy" decoding="async" class="pf-shot-knockout" />
         </div>
       </div>
       <div class="pf-project-info">
@@ -1043,6 +1037,7 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 .pf-browser img { width: 100%; display: block; transition: transform 0.5s; }
 .pf-browser:hover img { transform: scale(1.02); }
 .pf-browser-content {
+  background: #080d0b;
   position: relative;
   overflow: hidden;
   line-height: 0;
@@ -1061,66 +1056,17 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 
 .pf-vid-overlay {
   position: absolute;
-  top: 10.6%; left: 0;
-  width: 100%; height: 89%;
+  top: 5.99%; left: 0;
+  width: 100%; height: 53.56%;
   object-fit: cover;
   display: block;
+  z-index: 0;
   transition: transform 0.5s;
 }
+/* The hero band is knocked out of this screenshot so the clip plays behind the
+   site's own text. Dark ground underneath in case the clip never loads. */
+.pf-shot-knockout { position: relative; z-index: 1; }
 .pf-browser:hover .pf-vid-overlay { transform: scale(1.02); }
-.pf-gt-text {
-  position: absolute;
-  top: 29%; left: 0;
-  width: 53%;
-  padding-left: 4.5%;
-  pointer-events: none;
-  line-height: normal;
-  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, sans-serif;
-}
-.pf-hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 1.1cqw;
-  color: rgb(93,202,165);
-  background: rgba(29,158,117,0.12);
-  border-radius: 20px;
-  padding: 0.45cqw 1.3cqw;
-  margin-bottom: 2cqw;
-}
-.pf-dot-closed {
-  width: 0.55cqw; height: 0.55cqw;
-  border-radius: 50%;
-  background: rgb(93,202,165);
-  flex-shrink: 0;
-}
-.pf-hero-h {
-  font-size: 4.5cqw;
-  font-weight: 500;
-  color: #fff;
-  line-height: 1.15;
-  margin: 0 0 1.8cqw;
-  letter-spacing: normal;
-}
-.pf-hero-green { color: rgb(93,202,165); font-style: normal; }
-.pf-hero-p {
-  font-size: 1.3cqw;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.8;
-  margin: 0 0 2.5cqw;
-  font-weight: 400;
-}
-.pf-hero-btn {
-  display: inline-block;
-  padding: 0.8cqw 1.8cqw;
-  background: rgb(29,158,117);
-  color: #fff;
-  font-size: 1.2cqw;
-  font-weight: 500;
-  border-radius: 7px;
-  text-decoration: none;
-  pointer-events: all;
-}
 
 /* Project info */
 .pf-title {
