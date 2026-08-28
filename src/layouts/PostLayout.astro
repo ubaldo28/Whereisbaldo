@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Subscribe from '../components/Subscribe.astro';
+import { Image } from 'astro:assets';
 
 interface Props {
   title: string;
@@ -11,9 +12,11 @@ interface Props {
   heroColor?: string;
   relatedPosts?: any[];
   ogImage?: string;
+  heroImage?: any;
+  heroAlt?: string;
 }
 
-const { title, description, pubDate, tags = [], heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E', relatedPosts = [], ogImage } = Astro.props;
+const { title, description, pubDate, tags = [], heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E', relatedPosts = [], ogImage, heroImage, heroAlt } = Astro.props;
 
 // Calculate read time (assume 200 words per minute)
 const slot = await Astro.slots.render('default');
@@ -58,6 +61,12 @@ const canonicalURL = Astro.url.href;
     "keywords": tags.join(', ')
   })}
   </script>
+
+  {heroImage && (
+    <figure class="post-hero">
+      <Image src={heroImage} alt={heroAlt ?? ''} widths={[640, 1024, 1600]} sizes="100vw" loading="eager" />
+    </figure>
+  )}
 
   <div class="post-header">
     <span class="post-tag">{tagLabel}</span>
@@ -120,3 +129,8 @@ const canonicalURL = Astro.url.href;
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  .post-hero { margin: 0; line-height: 0; }
+  .post-hero :global(img) { width: 100%; height: clamp(220px, 42vh, 460px); object-fit: cover; }
+</style>

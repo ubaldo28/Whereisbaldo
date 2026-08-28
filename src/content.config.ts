@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 
 const posts = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/posts' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
@@ -12,6 +12,8 @@ const posts = defineCollection({
     heroEmoji: z.string().optional().default('\u2708\ufe0f'),
     heroColor: z.string().optional().default('#4A2C10, #8B5E2E'),
     ogImage: z.string().optional(),
+    heroImage: image().optional(),
+    heroAlt: z.string().optional(),
   }),
 });
 

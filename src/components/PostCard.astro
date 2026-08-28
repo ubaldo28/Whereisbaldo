@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   title: string;
   description: string;
@@ -7,16 +9,24 @@ interface Props {
   pubDate: Date;
   heroEmoji?: string;
   heroColor?: string;
+  heroImage?: any;
+  heroAlt?: string;
 }
 
-const { title, description, slug, tags = [], pubDate, heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E' } = Astro.props;
+const { title, description, slug, tags = [], pubDate, heroEmoji = '✈️', heroColor = '#4A2C10, #8B5E2E', heroImage, heroAlt } = Astro.props;
 const tagLabel = tags.length > 0 ? tags[0] : 'Travel';
 const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 ---
 <article class="post-card">
-  <div class="post-card-img" style={`background: linear-gradient(135deg, ${heroColor})`}>
-    {heroEmoji}
-  </div>
+  {heroImage ? (
+    <a href={`/blog/${slug}`} class="post-card-photo">
+      <Image src={heroImage} alt={heroAlt ?? ''} widths={[320, 640, 960]} sizes="(max-width: 768px) 100vw, 380px" loading="lazy" />
+    </a>
+  ) : (
+    <div class="post-card-img" style={`background: linear-gradient(135deg, ${heroColor})`}>
+      {heroEmoji}
+    </div>
+  )}
   <div class="post-card-body">
     <span class="post-tag">{tagLabel}</span>
     <a href={`/blog/${slug}`} class="post-card-title">{title}</a>
@@ -27,3 +37,8 @@ const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', mon
     </div>
   </div>
 </article>
+
+<style>
+  .post-card-photo { display: block; height: 200px; overflow: hidden; }
+  .post-card-photo :global(img) { width: 100%; height: 100%; object-fit: cover; }
+</style>
