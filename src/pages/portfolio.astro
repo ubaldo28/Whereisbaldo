@@ -150,17 +150,40 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
           <span class="burl">geniotech.co.uk</span>
         </div>
-        <div class="pf-browser-content">
+        <div class="pf-browser-content pf-gt">
           <video id="pf-gt-video" data-src="/geniotech-hero.mp4" poster="/geniotech-hero-poster.webp"
                  muted loop playsinline preload="none" aria-hidden="true" class="pf-vid-overlay"></video>
-          <img src="/portfolio-geniotech-v3.webp" alt="The GenioTech site: device repair booking, pricing, awards and accessories store"
-               width="1600" height="1088" loading="eager" decoding="sync" class="pf-shot-knockout" />
-          <div class="pf-gt-stats" aria-hidden="true">
+
+          <div class="pf-gt-nav">
+            <span class="pf-gt-mark">geni<i>o</i>tech</span>
+            <nav><b>Home</b><span>Services</span><span>Shop</span><span>Book Repair</span><span>Gallery</span><span>Blog</span></nav>
+            <span class="pf-gt-book">Quick book &#8594;</span>
+          </div>
+
+          <div class="pf-gt-hero">
+            <span class="pf-gt-badge"><i></i>Opens today at 9 am</span>
+            <p class="pf-gt-h">Dundee&#39;s go-to<br/>repair shop.<br/><em>Fast. Trusted.</em></p>
+            <p class="pf-gt-p">Cracked screens fixed in under an hour. iPhones,<br/>Samsungs, tablets, laptops. Award-winning service on<br/>Hilltown.</p>
+            <span class="pf-gt-cta">Book a repair</span>
+          </div>
+
+          <div class="pf-gt-ticker">
+            <span>iPhone screen &middot; from &pound;29</span><span>Samsung glass &middot; from &pound;29</span><span>Battery replacement &middot; from &pound;29</span><span>Water damage repair</span><span>MacBook screen fix</span><span>Same-day repairs</span><span>Call: 01382 221017</span><span>29 Hilltown, Dundee</span>
+          </div>
+
+          <div class="pf-gt-stats">
             <div><b>4.7&#9733;</b><span>Google rating</span></div>
             <div><b>200+</b><span>verified reviews</span></div>
             <div><b>&lt;1hr</b><span>most screen repairs</span></div>
             <div><b class="pf-gt-emo">&#127942;</b><span>Scottish Retail winner</span></div>
             <div><b class="pf-gt-emo">&#129351;</b><span>UK SBA 2026 Finalist</span></div>
+          </div>
+
+          <div class="pf-gt-svc">
+            <span class="pf-gt-svc-lbl">SERVICES</span>
+            <p class="pf-gt-svc-h">What we fix</p>
+            <p class="pf-gt-svc-sub">Quality parts &middot; professional repairs &middot; guaranteed work</p>
+            <div class="pf-gt-cards"><i></i><i></i><i></i><i></i></div>
           </div>
         </div>
       </div>
@@ -1061,6 +1084,41 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   object-position: top center;
 }
 
+/* GenioTech's card is drawn as markup, not captured as a picture, so the
+   reader's own machine renders it — Apple's trophy on a Mac — and it stays
+   sharp at any size. The clip is the hero's background, as on their site. */
+.pf-gt { background: #080d0b; font-family: -apple-system, "system-ui", "Segoe UI", Roboto, sans-serif; line-height: normal; }
+.pf-gt * { line-height: normal; }
+.pf-gt > *:not(video) { position: absolute; left: 0; width: 100%; z-index: 2; box-sizing: border-box; }
+.pf-gt-nav { top: 0; height: 6.67%; background: #080d0b; display: flex; align-items: center; gap: 2cqw; padding: 0 2.4cqw; font-size: 1.05cqw; }
+.pf-gt-mark { font-weight: 800; font-size: 1.75cqw; letter-spacing: -0.02em; color: #fff; text-transform: uppercase; }
+.pf-gt-mark i { color: #5dcaa5; font-style: normal; }
+.pf-gt-nav nav { display: flex; align-items: center; gap: 1.5cqw; margin-left: 3cqw; color: rgba(255,255,255,0.62); }
+.pf-gt-nav nav b { background: #2f9e73; color: #fff; font-weight: 500; padding: 0.4cqw 1cqw; border-radius: 0.5cqw; }
+.pf-gt-book { margin-left: auto; background: #4cb98c; color: #06251a; font-weight: 600; padding: 0.5cqw 1.1cqw; border-radius: 0.5cqw; white-space: nowrap; }
+.pf-gt-hero { top: 6.67%; height: 59.77%; display: flex; flex-direction: column; justify-content: center; padding-left: 3.6cqw; }
+.pf-gt-badge { display: inline-flex; align-items: center; gap: 0.5cqw; align-self: flex-start; font-size: 0.95cqw; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); border-radius: 2cqw; padding: 0.4cqw 1cqw; margin-bottom: 1.6cqw; }
+.pf-gt-badge i { width: 0.5cqw; height: 0.5cqw; border-radius: 50%; background: #5dcaa5; }
+.pf-gt-h { font-size: 3.12cqw; font-weight: 500; color: #fff; line-height: 1.18; margin: 0 0 1.4cqw; letter-spacing: -0.01em; }
+.pf-gt-h em { color: #5dcaa5; font-style: normal; }
+.pf-gt-p { font-size: 1.17cqw; color: rgba(255,255,255,0.75); line-height: 1.75; margin: 0 0 1.8cqw; }
+.pf-gt-cta { align-self: flex-start; background: #4cb98c; color: #06251a; font-weight: 600; font-size: 1.1cqw; padding: 0.75cqw 1.5cqw; border-radius: 0.6cqw; }
+.pf-gt-ticker { top: 66.44%; height: 4.54%; background: #0f1a14; display: flex; align-items: center; gap: 2.6cqw; padding: 0 2cqw; font-size: 0.92cqw; color: rgba(255,255,255,0.7); white-space: nowrap; overflow: hidden; }
+.pf-gt-ticker span { position: relative; padding-left: 1cqw; }
+.pf-gt-ticker span::before { content: ""; position: absolute; left: 0; top: 50%; width: 0.35cqw; height: 0.35cqw; margin-top: -0.175cqw; border-radius: 50%; background: #5dcaa5; }
+.pf-gt-stats { top: 70.98%; height: 9.42%; background: #0f1a14; display: grid; grid-template-columns: repeat(5, 1fr); }
+.pf-gt-stats > div { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.25cqw; border-right: 1px solid rgba(255,255,255,0.07); }
+.pf-gt-stats > div:last-child { border-right: 0; }
+.pf-gt-stats b { font-size: 2.1cqw; font-weight: 600; color: #5dcaa5; }
+.pf-gt-stats b.pf-gt-emo { font-size: 2.4cqw; color: inherit; }
+.pf-gt-stats span { font-size: 1.05cqw; color: rgba(255,255,255,0.55); }
+.pf-gt-svc { top: 80.4%; height: 19.6%; background: #080d0b; padding: 1.6cqw 2.4cqw 0; }
+.pf-gt-svc-lbl { display: block; font-size: 0.82cqw; letter-spacing: 0.16em; color: #4cb98c; }
+.pf-gt-svc-h { font-size: 1.85cqw; color: #fff; font-weight: 500; margin: 0.5cqw 0 0.3cqw; }
+.pf-gt-svc-sub { font-size: 0.95cqw; color: rgba(255,255,255,0.45); margin: 0 0 1.2cqw; }
+.pf-gt-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2cqw; }
+.pf-gt-cards i { display: block; height: 4cqw; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.8cqw; background: rgba(255,255,255,0.02); }
+
 .pf-vid-overlay {
   position: absolute;
   top: 6.67%; left: 0;
@@ -1073,35 +1131,6 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   filter: brightness(0.46) saturate(0.95);
   transition: transform 0.5s;
 }
-/* The hero band is knocked out of this screenshot so the clip plays behind the
-   site's own text. Dark ground underneath in case the clip never loads. */
-.pf-shot-knockout { position: relative; z-index: 1; }
-/* The awards strip is live markup rather than pixels, so the emoji and text
-   are drawn by the reader's own machine — Apple's trophy on a Mac — instead of
-   whatever font rendered the screenshot. */
-.pf-gt-stats {
-  position: absolute;
-  left: 0; width: 100%;
-  top: 70.98%; height: 9.42%;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  background: #0f1a14;
-  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, sans-serif;
-  line-height: normal;
-}
-.pf-gt-stats > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25cqw;
-  border-right: 1px solid rgba(255,255,255,0.07);
-}
-.pf-gt-stats > div:last-child { border-right: 0; }
-.pf-gt-stats b { font-size: 2.1cqw; font-weight: 600; color: #5dcaa5; }
-.pf-gt-stats b.pf-gt-emo { font-size: 2.4cqw; color: inherit; }
-.pf-gt-stats span { font-size: 1.05cqw; color: rgba(255,255,255,0.55); }
 .pf-browser:hover .pf-vid-overlay { transform: scale(1.02); }
 
 /* Project info */
