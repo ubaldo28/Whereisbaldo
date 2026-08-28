@@ -232,10 +232,10 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
           <span class="burl">whereisbaldo.com</span>
         </div>
-        <div class="pf-browser-content pf-shot-left">
+        <div class="pf-browser-content">
           <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-shot-link">
             <img src="/portfolio-baldo-v2.webp" alt="Where Is Baldo?: a custom publishing platform with dark mode and search"
-                 width="1427" height="840" loading="lazy" decoding="async" />
+                 width="1427" height="969" loading="lazy" decoding="async" />
           </a>
         </div>
       </div>
@@ -1058,9 +1058,7 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   object-fit: cover;
   object-position: top center;
 }
-/* This shot is wider than the box, so a centred crop cut the logo in half.
-   Anchor it left: the identity and nav survive instead. */
-.pf-shot-left img { object-position: top left; }
+
 .pf-vid-overlay {
   position: absolute;
   top: 10.6%; left: 0;
