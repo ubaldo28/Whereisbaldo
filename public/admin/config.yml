@@ -5,8 +5,9 @@ backend:
   base_url: https://whereisbaldo.com
   auth_endpoint: api/auth
 
-media_folder: public/images
-public_folder: /images
+# Uploads land where Astro can resize and optimise them.
+media_folder: src/assets/posts
+public_folder: ../../assets/posts
 
 site_url: https://whereisbaldo.com
 display_url: https://whereisbaldo.com
@@ -28,6 +29,8 @@ collections:
         name: tags
         widget: list
         default: ["Travel"]
+      - { label: Photo, name: heroImage, widget: image, required: false, hint: "Optional. Shows at the top of the post and on the blog card." }
+      - { label: Photo description, name: heroAlt, widget: string, required: false, hint: "What is in the photo — for screen readers and search." }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Hero Emoji, name: heroEmoji, widget: string, default: "✈️", required: false }
       - { label: Hero Color (CSS gradient stops), name: heroColor, widget: string, default: "#4A2C10, #8B5E2E", required: false }
