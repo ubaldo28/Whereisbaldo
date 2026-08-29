@@ -789,6 +789,11 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   color: #8a8a8a;
   line-height: 1;
   letter-spacing: -0.05em;
+  /* This serif defaults to old-style figures: 4 descends below the baseline,
+     0 is x-height, 2 sits on it — so each number sat a different distance
+     from its label. Lining figures make them one height. */
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
 }
 .pf-stat-label {
   display: block;
@@ -797,7 +802,7 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #5f5f5f;
-  margin-top: 0;
+  margin-top: 6px;
 }
 .pf-stat-sep { width: 100%; height: 1px; background: #e5e5e5; }
 
@@ -1048,6 +1053,8 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   font-weight: 900;
   color: #8a8a8a;
   line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
   flex-shrink: 0;
   letter-spacing: -0.04em;
 }
