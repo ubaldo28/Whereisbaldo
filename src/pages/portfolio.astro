@@ -43,15 +43,14 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       </a>
     </div>
     <div class="pf-tech-strip">
-      <span>Astro</span><span class="pf-strip-dot">·</span>
-      <span>JavaScript</span><span class="pf-strip-dot">·</span>
       <span>React</span><span class="pf-strip-dot">·</span>
+      <span>TypeScript</span><span class="pf-strip-dot">·</span>
       <span>Node.js</span><span class="pf-strip-dot">·</span>
-      <span>HTML</span><span class="pf-strip-dot">·</span>
-      <span>CSS</span><span class="pf-strip-dot">·</span>
+      <span>Astro</span><span class="pf-strip-dot">·</span>
+      <span>Claude API</span><span class="pf-strip-dot">·</span>
+      <span>PostgreSQL</span><span class="pf-strip-dot">·</span>
       <span>Cloudflare</span><span class="pf-strip-dot">·</span>
       <span>Git</span><span class="pf-strip-dot">·</span>
-      <span>Figma</span><span class="pf-strip-dot">·</span>
       <span>SEO</span>
     </div>
   </div>
@@ -71,7 +70,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <span class="pf-cap-num">01 / What I build</span>
       <h2 class="pf-cap-title">Full-Stack<br/>Web Dev</h2>
       <p class="pf-cap-desc">Design, code, launch. I take a brief the whole way to a live URL and own it after that too.</p>
-      <div class="pf-cap-tags"><span>Astro</span><span>JavaScript</span><span>HTML/CSS</span></div>
+      <div class="pf-cap-tags"><span>React</span><span>Node.js</span><span>REST APIs</span></div>
     </div>
     <div class="pf-cap">
       <span class="pf-cap-num">02 / How I grow it</span>
@@ -111,15 +110,19 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <p class="pf-stack-head">Tech stack</p>
       <div class="pf-stack-group">
         <p class="pf-stack-cat">Frontend</p>
-        <div class="pf-pills"><span class="hi">Astro</span><span class="hi">JavaScript</span><span>HTML / CSS</span></div>
+        <div class="pf-pills"><span class="hi">React</span><span class="hi">Astro</span><span>TypeScript</span><span>HTML / CSS</span></div>
       </div>
       <div class="pf-stack-group">
-        <p class="pf-stack-cat">Deploy & tooling</p>
-        <div class="pf-pills"><span>Cloudflare Pages</span><span>Git / GitHub</span><span>Figma</span></div>
+        <p class="pf-stack-cat">Backend</p>
+        <div class="pf-pills"><span class="hi">Node.js</span><span>Express</span><span>REST APIs</span><span>PostgreSQL</span></div>
       </div>
       <div class="pf-stack-group">
-        <p class="pf-stack-cat">Growth</p>
-        <div class="pf-pills"><span class="hi">SEO</span><span>Analytics</span><span>Copywriting</span></div>
+        <p class="pf-stack-cat">AI</p>
+        <div class="pf-pills"><span class="hi">Claude API</span><span>LLM pipelines</span><span>Prompt engineering</span></div>
+      </div>
+      <div class="pf-stack-group">
+        <p class="pf-stack-cat">Cloud & tooling</p>
+        <div class="pf-pills"><span>Cloudflare</span><span>Git / GitHub</span><span>GitHub Actions</span><span class="hi">SEO</span></div>
       </div>
     </div>
   </div>
@@ -771,6 +774,7 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #5f5f5f;
+  white-space: nowrap;
 }
 .pf-strip-dot { color: #00706e; padding: 0 0.5rem; }
 
