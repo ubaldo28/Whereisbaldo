@@ -807,8 +807,11 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   margin-top: 0;
 }
 /* Only the first pair: 4's flat foot sits hard on the baseline under a short
-   label, so it reads tighter than the other two. */
-.pf-stat:first-child .pf-stat-label { margin-top: 8px; }
+   label, so it reads tighter than the other two. The cell gives back the same
+   6px off its bottom padding, so all three cells stay the same height and the
+   separators keep an even rhythm. */
+.pf-stat:first-child .pf-stat-label { margin-top: 6px; }
+.pf-stat:first-child { padding-top: 0; }
 .pf-stat-sep { width: 100%; height: 1px; background: #e5e5e5; }
 
 /* ── CAPABILITIES ── */
