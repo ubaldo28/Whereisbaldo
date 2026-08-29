@@ -3,7 +3,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 ---
 <PortfolioLayout
   title="Ubaldo Figueroa — Full-Stack Developer & Growth Engineer"
-  description="Full-stack developer who ships end to end — design, code, deploy. Three live production sites, including an AI news platform that publishes itself. Available for freelance and full-time work."
+  description="Full-stack developer who ships end to end — design, code, deploy. Four live production sites, including an AI news platform that publishes itself. Available for freelance and full-time work."
 >
 
 <a href="#pf-main" class="pf-skip">Skip to content</a>
@@ -34,7 +34,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
     </h1>
     <div class="pf-redline"></div>
     <p class="pf-role">Full-Stack Developer & Growth Engineer</p>
-    <p class="pf-desc">From the barber&rsquo;s chair to three live production sites — including an AI news platform that publishes itself. I own everything: design, build, deploy. One person. No handoffs.</p>
+    <p class="pf-desc">From the barber&rsquo;s chair to four live production sites — including an AI news platform that publishes itself. I own everything: design, build, deploy. One person. No handoffs.</p>
     <p class="pf-typed"><span class="pf-hash">#</span> I build <span id="pf-tw"></span></p>
     <div class="pf-btns">
       <a href="#contact" class="pf-btn">Hire Me →</a>
@@ -54,9 +54,9 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
     </div>
   </div>
   <div class="pf-hero-stats">
-    <div class="pf-stat"><div class="pf-stat-num">3</div><div class="pf-stat-label">live sites</div></div>
+    <div class="pf-stat"><div class="pf-stat-num">4</div><div class="pf-stat-label">live sites</div></div>
     <div class="pf-stat-sep"></div>
-    <div class="pf-stat"><div class="pf-stat-num">1</div><div class="pf-stat-label">paying client</div></div>
+    <div class="pf-stat"><div class="pf-stat-num">2</div><div class="pf-stat-label">paying clients</div></div>
     <div class="pf-stat-sep"></div>
     <div class="pf-stat"><div class="pf-stat-num">0</div><div class="pf-stat-label">handoffs</div></div>
   </div>
@@ -90,11 +90,11 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <p class="pf-cred-head">The case for hiring me</p>
       <div class="pf-cred-row">
         <span class="pf-dot-g"></span>
-        <span><strong>3 production sites</strong> you can visit right now</span>
+        <span><strong>4 production sites</strong> you can visit right now</span>
       </div>
       <div class="pf-cred-row">
         <span class="pf-dot-g"></span>
-        <span><strong>1 paying client</strong> who trusted me first</span>
+        <span><strong>2 paying clients</strong>, one of whom trusted me first</span>
       </div>
       <div class="pf-cred-row">
         <span class="pf-dot-g"></span>
@@ -282,6 +282,53 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         </div>
         <p class="pf-stack"><strong>Stack</strong> Astro 7 · Cloudflare Pages · Cloudflare Functions · Resend · Webpushr · Decap CMS</p>
         <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="pf-project pf-flip">
+    <div class="pf-project-meta">
+      <span class="pf-num">04</span>
+      <span class="pf-tag">Freelance &middot; 2026</span>
+      <a href="https://peak-vending.com" target="_blank" rel="noopener" class="pf-link">peak-vending.com &#8599;</a>
+    </div>
+    <div class="pf-project-body">
+      <div class="pf-project-info">
+        <h3 class="pf-title">Peak Vending</h3>
+        <p class="pf-pdesc">A site for a Dundee vending operator covering Tayside and Fife. Services and coverage areas are content collections rather than hard-coded pages, so a new location or service is a markdown file, not a rebuild of the template.</p>
+        <p class="pf-outcome"><strong>How it&rsquo;s built:</strong> every page is prerendered to static HTML and served from Cloudflare&rsquo;s edge, and the site ships almost no JavaScript. One route runs server-side &mdash; the contact form, which delivers through Resend. No framework, no Tailwind: plain CSS with custom properties and vanilla JS.</p>
+        <div class="pf-metrics">
+          <div>Static HTML at the edge, near-zero JavaScript shipped</div>
+          <div>Services and locations authored as content collections</div>
+          <div>Contact form live on Resend</div>
+          <div>Print flyers generated from the same codebase &mdash; HTML laid out at millimetre dimensions, rendered to PDF with Playwright, QR codes generated at build</div>
+        </div>
+        <div class="pf-tags">
+          <span>Static Site</span><span>Content Collections</span><span>Cloudflare Workers</span><span>Transactional Email</span><span>Print / PDF</span><span>Vanilla JS</span>
+        </div>
+        <p class="pf-stack"><strong>Stack</strong> Astro 7 &middot; Cloudflare Workers &middot; Wrangler &middot; Astro content collections &middot; plain CSS &middot; vanilla JS &middot; Resend &middot; @fontsource (Barlow Semi Condensed, Source Sans 3) &middot; Playwright &middot; potrace</p>
+        <a href="https://peak-vending.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site &#8594;</a>
+      </div>
+      <div class="pf-browser">
+        <div class="pf-browser-bar">
+          <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
+          <span class="burl">peak-vending.com</span>
+        </div>
+        <div class="pf-browser-content pf-pv">
+          <div class="pf-pv-nav">
+            <img class="pf-pv-logo" src="/peak-logo.svg" alt="" width="132" height="69" loading="lazy" decoding="async" />
+            <nav class="pf-pv-links"><span>Services</span><span>Where we install</span><span>About</span><span>Contact</span></nav>
+            <span class="pf-pv-cta">Get a machine</span>
+          </div>
+          <div class="pf-pv-hero">
+            <span class="pf-pv-eyebrow">Full-service vending</span>
+            <p class="pf-pv-h">Vending your<br/>staff actually use.</p>
+            <p class="pf-pv-sub">We fit them, fill them and fix them. All you do is<br/>tell us where to put them.</p>
+            <div class="pf-pv-btns"><span class="pf-pv-b1">See if we cover you</span><span class="pf-pv-b2">How it works</span></div>
+            <p class="pf-pv-fine">Free site visit &middot; No contract to sign &middot; Based in Dundee</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1164,6 +1211,36 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 .pf-gt-cards em { font-size: 0.86cqw; font-style: normal; color: #5dcaa5;
   background: rgba(29,158,117,0.12); border-radius: 0.35cqw; padding: 0.2cqw 0.55cqw;
   align-self: flex-start; margin-top: 0.2cqw; }
+
+/* Peak Vending's card, same approach as GenioTech's: markup rather than a
+   capture, so the reader's machine draws it. Values read off peak-vending.com
+   and converted to cqw at its 1400px layout width (1cqw = 14px), then lifted
+   where the card's ~44% scale would have thinned them out. */
+.pf-pv { background: #f7f8f6; line-height: normal;
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif; }
+.pf-pv * { line-height: normal; }
+.pf-pv > * { position: absolute; left: 0; width: 100%; box-sizing: border-box; }
+.pf-pv-nav { top: 0; height: 10.71%; background: #fff; border-bottom: 1px solid #dedfd9;
+  display: flex; align-items: center; padding: 0 2.2cqw; }
+.pf-pv-logo { width: 8.8cqw; height: auto; display: block; flex-shrink: 0; }
+.pf-pv-links { display: flex; align-items: center; justify-content: flex-end; flex: 1;
+  gap: 1.7cqw; font-size: 1.14cqw; font-weight: 600; color: #5f665d; white-space: nowrap; }
+.pf-pv-cta { background: #1c72af; color: #fff; font-weight: 600; font-size: 1.14cqw;
+  padding: 0.8cqw 1.5cqw; border-radius: 0.286cqw; margin-left: 1.7cqw; white-space: nowrap;
+  flex-shrink: 0; }
+.pf-pv-hero { top: 10.71%; height: 89.29%; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; padding: 0 4cqw; }
+.pf-pv-eyebrow { font-size: 1.02cqw; font-weight: 600; letter-spacing: 0.176cqw;
+  text-transform: uppercase; color: #1c72af; margin-bottom: 1.4cqw; }
+.pf-pv-h { font-family: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  font-size: 5.686cqw; font-weight: 700; color: #2e322d; line-height: 1.08; margin: 0 0 1.5cqw; }
+.pf-pv-sub { font-size: 1.5cqw; color: #5f665d; line-height: 1.55; margin: 0 0 2.2cqw; }
+.pf-pv-btns { display: flex; align-items: center; gap: 1.2cqw; margin-bottom: 1.6cqw; }
+.pf-pv-b1 { background: #1c72af; color: #fff; font-weight: 600; font-size: 1.24cqw;
+  padding: 0.857cqw 1.714cqw; border-radius: 0.286cqw; }
+.pf-pv-b2 { background: #fff; color: #2e322d; font-weight: 600; font-size: 1.24cqw;
+  padding: 0.857cqw 1.714cqw; border-radius: 0.286cqw; border: 1px solid #dedfd9; }
+.pf-pv-fine { font-size: 1.14cqw; color: #6b7169; margin: 0; }
 
 .pf-vid-overlay {
   position: absolute;

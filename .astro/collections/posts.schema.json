@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "pubDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tags": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "draft": {
+      "default": false,
+      "type": "boolean"
+    },
+    "heroEmoji": {
+      "default": "✈️",
+      "type": "string"
+    },
+    "heroColor": {
+      "default": "#4A2C10, #8B5E2E",
+      "type": "string"
+    },
+    "ogImage": {
+      "type": "string"
+    },
+    "heroImage": {
+      "type": "string"
+    },
+    "heroAlt": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "pubDate"
+  ]
+}

@@ -51,7 +51,7 @@ export const GET: APIRoute = async () => {
                     lineHeight: 1.4,
                     width: '900px',
                   },
-                  'Three live production sites — including an AI news platform that publishes itself.'
+                  'Four live production sites — including an AI news platform that publishes itself.'
                 ),
               ],
             },
