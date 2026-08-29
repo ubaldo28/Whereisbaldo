@@ -774,7 +774,9 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 .pf-hero-stats {
   position: absolute;
   right: 64px;
-  bottom: 64px;
+  /* sits so the last label's baseline lands level with the end of the
+     tech strip on the left */
+  bottom: 54px;
   z-index: 3;
   display: flex;
   flex-direction: column;
