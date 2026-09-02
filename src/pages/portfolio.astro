@@ -47,7 +47,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <span>TypeScript</span><span class="pf-strip-dot">·</span>
       <span>Node.js</span><span class="pf-strip-dot">·</span>
       <span>Astro</span><span class="pf-strip-dot">·</span>
-      <span>Claude API</span><span class="pf-strip-dot">·</span>
+      <span>Cloudflare Workers AI</span><span class="pf-strip-dot">·</span>
       <span>PostgreSQL</span><span class="pf-strip-dot">·</span>
       <span>Cloudflare</span><span class="pf-strip-dot">·</span>
       <span>Git</span><span class="pf-strip-dot">·</span>
@@ -118,7 +118,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       </div>
       <div class="pf-stack-group">
         <p class="pf-stack-cat">AI</p>
-        <div class="pf-pills"><span class="hi">Claude API</span><span>LLM pipelines</span><span>Prompt engineering</span></div>
+        <div class="pf-pills"><span class="hi">Cloudflare Workers AI</span><span>LLM pipelines</span><span>Prompt engineering</span></div>
       </div>
       <div class="pf-stack-group">
         <p class="pf-stack-cat">Cloud & tooling</p>
@@ -152,17 +152,17 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
     <div class="pf-project-body">
       <div class="pf-project-info">
         <h3 class="pf-title">POTUS Watch Daily</h3>
-        <p class="pf-pdesc">A foreign-policy publication that researches, writes and publishes itself. Built on the Claude API, it produces multiple dispatches a day across desks covering the Americas, China, NATO, Iran, the Middle East, Russia, trade and analysis — with a breaking-news ticker, archive, newsletter, and a published editorial standards policy.</p>
+        <p class="pf-pdesc">A foreign-policy publication that researches, writes and publishes itself. A Cloudflare Worker on a cron trigger reads government primary sources — White House RSS, the Federal Register API, Pentagon, UN and European Council statements — and generates each article with Cloudflare Workers AI. It publishes about 20 pieces a day across 8 desks covering the Americas, China, NATO, Iran, the Middle East, Russia, trade and analysis, with an archive, newsletter, and a published editorial standards policy.</p>
         <p class="pf-outcome"><strong>What changed:</strong> this is a production AI system, not a demo. It has run on an automated publishing pipeline since January 2026, generating and shipping content daily without manual intervention.</p>
         <div class="pf-metrics">
           <div>Publishes unattended, multiple times a day</div>
-          <div>Live breaking-news ticker and archive</div>
+          <div>Reads primary source documents, not headlines</div>
           <div>Published editorial standards policy</div>
         </div>
         <div class="pf-tags">
-          <span>Autonomous Pipeline</span><span>Breaking News</span><span>Archive</span><span>Newsletter</span><span>Monetised</span>
+          <span>Autonomous Pipeline</span><span>Workers AI</span><span>Archive</span><span>Newsletter</span><span>Monetised</span>
         </div>
-        <p class="pf-stack"><strong>Stack</strong> Astro (SSR) · Cloudflare Pages · Supabase / PostgreSQL · Node.js · Claude API (Haiku) · NewsAPI · Unsplash API · Railway · GitHub Actions · Wrangler · IndexNow</p>
+        <p class="pf-stack"><strong>Stack</strong> Astro (SSR) · Cloudflare Pages · Cloudflare Workers · Cloudflare Workers AI · Supabase / PostgreSQL over PostgREST · Node.js · GitHub Actions · Wrangler · IndexNow</p>
         <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
       </div>
       <div class="pf-browser">
@@ -172,7 +172,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         </div>
         <div class="pf-browser-content">
           <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-shot-link">
-            <img src="/portfolio-potus.webp" alt="POTUS Watch Daily: an AI-run foreign-policy publication with a breaking-news ticker"
+            <img src="/portfolio-potus.webp" alt="POTUS Watch Daily: an AI-run foreign-policy publication"
                  width="1176" height="1026" loading="lazy" decoding="async" />
           </a>
         </div>
@@ -238,7 +238,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <div class="pf-project-info">
         <h3 class="pf-title">GenioTech</h3>
         <p class="pf-pdesc">Full site build for a working repair shop in Dundee. Customers choose their device, see a starting price, and book a repair slot online instead of phoning the shop. Includes an accessories store, photo and video gallery, blog, newsletter capture, and an installable PWA.</p>
-        <p class="pf-outcome"><strong>What changed:</strong> bookings moved off the phone and onto the site. Customers self-serve by device type and see pricing before they commit, with newsletter signup built into the flow behind a 10% first-order incentive.</p>
+        <p class="pf-outcome"><strong>What changed:</strong> bookings moved off the phone and onto the site. Customers self-serve by device type and see pricing before they commit, with newsletter signup built into the flow.</p>
         <div class="pf-metrics">
           <div>Built for an award-winning independent retailer</div>
           <div>The shop holds a Scottish Independent Retail Award and 4.7★ across 200+ verified reviews</div>
@@ -268,14 +268,14 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         </div>
         <div class="pf-browser-content">
           <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-shot-link">
-            <img src="/portfolio-baldo-v2.webp" alt="Where Is Baldo?: a custom publishing platform with dark mode and search"
+            <img src="/portfolio-baldo-v2.webp" alt="Where Is Baldo?: a personal travel blog with dark mode and search"
                  width="1600" height="1088" loading="lazy" decoding="async" />
           </a>
         </div>
       </div>
       <div class="pf-project-info">
         <h3 class="pf-title">Where Is Baldo?</h3>
-        <p class="pf-pdesc">A custom publishing platform, built from scratch rather than assembled on an off-the-shelf CMS. Transactional email through Resend, web push through Webpushr, dark mode, search, generated social cards, and an installable PWA.</p>
+        <p class="pf-pdesc">A personal travel blog, built from scratch rather than assembled on an off-the-shelf CMS. Transactional email through Resend, web push through Webpushr, dark mode, search, generated social cards, and an installable PWA.</p>
         <p class="pf-outcome"><strong>What it&rsquo;s for:</strong> this is where I test infrastructure before it goes near client work. The email and push stack running here is the same one I would deploy for a client.</p>
         <div class="pf-metrics">
           <div>Installable PWA with web push</div>
