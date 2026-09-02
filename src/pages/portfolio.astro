@@ -2,7 +2,7 @@
 import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 ---
 <PortfolioLayout
-  title="Ubaldo Figueroa — Full-Stack Developer & Growth Engineer"
+  title="Ubaldo Figueroa — Full-Stack Developer & AI Integration"
   description="Full-stack developer who ships end to end — design, code, deploy. Four live production sites, including an AI news platform that publishes itself. Available for freelance and full-time work."
 >
 
@@ -32,8 +32,8 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <span class="pf-name">Ubaldo Figueroa</span>
     </h1>
     <div class="pf-redline"></div>
-    <p class="pf-role">Full-Stack Developer & Growth Engineer</p>
-    <p class="pf-desc">From the barber&rsquo;s chair to four live production sites — including an AI news platform that publishes itself. I own every one end to end — design, build, deploy, and keep them running.</p>
+    <p class="pf-role">Full-Stack Developer & AI Integration</p>
+    <p class="pf-desc">From the barber&rsquo;s chair to five live sites — including an AI news platform that publishes itself. I own every one end to end — design, build, deploy, and keep them running.</p>
     <p class="pf-typed"><span class="pf-hash">#</span> I build <span id="pf-tw"></span></p>
     <div class="pf-btns">
       <a href="#contact" class="pf-btn">Hire Me →</a>
@@ -91,7 +91,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <p class="pf-cred-head">The case for hiring me</p>
       <div class="pf-cred-row">
         <span class="pf-dot-g"></span>
-        <span><strong>4 production sites</strong> you can visit right now</span>
+        <span><strong>5 production sites</strong> you can visit right now</span>
       </div>
       <div class="pf-cred-row">
         <span class="pf-dot-g"></span>
@@ -99,7 +99,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       </div>
       <div class="pf-cred-row">
         <span class="pf-dot-g"></span>
-        <span>Went from <strong>zero to four live sites</strong> since January</span>
+        <span>Went from <strong>zero to five live sites</strong> since January</span>
       </div>
       <div class="pf-cred-row pf-cred-muted">
         <span class="pf-dot-dim"></span>
@@ -332,6 +332,49 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
             <p class="pf-pv-sub">We fit them, fill them and fix them. All you do is<br/>tell us where to put them.</p>
             <div class="pf-pv-btns"><span class="pf-pv-b1">See if we cover you</span><span class="pf-pv-b2">How it works</span></div>
             <p class="pf-pv-fine">Free site visit &middot; No contract to sign &middot; Based in Dundee</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pf-project">
+    <div class="pf-project-meta">
+      <span class="pf-num">05</span>
+      <span class="pf-tag">Own product &middot; In development &middot; 2026</span>
+      <a href="https://cancellation-rebooking.pages.dev" target="_blank" rel="noopener" class="pf-link">cancellation-rebooking.pages.dev &#8599;</a>
+    </div>
+    <div class="pf-project-body">
+      <div class="pf-project-info">
+        <h3 class="pf-title">Cancellation Rebooking</h3>
+        <p class="pf-pdesc">A scheduling app for small mobile businesses &mdash; car detailers, junk removal, trash-can cleaning, pressure washing. They drive to every job, and they don&rsquo;t have the margin to buy leads. When a client cancels, this refills the slot from the operator&rsquo;s own list.</p>
+        <p class="pf-outcome"><strong>Why it isn&rsquo;t a waitlist:</strong> every booking platform already has one, and a waitlist works when customers come to you. These operators drive, so a waitlist hands them a fill forty minutes off their route and the slot stays empty anyway. This ranks candidates by how far out of the operator&rsquo;s way they are, using the jobs before and after the gap as anchors.</p>
+        <div class="pf-metrics">
+          <div>17-table schema; concurrent double-booking made impossible by a partial unique index and single-transaction writes</div>
+          <div>114 tests run against a real SQLite database &mdash; tenant isolation, the accept race, daylight-saving edge cases</div>
+          <div>Database writes cut 94% by a cron that skips unchanged records, taking free-tier capacity from 26 businesses to over 400</div>
+          <div>Offline postcode geocoding, passwordless email sign-in, and messaging that costs nothing to send</div>
+        </div>
+        <div class="pf-tags">
+          <span>React</span><span>TypeScript</span><span>Cloudflare D1</span><span>Concurrency</span><span>Tested</span><span>In development</span>
+        </div>
+        <p class="pf-stack"><strong>Stack</strong> React 18 &middot; React Router &middot; Vite &middot; TypeScript (strict) &middot; Cloudflare Workers &middot; Cloudflare Pages &middot; Cloudflare D1 (SQLite) &middot; Vitest &middot; GeoNames postal data</p>
+        <a href="https://cancellation-rebooking.pages.dev" target="_blank" rel="noopener" class="pf-view-btn">View Live Site &#8594;</a>
+      </div>
+      <div class="pf-browser">
+        <div class="pf-browser-bar">
+          <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
+          <span class="burl">cancellation-rebooking.pages.dev</span>
+        </div>
+        <div class="pf-browser-content pf-cr" aria-hidden="true">
+          <div class="pf-cr-card">
+            <p class="pf-cr-h">Sign in</p>
+            <p class="pf-cr-sub">No password. We email you a link.</p>
+            <div class="pf-cr-field"><span>Email</span></div>
+            <div class="pf-cr-field"><span>Business name</span></div>
+            <div class="pf-cr-field"><span>Country</span></div>
+            <div class="pf-cr-field"><span>Time zone</span></div>
+            <div class="pf-cr-btn">Email me a link</div>
           </div>
         </div>
       </div>
@@ -1103,7 +1146,25 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 }
 .pf-flip .pf-project-body { grid-template-columns: 1fr 1.2fr; }
 .pf-flip .pf-project-meta { flex-direction: row-reverse; }
+/* The flip has to reorder the columns, not just resize them. Order is set
+   explicitly on both children so it does not depend on DOM order. */
+.pf-project-body > * { order: 2; }
+.pf-project-body > .pf-project-info { order: 1; }
+.pf-flip .pf-project-body > * { order: 1; }
+.pf-flip .pf-project-body > .pf-project-info { order: 2; }
 .pf-flip .pf-tag { text-align: right; }
+
+/* Cancellation Rebooking mock */
+.pf-cr { background: #f6f7f9; display: flex; align-items: center; justify-content: center; padding: 6cqw 4cqw; }
+.pf-cr-card { background: #fff; border: 1px solid #e3e5e9; border-radius: 1cqw;
+  padding: 4cqw; width: 100%; max-width: 62cqw; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.pf-cr-h { font-size: 3.4cqw; font-weight: 700; color: #15181c; margin: 0 0 0.6cqw; }
+.pf-cr-sub { font-size: 2.1cqw; color: #667; margin: 0 0 3cqw; }
+.pf-cr-field { border: 1px solid #dfe2e7; border-radius: 0.6cqw; padding: 1.9cqw 2cqw;
+  margin-bottom: 1.6cqw; background: #fcfcfd; }
+.pf-cr-field span { font-size: 2cqw; color: #9aa1ab; }
+.pf-cr-btn { background: #15181c; color: #fff; text-align: center; border-radius: 0.6cqw;
+  padding: 2cqw; font-size: 2.2cqw; font-weight: 600; margin-top: 1cqw; }
 
 /* Browser */
 .pf-browser {
@@ -1512,7 +1573,8 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 @media (max-width: 960px) {
   .pf-work, .pf-services { padding: 60px 24px; }
   .pf-project-body, .pf-flip .pf-project-body { grid-template-columns: 1fr; gap: 28px; }
-  .pf-flip .pf-project-body .pf-browser { order: -1; }
+  .pf-project-body > *, .pf-flip .pf-project-body > * { order: 2; }
+  .pf-project-body > .pf-project-info, .pf-flip .pf-project-body > .pf-project-info { order: 1; }
   .pf-sgrid { grid-template-columns: 1fr 1fr; }
   .pf-foot { padding: 20px 24px; }
   .pf-about { grid-template-columns: 1fr; padding: 36px 24px; gap: 16px; }
