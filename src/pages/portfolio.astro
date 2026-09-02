@@ -366,16 +366,11 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
           <span class="burl">cancellation-rebooking.pages.dev</span>
         </div>
-        <div class="pf-browser-content pf-cr" aria-hidden="true">
-          <div class="pf-cr-card">
-            <p class="pf-cr-h">Sign in</p>
-            <p class="pf-cr-sub">No password. We email you a link.</p>
-            <div class="pf-cr-field"><span>Email</span></div>
-            <div class="pf-cr-field"><span>Business name</span></div>
-            <div class="pf-cr-field"><span>Country</span></div>
-            <div class="pf-cr-field"><span>Time zone</span></div>
-            <div class="pf-cr-btn">Email me a link</div>
-          </div>
+        <div class="pf-browser-content">
+          <a href="https://cancellation-rebooking.pages.dev" target="_blank" rel="noopener" class="pf-shot-link">
+            <img src="/portfolio-cancellation.webp" alt="Cancellation Rebooking: the Today screen showing a cancelled slot with nearby clients, and the week Schedule with the open gap"
+                 width="1617" height="1580" loading="lazy" decoding="async" />
+          </a>
         </div>
       </div>
     </div>
@@ -1153,18 +1148,6 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 .pf-flip .pf-project-body > * { order: 1; }
 .pf-flip .pf-project-body > .pf-project-info { order: 2; }
 .pf-flip .pf-tag { text-align: right; }
-
-/* Cancellation Rebooking mock */
-.pf-cr { background: #f6f7f9; display: flex; align-items: center; justify-content: center; padding: 6cqw 4cqw; }
-.pf-cr-card { background: #fff; border: 1px solid #e3e5e9; border-radius: 1cqw;
-  padding: 4cqw; width: 100%; max-width: 62cqw; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-.pf-cr-h { font-size: 3.4cqw; font-weight: 700; color: #15181c; margin: 0 0 0.6cqw; }
-.pf-cr-sub { font-size: 2.1cqw; color: #667; margin: 0 0 3cqw; }
-.pf-cr-field { border: 1px solid #dfe2e7; border-radius: 0.6cqw; padding: 1.9cqw 2cqw;
-  margin-bottom: 1.6cqw; background: #fcfcfd; }
-.pf-cr-field span { font-size: 2cqw; color: #9aa1ab; }
-.pf-cr-btn { background: #15181c; color: #fff; text-align: center; border-radius: 0.6cqw;
-  padding: 2cqw; font-size: 2.2cqw; font-weight: 600; margin-top: 1cqw; }
 
 /* Browser */
 .pf-browser {
