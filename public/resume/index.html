@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Résumé of Ubaldo Figueroa — full-stack developer, Los Angeles.">
+<title>Ubaldo Figueroa Résumé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  /* ---------- tokens: light is the base, both themes defined at token level ---------- */
+  :root{
+    --paper:#ffffff;
+    --ground:#f4f5f6;
+    --ink:#15181c;
+    --body:#2c3138;
+    --muted:#5d646d;
+    --rule:#e0e3e7;
+    --rule-soft:#eceef1;
+    --accent:#00615f;
+    --accent-soft:#0a7d7a;
+    --link:#00615f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15181c;
+      --ground:#0e1013;
+      --ink:#f2f4f5;
+      --body:#c9cfd5;
+      --muted:#949ba3;
+      --rule:#2b3036;
+      --rule-soft:#22262b;
+      --accent:#4fd1cb;
+      --accent-soft:#6fdcd7;
+      --link:#4fd1cb;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15181c;
+    --ground:#0e1013;
+    --ink:#f2f4f5;
+    --body:#c9cfd5;
+    --muted:#949ba3;
+    --rule:#2b3036;
+    --rule-soft:#22262b;
+    --accent:#4fd1cb;
+    --accent-soft:#6fdcd7;
+    --link:#4fd1cb;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--body);
+    font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:15.5px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .sheet{
+    max-width:46rem;
+    margin:0 auto;
+    background:var(--paper);
+    padding:3.25rem 3rem 3rem;
+    border-left:1px solid var(--rule-soft);
+    border-right:1px solid var(--rule-soft);
+    min-height:100vh;
+  }
+
+  /* ---------- masthead ---------- */
+  .name{
+    font-family:Lora,Georgia,serif;
+    font-weight:600;
+    font-size:2.15rem;
+    line-height:1.1;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin:0;
+    text-wrap:balance;
+  }
+  .role{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.75rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:.55rem 0 0;
+  }
+  .contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.35rem 1.1rem;
+    margin:1.05rem 0 0;
+    padding:0 0 1.4rem;
+    border-bottom:2px solid var(--ink);
+    font-size:.9rem;
+    color:var(--muted);
+  }
+  .contact a{color:var(--link);text-decoration:none;border-bottom:1px solid transparent}
+  .contact a:hover,.contact a:focus-visible{border-bottom-color:var(--link)}
+
+  /* ---------- sections ---------- */
+  section{margin-top:1.9rem}
+  h2{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.7rem;
+    font-weight:500;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 .85rem;
+    padding-bottom:.4rem;
+    border-bottom:1px solid var(--rule);
+  }
+
+  .lede{
+    font-family:Lora,Georgia,serif;
+    font-size:1.02rem;
+    line-height:1.62;
+    color:var(--ink);
+    margin:0;
+    max-width:40em;
+  }
+  .lede strong{font-weight:600}
+
+  /* ---------- skills ---------- */
+  .skills{display:grid;gap:.5rem;margin:0}
+  .skills div{display:grid;grid-template-columns:9.5rem 1fr;gap:.9rem;align-items:baseline}
+  .skills dt{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink);font-weight:500;
+  }
+  .skills dd{margin:0;font-size:.93rem;color:var(--body)}
+
+  /* ---------- entries ---------- */
+  .job{margin-top:1.15rem}
+  .job:first-of-type{margin-top:0}
+  .jobhead{
+    display:flex;flex-wrap:wrap;align-items:baseline;
+    gap:.15rem .7rem;margin-bottom:.15rem;
+  }
+  .jobhead h3{
+    font-family:Lora,Georgia,serif;
+    font-size:1.05rem;font-weight:600;color:var(--ink);margin:0;
+  }
+  .jobhead h3 a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent)}
+  .jobhead h3 a:hover,.jobhead h3 a:focus-visible{color:var(--accent)}
+  .when{
+    margin-left:auto;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;color:var(--muted);
+    font-variant-numeric:tabular-nums;white-space:nowrap;
+  }
+  .where{font-size:.86rem;color:var(--muted);font-style:italic;margin:0 0 .45rem}
+  .live{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);border:1px solid var(--accent);
+    padding:.05rem .35rem;border-radius:2px;vertical-align:.1em;
+  }
+
+  .live.wip{color:var(--muted);border-color:var(--rule)}
+  .repoline{margin:.1rem 0 .15rem}
+  .repo{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.64rem;letter-spacing:.08em;
+        color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .repo:hover,.repo:focus-visible{color:var(--accent);border-bottom-color:var(--accent)}
+  ul{margin:0;padding-left:1.05rem;display:grid;gap:.3rem}
+  li{font-size:.93rem;line-height:1.5}
+  li::marker{color:var(--accent-soft)}
+
+  .banner{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.7rem;letter-spacing:.05em;color:var(--muted);
+    margin:0;
+  }
+
+  footer{
+    margin-top:2.4rem;padding-top:1rem;border-top:1px solid var(--rule);
+    font-size:.82rem;color:var(--muted);
+  }
+  footer a{color:var(--link)}
+
+  a:focus-visible,.contact a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  @media (max-width:640px){
+    .sheet{padding:2rem 1.25rem 2.5rem;border:0}
+    .name{font-size:1.75rem}
+    .skills div{grid-template-columns:1fr;gap:.1rem}
+    .when{margin-left:0;width:100%}
+  }
+
+  /* ---------- print: one page, letter, ink-economical ---------- */
+  @media print{
+    @page{size:letter;margin:0.5in}
+    body{background:#fff;color:#000;font-size:9.6pt;line-height:1.34}
+    .sheet{max-width:none;margin:0;padding:0;border:0;min-height:0;background:#fff}
+    .name{font-size:19pt;color:#000}
+    .role{font-size:7.6pt;color:#000}
+    .contact{font-size:8.6pt;color:#000;padding-bottom:.5rem;border-bottom:1.5pt solid #000;margin-top:.5rem}
+    .contact a{color:#000}
+    section{margin-top:.75rem}
+    h2{font-size:7.4pt;color:#000;margin-bottom:.4rem;padding-bottom:.15rem;border-bottom:.5pt solid #000}
+    .lede{font-size:9.6pt;line-height:1.4;color:#000}
+    .jobhead h3{font-size:10pt;color:#000}
+    .jobhead h3 a{color:#000;border-bottom:0}
+    .when,.where{color:#000}
+    .live{border-color:#000;color:#000}
+    .repo{color:#000;border-bottom:0}
+    .skills dd,li{font-size:9.4pt;color:#000}
+    .skills dt{color:#000}
+    li{line-height:1.34}
+    ul{gap:.1rem}
+    .job{margin-top:.55rem}
+    li,.job,section{break-inside:avoid}
+    footer{margin-top:.8rem;padding-top:.35rem;border-top:.5pt solid #000;color:#000;font-size:8.4pt}
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header>
+    <h1 class="name">Ubaldo Figueroa</h1>
+    <p class="role">Full-Stack Developer · AI Integration</p>
+    <p class="contact">
+      <span>Los Angeles, CA</span>
+      <a href="mailto:ubaldofigueroascl@gmail.com">ubaldofigueroascl@gmail.com</a>
+      <a href="https://github.com/ubaldo28">github.com/ubaldo28</a>
+      <span>US Citizen</span>
+      <span>Open to remote</span>
+    </p>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p class="lede">Barber for eleven years. Self-taught developer since January 2026. In that time I built and shipped five live sites, two of them for paying clients, and I still run all five. Most of my work is Node.js, TypeScript, Postgres and serverless. I also built an AI pipeline on Cloudflare Workers AI that writes and publishes about 20 articles a day without anyone watching it.</p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <dl class="skills">
+      <div><dt>Languages</dt><dd>TypeScript, JavaScript (ES6+), SQL, HTML5, CSS3</dd></div>
+      <div><dt>Frontend</dt><dd>React, vanilla JavaScript, responsive CSS, accessibility (WCAG 2.1 AA), Astro, Vite</dd></div>
+      <div><dt>Backend</dt><dd>Node.js, Express, REST APIs, OAuth 2.0, authentication, serverless functions</dd></div>
+      <div><dt>Databases</dt><dd>PostgreSQL, SQLite (Cloudflare D1), schema design, key-value caching</dd></div>
+      <div><dt>AI</dt><dd>Cloudflare Workers AI, Anthropic Claude API, LLM integration, prompt engineering, structured outputs, AI-assisted development (Claude Code)</dd></div>
+      <div><dt>DevOps &amp; Tooling</dt><dd>Git, GitHub Actions, CI/CD, Cloudflare Workers &amp; Pages, Vitest, Playwright</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="jobhead">
+        <h3>Freelance Web Developer — Self-employed</h3>
+        <span class="when">Jan 2026 – Present · Remote, UK clients</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="jobhead">
+        <h3><a href="https://geniotech.co.uk">GenioTech</a></h3>
+        <span class="live">Live</span>
+        <span class="when">Jun 2026</span>
+      </div>
+      <p class="repoline"><a class="repo" href="https://github.com/ubaldo28/geniotech">github.com/ubaldo28/geniotech</a></p>
+      <p class="where">Device repair retailer, Dundee, Scotland</p>
+      <ul>
+        <li>Built the whole site on Astro and Cloudflare. 18 pages and 8 API routes in TypeScript, deployed with Wrangler.</li>
+        <li>Wrote the cart in plain JavaScript and a Stripe Checkout route taking live payments, with shipping rates, in-store pickup and multiple currencies.</li>
+        <li>Wrote two signature-verified webhook handlers: Stripe for orders, and my own HMAC-SHA256 on the Web Crypto API for bookings. Both email through Resend, every field escaped.</li>
+        <li>Wrote a versioned service worker that caches hashed assets and always hits the network for APIs and video. Ratings come live from Google Places.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead">
+        <h3><a href="https://peak-vending.com">Peak Vending</a></h3>
+        <span class="live">Live</span>
+        <span class="when">Aug 2026</span>
+      </div>
+      <p class="repoline"><a class="repo" href="https://github.com/ubaldo28/peak-vending">github.com/ubaldo28/peak-vending</a></p>
+      <p class="where">Vending operator, Dundee, Scotland</p>
+      <ul>
+        <li>Second paying client. Astro on Cloudflare Workers, every page prerendered to static HTML and served from the edge.</li>
+        <li>Wrote the contact API in TypeScript: field validation, per-IP rate limiting in KV, Resend delivery, and it still works with JavaScript off.</li>
+        <li>Built the print flyers by hand in HTML and CSS at millimetre dimensions, then rendered them to press-ready PDFs with Playwright.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="job">
+      <div class="jobhead">
+        <h3><a href="https://cancellation-rebooking.pages.dev">Cancellation Rebooking</a></h3>
+        <span class="live wip">In development</span>
+        <span class="when">2026</span>
+      </div>
+      <p class="repoline"><a class="repo" href="https://github.com/ubaldo28/cancellation-rebooking">github.com/ubaldo28/cancellation-rebooking</a></p>
+      <p class="where">Scheduling app for small service businesses</p>
+      <ul>
+        <li>Built and deployed the whole thing: React dashboard, serverless API and SQL database, all inside a free tier.</li>
+        <li>Designed a 17-table schema and stopped concurrent double-booking with a partial unique index and single-transaction writes.</li>
+        <li>Wrote 114 tests that run against a real SQLite database, covering tenant isolation, the accept race and daylight-saving edge cases.</li>
+        <li>Cut database writes 94% with a cron that skips unchanged records, raising free-tier capacity from 26 to over 400 businesses.</li>
+        <li>Runs in six countries. Message language sits on the customer, not the country, so one operator can text clients in Spanish and English.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead">
+        <h3><a href="https://potuswatchdaily.com">POTUS Watch Daily</a></h3>
+        <span class="live">Live</span>
+        <span class="when">2026</span>
+      </div>
+      <p class="repoline"><a class="repo" href="https://github.com/ubaldo28/potuswatchdaily">github.com/ubaldo28/potuswatchdaily</a></p>
+      <p class="where">AI-automated foreign-policy news publication</p>
+      <ul>
+        <li>Rebuilt the generator as a Cloudflare Worker on a cron trigger. 980 lines, no SDKs: it talks to Postgres over PostgREST with plain fetch. Costs nothing to run.</li>
+        <li>Reads primary sources instead of headlines: White House RSS, the Federal Register API, the Pentagon, UN and European Council statements.</li>
+        <li>Generates each article with Cloudflare Workers AI, about 147 Neurons against a free allowance of 10,000 a day. Anthropic is an optional upgrade.</li>
+        <li>Skips ceremonial proclamations and procedural filings before it writes anything, then checks the title against the last 500 articles so it does not repeat itself.</li>
+        <li>Publishes about 20 pieces a day across 8 desks with nobody watching.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="jobhead">
+        <h3><a href="https://whereisbaldo.com">Where Is Baldo?</a></h3>
+        <span class="live">Live</span>
+        <span class="when">2026</span>
+      </div>
+      <p class="repoline"><a class="repo" href="https://github.com/ubaldo28/Whereisbaldo">github.com/ubaldo28/Whereisbaldo</a></p>
+      <p class="where">Personal travel blog</p>
+      <ul>
+        <li>Implemented GitHub OAuth 2.0 from scratch. Each login gets its own CSRF state in an HttpOnly cookie, checked on callback before the token exchange.</li>
+        <li>Hardened 4 serverless endpoints with per-IP rate limiting, honeypot fields, bot verification and a CORS allowlist. Security headers are set at the edge.</li>
+        <li>Wrote a GitHub Actions workflow that fires a web push when a post goes from draft to published. A quote in a title cannot break the payload.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Earlier Experience</h2>
+    <div class="job">
+      <div class="jobhead">
+        <h3>Barber — Self-employed</h3>
+        <span class="when">2015 – 2026 · Los Angeles, CA and Dundee, Scotland</span>
+      </div>
+      <ul>
+        <li>Ran my own barbering business for over a decade and built the client base by referral.</li>
+        <li>Rented a chair at Yasper Barbershop, Dundee, July 2025 to July 2026. Both web clients above came from there.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <p class="banner">Self-taught. Web development and applied LLM work, 2026 to now.</p>
+  </section>
+
+  <footer>
+    Every project above is mine and inspectable. Source at <a href="https://github.com/ubaldo28">github.com/ubaldo28</a>.
+  </footer>
+
+</div>
+</body>
+</html>

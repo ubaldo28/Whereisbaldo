@@ -163,7 +163,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span>Autonomous Pipeline</span><span>Workers AI</span><span>Archive</span><span>Newsletter</span>
         </div>
         <p class="pf-stack"><strong>Stack</strong> Astro (SSR) · Cloudflare Pages · Cloudflare Workers · Cloudflare Workers AI · Supabase / PostgreSQL over PostgREST · Node.js · GitHub Actions · Wrangler · IndexNow</p>
-        <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
+        <a href="https://github.com/ubaldo28/potuswatchdaily" target="_blank" rel="noopener" class="pf-view-btn">View the code on GitHub &#8599;</a>
       </div>
       <div class="pf-browser">
         <div class="pf-browser-bar">
@@ -249,7 +249,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span>Booking System</span><span>E-commerce</span><span>PWA</span><span>SEO</span><span>Newsletter</span>
         </div>
         <p class="pf-stack"><strong>Stack</strong> Astro 4 · TypeScript · Cloudflare Pages · Cloudflare Workers · Stripe · Resend · Cal.eu · Service Worker PWA · JSON-LD</p>
-        <a href="https://geniotech.co.uk" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
+        <a href="https://github.com/ubaldo28/geniotech" target="_blank" rel="noopener" class="pf-view-btn">View the code on GitHub &#8599;</a>
       </div>
     </div>
   </div>
@@ -287,7 +287,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span>Custom Design</span><span>Dark Mode</span><span>Search</span><span>PWA</span><span>Web Push</span><span>Generated Social Cards</span>
         </div>
         <p class="pf-stack"><strong>Stack</strong> Astro 7 · Cloudflare Pages · Cloudflare Functions · Resend · Webpushr · Decap CMS</p>
-        <a href="https://whereisbaldo.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
+        <a href="https://github.com/ubaldo28/Whereisbaldo" target="_blank" rel="noopener" class="pf-view-btn">View the code on GitHub &#8599;</a>
       </div>
     </div>
   </div>
@@ -314,7 +314,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span>Static Site</span><span>Content Collections</span><span>Cloudflare Workers</span><span>Transactional Email</span><span>Print / PDF</span><span>Vanilla JS</span>
         </div>
         <p class="pf-stack"><strong>Stack</strong> Astro 7 &middot; Cloudflare Workers &middot; Wrangler &middot; Astro content collections &middot; plain CSS &middot; vanilla JS &middot; Resend &middot; @fontsource (Barlow Semi Condensed, Source Sans 3) &middot; Playwright &middot; potrace</p>
-        <a href="https://peak-vending.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site &#8594;</a>
+        <a href="https://github.com/ubaldo28/peak-vending" target="_blank" rel="noopener" class="pf-view-btn">View the code on GitHub &#8599;</a>
       </div>
       <div class="pf-browser">
         <div class="pf-browser-bar">
@@ -360,7 +360,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span>React</span><span>TypeScript</span><span>Cloudflare D1</span><span>Concurrency</span><span>Tested</span><span>In development</span>
         </div>
         <p class="pf-stack"><strong>Stack</strong> React 18 &middot; React Router &middot; Vite &middot; TypeScript (strict) &middot; Cloudflare Workers &middot; Cloudflare Pages &middot; Cloudflare D1 (SQLite) &middot; Vitest &middot; GeoNames postal data</p>
-        <a href="https://cancellation-rebooking.pages.dev" target="_blank" rel="noopener" class="pf-view-btn">View Live Site &#8594;</a>
+        <a href="https://github.com/ubaldo28/cancellation-rebooking" target="_blank" rel="noopener" class="pf-view-btn">View the code on GitHub &#8599;</a>
       </div>
       <div class="pf-browser">
         <div class="pf-browser-bar">
@@ -428,7 +428,10 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
       <p class="pf-label pf-label-inv">Let's build something</p>
       <h2 class="pf-cta-title">Have a project?<br/><em>Let's talk.</em></h2>
       <p class="pf-cta-sub">Open to freelance work and the right full-time role. Whatever you need built, you are talking to the person who will build it.</p>
-      <a href="https://github.com/ubaldo28" target="_blank" rel="noopener" class="pf-btn-ghost pf-contact-cv">See the code on GitHub ↗</a>
+      <div class="pf-contact-cv">
+        <a href="/resume" class="pf-btn-ghost">Résumé &#8599;</a>
+        <a href="https://github.com/ubaldo28" target="_blank" rel="noopener" class="pf-btn-ghost">See the code on GitHub &#8599;</a>
+      </div>
     </div>
     <div class="pf-contact-right">
       <form class="pf-form" id="pf-contact-form">
@@ -1487,7 +1490,7 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   align-items: start;
 }
 .pf-contact-left { padding-top: 4px; }
-.pf-contact-cv { display: inline-block; margin-top: 2rem; }
+.pf-contact-cv { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 2rem; }
 .pf-contact .pf-btn-ghost {
   color: rgba(255,255,255,0.6);
   border-color: rgba(255,255,255,0.25);
