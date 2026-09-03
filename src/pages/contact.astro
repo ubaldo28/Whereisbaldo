@@ -126,6 +126,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   const form = document.getElementById('contactForm');
   const msg = document.getElementById('contactMsg');
 
+
+// Turnstile tokens expire after about five minutes. Someone who reads the page
+// for a while before writing a message would submit a stale token and the API
+// would answer 403. Mint a fresh one at submit time instead, and fall back to
+// whatever the widget already put in the form if that doesn't work.
+async function freshTurnstileToken(form) {
+  const holder = form.querySelector('.cf-turnstile');
+  const stale = (form.querySelector('[name="cf-turnstile-response"]') || {}).value;
+  if (!window.turnstile || !holder) return stale;
+  try {
+    window.turnstile.reset();
+    const token = await new Promise((resolve) => {
+      const started = Date.now();
+      const poll = setInterval(() => {
+        let v;
+        try { v = window.turnstile.getResponse(); } catch { v = undefined; }
+        if (v) { clearInterval(poll); resolve(v); }
+        else if (Date.now() - started > 8000) { clearInterval(poll); resolve(undefined); }
+      }, 100);
+    });
+    return token || stale;
+  } catch {
+    return stale;
+  }
+}
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
@@ -139,7 +165,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       email: form.email.value.trim(),
       subject: form.subject.options[form.subject.selectedIndex].text,
       message: form.message.value.trim(),
-      'cf-turnstile-response': (form.querySelector('[name="cf-turnstile-response"]') || {}).value,
+      'cf-turnstile-response': await freshTurnstileToken(form),
     };
 
     try {

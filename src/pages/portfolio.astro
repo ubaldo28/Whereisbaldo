@@ -160,7 +160,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <div>Published editorial standards policy</div>
         </div>
         <div class="pf-tags">
-          <span>Autonomous Pipeline</span><span>Workers AI</span><span>Archive</span><span>Newsletter</span><span>Monetised</span>
+          <span>Autonomous Pipeline</span><span>Workers AI</span><span>Archive</span><span>Newsletter</span>
         </div>
         <p class="pf-stack"><strong>Stack</strong> Astro (SSR) · Cloudflare Pages · Cloudflare Workers · Cloudflare Workers AI · Supabase / PostgreSQL over PostgREST · Node.js · GitHub Actions · Wrangler · IndexNow</p>
         <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-view-btn">View Live Site →</a>
@@ -170,7 +170,7 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
           <span class="bd r"></span><span class="bd y"></span><span class="bd g"></span>
           <span class="burl">potuswatchdaily.com</span>
         </div>
-        <div class="pf-browser-content">
+        <div class="pf-browser-content" style="aspect-ratio: 1176 / 1026;">
           <a href="https://potuswatchdaily.com" target="_blank" rel="noopener" class="pf-shot-link">
             <img src="/portfolio-potus.webp" alt="POTUS Watch Daily: an AI-run foreign-policy publication"
                  width="1176" height="1026" loading="lazy" decoding="async" />
@@ -240,9 +240,10 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
         <p class="pf-pdesc">Full site build for a working repair shop in Dundee. Customers choose their device, see a starting price, and book a repair slot online instead of phoning the shop. Includes an accessories store, photo and video gallery, blog, newsletter capture, and an installable PWA.</p>
         <p class="pf-outcome"><strong>What changed:</strong> bookings moved off the phone and onto the site. Customers self-serve by device type and see pricing before they commit, with newsletter signup built into the flow.</p>
         <div class="pf-metrics">
-          <div>Built for an award-winning independent retailer</div>
-          <div>The shop holds a Scottish Independent Retail Award and 4.7★ across 200+ verified reviews</div>
-          <div>Named a finalist at the UK Small Business Awards 2026</div>
+          <div>Two signature-verified webhook handlers — Stripe for orders, and HMAC-SHA256 I wrote on the Web Crypto API for bookings</div>
+          <div>Live Stripe Checkout with shipping rates, in-store pickup and multiple currencies</div>
+          <div>18 pages and 8 API routes in TypeScript, behind a versioned service worker that always hits the network for APIs and video</div>
+          <div>Built for an award-winning independent retailer — 4.7★ across 200+ verified reviews, and a UK Small Business Awards 2026 finalist</div>
         </div>
         <div class="pf-tags">
           <span>Booking System</span><span>E-commerce</span><span>PWA</span><span>SEO</span><span>Newsletter</span>
@@ -477,18 +478,42 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 
 <script is:inline async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
 <script>
+
+// Turnstile tokens expire after about five minutes. Someone who reads the page
+// for a while before writing a message would submit a stale token and the API
+// would answer 403. Mint a fresh one at submit time instead, and fall back to
+// whatever the widget already put in the form if that doesn't work.
+async function freshTurnstileToken(form) {
+  const holder = form.querySelector('.cf-turnstile');
+  const stale = (form.querySelector('[name="cf-turnstile-response"]') || {}).value;
+  if (!window.turnstile || !holder) return stale;
+  try {
+    window.turnstile.reset();
+    const token = await new Promise((resolve) => {
+      const started = Date.now();
+      const poll = setInterval(() => {
+        let v;
+        try { v = window.turnstile.getResponse(); } catch { v = undefined; }
+        if (v) { clearInterval(poll); resolve(v); }
+        else if (Date.now() - started > 8000) { clearInterval(poll); resolve(undefined); }
+      }, 100);
+    });
+    return token || stale;
+  } catch {
+    return stale;
+  }
+}
+
 document.getElementById('pf-contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('pf-form-btn');
   const msg = document.getElementById('pf-form-msg');
   if (this.company.value) { return; }
-  const token = (window.turnstile && document.querySelector('.cf-turnstile'))
-    ? (this.querySelector('[name="cf-turnstile-response"]') || {}).value
-    : undefined;
-  const data = { name: this.name.value, email: this.email.value, message: this.message.value,
-                 subject: 'Portfolio', 'cf-turnstile-response': token };
   btn.textContent = 'Sending...';
   btn.disabled = true;
+  const token = await freshTurnstileToken(this);
+  const data = { name: this.name.value, email: this.email.value, message: this.message.value,
+                 subject: 'Portfolio', 'cf-turnstile-response': token };
   try {
     const res = await fetch('/api/contact', {
       method: 'POST',
