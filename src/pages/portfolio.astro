@@ -672,9 +672,15 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
 }
 .pf-hero-bg {
   position: absolute;
-  top: 0; right: 9%;
+  /* The photo box is as tall as the hero, and object-fit: cover scales the
+     photo to that height. Tightening the space under the tech strip shortened
+     the hero, which shrank the photo with it. Extend the box back up by that
+     same amount — behind the sticky nav, over nothing but background sky in
+     the shot — so the photo keeps its old size and its bottom still lands on
+     the thick divider. */
+  top: -60px; right: 9%;
   width: 44%;
-  height: 100%;
+  height: calc(100% + 60px);
   z-index: 1;
 }
 .pf-hero-bg img {
@@ -694,7 +700,7 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
      right edges into the white page so the crop has no visible seam. */
   background:
     linear-gradient(to right, #fff 0%, rgba(255,255,255,0.97) 18%, rgba(255,255,255,0.25) 34%, transparent 46%),
-    linear-gradient(to bottom, transparent 52%, rgba(255,255,255,0.35) 74%, rgba(255,255,255,0.85) 90%, #fff 100%),
+    linear-gradient(to top, #fff 0, rgba(255,255,255,0.85) 68px, rgba(255,255,255,0.35) 177px, transparent 328px),
     linear-gradient(to left, #fff 0%, rgba(255,255,255,0.55) 5%, transparent 14%);
 }
 .pf-hero-text {
@@ -1582,7 +1588,7 @@ if (vid && !stillPlease.matches && 'IntersectionObserver' in window) {
   .pf-tech-strip { flex-wrap: wrap; gap: 0.35rem 0; }
   .pf-strip-dot { padding: 0 0.35rem; }
   .pf-hero { min-height: 88vh; padding-top: 18px; padding-bottom: 60px; }
-  .pf-hero-bg { width: 66%; right: 0; }
+  .pf-hero-bg { width: 66%; right: 0; top: 0; height: 100%; }
   .pf-hero-overlay {
     background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0.99) 26%, rgba(255,255,255,0.9) 100%);
   }
