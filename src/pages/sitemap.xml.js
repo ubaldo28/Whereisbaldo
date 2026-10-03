@@ -9,7 +9,6 @@ export async function GET() {
     { url: 'https://whereisbaldo.com/blog/', priority: '0.9', changefreq: 'weekly' },
     { url: 'https://whereisbaldo.com/start-here/', priority: '0.7', changefreq: 'monthly' },
     { url: 'https://whereisbaldo.com/portfolio/', priority: '0.7', changefreq: 'monthly' },
-    { url: 'https://whereisbaldo.com/services/', priority: '0.6', changefreq: 'monthly' },
     { url: 'https://whereisbaldo.com/work-with-me/', priority: '0.6', changefreq: 'monthly' },
     { url: 'https://whereisbaldo.com/contact/', priority: '0.6', changefreq: 'monthly' },
     { url: 'https://whereisbaldo.com/search/', priority: '0.4', changefreq: 'monthly' },
