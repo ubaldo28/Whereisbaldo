@@ -1,12 +1,15 @@
 ---
-// Google Analytics stays unloaded until the visitor accepts. The choice is
-// remembered in localStorage; declining loads nothing.
+// Google Analytics and Webpushr stay unloaded until the visitor accepts. The
+// choice is remembered in localStorage; declining loads nothing. The footer's
+// "Cookie settings" button reopens the banner so the choice can be changed.
 const GA_ID = 'G-BSDXJ1PRGL';
+const PUSH_KEY = 'BFcSY49Fbl0plbicUgFhjBGABH7GMM9k-zAVucp7y-JkNtavzHlmmTE6rGIaFbtmz8q3v8EVgwL_6mGJ8PT48AQ';
 ---
 <div id="consent-banner" role="dialog" aria-label="Cookie consent" hidden>
   <p>
-    I'd like to use Google Analytics to see which stories get read. It sets cookies,
-    so it only runs if you say yes. <a href="/cookie-policy/">Cookie policy</a>
+    I'd like to use Google Analytics to see which stories get read, and Webpushr for
+    new-story notifications. Both set cookies, so they only run if you say yes.
+    <a href="/cookie-policy/">Cookie policy</a>
   </p>
   <div class="consent-actions">
     <button type="button" id="consent-decline">No thanks</button>
@@ -14,7 +17,7 @@ const GA_ID = 'G-BSDXJ1PRGL';
   </div>
 </div>
 
-<script define:vars={{ GA_ID }}>
+<script define:vars={{ GA_ID, PUSH_KEY }}>
   (function () {
     var KEY = 'wib-consent';
     var banner = document.getElementById('consent-banner');
@@ -38,21 +41,53 @@ const GA_ID = 'G-BSDXJ1PRGL';
       document.head.appendChild(s);
     }
 
+    function loadPush() {
+      if (window.__pushLoaded) return;
+      window.__pushLoaded = true;
+      (function (w, d, s, id) {
+        if (typeof w.webpushr !== 'undefined') return;
+        w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments); };
+        var js, fjs = d.getElementsByTagName(s)[0];
+        js = d.createElement(s); js.id = id; js.async = 1;
+        js.src = 'https://cdn.webpushr.com/app.min.js';
+        fjs.parentNode.appendChild(js);
+      }(window, document, 'script', 'webpushr-jssdk'));
+      window.webpushr('setup', { key: PUSH_KEY });
+    }
+    function stopAnalytics() {
+      window['ga-disable-' + GA_ID] = true;
+      document.cookie.split(';').forEach(function (c) {
+        var name = c.split('=')[0].trim();
+        if (name === '_ga' || name.indexOf('_ga_') === 0) {
+          document.cookie = name + '=; Max-Age=0; path=/';
+          document.cookie = name + '=; Max-Age=0; path=/; domain=' + location.hostname;
+          document.cookie = name + '=; Max-Age=0; path=/; domain=.' + location.hostname.replace(/^www\./, '');
+        }
+      });
+    }
+
     var choice = read();
     if (choice === 'granted') {
       loadAnalytics();
+      loadPush();
     } else if (choice !== 'denied') {
       banner.hidden = false;
     }
 
+    var settings = document.getElementById('cookie-settings');
+    if (settings) settings.addEventListener('click', function () { banner.hidden = false; });
+
     document.getElementById('consent-accept').addEventListener('click', function () {
       write('granted');
+      window['ga-disable-' + GA_ID] = false;
       banner.hidden = true;
       loadAnalytics();
+      loadPush();
     });
     document.getElementById('consent-decline').addEventListener('click', function () {
       write('denied');
       banner.hidden = true;
+      stopAnalytics();
     });
   })();
 </script>

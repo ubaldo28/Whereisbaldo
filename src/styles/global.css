@@ -313,6 +313,9 @@ nav a:focus { outline: 2px solid var(--orange); outline-offset: 4px; border-radi
 .footer-col ul li { margin-bottom: 10px; }
 .footer-col ul li a { color: var(--kraft); text-decoration: none; font-size: 14px; font-style: italic; transition: color 0.2s; }
 .footer-col ul li a:hover { color: var(--orange); }
+.cookie-settings-btn { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: var(--kraft); font-size: 14px; font-style: italic; transition: color 0.2s; }
+.cookie-settings-btn:hover { color: var(--orange); }
+.cookie-settings-btn:focus { outline: 2px solid var(--orange); outline-offset: 2px; }
 .footer-col ul li a:focus { outline: 2px solid var(--orange); outline-offset: 2px; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; color: var(--gold); letter-spacing: 1px; }
 .footer-legal { display: flex; gap: 20px; }
