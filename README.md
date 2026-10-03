@@ -84,10 +84,12 @@ images are static files on the CDN and no request ever waits on an image service
 
 ## Security headers
 
-`public/_headers` sets `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`,
+`public/_headers` is the only headers file Cloudflare Pages reads (it is copied into
+`dist/`). It sets `X-Frame-Options: SAMEORIGIN`, `X-Content-Type-Options: nosniff`,
 `Referrer-Policy: strict-origin-when-cross-origin` and a `Permissions-Policy` that turns
-off camera, microphone and geolocation, on every route. `/admin/*` also gets
-`X-Robots-Tag: noindex`.
+off camera, microphone, geolocation and FLoC, on every route. `/admin/*` also gets
+`X-Robots-Tag: noindex`. There is no Content-Security-Policy yet: the site uses inline
+scripts (consent banner, JSON-LD, push) and third-party scripts, so one needs care.
 
 `.gitignore` refuses `*.pdf` outright. Personal documents were in here once and the rule
 is there so they cannot come back.
